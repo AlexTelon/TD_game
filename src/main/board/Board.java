@@ -9,7 +9,6 @@ import main.enemies.EnemyWaves;
 import main.enemies.EnemyWave;
 import main.graphics.ColorHandler;
 import main.position.Point;
-import main.position.Vector;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -123,7 +122,7 @@ public class Board {
                     gameOver();
                 }
                 for ( Towers currentTower : allTowers) {
-                    currentTower.tick(currentTower, allEnemiesInCurrentWave);
+                    currentTower.tick(allEnemiesInCurrentWave);
                 }
             }
         }
@@ -437,7 +436,7 @@ public class Board {
         resetBoard(currentTower.getPosition());
         allTowers.remove(currentTower);
 
-        for (Placeable currentPlaceable : currentTower.getCurrentTargets()) {
+        for (Placeable currentPlaceable : currentTower.getPlacablesWithinRangeOfThisTower()) {
             for (GameActions action : currentTower.getGameActions()) {
                 if (currentPlaceable instanceof ShootableTowers) {
                     ((ShootableTowers) currentPlaceable).getAttack().removeBuffers(action);

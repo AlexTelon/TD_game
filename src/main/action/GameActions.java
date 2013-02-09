@@ -15,6 +15,14 @@ public class  GameActions implements IGameActions {
         // all values are set to 0 by default.
     }
 
+    /**
+     * overrided by ShootingAction
+     * @param newAttack
+     */
+    public GameActions(Attack newAttack) {
+    //funkardethär? - jag hoppas att ShootingAction overidear denna varje gång den anropas
+    }
+
     public void tick(Placeable obj) {
    /*     if (obj instanceof ShootableTowers) {
             ((ShootableTowers) obj).getAttack().addBuffers(this); // DÅLIGT MEN NÅT SÅNTHÄR SKA DE VA
@@ -26,6 +34,8 @@ public class  GameActions implements IGameActions {
         this.extraDmg = extraDmg;
         this.extraRange = extraRange;
     }
+
+
 
     public int getExtraDmg() {
         return extraDmg;
@@ -39,4 +49,11 @@ public class  GameActions implements IGameActions {
         return decreaseSpeed;
     }
 
+    public Attack getAttack() {
+        return null;
+    }
+
+    public void setTower(Placeable tower) {
+        //funkardethär?
+    }
 }

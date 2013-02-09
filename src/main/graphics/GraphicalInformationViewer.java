@@ -139,7 +139,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
                 tmpY);
 
         tmpY += 20;
-        g2.drawString("NrOfTargets:  " + stringConverter(tower.getCurrentTargets().size()), 0, tmpY);
+        g2.drawString("NrOfTargets:  " + stringConverter(tower.getPlacablesWithinRangeOfThisTower().size()), 0, tmpY);
 
         tmpY += 20;
         g2.drawString("Rate of Fire:  " +  tower.getAttack().getRateOfFire(), 0, tmpY);

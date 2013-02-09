@@ -72,37 +72,7 @@ public class NonShootableTower extends Towers {
         this.difficulty = difficulty;
     }
 
-    public void tick() {
 
-        findObjectsWithinRange();
-
-        //send action to all objects
-        for (Placeable obj : super.getCurrentTargets()) {
-            for (GameActions currentAction : super.getGameActions()) {
-                currentAction.tick(obj);
-            }
-        }
-    }
-
-    /**
-     * Fins all placebles within range and adds them to current targets
-     */
-    private void findObjectsWithinRange() {
-        for( Placeable obj : super.getAllObjects()) {
-            if (isObjectWithinRange(obj)) {
-                if (obj != this) {
-                    super.addToCurrentTargets(obj);
-                }
-            }
-        }
-    }
-
-    private boolean isObjectWithinRange(Placeable obj) {
-        if (obj.distanceTo(this) <= range) {
-            return true;
-        }
-        return false;
-    }
 
     public int getExtraDmg() {
         int extraDmg = 0;

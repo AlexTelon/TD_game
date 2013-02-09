@@ -112,7 +112,7 @@ public class Placeable implements IDesign{
     /**
      * Calculates the distance between obj a and b.
      * @param a
-     * @return
+     * @return a double
      */
     public double distanceTo(Placeable a) {
         main.position.Point aPos = a.getPixelPosition();

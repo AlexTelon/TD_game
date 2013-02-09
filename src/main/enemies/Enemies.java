@@ -165,7 +165,7 @@ public class Enemies extends Placeable {
         //     makeDeadBody();
 
         for( Towers currentTower : board.getAllTowers()) {
-            currentTower.removeFromCurrentTargets(this);
+            currentTower.removeFromCurrentPlacablesWithinRangeOfThisTower(this);
         }
 
         setActive(false);

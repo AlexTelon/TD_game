@@ -1,4 +1,4 @@
-package main.Towers;
+package main.action;
 
 import main.action.GameActions;
 import main.graphics.ColorHandler;
@@ -36,12 +36,13 @@ public class Attack {
         this.buffers = buffers;
     }
 
-    public Attack(int dmg, double range, double rateOfFire, ColorHandler.Colour colour, double framerate) {
+    public Attack(int dmg, double range, double rateOfFire, int enemiesTowerCanShootAtTheSameFrame, ColorHandler.Colour colour, double framerate) {
         this.dmg = dmg;
         this.range = range;
         this.rateOfFire = rateOfFire;
         this.color = colorHandler.getGUIColour(colour);
         this.setRateOfFirePerFrame(framerate);
+        this.enemiesTowerCanShootAtTheSameFrame = enemiesTowerCanShootAtTheSameFrame;
     }
 
     public int getDmg() {

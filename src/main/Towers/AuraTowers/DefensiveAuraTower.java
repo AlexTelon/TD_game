@@ -1,5 +1,6 @@
 package main.Towers.AuraTowers;
 
+import main.Towers.Towers;
 import main.board.Placeable;
 import main.graphics.ColorHandler;
 
@@ -10,7 +11,7 @@ import java.util.ArrayList;
  * User: alete471 Date: 2012-10-07 Time: 18:35
  * Remember to write something useful here!!
  */
-public class DefensiveAuraTower extends NonShootableTower {
+public class DefensiveAuraTower extends Towers {
     private static final int price = 20;
     private static final int range = 200;
     private static final ColorHandler.Colour colourOfTower = ColorHandler.Colour.DARKBLUE;
@@ -34,6 +35,7 @@ public class DefensiveAuraTower extends NonShootableTower {
      */
     public DefensiveAuraTower(ArrayList<Placeable> allObjects, int difficulty, int x, int y,
                               double extraRange) {
+
         super(allObjects, difficulty, x, y, dimension, colourOfTower, shape, range, price,
                 extraDmg, extraRange);
     }

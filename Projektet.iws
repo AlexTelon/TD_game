@@ -5,36 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="ffb3a02d-f355-4700-8085-964ced278c1f" name="Default" comment="Changed the structure of">
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\Attack.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\AuraTowers\DefensiveAuraTower.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\AuraTowers\NonShootableTower.java" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\AuraTowers\OffensiveAuraTower.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\LevelOfTower.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\TowerMaker.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\Towers.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\shootingTowers\ShootableTowers.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraActions\AuraAction.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraActions\DmgBuffAction.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraActions\RangeBuffAction.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraAction\AuraAction.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraAction\DmgBuffAction.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraAction\RangeBuffAction.java" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\Enemies.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\EnemyPath.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\EnemyWave.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\EnemyWaves.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\DefaultEnemy.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\FastEnemy.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\SlowEnemy.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\StrongEnemy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemy\Enemies.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemy\EnemyPath.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemy\EnemyWave.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemy\EnemyWaves.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemy\enemyType\DefaultEnemy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemy\enemyType\FastEnemy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemy\enemyType\SlowEnemy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemy\enemyType\StrongEnemy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\tower\Attack.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\tower\GeneralTower.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\tower\LevelOfTower.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\tower\Tower.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\tower\TowerMaker.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\tower\auraTower\DefensiveAuraTower.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\tower\auraTower\NonShootableTower.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\tower\auraTower\OffensiveAuraTower.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\tower\shootingTower\ShootableTower.java" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\Attack.java" afterPath="$PROJECT_DIR$/src/main/action/Attack.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/board/Board.java" afterPath="$PROJECT_DIR$/src/main/board/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/action/GameActionFactory.java" afterPath="$PROJECT_DIR$/src/main/action/GameActionFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Towers/AuraTowers/DefensiveAuraTower.java" afterPath="$PROJECT_DIR$/src/main/Towers/AuraTowers/DefensiveAuraTower.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/enemies/Enemies.java" afterPath="$PROJECT_DIR$/src/main/enemies/Enemies.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/action/GameActions.java" afterPath="$PROJECT_DIR$/src/main/action/GameActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/graphics/GameFrame.java" afterPath="$PROJECT_DIR$/src/main/graphics/GameFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/board/GameTimer.java" afterPath="$PROJECT_DIR$/src/main/board/GameTimer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java" afterPath="$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java" afterPath="$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projektet.ipr" afterPath="$PROJECT_DIR$/Projektet.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Towers/AuraTowers/NonShootableTower.java" afterPath="$PROJECT_DIR$/src/main/Towers/AuraTowers/NonShootableTower.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/board/Placeable.java" afterPath="$PROJECT_DIR$/src/main/board/Placeable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projektet.iws" afterPath="$PROJECT_DIR$/Projektet.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Towers/shootingTowers/ShootableTowers.java" afterPath="$PROJECT_DIR$/src/main/Towers/shootingTowers/ShootableTowers.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java" afterPath="$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Towers/TowerMaker.java" afterPath="$PROJECT_DIR$/src/main/Towers/TowerMaker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Towers/Towers.java" afterPath="$PROJECT_DIR$/src/main/Towers/Towers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Towers.uml" afterPath="$PROJECT_DIR$/Towers.uml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Towersmoreinfo.uml" afterPath="$PROJECT_DIR$/Towersmoreinfo.uml" />
     </list>
     <list id="7cc6ea38-270f-4fd3-b6f4-ac40ed33ad76" name="Rejected commit: Default" comment="Imported the whole projekt" />
     <list id="1ae18aaf-70fe-4aaa-9c47-d108b1b7ab3e" name="Rejected commit: Default (2)" comment="Imported the whole projekt" />
@@ -43,6 +51,15 @@
     <ignored path="Projektet.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360442572611" ignored="false" />
+    <file path="/Towers.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360446419348" ignored="false" />
+    <file path="$PROJECT_DIR$/src/main/graphics/GameFrame.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360442989861" ignored="false" />
+    <file path="/Placeable.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360443618360" ignored="false" />
+    <file path="/ShootingAction.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360447323030" ignored="false" />
+    <file path="/DefensiveAuraTower.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360444636155" ignored="false" />
+    <file path="/fragment.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360445987966" ignored="false" />
+    <file path="/GameActions.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360447552904" ignored="false" />
+    <file path="/TowerMaker.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360447686973" ignored="false" />
+    <file path="/Attack.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360447670650" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,19 +130,99 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ShootableTower.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/tower/shootingTower/ShootableTower.java">
+      <file leaf-file-name="Towers.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Towers/Towers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="8" selection-start="1896" selection-end="1896" vertical-scroll-proportion="0.0">
+            <state line="154" column="1" selection-start="4599" selection-end="4599" vertical-scroll-proportion="-14.96">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#725#736#0" expanded="true" />
+                <element signature="e#820#831#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameActions.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/action/GameActions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="90" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NonShootableTower.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/tower/auraTower/NonShootableTower.java">
+      <file leaf-file-name="ShootableTowers.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Towers/shootingTowers/ShootableTowers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="48" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.64489794">
+            <state line="21" column="19" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/board/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="440" column="48" selection-start="13351" selection-end="13351" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1713#1730#0" expanded="true" />
+                <element signature="e#1865#1884#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DmgBuffAction.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/action/auraActions/DmgBuffAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="27" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphicalViewer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="172" column="14" selection-start="5794" selection-end="5794" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphicalInformationViewer.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="98" column="22" selection-start="2993" selection-end="2993" vertical-scroll-proportion="0.60104984">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Attack.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/action/Attack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="46" selection-start="1437" selection-end="1437" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TowerMaker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Towers/TowerMaker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="0" selection-start="3235" selection-end="3235" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShootingAction.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="134" column="5" selection-start="4369" selection-end="4369" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -163,22 +260,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/enemies/EnemyWave.java" />
-        <option value="$PROJECT_DIR$/src/main/enemies/enemyTypes/StrongEnemy.java" />
-        <option value="$PROJECT_DIR$/src/main/enemies/EnemyWaves.java" />
-        <option value="$PROJECT_DIR$/src/main/graphics/ColorHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/graphics/GameFrame.java" />
         <option value="$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java" />
         <option value="$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java" />
-        <option value="$PROJECT_DIR$/src/main/Towers/AuraTowers/DefensiveAuraTower.java" />
-        <option value="$PROJECT_DIR$/src/main/Towers/AuraTowers/NonShootableTower.java" />
         <option value="$PROJECT_DIR$/src/main/Towers/AuraTowers/OffensiveAuraTower.java" />
-        <option value="$PROJECT_DIR$/src/main/Towers/shootingTowers/ShootableTowers.java" />
         <option value="$PROJECT_DIR$/src/main/Towers/Attack.java" />
         <option value="$PROJECT_DIR$/src/main/Towers/LevelOfTower.java" />
-        <option value="$PROJECT_DIR$/src/main/Towers/Towers.java" />
+        <option value="$PROJECT_DIR$/src/main/Towers/Tower.java" />
+        <option value="$PROJECT_DIR$/src/main/board/Placeable.java" />
         <option value="$PROJECT_DIR$/src/main/board/Board.java" />
+        <option value="$PROJECT_DIR$/src/main/Towers/AuraTowers/NonShootableTower.java" />
+        <option value="$PROJECT_DIR$/src/main/Towers/AuraTowers/DefensiveAuraTower.java" />
+        <option value="$PROJECT_DIR$/src/main/Towers/shootingTowers/ShootableTowers.java" />
+        <option value="$PROJECT_DIR$/src/main/Towers/Towers.java" />
         <option value="$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java" />
+        <option value="$PROJECT_DIR$/src/main/action/GameActions.java" />
+        <option value="$PROJECT_DIR$/src/main/action/Attack.java" />
+        <option value="$PROJECT_DIR$/src/main/Towers/TowerMaker.java" />
       </list>
     </option>
   </component>
@@ -300,6 +397,128 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Towers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projektet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CustomTD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Towers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shootingTowers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projektet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CustomTD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Towers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AuraTowers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projektet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CustomTD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projektet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CustomTD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projektet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CustomTD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shootingAction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -343,8 +562,8 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="main.board" />
       <recent name="main.action" />
+      <recent name="main.board" />
       <recent name="main.position" />
       <recent name="main.Towers.towerAction.auraActions" />
       <recent name="main.enemies.enemyTypes" />
@@ -558,17 +777,18 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6381074" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.6700767" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45268542" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.6700767" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09555556" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24680308" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32352942" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32352942" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24371994" sideWeight="0.2188889" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329859" sideWeight="0.67471266" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996139" sideWeight="0.6700767" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22844273" sideWeight="0.6764706" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22844273" sideWeight="0.5473146" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35933504" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="-59" y="276" width="1720" height="846" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.329859" sideWeight="0.6563218" order="0" side_tool="false" content_ui="tabs" x="136" y="132" width="1394" height="715" />
@@ -580,7 +800,6 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32444444" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.537931" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -682,16 +901,124 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/tower/shootingTower/ShootableTower.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Towers/AuraTowers/NonShootableTower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="8" selection-start="1896" selection-end="1896" vertical-scroll-proportion="0.0">
+        <state line="75" column="0" selection-start="2250" selection-end="2250" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/board/Placeable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="179" column="34" selection-start="5413" selection-end="5413" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/tower/auraTower/NonShootableTower.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Towers/LevelOfTower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="48" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.64489794">
+        <state line="27" column="34" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/action/GameActionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/action/IGameActionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/action/IGameActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="17" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="5" selection-start="4369" selection-end="4369" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/action/GameActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="90" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/action/Attack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="46" selection-start="1437" selection-end="1437" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Towers/TowerMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="3235" selection-end="3235" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Towers/Towers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="154" column="1" selection-start="4599" selection-end="4599" vertical-scroll-proportion="-14.96">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#725#736#0" expanded="true" />
+            <element signature="e#820#831#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Towers/shootingTowers/ShootableTowers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="19" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="172" column="14" selection-start="5794" selection-end="5794" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/action/auraActions/DmgBuffAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="27" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/board/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="440" column="48" selection-start="13351" selection-end="13351" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1713#1730#0" expanded="true" />
+            <element signature="e#1865#1884#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="22" selection-start="2993" selection-end="2993" vertical-scroll-proportion="0.60104984">
           <folding />
         </state>
       </provider>

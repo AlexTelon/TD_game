@@ -2,8 +2,11 @@ package main.Towers;
 
 import main.Towers.AuraTowers.DefensiveAuraTower;
 import main.Towers.shootingTowers.ShootableTowers;
+import main.action.Attack;
+import main.action.GameActions;
 import main.board.Board;
 import main.board.IDesign;
+import main.board.Placeable;
 import main.graphics.ColorHandler;
 import main.position.Point;
 
@@ -66,11 +69,13 @@ public class TowerMaker {
                              int range, int rOF,
                              int enemiesTowerCanShootAtTheSameTime, int price, Dimension dimension) {
 
-        board.addObject(new ShootableTowers(board.getAllObjects(), board.getDifficulty(),
-                board.getFrameRate(), position.getX(),
-                position.getY(), dimension,
-                colourOfTower, colourOfShoots, IDesign.Shapes.Rectangle, dmg, range, rOF,
-                enemiesTowerCanShootAtTheSameTime, price));
+        Attack newAttack = new Attack(dmg, range, rOF, enemiesTowerCanShootAtTheSameTime ,colourOfShoots, board.getFrameRate());
+        GameActions newGameAction = new GameActions(newAttack); // made a lonley gameaction
+        Placeable newTower = new Towers(board.getAllObjects(), newGameAction, position.getX(), position.getY(),
+                dimension, colourOfTower, IDesign.Shapes.Rectangle, price, board.getDifficulty());
+        newGameAction.setTower(newTower); // the gameaction is now attatched to the newTower.
+
+        board.addObject(newTower);
     }
 
 }

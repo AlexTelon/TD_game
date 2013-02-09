@@ -10,7 +10,7 @@
     <node x="201.33333333333337" y="330.0">main.Towers.TowerMaker</node>
     <node x="57.02864583333337" y="0.0">main.action.GameActions</node>
     <node x="191.50000000000003" y="160.0">main.Towers.LevelOfTower</node>
-    <node x="-43.0" y="160.0">main.Towers.Attack</node>
+    <node x="-43.0" y="160.0">main.action.Attack</node>
     <node x="343.77864583333337" y="160.0">main.Towers.Towers</node>
   </nodes>
   <notes />
@@ -25,7 +25,7 @@
       <point x="0.0" y="-15.0" />
       <point x="19.25" y="15.0" />
     </edge>
-    <edge source="main.Towers.shootingTowers" target="main.Towers.Attack">
+    <edge source="main.Towers.shootingTowers" target="main.action.Attack">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
@@ -59,7 +59,7 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="main.Towers.Attack" target="main.action.GameActions">
+    <edge source="main.action.Attack" target="main.action.GameActions">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>

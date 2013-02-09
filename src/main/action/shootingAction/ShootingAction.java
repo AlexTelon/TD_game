@@ -1,6 +1,8 @@
 package main.action.shootingAction;
 
+import main.Towers.Towers;
 import main.Towers.shootingTowers.ShootableTowers;
+import main.action.Attack;
 import main.action.GameActions;
 import main.enemies.Enemies;
 
@@ -10,23 +12,42 @@ import main.enemies.Enemies;
  * data itself. The Data is in tower and in attack
  */
 public class ShootingAction extends GameActions {
-    private ShootableTowers tower;
+    private Towers tower;
+    private Attack attack;
 
-    public ShootingAction(ShootableTowers tower) {
+
+    public ShootingAction(Towers tower, Attack attack) {
         this.tower = tower;
+        this.attack = attack;
     }
 
-    public void tick(Enemies currentEnemy) {
-        if (currentEnemy.isActive() && currentEnemy.isAlive()) { // can only handle active and alive enemies
-            if (canShoot() && inRange(currentEnemy) && correctTarget(currentEnemy)) {
-                shoot(currentEnemy);
-                tower.setLastTarget(currentEnemy);
+    /**
+     * constructor to make a ShootingAction that does not belong to a tower yet.
+     * @param newAttack
+     */
+    public ShootingAction(Attack newAttack) {
+        this.attack = newAttack;
+    }
 
-                if (currentEnemy.isAlive()) { // ie enemy still is alive
-                    tower.setCurrentTarget(currentEnemy);
-                    tower.addToCurrentTargets(currentEnemy);
-                } else {
-                    tower.setCurrentTarget(null);
+    /*
+        Makes its thing on one enemy
+         */
+    public void tick(Enemies currentEnemy) {
+
+        getAttack().resetEnemiesTowerHasShoot(); // reset enemies it has shot this frame.
+        if (attack.canShootAtThisFrame()) {
+
+            if (currentEnemy.isActive() && currentEnemy.isAlive()) { // can only handle active and alive enemies
+                if (canShoot() && inRange(currentEnemy) && correctTarget(currentEnemy)) {
+                    shoot(currentEnemy);
+                    tower.setLastTarget(currentEnemy); // why is lastTarget used? - does it only work as an iterator?
+
+                    if (currentEnemy.isAlive()) { // ie enemy still is alive
+                        tower.setCurrentTarget(currentEnemy);
+                        tower.addToCurrentPlacablesWithinRangeOfThisTower(currentEnemy);
+                    } else {
+                        tower.setCurrentTarget(null);
+                    }
                 }
             }
         }
@@ -42,7 +63,7 @@ public class ShootingAction extends GameActions {
     private boolean correctTarget(Enemies currentEnemy) {
         if (tower.getLastTarget() != null || !inRange(currentEnemy)) { // if no last target skip below and return
             // true
-            if (tower.getAttack().isRememberOldTarget()) { //if it does not care about keeping track of old target
+            if (attack.isRememberOldTarget()) { //if it does not care about keeping track of old target
             // skip below
                 // and return true
                 if (tower.getLastTarget().isActive() || tower.getLastTarget().isAlive() ) { // if enemy is dead skip
@@ -61,10 +82,10 @@ public class ShootingAction extends GameActions {
 
 
     private void shoot(Enemies currentEnemy) {
-        currentEnemy.attacked(tower.getAttack().getDmg());
+        currentEnemy.attacked(attack.getDmg());
         tower.addKills(1);
         tower.getLevelOfTower().addExperience(currentEnemy.getExperienceToTowers());
-        tower.getAttack().addEnemiesTowerHasShoot();
+        attack.addEnemiesTowerHasShoot();
     }
 
     /**
@@ -76,7 +97,7 @@ public class ShootingAction extends GameActions {
     private boolean inRange(Enemies currentEnemy) {
         double rangeToEnemy;
         rangeToEnemy = currentEnemy.distanceTo(tower);
-        if (tower.getAttack().getRange() >= rangeToEnemy) {
+        if (attack.getRange() >= rangeToEnemy) {
             return true;
         } return false;
     }
@@ -98,11 +119,18 @@ public class ShootingAction extends GameActions {
     }
 
     private boolean canShootMoreTargets() {
-        if (tower.getAttack().getEnemiesTowerCanShootAtTheSameFrame() > tower.getAttack().getEnemiesTowerHasShoot()) {
+        if (attack.getEnemiesTowerCanShootAtTheSameFrame() > attack.getEnemiesTowerHasShoot()) {
             return true;
         }
         return false;
     }
 
+    @Override
+    public Attack getAttack() {
+        return attack;
+    }
 
+    public void setTower(Towers tower) {
+        this.tower = tower;
+    }
 }
