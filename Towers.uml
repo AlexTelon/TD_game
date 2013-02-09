@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>main.Towers</OriginalElement>
+  <nodes>
+    <node x="337.27864583333337" y="80.0">main.board.Placeable</node>
+    <node x="39.27864583333337" y="250.0">main.Towers.shootingTowers</node>
+    <node x="51.50000000000003" y="160.0">main.action.towerAction.ShootingAction</node>
+    <node x="311.02864583333337" y="250.0">main.Towers.AuraTowers</node>
+    <node x="201.33333333333337" y="330.0">main.Towers.TowerMaker</node>
+    <node x="57.02864583333337" y="0.0">main.action.GameActions</node>
+    <node x="191.50000000000003" y="160.0">main.Towers.LevelOfTower</node>
+    <node x="-43.0" y="160.0">main.Towers.Attack</node>
+    <node x="343.77864583333337" y="160.0">main.Towers.Towers</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="main.Towers.Towers" target="main.board.Placeable">
+      <point x="-25.666666666666686" y="-15.0" />
+      <point x="356.6119791666667" y="135.0" />
+      <point x="352.27864583333337" y="135.0" />
+      <point x="-30.0" y="15.0" />
+    </edge>
+    <edge source="main.Towers.AuraTowers" target="main.Towers.Towers">
+      <point x="0.0" y="-15.0" />
+      <point x="19.25" y="15.0" />
+    </edge>
+    <edge source="main.Towers.shootingTowers" target="main.Towers.Attack">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.action.towerAction.ShootingAction" target="main.Towers.shootingTowers">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.action.towerAction.ShootingAction" target="main.action.GameActions">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="main.Towers.shootingTowers" target="main.Towers.Towers">
+      <point x="88.8125" y="-15.0" />
+      <point x="229.59114583333337" y="230.0" />
+      <point x="363.02864583333337" y="230.0" />
+      <point x="-19.25" y="15.0" />
+    </edge>
+    <edge source="main.Towers.shootingTowers" target="main.action.towerAction.ShootingAction">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.Towers.shootingTowers" target="main.Towers.LevelOfTower">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.Towers.TowerMaker" target="main.Towers.shootingTowers">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.board.Placeable" target="main.action.GameActions">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.Towers.Attack" target="main.action.GameActions">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.Towers.TowerMaker" target="main.Towers.AuraTowers">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="259.5" y="180.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

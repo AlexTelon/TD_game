@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>main.action</OriginalElement>
+  <nodes>
+    <node x="318.0" y="347.0">main.action.auraActions</node>
+    <node x="510.0" y="347.0">main.action.shootingAction</node>
+    <node x="502.4166666666667" y="0.0">main.action.IGameActions</node>
+    <node x="502.4166666666667" y="168.0">main.action.GameActions</node>
+    <node x="263.59523809523813" y="438.0">main.action.GameActionFactory</node>
+    <node x="0.0" y="336.0">main.action.IGameActionFactory</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="main.action.auraActions" target="main.action.GameActions">
+      <point x="0.0" y="-15.0" />
+      <point x="404.0" y="311.0" />
+      <point x="533.4166666666667" y="311.0" />
+      <point x="-62.0" y="59.0" />
+    </edge>
+    <edge source="main.action.GameActionFactory" target="main.action.GameActions">
+      <point x="99.33333333333333" y="-26.0" />
+      <point x="511.92857142857144" y="413.0" />
+      <point x="708.5" y="413.0" />
+      <point x="708.5" y="311.0" />
+      <point x="657.4166666666667" y="311.0" />
+      <point x="62.0" y="59.0" />
+    </edge>
+    <edge source="main.action.shootingAction" target="main.action.GameActions">
+      <point x="0.0" y="-15.0" />
+      <point x="604.0" y="311.0" />
+      <point x="595.4166666666667" y="311.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="main.action.GameActions" target="main.action.IGameActions">
+      <point x="0.0" y="-59.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="main.action.GameActionFactory" target="main.action.auraActions">
+      <point x="0.0" y="-26.0" />
+      <point x="412.59523809523813" y="413.0" />
+      <point x="404.0" y="413.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="main.action.GameActionFactory" target="main.action.IGameActionFactory">
+      <point x="-99.33333333333331" y="-26.0" />
+      <point x="313.2619047619048" y="413.0" />
+      <point x="149.0" y="413.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="354.5" y="245.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

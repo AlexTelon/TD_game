@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>main.board</OriginalElement>
+  <nodes>
+    <node x="592.2133333333334" y="881.641212121212">main.board.Placeable</node>
+    <node x="179.25" y="698.0">main.board.Board</node>
+    <node x="655.5036363636361" y="751.2727272727271">main.board.IDesign</node>
+    <node x="584.911515151515" y="659.6169696969696">main.board.GlobalPositioning</node>
+    <node x="596.629090909091" y="1630.1054545454544">main.board.PriorityMap</node>
+    <node x="665.9636363636366" y="1507.8181818181818">main.board.IBoardListener</node>
+    <node x="280.8239393939393" y="1810.4630303030303">main.board.GameTimer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="main.board.Board" target="main.board.IBoardListener">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.board.Board" target="main.board.PriorityMap">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.board.Board" target="main.board.Placeable">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.board.Placeable" target="main.board.IDesign">
+      <point x="0.0" y="-246.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="main.board.GameTimer" target="main.board.Board">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6506309148264984" x="572.9236363636364" y="1200.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
