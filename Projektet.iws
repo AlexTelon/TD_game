@@ -5,12 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="ffb3a02d-f355-4700-8085-964ced278c1f" name="Default" comment="Changed the structure of">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/enemies" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/enemies/EnemyWave.java" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\Attack.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\AuraTowers\DefensiveAuraTower.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\AuraTowers\NonShootableTower.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\AuraTowers\OffensiveAuraTower.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\LevelOfTower.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\TowerMaker.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\Towers.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\Towers\shootingTowers\ShootableTowers.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraActions\AuraAction.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraActions\DmgBuffAction.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraActions\RangeBuffAction.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\.svn\entries" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\Enemies.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\EnemyPath.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\EnemyWave.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\EnemyWaves.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\DefaultEnemy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\FastEnemy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\SlowEnemy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\StrongEnemy.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/board/Board.java" afterPath="$PROJECT_DIR$/src/main/board/Board.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/action/GameActionFactory.java" afterPath="$PROJECT_DIR$/src/main/action/GameActionFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/action/GameActions.java" afterPath="$PROJECT_DIR$/src/main/action/GameActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/graphics/GameFrame.java" afterPath="$PROJECT_DIR$/src/main/graphics/GameFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/board/GameTimer.java" afterPath="$PROJECT_DIR$/src/main/board/GameTimer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java" afterPath="$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java" afterPath="$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projektet.ipr" afterPath="$PROJECT_DIR$/Projektet.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projektet.iws" afterPath="$PROJECT_DIR$/Projektet.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java" afterPath="$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java" />
     </list>
     <list id="7cc6ea38-270f-4fd3-b6f4-ac40ed33ad76" name="Rejected commit: Default" comment="Imported the whole projekt" />
     <list id="1ae18aaf-70fe-4aaa-9c47-d108b1b7ab3e" name="Rejected commit: Default (2)" comment="Imported the whole projekt" />
@@ -18,6 +42,7 @@
     <list id="89370a58-e75d-4a9d-b045-8e3049b2fc34" name="Failed commit: Default" comment="Imported the whole projekt" />
     <ignored path="Projektet.iws" />
     <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360442572611" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +50,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Projektet$BoardTester.coverage" NAME="BoardTester Coverage Results" MODIFIED="1350846712122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
@@ -83,19 +113,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Enemies.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/enemy/Enemies.java">
+      <file leaf-file-name="ShootableTower.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/tower/shootingTower/ShootableTower.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="52" selection-start="6271" selection-end="6271" vertical-scroll-proportion="0.0">
+            <state line="48" column="8" selection-start="1896" selection-end="1896" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShootableTower.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/tower/shootingTower/ShootableTower.java">
+      <file leaf-file-name="NonShootableTower.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/tower/auraTower/NonShootableTower.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="8" selection-start="1896" selection-end="1896" vertical-scroll-proportion="0.33200794">
+            <state line="46" column="48" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.64489794">
               <folding />
             </state>
           </provider>
@@ -108,11 +138,31 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="NewTower" />
+      </map>
+    </option>
+  </component>
+  <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="expandStates">
+      <map>
+        <entry key="Projektet" value="true" />
+      </map>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/enemies/Enemies.java" />
-        <option value="$PROJECT_DIR$/src/main/enemies/EnemyPath.java" />
         <option value="$PROJECT_DIR$/src/main/enemies/EnemyWave.java" />
         <option value="$PROJECT_DIR$/src/main/enemies/enemyTypes/StrongEnemy.java" />
         <option value="$PROJECT_DIR$/src/main/enemies/EnemyWaves.java" />
@@ -127,6 +177,8 @@
         <option value="$PROJECT_DIR$/src/main/Towers/Attack.java" />
         <option value="$PROJECT_DIR$/src/main/Towers/LevelOfTower.java" />
         <option value="$PROJECT_DIR$/src/main/Towers/Towers.java" />
+        <option value="$PROJECT_DIR$/src/main/board/Board.java" />
+        <option value="$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java" />
       </list>
     </option>
   </component>
@@ -161,7 +213,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -189,22 +241,12 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Projektet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Projektet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CustomTD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -223,12 +265,40 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
+      <pane id="ProjectPane">
+        <subPane>
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projektet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projektet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CustomTD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projektet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CustomTD" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -241,9 +311,10 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="options.lastSelected" value="preferences.toDoOptions" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="projektet" />
@@ -252,11 +323,11 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="GoToClass.includeLibraries" value="false" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -319,19 +390,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -358,6 +416,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -410,7 +481,7 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="commandLine" myAutoUpdateAfterCommit="true" cleanupOnStartRun="true">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="true" cleanupOnStartRun="true">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -482,29 +553,29 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="916" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6381074" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.6700767" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.6700767" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09555556" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24680308" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32352942" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24371994" sideWeight="0.2188889" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329859" sideWeight="0.67471266" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996139" sideWeight="0.6700767" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22844273" sideWeight="0.6764706" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35933504" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="-59" y="276" width="1720" height="846" />
       <window_info id="DSM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.329859" sideWeight="0.6563218" order="0" side_tool="false" content_ui="tabs" x="136" y="132" width="1394" height="715" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32777777" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977018" sideWeight="0.6722222" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977018" sideWeight="0.6433333" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977018" sideWeight="0.6433333" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -611,16 +682,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/enemy/Enemies.java">
+    <entry file="file://$PROJECT_DIR$/src/main/tower/shootingTower/ShootableTower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="52" selection-start="6271" selection-end="6271" vertical-scroll-proportion="0.0">
+        <state line="48" column="8" selection-start="1896" selection-end="1896" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/tower/shootingTower/ShootableTower.java">
+    <entry file="file://$PROJECT_DIR$/src/main/tower/auraTower/NonShootableTower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="8" selection-start="1896" selection-end="1896" vertical-scroll-proportion="0.33200794">
+        <state line="46" column="48" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.64489794">
           <folding />
         </state>
       </provider>
