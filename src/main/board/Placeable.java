@@ -174,7 +174,7 @@ public class Placeable implements IDesign{
     }
 
     public void addGameActions(GameActions action) {
-        this.actions.add(action);
+//        this.actions.add(action);
     }
 
     public ArrayList<GameActions> getGameActions() {

@@ -1,0 +1,29 @@
+[33mcommit efc8101399470aa151c5651affd555b29b57badb[m
+Author: Alex Telon <alex.telon@gmail.com>
+Date:   Sun Feb 10 02:15:40 2013 +0100
+
+    Tower is fixed, buggs left only. Also check buff factory. There is a TODO about this. Check after an infinite recusion bug, i have a feeling there is one somewhere
+
+[33mcommit b6d40f3d7606fd779e0c392ae446eae67599b41c[m
+Author: Alex Telon <alex.telon@gmail.com>
+Date:   Sat Feb 9 23:14:35 2013 +0100
+
+    Have fixed ShootingAction. Next Delete ShootingTower and fix all faults
+
+[33mcommit 99b5638a984ab971ca505ee9ef28f274a83f9a1b[m
+Author: Alex Telon <alex.telon@gmail.com>
+Date:   Sat Feb 9 21:44:48 2013 +0100
+
+    fungerar innan allt hax
+
+[33mcommit bb30fca815c845cce3c628f9350825c474f9ead3[m
+Author: Alex Telon <alex.telon@gmail.com>
+Date:   Sat Feb 9 20:08:43 2013 +0100
+
+    Working Version
+
+[33mcommit 4c4ba812d09351dc3465c874be919197e6cf410a[m
+Author: Alex Telon <alex.telon@gmail.com>
+Date:   Sat Feb 9 19:58:42 2013 +0100
+
+    hope this is a working version
