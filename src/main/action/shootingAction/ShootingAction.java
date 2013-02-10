@@ -114,6 +114,7 @@ public class ShootingAction extends GameActions {
         return false;
     }
 
+    @Override
     public boolean canShoot(Enemies currentEnemy) {
         return (canShoot() && inRange(currentEnemy) && correctTarget(currentEnemy));
     }
@@ -132,5 +133,13 @@ public class ShootingAction extends GameActions {
 
     public void setTower(Towers tower) {
         this.tower = tower;
+    }
+
+    @Override
+    public boolean hasAnAttack() {
+        if (this.attack != null) {
+            return true;
+        }
+        return false;
     }
 }

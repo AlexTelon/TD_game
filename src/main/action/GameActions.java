@@ -1,6 +1,7 @@
 package main.action;
 
 import main.board.Placeable;
+import main.enemies.Enemies;
 
 /**
  * User: alete471 Date: 2012-10-12 Time: 09:47
@@ -36,7 +37,6 @@ public class  GameActions implements IGameActions {
     }
 
 
-
     public int getExtraDmg() {
         return extraDmg;
     }
@@ -49,11 +49,23 @@ public class  GameActions implements IGameActions {
         return decreaseSpeed;
     }
 
+    /**
+     * returns true if the action has an attack
+     * @return
+     */
+    public boolean hasAnAttack() {
+        return false;
+    }
+
     public Attack getAttack() {
         return null;
     }
 
     public void setTower(Placeable tower) {
         //funkardethär?
+    }
+
+    public boolean canShoot(Enemies currentObj) {
+        return false;
     }
 }

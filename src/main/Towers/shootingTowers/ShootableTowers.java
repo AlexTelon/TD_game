@@ -16,18 +16,15 @@ import main.graphics.ColorHandler;
 import static java.lang.Math.abs;
 
 public class ShootableTowers extends Towers {
-    private Attack attack = new Attack(super.getBuffers());
-    private ShootingAction towerAction;
 
-    public ShootableTowers(ArrayList<Placeable> allObjects, int difficulty, double framerate, int x, int y,
+
+    public ShootableTowers(ArrayList<Placeable> allObjects, GameActions gameActions, int difficulty, double framerate, int x, int y,
                            Dimension dimension, ColorHandler.Colour colourOfTower, ColorHandler.Colour colourOfShoots,
                            IDesign.Shapes shape, int dmg, int range, int rOF, int enemiesTowerCanShootAtTheSameFrame,
                            int price) {
 
-        super(allObjects, x, y, dimension, colourOfTower, shape, price, difficulty);
-        this.attack = new Attack(dmg, range, rOF, colourOfShoots, framerate);
-        attack.setEnemiesTowerCanShootAtTheSameFrame(enemiesTowerCanShootAtTheSameFrame);
-        this.towerAction = new ShootingAction(this);
+        super(allObjects, gameActions, x, y, dimension, colourOfTower, shape, price, difficulty);
+
     }
 
     /**
@@ -36,29 +33,28 @@ public class ShootableTowers extends Towers {
      */
     public void tick(EnemyWave allEnemies) { // TODO Move to shootingAction so that we have only data in this class!
 
-
-
-
-
-
         }
-
-
 
 
     @Override
     public void addBuffers(GameActions action) {
-        //  attack.addBuffers(obj);
-        super.addBuffers(action);
+        if (super.getBuffers().contains(action)) {
+            // do nothing if already there
+        } else {
+            super.getBuffers().add(action);
+            for (GameActions currentGameAction : getGameActions()) {
+                if (currentGameAction.hasAnAttack())
+                    currentGameAction.getAttack().addBuffers(action);
+            }
+        }
     }
 
-    /**
-     * CAUTION this replaces the current shootingAction with a new one in ShootableTowers!
-     * @param action
-     */
     @Override
-    public void addGameActions(GameActions action) {
-        towerAction = (ShootingAction) action;
+        public void removeBuffer(GameActions action) {
+            super.getBuffers().remove(action);
+        for (GameActions currentGameAction : getGameActions()) {
+            if (currentGameAction.hasAnAttack())
+                currentGameAction.getAttack().removeBuffers(action);
+        }
     }
-
 }

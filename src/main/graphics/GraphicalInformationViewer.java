@@ -116,7 +116,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
 
     }
 
-    private void paintInfoForCurrentTower(Graphics2D g2, ShootableTowers tower) {
+    private void paintInfoForCurrentTower(Graphics2D g2, Towers tower) {
         int tmpX = 80;
         int tmpY = 15;
         g2.setColor(Color.BLACK);
@@ -135,14 +135,14 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
         g2.drawString(stringConverter(tower.getLevelOfTower().getExp()), tmpX, tmpY);
 
         tmpY += 20;
-        g2.drawString("MultiShoot? " + stringConverter(tower.getAttack().getEnemiesTowerCanShootAtTheSameFrame()), 0,
+        g2.drawString("MultiShoot? " + stringConverter(tower.getTowerInformation(Towers.TowerInformation.ENEMIESCANSHOOTSAMETIME)), 0,
                 tmpY);
 
         tmpY += 20;
         g2.drawString("NrOfTargets:  " + stringConverter(tower.getPlacablesWithinRangeOfThisTower().size()), 0, tmpY);
 
         tmpY += 20;
-        g2.drawString("Rate of Fire:  " +  tower.getAttack().getRateOfFire(), 0, tmpY);
+        g2.drawString("Rate of Fire: (rounded)  " +  stringConverter(tower.getTowerInformation(Towers.TowerInformation.RATEOFFIRE)), 0, tmpY);
 
         tmpY += 20;
         tmpX = 30;
@@ -158,8 +158,8 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
 
 
         tmpY += 20;
-        g2.drawString("DPS  " + String.valueOf(tower.getAttack().getDPS()) + "    Dmg  " + stringConverter(tower
-                .getAttack().getDmg()) + " ( " +"+ " + stringConverter(tower.getAttack().getExtraDmg()) + ")" , 0, tmpY);
+        g2.drawString("DPS  " + String.valueOf(tower.getTowerInformation(Towers.TowerInformation.DPS)) + "    Dmg  " + stringConverter(tower
+                .getTowerInformation(Towers.TowerInformation.DMG)) + " ( " +"+ " + stringConverter(tower.getTowerInformation(Towers.TowerInformation.extraDMG)) + ")" , 0, tmpY);
 
     }
 

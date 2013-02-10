@@ -1,7 +1,6 @@
 package main.board;
 
-import main.Towers.AuraTowers.NonShootableTower;
-import main.Towers.shootingTowers.ShootableTowers;
+import main.Towers.NonShootableTower.NonShootableTower;
 import main.Towers.Towers;
 import main.action.GameActions;
 import main.enemies.Enemies;
@@ -45,10 +44,7 @@ public class Board {
     // All main.Towers.Towers
     private final ArrayList<Towers> allTowers = new ArrayList<Towers>();
 
-    // All main.Towers.shootingTowers.ShootableTowers
-    private final ArrayList<ShootableTowers> allShootableTowers = new ArrayList<ShootableTowers>();
-
-    // All main.Towers.AuraTowers.NonShootableTower
+    // All main.Towers.NonShootableTower.NonShootableTower
     private ArrayList<NonShootableTower> allNonShootableTowers = new ArrayList<NonShootableTower>();
 
     // All Objects
@@ -150,9 +146,6 @@ public class Board {
                 allTowers.add(0, (Towers) obj);
                 setPriority(obj);
 
-                if (obj instanceof ShootableTowers) {
-                    allShootableTowers.add(0, (ShootableTowers) obj);
-                }
                 if (obj instanceof NonShootableTower) {
                     allNonShootableTowers.add(0, (NonShootableTower) obj);
                 }
@@ -368,11 +361,6 @@ public class Board {
         return allTowers;
     }
 
-    public ArrayList<ShootableTowers> getAllShootableTowers() {
-        return allShootableTowers;
-    }
-
-
     public Placeable getCastle() {
         return castle;
     }
@@ -438,9 +426,6 @@ public class Board {
 
         for (Placeable currentPlaceable : currentTower.getPlacablesWithinRangeOfThisTower()) {
             for (GameActions action : currentTower.getGameActions()) {
-                if (currentPlaceable instanceof ShootableTowers) {
-                    ((ShootableTowers) currentPlaceable).getAttack().removeBuffers(action);
-                }
                 currentPlaceable.removeBuffer(action);
             }
         }

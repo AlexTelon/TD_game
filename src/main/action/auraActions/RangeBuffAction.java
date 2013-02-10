@@ -13,10 +13,9 @@ public class RangeBuffAction extends AuraAction {
         super(0, extraRange);
       }
 
+    @Override
     public void tick(Placeable obj) {
-        if (obj instanceof ShootableTowers) {
-            ((ShootableTowers) obj).getAttack().addBuffers(this);
-        }
-        obj.addBuffers(this);
+        super.tick(obj);
     }
+
 }

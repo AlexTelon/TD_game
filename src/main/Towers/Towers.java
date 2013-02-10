@@ -29,6 +29,9 @@ public class Towers extends Placeable  {
     private int kills = 0;
     private Enemies lastTarget;
     private Enemies currentTarget;
+    public enum TowerInformation {
+        DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, extraDMG
+    }
 
     public Towers(ArrayList<Placeable> allObjects, GameActions gameActions, int x, int y, Dimension dimension, ColorHandler.Colour color,
                   Shapes shape, int price, int difficulty) {
@@ -151,5 +154,82 @@ public class Towers extends Placeable  {
             return false;
         }
         return true;
+    }
+
+
+
+    public boolean canShoot(Enemies currentObj) {
+        for (GameActions currentGameAction : getGameActions()) {
+            if (currentGameAction.canShoot(currentObj) == true) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    /**
+     * returns the aggregated value of all the shooting actions of a tower. Doubles are cast to ints!
+     * @param towerInformation
+     * @return
+     */
+    public int getTowerInformation(TowerInformation towerInformation) {
+        double counter = 0;
+        for (GameActions currentGameAction : getGameActions()) {
+            if (currentGameAction.hasAnAttack()) {
+                switch (towerInformation) {
+                    case DMG:
+                        counter += currentGameAction.getAttack().getDmg();
+                        break;
+                    case RANGE:
+                        counter += currentGameAction.getAttack().getRange();
+                        break;
+                    case RATEOFFIRE:
+                        counter += currentGameAction.getAttack().getRateOfFire();
+                        break;
+                    case ENEMIESCANSHOOTSAMETIME:
+                        counter += currentGameAction.getAttack().getEnemiesTowerCanShootAtTheSameFrame();
+                        break;
+                    case DPS:
+                        counter += currentGameAction.getAttack().getDPS();
+                        break;
+                    case extraDMG:
+                        counter += currentGameAction.getExtraDmg();
+                        break;
+
+                    default:
+                        System.out.println("Something went wrong in getTowerInformation");
+                        return -1;
+                }
+            }
+        }
+        return (int)counter;
+    }
+
+    /**
+     * Returns no cyan if the tower has no attack. If the tower has several shooting actions the color
+     * of the first one is returned.
+     * @return
+     */
+    public Color getAttackColor() {
+        Color attackColor = Color.cyan;
+        for (GameActions currentGameAction : getGameActions()) {
+            if (currentGameAction.hasAnAttack()) {
+                return currentGameAction.getAttack().getColor();
+
+            }
+        }
+        return attackColor;
+    }
+
+
+    @Override
+    public void addBuffers(GameActions action) {
+        super.addBuffers(action);
+    }
+
+    @Override
+    public void removeBuffer(GameActions action) {
+        super.removeBuffer(action);    //To change body of overridden methods use File | Settings | File Templates.
     }
 }

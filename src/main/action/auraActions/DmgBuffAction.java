@@ -13,11 +13,8 @@ public class DmgBuffAction extends AuraAction {
         super(extraDmg, 0);
      }
 
-
+    @Override
     public void tick(Placeable obj) {
-        if (obj instanceof ShootableTowers) {
-            ((ShootableTowers) obj).getAttack().addBuffers(this);
-        }
-        obj.addBuffers(this);
+        super.tick(obj);
     }
 }

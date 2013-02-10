@@ -12,6 +12,11 @@ public class AuraAction extends GameActions {
     public AuraAction(int extraDmg, double extraRange) {
         super(extraDmg, extraRange);
     }
+
+    public void tick(Placeable obj) {
+        obj.addBuffers(this);
+    }
+
 /*
     public void tick(GameActions currentAction, Placeable obj) {
         if (currentAction instanceof DmgBuffAction) {

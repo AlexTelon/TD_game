@@ -1,7 +1,6 @@
 package main.Towers;
 
-import main.Towers.AuraTowers.DefensiveAuraTower;
-import main.Towers.shootingTowers.ShootableTowers;
+import main.Towers.NonShootableTower.NonShootableTower;
 import main.action.Attack;
 import main.action.GameActions;
 import main.board.Board;
@@ -46,12 +45,22 @@ public class TowerMaker {
 
             case 'B':
                 price = 20;
+                range = 200;
                 priority = 1;
                 dimension = new Dimension(1,1);
+                int extraDMG = 5;
+                int extraRange = 0;
 
                 if (board.isValidPositions(position, priority, dimension) && board.getGold() >= price) {
-                    board.addObject(new DefensiveAuraTower(board.getAllObjects(), board.getDifficulty(),
-                            position.getX(), position.getY(), 5));
+
+                    // TODO fixa här, Gör en gameActions som du skickar in nedan. Sedan kolla upp vad gameActionFactoryn
+                    // gör egentligen och om inte extraDMG och extraRange blir dubbel info då de kmr finnas
+                    // i gameActions också
+                    GameActions gameActions = new GameActions(extraDMG, extraRange);
+                    Towers NewTower = new NonShootableTower(board.getAllObjects(), gameActions, board.getDifficulty(),
+                            position.getX(), position.getY(), dimension, ColorHandler.Colour.BLUE, IDesign.Shapes.Rectangle, range , price, extraDMG, extraRange);
+
+                    board.addObject(NewTower);
 
                     board.subtractGold(price);
                 } else
