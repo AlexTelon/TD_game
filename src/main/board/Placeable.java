@@ -1,5 +1,6 @@
 package main.board;
 
+import main.Towers.Towers;
 import main.action.GameActions;
 import main.graphics.ColorHandler;
 import main.position.*;
@@ -47,6 +48,12 @@ public class Placeable implements IDesign{
     public Placeable(int x, int y, int hitpoints, ColorHandler.Colour color, int priority) {
         this(x, y, new Dimension(1,1), color, Shapes.Rectangle, priority);
         this.hitpoints = hitpoints;
+    }
+
+    public void tick() {
+        for (GameActions currentAction : getGameActions()) {
+            currentAction.tick(this);
+        }
     }
 
     /**
@@ -179,6 +186,15 @@ public class Placeable implements IDesign{
 
     public ArrayList<GameActions> getGameActions() {
         return actions;
+    }
+
+    /**
+     * Calculates if a object is within range of the tower.
+     *
+     * @param towers@return true if it is in range.
+     */
+    public boolean isObjectWithinRange(Towers towers) {
+        return towers.isObjectWithinRange(towers);
     }
 }
 

@@ -19,13 +19,11 @@ import java.util.ArrayList;
  */
 
 public class Towers extends Placeable  {
+    private final main.Towers.attackHelpClass attackHelpClass = new main.Towers.attackHelpClass();
     protected LevelOfTower levelOfTower;
     protected int hasGainedLevels = 0;
     private int price;
     private ArrayList<Placeable> lastTargets = new ArrayList<Placeable>();
-    private ArrayList<Placeable>  PlacablesWithinRangeOfThisTower = new ArrayList<Placeable>();
-    private ArrayList<Placeable> allObjects;
-    private double range = 200.0;
     private int kills = 0;
     private Enemies lastTarget;
     private Enemies currentTarget;
@@ -37,7 +35,7 @@ public class Towers extends Placeable  {
                   Shapes shape, int price, int difficulty) {
         super(x, y, dimension, color, shape);
         this.price = price;
-        this.allObjects = allObjects;
+        this.attackHelpClass.setAllObjects(allObjects);
         this.levelOfTower = new LevelOfTower(difficulty);
     }
 
@@ -45,12 +43,12 @@ public class Towers extends Placeable  {
     Adds the towers GameAction to all placeables in range.
      */
     public void tick(EnemyWave allEnemies) {
-
+        super.tick();
         recalcLevel();
-        findObjectsWithinRange(allObjects);
+        attackHelpClass.findObjectsWithinRange(attackHelpClass.getAllObjects());
 
             //send action to all objects
-            for (Placeable obj : PlacablesWithinRangeOfThisTower) {
+            for (Placeable obj : attackHelpClass.getPlacablesWithinRangeOfThisTower()) {
                 for (GameActions currentAction : super.getGameActions()) {
                     obj.addGameActions(currentAction);
                 }
@@ -72,27 +70,8 @@ public class Towers extends Placeable  {
          * Fins all placebles within range and returns them
          */
         private void findObjectsWithinRange(ArrayList<Placeable> allObjects) {
-            for( Placeable obj : allObjects) {
-                if (isObjectWithinRange(obj)) {
-                    if (obj != this) { // so we dont get an infinite recursion?
-                        addToCurrentPlacablesWithinRangeOfThisTower(obj); // why do we do this?
-                    }
-                }
-            }
+            attackHelpClass.findObjectsWithinRange(allObjects);
         }
-
-    /**
-     * Calculates if a object is within range of the tower.
-     * @param obj it is a placable
-     * @return true if it is in range.
-     */
-    public boolean isObjectWithinRange(Placeable obj) {
-        if (obj.distanceTo(this) <= range) {
-            return true;
-        }
-        return false;
-    }
-
 
 
     public ArrayList<Placeable> getLastTargets() {
@@ -108,9 +87,7 @@ public class Towers extends Placeable  {
     Things regarding PlacablesWithinRangeOfThisTower
      */
     public void addToCurrentPlacablesWithinRangeOfThisTower(Placeable obj) {
-        if (!PlacablesWithinRangeOfThisTower.contains(obj)) {
-            this.PlacablesWithinRangeOfThisTower.add(obj);
-        }
+        attackHelpClass.addToCurrentPlacablesWithinRangeOfThisTower(obj);
     }
 
     public void setLastTarget(Enemies currentTarget) {
@@ -118,15 +95,15 @@ public class Towers extends Placeable  {
     }
 
     public void removeFromCurrentPlacablesWithinRangeOfThisTower(Enemies currentEnemy) {
-        this.PlacablesWithinRangeOfThisTower.remove(currentEnemy);
+        attackHelpClass.removeFromCurrentPlacablesWithinRangeOfThisTower(currentEnemy);
     }
 
     public ArrayList<Placeable> getPlacablesWithinRangeOfThisTower() {
-        return PlacablesWithinRangeOfThisTower;
+        return attackHelpClass.getPlacablesWithinRangeOfThisTower();
     }
 
     public ArrayList<Placeable> getAllObjects() {
-        return allObjects;
+        return attackHelpClass.getAllObjects();
     }
 
     public int getKills() {
@@ -150,7 +127,7 @@ public class Towers extends Placeable  {
     }
 
     public boolean hasTarget() {
-        if (getPlacablesWithinRangeOfThisTower().isEmpty()) {
+        if (attackHelpClass.getPlacablesWithinRangeOfThisTower().isEmpty()) {
             return false;
         }
         return true;
@@ -231,5 +208,14 @@ public class Towers extends Placeable  {
     @Override
     public void removeBuffer(GameActions action) {
         super.removeBuffer(action);    //To change body of overridden methods use File | Settings | File Templates.
+    }
+
+    /**
+     * Calculates if a object is within range of the tower.
+     *
+     * @param towers@return true if it is in range.
+     */
+    public boolean isObjectWithinRange(Towers towers) {
+        return towers.attackHelpClass.isObjectWithinRange(this);
     }
 }
