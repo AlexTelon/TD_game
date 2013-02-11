@@ -23,7 +23,7 @@ public class Towers extends Placeable  {
     protected int hasGainedLevels = 0;
     private int price;
     private ArrayList<Placeable> lastTargets = new ArrayList<Placeable>();
-    private ArrayList<Placeable> PlacablesWithinRangeOfThisTower = new ArrayList<Placeable>();
+    private ArrayList<Placeable>  PlacablesWithinRangeOfThisTower = new ArrayList<Placeable>();
     private ArrayList<Placeable> allObjects;
     private double range = 200.0;
     private int kills = 0;
