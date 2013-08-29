@@ -1,5 +1,6 @@
 package main.action;
 
+import main.Tower.Tower;
 import main.board.Placeable;
 import main.enemies.Enemies;
 
@@ -16,21 +17,14 @@ public class GameAction implements IGameActions {
         // all values are set to 0 by default.
     }
 
-    /**
-     * overrided by ShootingAction
-     * @param newAttack
-     */
-    public GameAction(Attack newAttack) {
-    //funkardethär? - jag hoppas att ShootingAction overidear denna varje gång den anropas
-        // TODO Should this be something?
-    }
-
-    public void tick(Placeable obj) {
+    public void tick(Placeable tower) {
    /*     if (obj instanceof ShootableTower) {
             ((ShootableTower) obj).getAttack().addBuffers(this); // DÅLIGT MEN NÅT SÅNTHÄR SKA DE VA
         } */
-        obj.addBuffers(this);
+        tower.addBuffers(this);
     }
+
+
 
     public GameAction(int extraDmg, double extraRange) {
         this.extraDmg = extraDmg;
@@ -62,8 +56,7 @@ public class GameAction implements IGameActions {
         return null;
     }
 
-    public void setTower(Placeable tower) {
-        //funkardethär?
+    public void setTower(Tower tower) {
     }
 
     public boolean canShoot(Placeable currentObj) {

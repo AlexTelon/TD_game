@@ -50,9 +50,9 @@ public class Placeable implements IDesign{
         this.hitpoints = hitpoints;
     }
 
-    public void tick() {
+    public void tick(Placeable placeable) {
         for (GameAction currentAction : getGameActions()) {
-            currentAction.tick(this);
+            currentAction.tick(placeable);
         }
     }
 

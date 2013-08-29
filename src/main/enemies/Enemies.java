@@ -98,7 +98,7 @@ public class Enemies extends Placeable {
     public void tick(double time) {
         if (getActivationTime() <= time && isAlive()) {
             setActive(true);
-            super.tick();
+            super.tick(this);
 
             moveEnemy(enemyPixelMovement(enemyPathing.getCurrentPixelGoal()));
             if (enemyPathing.getCurrentPixelGoal().equals(getPixelPosition())) {

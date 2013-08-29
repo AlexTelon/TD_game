@@ -52,7 +52,7 @@ public class Tower extends Placeable  {
          */
     public void tick(EnemyWave allEnemies) {
 //<<<<<<< Updated upstream
-        super.tick();
+        super.tick(this);
         //       recalcLevel();
 //        attackHelpClass.findObjectsWithinRange(attackHelpClass.getAllObjects());
 //=======
