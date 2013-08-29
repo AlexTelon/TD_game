@@ -28,6 +28,7 @@ public class Placeable implements IDesign{
     private main.position.Point pixelPosition;
     private String nameText = "Placeholder";
     private int hitpoints = 99999;
+    private Boolean isImortal = false;
     private ArrayList<GameAction> buffers = new ArrayList<GameAction>(); // TODO change to sets?
     private ArrayList<GameAction> actions = new ArrayList<GameAction>();
     //   private GameAction gameActions = new GameAction();
@@ -42,7 +43,7 @@ public class Placeable implements IDesign{
     }
 
     public Placeable(int x, int y, Dimension dimension, ColorHandler.Colour color, Shapes shape) {
-        this(x, y, dimension,color,shape,1);
+        this(x, y, dimension, color, shape, 1);
     }
 
 
@@ -203,7 +204,11 @@ public class Placeable implements IDesign{
      * @return
      */
     public boolean isImortal() {
-        return false;
+        return isImortal;
+    }
+
+    public void setImortality(Boolean imortal) {
+        isImortal = imortal;
     }
 }
 

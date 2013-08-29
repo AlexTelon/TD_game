@@ -3,6 +3,7 @@ package main.Tower;
 import main.Tower.NonShootableTower.NonShootableTower;
 import main.action.Attack;
 import main.action.GameAction;
+import main.action.auraActions.DmgBuffAction;
 import main.action.shootingAction.ShootingAction;
 import main.board.Board;
 import main.board.IDesign;
@@ -57,8 +58,8 @@ public class TowerMaker {
                     // TODO fixa här, Gör en gameAction som du skickar in nedan. Sedan kolla upp vad gameActionFactoryn
                     // gör egentligen och om inte extraDMG och extraRange blir dubbel info då de kmr finnas
                     // i gameAction också.
-                    GameAction gameAction = new GameAction(extraDMG, extraRange);
-                    Tower NewTower = new NonShootableTower(board, board.getAllObjects(), gameAction, board.getDifficulty(),
+                    DmgBuffAction dmgBuffAction = new DmgBuffAction(extraDMG);
+                    Tower NewTower = new NonShootableTower(board, board.getAllObjects(), dmgBuffAction, board.getDifficulty(),
                             position.getX(), position.getY(), dimension, ColorHandler.Colour.BLUE, IDesign.Shapes.Rectangle, range , price, extraDMG, extraRange);
 
                     board.addObject(NewTower);

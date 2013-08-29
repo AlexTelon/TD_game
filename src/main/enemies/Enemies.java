@@ -167,6 +167,7 @@ public class Enemies extends Placeable {
 
     public void setToDead() {
         setAlive(false);
+        super.setImortality(true);
         //     makeDeadBody();
 
         for( Tower currentTower : board.getAllTowers()) {

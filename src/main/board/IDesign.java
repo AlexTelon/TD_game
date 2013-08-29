@@ -35,5 +35,4 @@ public interface IDesign {
      */
     public Shapes getShape();
 
-
 }

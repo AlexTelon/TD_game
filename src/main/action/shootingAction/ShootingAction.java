@@ -112,9 +112,9 @@ public class ShootingAction extends GameAction {
     }
 
     @Override
-    public boolean canShoot(Placeable currentEnemy) {
-        if (!currentEnemy.isImortal()) {
-            return (canShoot() && inRange(currentEnemy) && correctTarget(currentEnemy));
+    public boolean canShoot(Placeable obj) {
+        if (!obj.isImortal()) {
+            return (canShoot() && inRange(obj) && correctTarget(obj));
         }
         return false;
     }
@@ -143,4 +143,9 @@ public class ShootingAction extends GameAction {
         }
         return false;
     }
+    @Override
+    public void addBuffers(GameAction gameAction) {
+        this.attack.addBuffers(gameAction);
+    }
+
 }

@@ -1,5 +1,6 @@
 package main.action.auraActions;
 
+import main.Tower.Tower;
 import main.board.Placeable;
 
 /**
@@ -16,4 +17,11 @@ public class DmgBuffAction extends AuraAction {
     public void tick(Placeable obj) {
         super.tick(obj);
     }
+
+    @Override
+    public void tick(Tower tower) {
+        tower.addBuffers(this);
+    }
+
+
 }

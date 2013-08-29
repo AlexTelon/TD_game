@@ -1,5 +1,6 @@
 package main.Tower;
 
+import main.action.Attack;
 import main.action.GameAction;
 import main.board.Board;
 import main.enemies.EnemyWave;
@@ -229,6 +230,9 @@ public class Tower extends Placeable  {
     @Override
     public void addBuffers(GameAction action) {
         super.addBuffers(action);
+        for (GameAction currentGameAction : getGameActions()) {
+            currentGameAction.addBuffers(currentGameAction);
+        }
     }
 
     @Override

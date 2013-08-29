@@ -61,7 +61,11 @@ public class GameAction implements IGameActions {
     public void setTower(Tower tower) {
     }
 
-    public boolean canShoot(Placeable currentObj) {
+    public boolean canShoot(Placeable obj) {
+        // this is overrided by shooting towers
         return false;
+    }
+
+    public void addBuffers(GameAction gameAction) {
     }
 }
