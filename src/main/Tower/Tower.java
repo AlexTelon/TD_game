@@ -1,6 +1,7 @@
-package main.Towers;
+package main.Tower;
 
-import main.action.GameActions;
+import main.action.GameAction;
+import main.board.Board;
 import main.enemies.EnemyWave;
 import main.board.Placeable;
 import main.enemies.Enemies;
@@ -18,61 +19,78 @@ import java.util.ArrayList;
  * both shooting and nonshooting towers can use the methods defined in this class.
  */
 
-public class Towers extends Placeable  {
-    private final main.Towers.attackHelpClass attackHelpClass = new main.Towers.attackHelpClass();
+public class Tower extends Placeable  {
+    private final main.Tower.attackHelpClass attackHelpClass = new main.Tower.attackHelpClass();
     protected LevelOfTower levelOfTower;
     protected int hasGainedLevels = 0;
     private int price;
     private ArrayList<Placeable> lastTargets = new ArrayList<Placeable>();
+    private ArrayList<Placeable>  PlacablesWithinRangeOfThisTower = new ArrayList<Placeable>();
+    private ArrayList<Placeable> allPlaceables;
+    private double range = 200.0;
     private int kills = 0;
+    private Board board;
     private Enemies lastTarget;
     private Enemies currentTarget;
+    private GameAction gameAction;
     public enum TowerInformation {
         DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, extraDMG
     }
 
-    public Towers(ArrayList<Placeable> allObjects, GameActions gameActions, int x, int y, Dimension dimension, ColorHandler.Colour color,
-                  Shapes shape, int price, int difficulty) {
+    public Tower(Board board, ArrayList<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, ColorHandler.Colour color,
+                 Shapes shape, int price, int difficulty) {
         super(x, y, dimension, color, shape);
+        this.board = board;
         this.price = price;
-        this.attackHelpClass.setAllObjects(allObjects);
+        this.allPlaceables = allPlaceables;
         this.levelOfTower = new LevelOfTower(difficulty);
+        this.gameAction = gameAction;
     }
 
     /*
-    Adds the towers GameAction to all placeables in range.
-     */
+        Adds the towers GameAction to all placeables in range.
+         */
     public void tick(EnemyWave allEnemies) {
+//<<<<<<< Updated upstream
         super.tick();
+        //       recalcLevel();
+//        attackHelpClass.findObjectsWithinRange(attackHelpClass.getAllObjects());
+//=======
+        updateAllObjects();
         recalcLevel();
-        attackHelpClass.findObjectsWithinRange(attackHelpClass.getAllObjects());
 
-            //send action to all objects
-            for (Placeable obj : attackHelpClass.getPlacablesWithinRangeOfThisTower()) {
-                for (GameActions currentAction : super.getGameActions()) {
+        PlacablesWithinRangeOfThisTower = attackHelpClass.findObjectsWithinRange(allPlaceables, this);
+//>>>>>>> Stashed changes
+
+        //send action to all objects
+        for (Placeable obj : PlacablesWithinRangeOfThisTower) {
+            if (obj != this) {
+              obj.addGameActions(gameAction);
+              /*  for (GameAction currentAction : super.getGameActions()) {
                     obj.addGameActions(currentAction);
-                }
+                }*/
             }
         }
+    }
+
+    private void updateAllObjects() {
+        allPlaceables = new ArrayList<Placeable>(); // GS is going to have a fun time becouse of this... :(
+        allPlaceables.addAll(board.getAllObjects());
+        for (Enemies currentEnemy : board.getAllEnemiesInCurrentWave()) {
+            allPlaceables.add(currentEnemy);
+        }
+    }
 
     private void recalcLevel() {
         hasGainedLevels = getLevelOfTower().recalculateLevel();
         if (hasGainedLevels != 0) {
-            for ( GameActions action : getGameActions()) {
+            for ( GameAction action : getGameActions()) {
                 if (action.getAttack() != null) { // getAttack() returns null if the gameAction does not have an attack.
                     action.getAttack().recalculateLevelMultiplier(hasGainedLevels);
                 }
             }
         }
     }
-
-    /**
-         * Fins all placebles within range and returns them
-         */
-        private void findObjectsWithinRange(ArrayList<Placeable> allObjects) {
-            attackHelpClass.findObjectsWithinRange(allObjects);
-        }
-
 
     public ArrayList<Placeable> getLastTargets() {
         return lastTargets;
@@ -83,12 +101,14 @@ public class Towers extends Placeable  {
         return price;
     }
 
+
     /*
     Things regarding PlacablesWithinRangeOfThisTower
      */
     public void addToCurrentPlacablesWithinRangeOfThisTower(Placeable obj) {
         attackHelpClass.addToCurrentPlacablesWithinRangeOfThisTower(obj);
     }
+
 
     public void setLastTarget(Enemies currentTarget) {
         this.lastTargets.add(currentTarget);
@@ -102,9 +122,15 @@ public class Towers extends Placeable  {
         return attackHelpClass.getPlacablesWithinRangeOfThisTower();
     }
 
+    //<<<<<<< Updated upstream
     public ArrayList<Placeable> getAllObjects() {
         return attackHelpClass.getAllObjects();
     }
+    //=======
+ //   public ArrayList<Placeable> getAllPlaceables() {
+  //      return allPlaceables;
+//>>>>>>> Stashed changes
+  //  }
 
     public int getKills() {
         return kills;
@@ -135,9 +161,9 @@ public class Towers extends Placeable  {
 
 
 
-    public boolean canShoot(Enemies currentObj) {
-        for (GameActions currentGameAction : getGameActions()) {
-            if (currentGameAction.canShoot(currentObj) == true) {
+    public boolean canShoot(Placeable currentObj) {
+        for (GameAction currentGameAction : getGameActions()) {
+            if (currentGameAction.canShoot(currentObj)) {
                 return true;
             }
         }
@@ -152,7 +178,7 @@ public class Towers extends Placeable  {
      */
     public int getTowerInformation(TowerInformation towerInformation) {
         double counter = 0;
-        for (GameActions currentGameAction : getGameActions()) {
+        for (GameAction currentGameAction : getGameActions()) {
             if (currentGameAction.hasAnAttack()) {
                 switch (towerInformation) {
                     case DMG:
@@ -190,7 +216,7 @@ public class Towers extends Placeable  {
      */
     public Color getAttackColor() {
         Color attackColor = Color.cyan;
-        for (GameActions currentGameAction : getGameActions()) {
+        for (GameAction currentGameAction : getGameActions()) {
             if (currentGameAction.hasAnAttack()) {
                 return currentGameAction.getAttack().getColor();
 
@@ -201,21 +227,17 @@ public class Towers extends Placeable  {
 
 
     @Override
-    public void addBuffers(GameActions action) {
+    public void addBuffers(GameAction action) {
         super.addBuffers(action);
     }
 
     @Override
-    public void removeBuffer(GameActions action) {
+    public void removeBuffer(GameAction action) {
         super.removeBuffer(action);    //To change body of overridden methods use File | Settings | File Templates.
     }
 
-    /**
-     * Calculates if a object is within range of the tower.
-     *
-     * @param towers@return true if it is in range.
-     */
-    public boolean isObjectWithinRange(Towers towers) {
-        return towers.attackHelpClass.isObjectWithinRange(this);
+    @Override
+    public boolean isImortal() {
+        return true;
     }
 }

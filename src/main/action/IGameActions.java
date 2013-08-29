@@ -4,7 +4,7 @@ import main.board.Placeable;
 
 /**
  * User: alete471 Date: 2012-10-18 Time: 15:14
- * Interface for all GameActions
+ * Interface for all GameAction
  */
 public interface IGameActions {
 

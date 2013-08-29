@@ -1,9 +1,9 @@
 package main.action.shootingAction;
 
-import main.Towers.Towers;
-import main.Towers.shootingTowers.ShootableTowers;
+import main.Tower.Tower;
 import main.action.Attack;
-import main.action.GameActions;
+import main.action.GameAction;
+import main.board.Placeable;
 import main.enemies.Enemies;
 
 /**
@@ -11,12 +11,12 @@ import main.enemies.Enemies;
  * This ONLY and action - in other words this only handels HOW things are done and when. It should NOT contain any
  * data itself. The Data is in tower and in attack
  */
-public class ShootingAction extends GameActions {
-    private Towers tower;
+public class ShootingAction extends GameAction {
+    private Tower tower;
     private Attack attack;
 
 
-    public ShootingAction(Towers tower, Attack attack) {
+    public ShootingAction(Tower tower, Attack attack) {
         this.tower = tower;
         this.attack = attack;
     }
@@ -61,16 +61,10 @@ public class ShootingAction extends GameActions {
      * @param currentEnemy
      * @return
      */
-    private boolean correctTarget(Enemies currentEnemy) {
+    private boolean correctTarget(Placeable currentEnemy) {
         if (tower.getLastTarget() != null || !inRange(currentEnemy)) { // if no last target skip below and return
-            // true
             if (attack.isRememberOldTarget()) { //if it does not care about keeping track of old target
-            // skip below
-                // and return true
-                if (tower.getLastTarget().isActive() || tower.getLastTarget().isAlive() ) { // if enemy is dead skip
-                    // below
-                    // and
-                    // return true
+                if (tower.getLastTarget().isActive() || tower.getLastTarget().isAlive() ) { // if enemy is dead, skip
                     if (currentEnemy.equals(tower.getLastTarget())) {
                         return true;
                     }
@@ -90,15 +84,15 @@ public class ShootingAction extends GameActions {
     }
 
     /**
-     * calculates the range between the tower and its current enemy and then sees if this is less than the towers
+     * Calculates the range between the tower and its current target and then sees if this is less than the towers
      * maximum range.
-     * @param currentEnemy
+     * @param currentTarget
      * @return true if it is in range, false otherwise
      */
-    private boolean inRange(Enemies currentEnemy) {
-        double rangeToEnemy;
-        rangeToEnemy = currentEnemy.distanceTo(tower);
-        if (attack.getRange() >= rangeToEnemy) {
+    private boolean inRange(Placeable currentTarget) {
+        double rangeToTarget;
+        rangeToTarget = currentTarget.distanceTo(tower);
+        if (attack.getRange() >= rangeToTarget) {
             return true;
         } return false;
     }
@@ -116,8 +110,11 @@ public class ShootingAction extends GameActions {
     }
 
     @Override
-    public boolean canShoot(Enemies currentEnemy) {
-        return (canShoot() && inRange(currentEnemy) && correctTarget(currentEnemy));
+    public boolean canShoot(Placeable currentEnemy) {
+        if (!currentEnemy.isImortal()) {
+            return (canShoot() && inRange(currentEnemy) && correctTarget(currentEnemy));
+        }
+        return false;
     }
 
     private boolean canShootMoreTargets() {
@@ -132,7 +129,7 @@ public class ShootingAction extends GameActions {
         return attack;
     }
 
-    public void setTower(Towers tower) {
+    public void setTower(Tower tower) {
         this.tower = tower;
     }
 

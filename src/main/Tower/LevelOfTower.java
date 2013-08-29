@@ -1,6 +1,4 @@
-package main.Towers;
-
-import main.Towers.shootingTowers.ShootableTowers;
+package main.Tower;
 
 /**
  * Created with IntelliJ IDEA.

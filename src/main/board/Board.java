@@ -1,8 +1,8 @@
 package main.board;
 
-import main.Towers.NonShootableTower.NonShootableTower;
-import main.Towers.Towers;
-import main.action.GameActions;
+import main.Tower.NonShootableTower.NonShootableTower;
+import main.Tower.Tower;
+import main.action.GameAction;
 import main.enemies.Enemies;
 import main.enemies.EnemyWaves;
 import main.enemies.EnemyWave;
@@ -31,23 +31,16 @@ public class Board {
     private static final int CASTLE_SIDE = 2;
     private int gold = 40;
     private int lives = 100;
-    private static boolean gameover = false;
+    private boolean gameover = false;
     private final int difficulty = 1;
     private double currentTime = 0;
     private double countdownToNextWave = 0;
     private final ArrayList<IBoardListener> boardListener  = new ArrayList<IBoardListener>();
     private EnemyWaves enemyWaves;
 
-    //All enemies in current wave
     private EnemyWave allEnemiesInCurrentWave;
-
-    // All main.Towers.Towers
-    private final ArrayList<Towers> allTowers = new ArrayList<Towers>();
-
-    // All main.Towers.NonShootableTower.NonShootableTower
+    private final ArrayList<Tower> allTowers = new ArrayList<Tower>();
     private ArrayList<NonShootableTower> allNonShootableTowers = new ArrayList<NonShootableTower>();
-
-    // All Objects
     private final ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
 
     // A datatype containing all the priority for all positions.
@@ -68,11 +61,11 @@ public class Board {
         enemyWaves = new EnemyWaves(this, difficulty, castle.getPosition(), new Point(0, getHeight()/2));
         allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();
 
-        PlaceEnemyPathOnBoard();
+        placeEnemyPathOnBoard();
         placeObjectOnBoard(castle);
     }
 
-    private void PlaceEnemyPathOnBoard() {
+    private void placeEnemyPathOnBoard() {
         int priority = enemyWaves.getPriority();
         int x, y;
         for (Point currentPoint : enemyWaves.getEnemyPath()) {
@@ -109,7 +102,7 @@ public class Board {
                         allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();
                         currentTime = 0;
                     } else {
-                        playerWins();
+                        playerWins(this);
                         notifyListeners();
                     }
 
@@ -117,18 +110,18 @@ public class Board {
                 if (lives <= 0) {
                     gameOver();
                 }
-                for ( Towers currentTower : allTowers) {
+                for ( Tower currentTower : allTowers) {
                     currentTower.tick(allEnemiesInCurrentWave);
                 }
             }
         }
     }
 
-    private static void playerWins() {
+    private void playerWins(Board board) {
         System.out.println();
         System.out.println("You won!!!");
         System.out.println();
-        gameover = true;
+        this.gameover = true;
     }
 
     /**
@@ -142,8 +135,8 @@ public class Board {
             allObjects.add(0, obj);
             if (obj instanceof Enemies) {
                 System.out.println("Why would you add enemies to a wave here? - in addObject");
-            } else if ( obj instanceof Towers) {
-                allTowers.add(0, (Towers) obj);
+            } else if ( obj instanceof Tower) {
+                allTowers.add(0, (Tower) obj);
                 setPriority(obj);
 
                 if (obj instanceof NonShootableTower) {
@@ -289,9 +282,9 @@ public class Board {
         }
     }
 
-    public static void gameOver() {
+    public void gameOver() {
         System.out.println("Game over!");
-        gameover = true;
+        this.gameover = true;
     }
 
     public int getLives() {
@@ -357,7 +350,7 @@ public class Board {
         return backgroundColor;
     }
 
-    public ArrayList<Towers> getAllTowers() {
+    public ArrayList<Tower> getAllTowers() {
         return allTowers;
     }
 
@@ -419,13 +412,13 @@ public class Board {
      * sets priorioty on the priorityMap to 0 again, player gains some gold, tower is removed from allTowers
      * @param currentTower
      */
-    public void sellTower(Towers currentTower) {
+    public void sellTower(Tower currentTower) {
         addGold(currentTower.getPrice());
         resetBoard(currentTower.getPosition());
         allTowers.remove(currentTower);
 
         for (Placeable currentPlaceable : currentTower.getPlacablesWithinRangeOfThisTower()) {
-            for (GameActions action : currentTower.getGameActions()) {
+            for (GameAction action : currentTower.getGameActions()) {
                 currentPlaceable.removeBuffer(action);
             }
         }

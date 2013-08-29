@@ -1,7 +1,7 @@
 package main.graphics;
 
-import main.Towers.TowerMaker;
-import main.Towers.Towers;
+import main.Tower.Tower;
+import main.Tower.TowerMaker;
 import main.board.Board;
 import main.board.IBoardListener;
 import main.enemies.Enemies;
@@ -82,7 +82,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
         }
 
         // this part handels where to build towers
-        for (Towers currentTower : board.getAllTowers()) {
+        for (Tower currentTower : board.getAllTowers()) {
             if (currentTower.getPosition().getX() == mouseGridPosition.getX() &&
                     currentTower.getPosition().getY() == mouseGridPosition.getY() ) {
                 graphicalInformationViewer.currentObject(currentTower);
@@ -139,7 +139,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
             putValue(SHORT_DESCRIPTION, "Put in how much Gold you get back later...");
         }
         public void actionPerformed(ActionEvent evt) {
-            for (Towers currentTower : board.getAllTowers()) {
+            for (Tower currentTower : board.getAllTowers()) {
                 if (currentTower.getPosition().getX() == lastClickedPosition.getX() &&
                         currentTower.getPosition().getY() == lastClickedPosition.getY() ) {
                     board.sellTower(currentTower);

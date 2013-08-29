@@ -1,8 +1,8 @@
 package main.graphics;
 
-import main.Towers.shootingTowers.ShootableTowers;
-import main.Towers.Towers;
-import main.action.GameActions;
+import main.Tower.shootingTowers.ShootableTower;
+import main.Tower.Tower;
+import main.action.GameAction;
 import main.board.Board;
 import main.board.IBoardListener;
 import main.enemies.Enemies;
@@ -30,6 +30,8 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     private Board board;
     private Placeable currentObject;
     private EnemyWaves enemyGroups;
+    private int smallSpacing = 20;
+
 
     public GraphicalInformationViewer( Board board) {
         this.board = board;
@@ -68,19 +70,19 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
         g2.setColor(Color.BLACK);
         g2.drawString("Information about current Enemy", 0, 15);
 
-        tmpY += 20;
+        tmpY += smallSpacing;
         g2.drawString("Hitpoints", 0, tmpY);
 
         g2.drawString(currentEnemy.getHealthText(), tmpX, tmpY);
-        tmpY += 20;
+        tmpY += smallSpacing;
         g2.drawString("Dmg To Base",0, tmpY);
 
         g2.drawString(stringConverter(currentEnemy.getDmgToBase()), tmpX, tmpY);
-        tmpY += 20;
+        tmpY += smallSpacing;
         g2.drawString("Speed",0, tmpY);
 
         g2.drawString(stringConverter(currentEnemy.getPixelSpeed()), tmpX, tmpY);
-        tmpY += 20;
+        tmpY += smallSpacing;
         g2.drawString("Gold", 0, tmpY);
 
         g2.drawString(stringConverter(currentEnemy.getGold()), tmpX, tmpY);
@@ -89,77 +91,78 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     private void paintInfoForCurrentObj(Graphics2D g2, Placeable obj) {
         if (currentObject instanceof Enemies) {
             paintInfoForCurrentEnemy(g2, (Enemies) obj);
-        } else if (currentObject instanceof ShootableTowers) {
-            paintInfoForCurrentTower(g2, (ShootableTowers) currentObject);
+        } else if (currentObject instanceof ShootableTower) {
+            paintInfoForCurrentTower(g2, (ShootableTower) currentObject);
         }
     }
 
     private void paintInfo(Graphics2D g2) {
+        int spacingBeforeTowerText = 85;
         g2.setColor(Color.BLACK);
         int tmpX = 10;
         int tmpY = 190;
         g2.drawString("Current WaveNr: " + enemyGroups.getCurrentGroupNr() + "    Time to next Wave " +
                 stringConverter((int) board.getCountdownToNextWave()), tmpX, tmpY);
-        tmpY += 30;
+        tmpY += smallSpacing;
         g2.setColor(Color.BLACK);
-        g2.drawString("main/Towers", tmpX, tmpY);
-        tmpX += 85;
-        for (Towers currentTower : board.getAllTowers()) {
+        g2.drawString("main/Tower", tmpX, tmpY);
+        tmpX += spacingBeforeTowerText;
+        for (Tower currentTower : board.getAllTowers()) {
             g2.drawString(currentTower.getPrice() + ", ", tmpX, tmpY);
-            tmpX += 30;
+            tmpX += smallSpacing;
         }
-        tmpY += 30;
+        tmpY += smallSpacing;
         g2.drawString("Gold: "+ stringConverter(board.getGold()), 10, tmpY);
-        tmpY += 30;
+        tmpY += smallSpacing;
         g2.drawString("Lives: "+ stringConverter(board.getLives()), 10, tmpY);
 
 
     }
 
-    private void paintInfoForCurrentTower(Graphics2D g2, Towers tower) {
+    private void paintInfoForCurrentTower(Graphics2D g2, Tower tower) {
+        int spacingBetweenBuffers = 55;
         int tmpX = 80;
         int tmpY = 15;
         g2.setColor(Color.BLACK);
         g2.drawString("Information about current tower", 0, 15);
 
-        tmpY += 20;
+        tmpY += smallSpacing;
         g2.drawString("Type", 0, tmpY);
         g2.drawString(tower.getNameText(), tmpX, tmpY);
 
-        tmpY += 20;
+        tmpY += smallSpacing;
         g2.drawString("Level",0, tmpY);
         g2.drawString(stringConverter(tower.getLevelOfTower().getLevel()), tmpX, tmpY);
 
-        tmpY += 20;
+        tmpY += smallSpacing;
         g2.drawString("Exp",0, tmpY);
         g2.drawString(stringConverter(tower.getLevelOfTower().getExp()), tmpX, tmpY);
 
-        tmpY += 20;
-        g2.drawString("MultiShoot? " + stringConverter(tower.getTowerInformation(Towers.TowerInformation.ENEMIESCANSHOOTSAMETIME)), 0,
+        tmpY += smallSpacing;
+        g2.drawString("MultiShoot? " + stringConverter(tower.getTowerInformation(Tower.TowerInformation.ENEMIESCANSHOOTSAMETIME)), 0,
                 tmpY);
 
-        tmpY += 20;
+        tmpY += smallSpacing;
         g2.drawString("NrOfTargets:  " + stringConverter(tower.getPlacablesWithinRangeOfThisTower().size()), 0, tmpY);
 
-        tmpY += 20;
-        g2.drawString("Rate of Fire: (rounded)  " +  stringConverter(tower.getTowerInformation(Towers.TowerInformation.RATEOFFIRE)), 0, tmpY);
+        tmpY += smallSpacing;
+        g2.drawString("Rate of Fire: (rounded)  " +  stringConverter(tower.getTowerInformation(Tower.TowerInformation.RATEOFFIRE)), 0, tmpY);
 
-        tmpY += 20;
-        tmpX = 30;
+        tmpY += smallSpacing;
+        tmpX = smallSpacing;
         if (tower.getBuffers().size() != 0 ) {
             if (tower.getBuffers().size() != 0 ) {
                 g2.drawString("Buffers:  ", 0, tmpY);
-                for (GameActions actions : tower.getBuffers()) {
-                    tmpX += 55;
+                for (GameAction actions : tower.getBuffers()) {
+                    tmpX += spacingBetweenBuffers;
                     g2.drawString(String.valueOf(actions.getExtraDmg() + " " + actions.getExtraRange()), tmpX, tmpY);
                 }
             } else System.out.println("No targets");
         }
 
-
-        tmpY += 20;
-        g2.drawString("DPS  " + String.valueOf(tower.getTowerInformation(Towers.TowerInformation.DPS)) + "    Dmg  " + stringConverter(tower
-                .getTowerInformation(Towers.TowerInformation.DMG)) + " ( " +"+ " + stringConverter(tower.getTowerInformation(Towers.TowerInformation.extraDMG)) + ")" , 0, tmpY);
+        tmpY += smallSpacing;
+        g2.drawString("DPS  " + String.valueOf(tower.getTowerInformation(Tower.TowerInformation.DPS)) + "    Dmg  " + stringConverter(tower
+                .getTowerInformation(Tower.TowerInformation.DMG)) + " ( " +"+ " + stringConverter(tower.getTowerInformation(Tower.TowerInformation.extraDMG)) + ")" , 0, tmpY);
 
     }
 

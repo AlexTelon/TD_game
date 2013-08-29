@@ -1,8 +1,8 @@
-package main.Towers;
+package main.Tower;
 
-import main.Towers.NonShootableTower.NonShootableTower;
+import main.Tower.NonShootableTower.NonShootableTower;
 import main.action.Attack;
-import main.action.GameActions;
+import main.action.GameAction;
 import main.board.Board;
 import main.board.IDesign;
 import main.board.Placeable;
@@ -22,7 +22,7 @@ import java.awt.*;
 public class TowerMaker {
 
 
-    public void makeTower(Board board, Character type, Point position) {
+    public void makeTower(Board board, char type, Point position) {
         switch(type){
             case 'A':
                 int price = 10;
@@ -53,11 +53,11 @@ public class TowerMaker {
 
                 if (board.isValidPositions(position, priority, dimension) && board.getGold() >= price) {
 
-                    // TODO fixa här, Gör en gameActions som du skickar in nedan. Sedan kolla upp vad gameActionFactoryn
+                    // TODO fixa här, Gör en gameAction som du skickar in nedan. Sedan kolla upp vad gameActionFactoryn
                     // gör egentligen och om inte extraDMG och extraRange blir dubbel info då de kmr finnas
-                    // i gameActions också
-                    GameActions gameActions = new GameActions(extraDMG, extraRange);
-                    Towers NewTower = new NonShootableTower(board.getAllObjects(), gameActions, board.getDifficulty(),
+                    // i gameAction också.
+                    GameAction gameAction = new GameAction(extraDMG, extraRange);
+                    Tower NewTower = new NonShootableTower(board, board.getAllObjects(), gameAction, board.getDifficulty(),
                             position.getX(), position.getY(), dimension, ColorHandler.Colour.BLUE, IDesign.Shapes.Rectangle, range , price, extraDMG, extraRange);
 
                     board.addObject(NewTower);
@@ -79,8 +79,8 @@ public class TowerMaker {
                              int enemiesTowerCanShootAtTheSameTime, int price, Dimension dimension) {
 
         Attack newAttack = new Attack(dmg, range, rOF, enemiesTowerCanShootAtTheSameTime ,colourOfShoots, board.getFrameRate());
-        GameActions newGameAction = new GameActions(newAttack); // made a lonley gameaction
-        Placeable newTower = new Towers(board.getAllObjects(), newGameAction, position.getX(), position.getY(),
+        GameAction newGameAction = new GameAction(newAttack); // made a lonley gameaction
+        Placeable newTower = new Tower(board, board.getAllObjects(), newGameAction, position.getX(), position.getY(),
                 dimension, colourOfTower, IDesign.Shapes.Rectangle, price, board.getDifficulty());
         newGameAction.setTower(newTower); // the gameaction is now attatched to the newTower.
 

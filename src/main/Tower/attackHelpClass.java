@@ -1,4 +1,4 @@
-package main.Towers;
+package main.Tower;
 
 import main.board.Placeable;
 import main.enemies.Enemies;
@@ -14,16 +14,21 @@ public class attackHelpClass {
     }
 
     /**
-     * Fins all placebles within range and returns them
+     * Finds all placebles within range and returns them
+     * @param allObjects
+     * @param referencePoint - a placeable from which we want to find which objects are within range of
+     * @return
      */
-    void findObjectsWithinRange(ArrayList<Placeable> allObjects) {
-        for (Placeable obj : allObjects) {
-            if (isObjectWithinRange(obj)) {
-                if (obj != null) { // so we dont get an infinite recursion?
-                    addToCurrentPlacablesWithinRangeOfThisTower(obj); // why do we do this?
+    public ArrayList<Placeable> findObjectsWithinRange(ArrayList<Placeable> allObjects, Placeable referencePoint) {
+        if (!allObjects.isEmpty()) {
+            assert(allObjects != null);
+            for (Placeable obj : allObjects) {
+                if (isObjectWithinRange(obj, referencePoint)) {
+                    addToCurrentPlacablesWithinRangeOfThisTower(obj);
                 }
             }
         }
+        return PlacablesWithinRangeOfThisTower;
     }
 
     /**
@@ -32,8 +37,8 @@ public class attackHelpClass {
      * @param obj it is a placable
      * @return true if it is in range.
      */
-    public boolean isObjectWithinRange(Placeable obj) {
-        if (obj.distanceTo(null) <= range) {
+    public boolean isObjectWithinRange(Placeable obj, Placeable obj2) {
+        if (obj.distanceTo(obj2) <= range) {
             return true;
         }
         return false;
@@ -63,12 +68,5 @@ public class attackHelpClass {
         this.allObjects = allObjects;
     }
 
-    /**
-     * Calculates if a object is within range of the tower.
-     *
-     * @param towers@return true if it is in range.
-     */
-    public boolean isObjectWithinRange(Towers towers) {
-        return isObjectWithinRange(towers);
-    }
+
 }

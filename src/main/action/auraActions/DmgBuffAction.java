@@ -1,6 +1,5 @@
 package main.action.auraActions;
 
-import main.Towers.shootingTowers.ShootableTowers;
 import main.board.Placeable;
 
 /**

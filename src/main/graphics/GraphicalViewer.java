@@ -1,7 +1,6 @@
 package main.graphics;
 
-import main.Towers.shootingTowers.ShootableTowers;
-import main.Towers.Towers;
+import main.Tower.Tower;
 import main.board.*;
 import main.enemies.Enemies;
 import main.position.Point;
@@ -170,10 +169,10 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      * @param g2
      */
     private void paintAllShoots(Graphics2D g2) {
-        for ( Towers currentTower : board.getAllTowers()) {
+        for ( Tower currentTower : board.getAllTowers()) {
             if (currentTower.hasTarget()) {
                 for (Placeable currentObj : currentTower.getPlacablesWithinRangeOfThisTower()) {
-                    if (currentTower.canShoot((Enemies) currentObj)) {
+                    if (currentTower.canShoot(currentObj)) {
                         g2.setColor(currentTower.getAttackColor());
                         g2.drawLine(currentTower.getCenterOfObject().getX(), currentTower.getCenterOfObject().getY(),
                                 currentObj.getCenterOfObject().getX(), currentObj.getCenterOfObject().getY());
@@ -188,7 +187,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      *
      */
     private void paintAllTowers(Graphics2D g2) {
-        for ( Towers currentTower : board.getAllTowers()) {
+        for ( Tower currentTower : board.getAllTowers()) {
             paintPlaceable(currentTower, g2);
         }
     }

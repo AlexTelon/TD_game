@@ -10,9 +10,9 @@ import main.action.auraActions.RangeBuffAction;
 public class GameActionFactory implements IGameActionFactory {
 
     @Override
-    public GameActions createGameAction(int extraDmg, double extraRange) {
+    public GameAction createGameAction(int extraDmg, double extraRange) {
 if (extraDmg != 0 && extraRange != 0) {
-    return new GameActions(extraDmg, extraRange);
+    return new GameAction(extraDmg, extraRange);
 
 }
         if (extraDmg != 0) {
@@ -26,7 +26,7 @@ if (extraDmg != 0 && extraRange != 0) {
             return rangeBuffAction;
 
         }
-        return null; // TODO this could cause error, change to "return new GameActions(extraDmg, extraRange);" ?
+        return null; // TODO this could cause error, change to "return new GameAction(extraDmg, extraRange);" ?
     }
 
 }

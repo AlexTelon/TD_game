@@ -55,7 +55,7 @@ public class EnemyWaves {
 
                 case 1: enemyPrototype = new StrongEnemy(board, x, y);
                     nrOfEnemiesInAWave -= 5;
-                    activationTime += activationTime;
+                    activationTime *= 2;
                     break;
 
                 default: enemyPrototype = new DefaultEnemy(board, 0, board.getCastlePos().getY());

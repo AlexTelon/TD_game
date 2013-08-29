@@ -1,29 +1,27 @@
-package main.Towers.shootingTowers;
+package main.Tower.shootingTowers;
 
 import java.awt.*;
 import java.util.ArrayList;
 
-import main.action.Attack;
-import main.action.GameActions;
+import main.action.GameAction;
+import main.board.Board;
 import main.board.IDesign;
 import main.enemies.EnemyWave;
 import main.board.Placeable;
-import main.Towers.Towers;
-import main.action.shootingAction.ShootingAction;
-import main.enemies.Enemies;
+import main.Tower.Tower;
 import main.graphics.ColorHandler;
 
 import static java.lang.Math.abs;
 
-public class ShootableTowers extends Towers {
+public class ShootableTower extends Tower {
 
 
-    public ShootableTowers(ArrayList<Placeable> allObjects, GameActions gameActions, int difficulty, double framerate, int x, int y,
-                           Dimension dimension, ColorHandler.Colour colourOfTower, ColorHandler.Colour colourOfShoots,
-                           IDesign.Shapes shape, int dmg, int range, int rOF, int enemiesTowerCanShootAtTheSameFrame,
-                           int price) {
+    public ShootableTower(Board board, ArrayList<Placeable> allObjects, GameAction gameAction, int difficulty, double framerate, int x, int y,
+                          Dimension dimension, ColorHandler.Colour colourOfTower, ColorHandler.Colour colourOfShoots,
+                          IDesign.Shapes shape, int dmg, int range, int rOF, int enemiesTowerCanShootAtTheSameFrame,
+                          int price) {
 
-        super(allObjects, gameActions, x, y, dimension, colourOfTower, shape, price, difficulty);
+        super(board, allObjects, gameAction, x, y, dimension, colourOfTower, shape, price, difficulty);
 
     }
 
@@ -37,12 +35,12 @@ public class ShootableTowers extends Towers {
 
 
     @Override
-    public void addBuffers(GameActions action) {
+    public void addBuffers(GameAction action) {
         if (super.getBuffers().contains(action)) {
             // do nothing if already there
         } else {
             super.getBuffers().add(action);
-            for (GameActions currentGameAction : getGameActions()) {
+            for (GameAction currentGameAction : getGameActions()) {
                 if (currentGameAction.hasAnAttack())
                     currentGameAction.getAttack().addBuffers(action);
             }
@@ -50,9 +48,9 @@ public class ShootableTowers extends Towers {
     }
 
     @Override
-        public void removeBuffer(GameActions action) {
+        public void removeBuffer(GameAction action) {
             super.getBuffers().remove(action);
-        for (GameActions currentGameAction : getGameActions()) {
+        for (GameAction currentGameAction : getGameActions()) {
             if (currentGameAction.hasAnAttack())
                 currentGameAction.getAttack().removeBuffers(action);
         }

@@ -1,7 +1,7 @@
 package main.enemies;
 
 import main.board.Placeable;
-import main.Towers.Towers;
+import main.Tower.Tower;
 import main.board.Board;
 import main.graphics.ColorHandler;
 import main.position.Point;
@@ -165,7 +165,7 @@ public class Enemies extends Placeable {
         setAlive(false);
         //     makeDeadBody();
 
-        for( Towers currentTower : board.getAllTowers()) {
+        for( Tower currentTower : board.getAllTowers()) {
             currentTower.removeFromCurrentPlacablesWithinRangeOfThisTower(this);
         }
 

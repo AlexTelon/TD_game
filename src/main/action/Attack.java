@@ -1,6 +1,5 @@
 package main.action;
 
-import main.action.GameActions;
 import main.graphics.ColorHandler;
 
 import java.awt.*;
@@ -23,13 +22,13 @@ public class Attack {
     private double rateOfFireCounter;
     private ColorHandler colorHandler = ColorHandler.getInstance();
     private Color color = Color.ORANGE;
-   private ArrayList<GameActions> buffers = new ArrayList<GameActions>();
+   private ArrayList<GameAction> buffers = new ArrayList<GameAction>();
 
     private int enemiesTowerCanShootAtTheSameFrame = 1;
     private int enemiesTowerHasShoot = 0;
     private boolean rememberOldTarget = false;
 
-    public Attack(ArrayList<GameActions> buffers) {
+    public Attack(ArrayList<GameAction> buffers) {
         this.dmg = 3;
         this.range = 200;
         this.rateOfFire = 2;
@@ -55,7 +54,7 @@ public class Attack {
 
     public double getRange() {
         double extraRange = 0;
-        for (GameActions action: getBuffers()) {
+        for (GameAction action: getBuffers()) {
             extraRange += action.getExtraRange();
         }
         return range+ extraRange;
@@ -90,7 +89,7 @@ public class Attack {
 
     public int getBufferDmg() {
         int DmgFromBuffers = 0;
-        for (GameActions action: getBuffers()) {
+        for (GameAction action: getBuffers()) {
             DmgFromBuffers += action.getExtraDmg();
         }
         extraDmg = DmgFromBuffers;
@@ -119,11 +118,11 @@ public class Attack {
         addDmg(levels);
     }
 
-    public ArrayList<GameActions> getBuffers() {
+    public ArrayList<GameAction> getBuffers() {
         return buffers;
     }
 
-    public void addBuffers(GameActions action) {
+    public void addBuffers(GameAction action) {
         if (buffers.contains(action)) {
             // do nothing if already there
         } else {
@@ -131,7 +130,7 @@ public class Attack {
         }
     }
 
-    public void removeBuffers(GameActions action) {
+    public void removeBuffers(GameAction action) {
         this.buffers.remove(action);
     }
 

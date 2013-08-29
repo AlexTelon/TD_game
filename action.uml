@@ -6,19 +6,19 @@
     <node x="318.0" y="347.0">main.action.auraActions</node>
     <node x="510.0" y="347.0">main.action.shootingAction</node>
     <node x="502.4166666666667" y="0.0">main.action.IGameActions</node>
-    <node x="502.4166666666667" y="168.0">main.action.GameActions</node>
+    <node x="502.4166666666667" y="168.0">main.action.GameAction</node>
     <node x="263.59523809523813" y="438.0">main.action.GameActionFactory</node>
     <node x="0.0" y="336.0">main.action.IGameActionFactory</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="main.action.auraActions" target="main.action.GameActions">
+    <edge source="main.action.auraActions" target="main.action.GameAction">
       <point x="0.0" y="-15.0" />
       <point x="404.0" y="311.0" />
       <point x="533.4166666666667" y="311.0" />
       <point x="-62.0" y="59.0" />
     </edge>
-    <edge source="main.action.GameActionFactory" target="main.action.GameActions">
+    <edge source="main.action.GameActionFactory" target="main.action.GameAction">
       <point x="99.33333333333333" y="-26.0" />
       <point x="511.92857142857144" y="413.0" />
       <point x="708.5" y="413.0" />
@@ -26,13 +26,13 @@
       <point x="657.4166666666667" y="311.0" />
       <point x="62.0" y="59.0" />
     </edge>
-    <edge source="main.action.shootingAction" target="main.action.GameActions">
+    <edge source="main.action.shootingAction" target="main.action.GameAction">
       <point x="0.0" y="-15.0" />
       <point x="604.0" y="311.0" />
       <point x="595.4166666666667" y="311.0" />
       <point x="0.0" y="59.0" />
     </edge>
-    <edge source="main.action.GameActions" target="main.action.IGameActions">
+    <edge source="main.action.GameAction" target="main.action.IGameActions">
       <point x="0.0" y="-59.0" />
       <point x="0.0" y="59.0" />
     </edge>

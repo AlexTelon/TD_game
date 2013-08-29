@@ -1,7 +1,7 @@
 package main.board;
 
-import main.Towers.Towers;
-import main.action.GameActions;
+import main.Tower.Tower;
+import main.action.GameAction;
 import main.graphics.ColorHandler;
 import main.position.*;
 
@@ -28,9 +28,9 @@ public class Placeable implements IDesign{
     private main.position.Point pixelPosition;
     private String nameText = "Placeholder";
     private int hitpoints = 99999;
-    private ArrayList<GameActions> buffers = new ArrayList<GameActions>(); // TODO change to sets?
-    private ArrayList<GameActions> actions = new ArrayList<GameActions>();
-    //   private GameActions gameActions = new GameActions();
+    private ArrayList<GameAction> buffers = new ArrayList<GameAction>(); // TODO change to sets?
+    private ArrayList<GameAction> actions = new ArrayList<GameAction>();
+    //   private GameAction gameActions = new GameAction();
 
     public Placeable(int x, int y, Dimension dimension, ColorHandler.Colour color, Shapes shape, int priority) {
         this.position = new main.position.Point(x,y);
@@ -51,7 +51,7 @@ public class Placeable implements IDesign{
     }
 
     public void tick() {
-        for (GameActions currentAction : getGameActions()) {
+        for (GameAction currentAction : getGameActions()) {
             currentAction.tick(this);
         }
     }
@@ -164,11 +164,11 @@ public class Placeable implements IDesign{
     }
 
 
-    public ArrayList<GameActions> getBuffers() {
+    public ArrayList<GameAction> getBuffers() {
         return buffers;
     }
 
-    public void addBuffers(GameActions action) {
+    public void addBuffers(GameAction action) {
         if (buffers.contains(action)) {
             // do nothing if already there
         } else {
@@ -176,25 +176,34 @@ public class Placeable implements IDesign{
         }
     }
 
-    public void removeBuffer(GameActions action) {
+    public void removeBuffer(GameAction action) {
         this.buffers.remove(action);
     }
 
-    public void addGameActions(GameActions action) {
-//        this.actions.add(action);
+    public void addGameActions(GameAction action) {
+        if (!actions.contains(action))
+        this.actions.add(action); // only adds new actions
     }
 
-    public ArrayList<GameActions> getGameActions() {
+    public ArrayList<GameAction> getGameActions() {
         return actions;
     }
 
     /**
      * Calculates if a object is within range of the tower.
      *
-     * @param towers@return true if it is in range.
+     * @param tower@return true if it is in range.
      */
-    public boolean isObjectWithinRange(Towers towers) {
-        return towers.isObjectWithinRange(towers);
+    public boolean isObjectWithinRange(Tower tower) {
+        return tower.isObjectWithinRange(tower);
+    }
+
+    /**
+     * As default placables are NOT imortal, towers for example might be.
+     * @return
+     */
+    public boolean isImortal() {
+        return false;
     }
 }
 

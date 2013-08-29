@@ -1,9 +1,10 @@
-package main.Towers.NonShootableTower;
+package main.Tower.NonShootableTower;
 
+import main.Tower.Tower;
+import main.action.GameAction;
 import main.action.GameActionFactory;
-import main.action.GameActions;
+import main.board.Board;
 import main.board.Placeable;
-import main.Towers.Towers;
 import main.graphics.ColorHandler;
 
 import java.awt.*;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  * User: alete471 Date: 2012-10-07 Time: 19:05
  * Remember to write something useful here!!
  */
-public class NonShootableTower extends Towers {
+public class NonShootableTower extends Tower {
     private int difficulty = 1;
     private final int price = 20;
     private int range = 200;
@@ -37,10 +38,10 @@ public class NonShootableTower extends Towers {
      * @param extraDmg
      * @param extraRange
      */
-    public NonShootableTower(ArrayList<Placeable> allObjects, GameActions gameActions, int difficulty, int x, int y,
+    public NonShootableTower(Board board, ArrayList<Placeable> allObjects, GameAction gameAction, int difficulty, int x, int y,
                              Dimension dimension, ColorHandler.Colour color, Shapes shape, int range, int price,
                              int extraDmg, double extraRange) {
-        super(allObjects, gameActions, x, y, dimension, color, shape, price, difficulty);
+        super(board, allObjects, gameAction, x, y, dimension, color, shape, price, difficulty);
         this.range = range;
         this.difficulty = difficulty;
         super.addGameActions(new GameActionFactory().createGameAction(extraDmg, extraRange));
