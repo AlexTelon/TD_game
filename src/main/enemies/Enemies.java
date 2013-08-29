@@ -1,5 +1,6 @@
 package main.enemies;
 
+import main.action.GameAction;
 import main.board.Placeable;
 import main.Tower.Tower;
 import main.board.Board;
@@ -98,7 +99,10 @@ public class Enemies extends Placeable {
     public void tick(double time) {
         if (getActivationTime() <= time && isAlive()) {
             setActive(true);
-            super.tick(this);
+
+            for (GameAction currentAction : super.getGameActions()) {
+                currentAction.tick(this);
+            }
 
             moveEnemy(enemyPixelMovement(enemyPathing.getCurrentPixelGoal()));
             if (enemyPathing.getCurrentPixelGoal().equals(getPixelPosition())) {

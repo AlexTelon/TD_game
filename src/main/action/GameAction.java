@@ -17,14 +17,16 @@ public class GameAction implements IGameActions {
         // all values are set to 0 by default.
     }
 
-    public void tick(Placeable tower) {
+    public void tick(Tower tower) {
    /*     if (obj instanceof ShootableTower) {
             ((ShootableTower) obj).getAttack().addBuffers(this); // DÅLIGT MEN NÅT SÅNTHÄR SKA DE VA
         } */
         tower.addBuffers(this);
     }
 
-
+    public void tick(Enemies enemy) {
+        enemy.addBuffers(this);
+    }
 
     public GameAction(int extraDmg, double extraRange) {
         this.extraDmg = extraDmg;

@@ -45,15 +45,15 @@ public class Placeable implements IDesign{
         this(x, y, dimension,color,shape,1);
     }
 
+
+    public Placeable(int x, int y, Dimension dimension, ColorHandler.Colour color, Shapes shape, GameAction gameAction) {
+        this(x, y, dimension,color,shape,1);
+        this.addGameActions(gameAction);
+    }
+
     public Placeable(int x, int y, int hitpoints, ColorHandler.Colour color, int priority) {
         this(x, y, new Dimension(1,1), color, Shapes.Rectangle, priority);
         this.hitpoints = hitpoints;
-    }
-
-    public void tick(Placeable placeable) {
-        for (GameAction currentAction : getGameActions()) {
-            currentAction.tick(placeable);
-        }
     }
 
     /**

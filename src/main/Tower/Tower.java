@@ -32,19 +32,18 @@ public class Tower extends Placeable  {
     private Board board;
     private Enemies lastTarget;
     private Enemies currentTarget;
-    private GameAction gameAction;
     public enum TowerInformation {
         DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, extraDMG
     }
 
     public Tower(Board board, ArrayList<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, ColorHandler.Colour color,
                  Shapes shape, int price, int difficulty) {
-        super(x, y, dimension, color, shape);
+        super(x, y, dimension, color, shape, gameAction);
         this.board = board;
         this.price = price;
         this.allPlaceables = allPlaceables;
         this.levelOfTower = new LevelOfTower(difficulty);
-        this.gameAction = gameAction;
+
     }
 
     /*
@@ -52,7 +51,9 @@ public class Tower extends Placeable  {
          */
     public void tick(EnemyWave allEnemies) {
 //<<<<<<< Updated upstream
-        super.tick(this);
+        for (GameAction currentAction : super.getGameActions()) {
+            currentAction.tick(this);
+        }
         //       recalcLevel();
 //        attackHelpClass.findObjectsWithinRange(attackHelpClass.getAllObjects());
 //=======
@@ -65,10 +66,9 @@ public class Tower extends Placeable  {
         //send action to all objects
         for (Placeable obj : PlacablesWithinRangeOfThisTower) {
             if (obj != this) {
-              obj.addGameActions(gameAction);
-              /*  for (GameAction currentAction : super.getGameActions()) {
+              for (GameAction currentAction : super.getGameActions()) {
                     obj.addGameActions(currentAction);
-                }*/
+                }
             }
         }
     }

@@ -8,7 +8,7 @@ import main.board.Placeable;
  */
 public interface IGameActions {
 
-    public void tick(Placeable obj);
+  //  public void tick(Placeable obj);
 
     public int getExtraDmg();
 

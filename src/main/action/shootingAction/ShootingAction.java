@@ -33,7 +33,7 @@ public class ShootingAction extends GameAction {
         Makes its thing on one enemy
          */
     @Override
-    public void tick(Placeable currentEnemy) {
+    public void tick(Enemies currentEnemy) {
 
         getAttack().resetEnemiesTowerHasShoot(); // reset enemies it has shot this frame.
         if (attack.canShootAtThisFrame()) {
@@ -78,9 +78,11 @@ public class ShootingAction extends GameAction {
 
     private void shoot(Enemies currentEnemy) {
         currentEnemy.attacked(attack.getDmg());
-        tower.addKills(1);
-        tower.getLevelOfTower().addExperience(currentEnemy.getExperienceToTowers());
         attack.addEnemiesTowerHasShoot();
+        if (!currentEnemy.isAlive()) {
+            tower.addKills(1); // TODO this cant be right?!
+            tower.getLevelOfTower().addExperience(currentEnemy.getExperienceToTowers());
+        }
     }
 
     /**
