@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffb3a02d-f355-4700-8085-964ced278c1f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/action/Attack.java" afterPath="$PROJECT_DIR$/src/main/action/Attack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/board/Board.java" afterPath="$PROJECT_DIR$/src/main/board/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Tower/NonShootableTower/NonShootableTower.java" afterPath="$PROJECT_DIR$/src/main/Tower/NonShootableTower/NonShootableTower.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/enemy/enemyType/DefaultEnemy.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/enemy/EnemyPath.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/enemy/EnemyWave.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/enemy/EnemyWaves.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/enemy/enemyType/FastEnemy.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/enemy/enemyType/SlowEnemy.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/enemy/enemyType/StrongEnemy.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projektet.iws" afterPath="$PROJECT_DIR$/Projektet.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Tower/shootingTowers/ShootableTower.java" afterPath="$PROJECT_DIR$/src/main/Tower/shootingTowers/ShootableTower.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Tower/Tower.java" afterPath="$PROJECT_DIR$/src/main/Tower/Tower.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Tower/TowerMaker.java" afterPath="$PROJECT_DIR$/src/main/Tower/TowerMaker.java" />
     </list>
     <list id="7cc6ea38-270f-4fd3-b6f4-ac40ed33ad76" name="Rejected commit: Default" comment="Imported the whole projekt" />
     <list id="1ae18aaf-70fe-4aaa-9c47-d108b1b7ab3e" name="Rejected commit: Default (2)" comment="Imported the whole projekt" />
@@ -19,7 +20,7 @@
     <list id="89370a58-e75d-4a9d-b045-8e3049b2fc34" name="Failed commit: Default" comment="Imported the whole projekt" />
     <ignored path="Projektet.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377893684428" ignored="false" />
+    <file path="/Dummy.txt" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377895916253" ignored="false" />
     <file path="/Towers.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1364926621261" ignored="false" />
     <file path="/Placeable.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377807958758" ignored="false" />
     <file path="/ShootingAction.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377809610569" ignored="false" />
@@ -297,7 +298,7 @@
       <file leaf-file-name="Board.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/board/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="435" column="0" selection-start="12975" selection-end="12975" vertical-scroll-proportion="0.84988964">
+            <state line="417" column="0" selection-start="12400" selection-end="12400" vertical-scroll-proportion="0.5121413">
               <folding />
             </state>
           </provider>
@@ -978,7 +979,11 @@
       <created>1377893688333</created>
       <updated>1377893688333</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Buffers now are added correctly, not deleted though.&#10;&#10;Seems like removal of towers overall is not working properly.&#10;NonShootable towers looked like they also shoot before, not anymore.">
+      <created>1377895920060</created>
+      <updated>1377895920060</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1003,7 +1008,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="-8" width="1696" height="1066" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6381074" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.6700767" order="10" side_tool="false" content_ui="tabs" />
@@ -1019,7 +1024,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24371994" sideWeight="0.2188889" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329859" sideWeight="0.67471266" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.3996139" sideWeight="0.6700767" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23929009" sideWeight="0.6432319" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23929009" sideWeight="0.6432319" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3567681" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="-59" y="276" width="1720" height="846" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1075,7 +1080,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugg with information of towers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Buffers now are added correctly, not deleted though.&#10;&#10;Seems like removal of towers overall is not working properly.&#10;NonShootable towers looked like they also shoot before, not anymore." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1095,6 +1100,7 @@
     <MESSAGE value="Shoting graphics works, though after enemy death the shots linger" />
     <MESSAGE value="Refactoring names.&#10;&#10;Changing things like enemies to enemy." />
     <MESSAGE value="Fixed bugg with information of towers." />
+    <MESSAGE value="Buffers now are added correctly, not deleted though.&#10;&#10;Seems like removal of towers overall is not working properly.&#10;NonShootable towers looked like they also shoot before, not anymore." />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1255,7 +1261,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/board/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="435" column="0" selection-start="12975" selection-end="12975" vertical-scroll-proportion="0.84988964">
+        <state line="417" column="0" selection-start="12400" selection-end="12400" vertical-scroll-proportion="0.5121413">
           <folding />
         </state>
       </provider>
