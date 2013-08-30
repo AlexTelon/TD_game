@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement>main.enemies</OriginalElement>
+  <OriginalElement>main.enemy</OriginalElement>
   <nodes>
     <node x="191.74166666666665" y="0.0">main.board.Placeable</node>
-    <node x="183.99999999999997" y="162.0">main.enemies.EnemyWave</node>
-    <node x="-25.0" y="164.0">main.enemies.enemyTypes</node>
-    <node x="195.24166666666665" y="59.0">main.enemies.Enemies</node>
-    <node x="148.74166666666665" y="269.0">main.enemies.EnemyWaves</node>
+    <node x="183.99999999999997" y="162.0">main.enemy.EnemyWave</node>
+    <node x="-25.0" y="164.0">main.enemy.enemyTypes</node>
+    <node x="195.24166666666665" y="59.0">main.enemy.Enemies</node>
+    <node x="148.74166666666665" y="269.0">main.enemy.EnemyWaves</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="main.enemies.EnemyWaves" target="main.enemies.EnemyWave">
+    <edge source="main.enemy.EnemyWaves" target="main.enemy.EnemyWave">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="main.enemies.EnemyWave" target="main.enemies.Enemies">
+    <edge source="main.enemy.EnemyWave" target="main.enemy.Enemies">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="main.enemies.enemyTypes" target="main.enemies.Enemies">
+    <edge source="main.enemy.enemyTypes" target="main.enemy.Enemies">
       <point x="0.0" y="-15.0" />
       <point x="69.5" y="134.0" />
       <point x="205.61666666666665" y="135.0" />
       <point x="-31.125" y="15.0" />
     </edge>
-    <edge source="main.enemies.EnemyWaves" target="main.enemies.enemyTypes">
+    <edge source="main.enemy.EnemyWaves" target="main.enemy.enemyTypes">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="main.enemies.Enemies" target="main.board.Placeable">
+    <edge source="main.enemy.Enemies" target="main.board.Placeable">
       <point x="0.0" y="-15.0" />
       <point x="0.0" y="15.0" />
     </edge>

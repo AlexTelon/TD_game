@@ -2,12 +2,10 @@ package main.Tower;
 
 import main.Tower.NonShootableTower.NonShootableTower;
 import main.action.Attack;
-import main.action.GameAction;
-import main.action.auraActions.DmgBuffAction;
+import main.action.auraAction.DmgBuffAction;
 import main.action.shootingAction.ShootingAction;
 import main.board.Board;
 import main.board.IDesign;
-import main.board.Placeable;
 import main.graphics.ColorHandler;
 import main.position.Point;
 

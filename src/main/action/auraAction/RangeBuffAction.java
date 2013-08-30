@@ -1,4 +1,4 @@
-package main.action.auraActions;
+package main.action.auraAction;
 
 import main.board.Placeable;
 

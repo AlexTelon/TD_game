@@ -2,7 +2,7 @@ package main.graphics;
 
 import main.Tower.Tower;
 import main.board.*;
-import main.enemies.Enemies;
+import main.enemy.Enemy;
 import main.position.Point;
 
 import javax.swing.*;
@@ -124,13 +124,13 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
         int someArbritarySpacing = 30;
         g2.setColor(Color.BLACK);
         g2.drawString("HP", 0, 10);
-        for ( Enemies currentEnemy : board.getAllEnemiesInCurrentWave()) {
+        for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             g2.drawString(currentEnemy.getHealthText(), tmpX, 10);
             tmpX += someArbritarySpacing ;
         }
         tmpX = someArbritarySpacing ;
         g2.drawString("Alive", 0, 30);
-        for ( Enemies currentEnemy : board.getAllEnemiesInCurrentWave()) {
+        for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             if (currentEnemy.isAlive()) {
                 g2.drawString("A", tmpX, 30);
             } else {
@@ -141,7 +141,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
         tmpX = someArbritarySpacing ;
         g2.drawString("Active", 0, 55);
         int localtime;
-        for ( Enemies currentEnemy : board.getAllEnemiesInCurrentWave()) {
+        for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             localtime =((int) currentEnemy.getActivationTime() - (int) board.getCurrentTime())/1000;
             if (localtime < 0) localtime = 0;
             g2.drawString(stringConverter(localtime), tmpX, 50);
@@ -150,7 +150,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
 
         tmpX = someArbritarySpacing*2;
         g2.drawString("PixelPos", 0, 255);
-        for ( Enemies currentEnemy : board.getAllEnemiesInCurrentWave()) {
+        for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             if (currentEnemy.isActive()) {
                 g2.setColor(Color.BLACK);
                 g2.drawString(currentEnemy.getPixelPosition().toString(), tmpX, 255);
@@ -197,7 +197,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      * @param g2
      */
     private void paintAllActiveEnemies(Graphics2D g2) {
-        for ( Enemies currentEnemy : board.getAllEnemiesInCurrentWave()) {
+        for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             if (currentEnemy.isActive()) {
                 paintPlacablePixelPosition(currentEnemy, g2);
 
@@ -207,7 +207,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
     }
 
 
-    private void printHealthAboveEnemy(Enemies currentEnemy, Graphics2D g2) {
+    private void printHealthAboveEnemy(Enemy currentEnemy, Graphics2D g2) {
         g2.setColor(Color.BLACK);
         g2.drawString(currentEnemy.getHealthText(), currentEnemy.getPixelPosition().getX(),
                 currentEnemy.getPixelPosition().getY());

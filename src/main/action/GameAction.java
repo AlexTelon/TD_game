@@ -2,7 +2,7 @@ package main.action;
 
 import main.Tower.Tower;
 import main.board.Placeable;
-import main.enemies.Enemies;
+import main.enemy.Enemy;
 
 /**
  * User: alete471 Date: 2012-10-12 Time: 09:47
@@ -24,7 +24,7 @@ public class GameAction implements IGameActions {
         tower.addBuffers(this);
     }
 
-    public void tick(Enemies enemy) {
+    public void tick(Enemy enemy) {
         enemy.addBuffers(this);
     }
 

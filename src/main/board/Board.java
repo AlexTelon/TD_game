@@ -3,9 +3,9 @@ package main.board;
 import main.Tower.NonShootableTower.NonShootableTower;
 import main.Tower.Tower;
 import main.action.GameAction;
-import main.enemies.Enemies;
-import main.enemies.EnemyWaves;
-import main.enemies.EnemyWave;
+import main.enemy.Enemy;
+import main.enemy.EnemyWaves;
+import main.enemy.EnemyWave;
 import main.graphics.ColorHandler;
 import main.position.Point;
 
@@ -90,7 +90,7 @@ public class Board {
 
                 // asume all enemies are dead and if this is not the case it is set to false below.
                 boolean allEnemiesAreDead = true;
-                for (Enemies currentEnemy : allEnemiesInCurrentWave) {
+                for (Enemy currentEnemy : allEnemiesInCurrentWave) {
                     currentEnemy.tick(currentTime);
                     if (currentEnemy.isAlive()) {
                         allEnemiesAreDead = false;
@@ -133,7 +133,7 @@ public class Board {
 
         if (isValidPositions(obj)) {
             allObjects.add(0, obj);
-            if (obj instanceof Enemies) {
+            if (obj instanceof Enemy) {
                 System.out.println("Why would you add enemies to a wave here? - in addObject");
             } else if ( obj instanceof Tower) {
                 allTowers.add(0, (Tower) obj);
@@ -223,7 +223,7 @@ public class Board {
         }
     }
 
-    public boolean isWithinCastlePixelPos(Enemies currentEnemy) {
+    public boolean isWithinCastlePixelPos(Enemy currentEnemy) {
         if ( isWithinCastle(getPosOnGrid(currentEnemy.getCenterOfObject()))) {
             return true;
         }

@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement>main.enemies</OriginalElement>
+  <OriginalElement>main.enemy</OriginalElement>
   <nodes>
-    <node x="209.0" y="732.0">main.enemies.EnemyWave</node>
-    <node x="475.0300045768198" y="646.4215100488863">main.enemies.EnemyPath</node>
-    <node x="0.0" y="754.0">main.enemies.enemyTypes</node>
-    <node x="161.64583333333334" y="212.0">main.enemies.Enemies</node>
-    <node x="186.52083333333334" y="856.0">main.enemies.EnemyWaves</node>
+    <node x="209.0" y="732.0">main.enemy.EnemyWave</node>
+    <node x="475.0300045768198" y="646.4215100488863">main.enemy.EnemyPath</node>
+    <node x="0.0" y="754.0">main.enemy.enemyTypes</node>
+    <node x="161.64583333333334" y="212.0">main.enemy.Enemies</node>
+    <node x="186.52083333333334" y="856.0">main.enemy.EnemyWaves</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="main.enemies.Enemies" target="main.enemies.EnemyPath">
+    <edge source="main.enemy.Enemies" target="main.enemy.EnemyPath">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="main.enemies.enemyTypes" target="main.enemies.Enemies">
+    <edge source="main.enemy.enemyTypes" target="main.enemy.Enemies">
       <point x="0.0" y="-15.0" />
       <point x="94.5" y="707.0" />
       <point x="192.52083333333334" y="707.0" />
       <point x="-92.625" y="235.0" />
     </edge>
-    <edge source="main.enemies.EnemyWave" target="main.enemies.Enemies">
+    <edge source="main.enemy.EnemyWave" target="main.enemy.Enemies">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="main.enemies.EnemyWaves" target="main.enemies.EnemyWave">
+    <edge source="main.enemy.EnemyWaves" target="main.enemy.EnemyWave">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="main.enemies.EnemyWaves" target="main.enemies.enemyTypes">
+    <edge source="main.enemy.EnemyWaves" target="main.enemy.enemyTypes">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="main.enemies.EnemyWaves" target="main.enemies.EnemyPath">
+    <edge source="main.enemy.EnemyWaves" target="main.enemy.EnemyPath">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>

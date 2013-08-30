@@ -1,7 +1,7 @@
 package main.Tower;
 
 import main.board.Placeable;
-import main.enemies.Enemies;
+import main.enemy.Enemy;
 
 import java.util.ArrayList;
 
@@ -52,7 +52,7 @@ public class attackHelpClass {
         }
     }
 
-    public void removeFromCurrentPlacablesWithinRangeOfThisTower(Enemies currentEnemy) {
+    public void removeFromCurrentPlacablesWithinRangeOfThisTower(Enemy currentEnemy) {
         this.PlacablesWithinRangeOfThisTower.remove(currentEnemy);
     }
 

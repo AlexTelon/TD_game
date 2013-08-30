@@ -4,7 +4,7 @@ import main.Tower.Tower;
 import main.Tower.TowerMaker;
 import main.board.Board;
 import main.board.IBoardListener;
-import main.enemies.Enemies;
+import main.enemy.Enemy;
 import main.position.Point;
 
 import javax.swing.*;
@@ -73,7 +73,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
         Point mouseGridPosition = board.getPosOnGrid(new Point(e.getPoint()));
 
 
-        for (Enemies currentEnemy : board.getAllEnemiesInCurrentWave()) {
+        for (Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             if( currentEnemy.isWithinObject(new main.position.Point(e.getPoint())) && currentEnemy.isAlive()) {
                 graphicalInformationViewer.currentObject(currentEnemy);
                 graphicalViewer.higlight(currentEnemy);

@@ -5,8 +5,8 @@ import main.Tower.Tower;
 import main.action.GameAction;
 import main.board.Board;
 import main.board.IBoardListener;
-import main.enemies.Enemies;
-import main.enemies.EnemyWaves;
+import main.enemy.Enemy;
+import main.enemy.EnemyWaves;
 import main.board.Placeable;
 
 import javax.swing.*;
@@ -64,7 +64,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
      * working with the code.
      * @param  g2  a graphics2D objecv
      */
-    private void paintInfoForCurrentEnemy(Graphics2D g2, Enemies currentEnemy) {
+    private void paintInfoForCurrentEnemy(Graphics2D g2, Enemy currentEnemy) {
         int tmpX = 80;
         int tmpY = 15;
         g2.setColor(Color.BLACK);
@@ -89,8 +89,8 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     }
 
     private void paintInfoForCurrentObj(Graphics2D g2, Placeable obj) {
-        if (currentObject instanceof Enemies) {
-            paintInfoForCurrentEnemy(g2, (Enemies) obj);
+        if (currentObject instanceof Enemy) {
+            paintInfoForCurrentEnemy(g2, (Enemy) obj);
         } else if (currentObject instanceof ShootableTower) {
             paintInfoForCurrentTower(g2, (ShootableTower) currentObject);
         }

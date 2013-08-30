@@ -4,7 +4,7 @@ import main.Tower.Tower;
 import main.action.Attack;
 import main.action.GameAction;
 import main.board.Placeable;
-import main.enemies.Enemies;
+import main.enemy.Enemy;
 
 /**
  * User: alete471 Date: 2012-10-08 Time: 14:27
@@ -33,18 +33,18 @@ public class ShootingAction extends GameAction {
         Makes its thing on one enemy
          */
     @Override
-    public void tick(Enemies currentEnemy) {
+    public void tick(Enemy currentEnemy) {
 
         getAttack().resetEnemiesTowerHasShoot(); // reset enemies it has shot this frame.
         if (attack.canShootAtThisFrame()) {
 
-            if (((Enemies) currentEnemy).isActive() && ((Enemies) currentEnemy).isAlive()) { // can only handle active and alive enemies
+            if (((Enemy) currentEnemy).isActive() && ((Enemy) currentEnemy).isAlive()) { // can only handle active and alive enemies
                 if (canShoot() && inRange(currentEnemy) && correctTarget(currentEnemy)) {
-                    shoot(((Enemies) currentEnemy));
-                    tower.setLastTarget(((Enemies) currentEnemy)); // why is lastTarget used? - does it only work as an iterator?
+                    shoot(((Enemy) currentEnemy));
+                    tower.setLastTarget(((Enemy) currentEnemy)); // why is lastTarget used? - does it only work as an iterator?
 
-                    if (((Enemies) currentEnemy).isAlive()) { // ie enemy still is alive
-                        tower.setCurrentTarget(((Enemies) currentEnemy));
+                    if (((Enemy) currentEnemy).isAlive()) { // ie enemy still is alive
+                        tower.setCurrentTarget(((Enemy) currentEnemy));
                         tower.addToCurrentPlacablesWithinRangeOfThisTower(currentEnemy);
                     } else {
                         tower.setCurrentTarget(null);
@@ -76,7 +76,7 @@ public class ShootingAction extends GameAction {
     }
 
 
-    private void shoot(Enemies currentEnemy) {
+    private void shoot(Enemy currentEnemy) {
         currentEnemy.attacked(attack.getDmg());
         attack.addEnemiesTowerHasShoot();
         if (!currentEnemy.isAlive()) {

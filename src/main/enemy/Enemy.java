@@ -1,4 +1,4 @@
-package main.enemies;
+package main.enemy;
 
 import main.action.GameAction;
 import main.board.Placeable;
@@ -17,10 +17,10 @@ import static java.lang.Math.abs;
  * User: alete471
  * Date: 2012-09-25
  * Time: 14:23
- * The main class for enemies, all types of enemies will extend this class. Has all the basic information which all
- * enemies have in common.
+ * The main class for enemy, all types of enemy will extend this class. Has all the basic information which all
+ * enemy have in common.
  */
-public class Enemies extends Placeable {
+public class Enemy extends Placeable {
     private int hitPoints;
     private int pixelSpeed;
     private int dmgToBase;
@@ -33,8 +33,8 @@ public class Enemies extends Placeable {
 
     private EnemyPath enemyPathing;
 
-    public Enemies(Board board, int x, int y, ColorHandler.Colour colour,
-                   int experienceToTowers, int pixelSpeed, int dmgToBase, int gold, int hitPoints) {
+    public Enemy(Board board, int x, int y, ColorHandler.Colour colour,
+                 int experienceToTowers, int pixelSpeed, int dmgToBase, int gold, int hitPoints) {
         super(x, y, hitPoints , colour, 9);
         this.board = board;
         this.hitPoints = hitPoints;
@@ -65,7 +65,7 @@ public class Enemies extends Placeable {
      * @param enemyPrototype an enemy to be copied
      * @param activationTime new activationTime for this enemy.
      */
-    public Enemies(Enemies enemyPrototype, double activationTime) {
+    public Enemy(Enemy enemyPrototype, double activationTime) {
         super(enemyPrototype.getPosition().getX(), enemyPrototype.getPosition().getY(), enemyPrototype.getHitpoints() , enemyPrototype.getColour(), 9);
         this.board = enemyPrototype.getBoard();
         this.hitPoints = enemyPrototype.getHitpoints();
@@ -85,7 +85,7 @@ public class Enemies extends Placeable {
         enemyPathing = new EnemyPath(super.getPosition(), board.getCastlePos());
     }
 
-    public Enemies(int x, int y, Dimension dimension, ColorHandler.Colour color, Shapes shape) {
+    public Enemy(int x, int y, Dimension dimension, ColorHandler.Colour color, Shapes shape) {
         super(x, y, dimension, color, shape);
     }
 
@@ -210,21 +210,21 @@ public class Enemies extends Placeable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Enemies)) return false;
+        if (!(o instanceof Enemy)) return false;
         if (!super.equals(o)) return false;
 
-        Enemies enemies = (Enemies) o;
+        Enemy enemy = (Enemy) o;
 
-        if (dmgToBase != enemies.dmgToBase) return false;
-        if (hitPoints != enemies.hitPoints) return false;
-        if (active != enemies.active) return false;
-        if (alive != enemies.alive) return false;
-        if (experienceToTowers != enemies.experienceToTowers) return false;
-        if (gold != enemies.gold) return false;
-  //      if (justDied != enemies.justDied) return false;
-        if (pixelSpeed != enemies.pixelSpeed) return false;
-    //    if (speed != enemies.speed) return false;
-        if (board != null ? !board.equals(enemies.board) : enemies.board != null) return false;
+        if (dmgToBase != enemy.dmgToBase) return false;
+        if (hitPoints != enemy.hitPoints) return false;
+        if (active != enemy.active) return false;
+        if (alive != enemy.alive) return false;
+        if (experienceToTowers != enemy.experienceToTowers) return false;
+        if (gold != enemy.gold) return false;
+  //      if (justDied != enemy.justDied) return false;
+        if (pixelSpeed != enemy.pixelSpeed) return false;
+    //    if (speed != enemy.speed) return false;
+        if (board != null ? !board.equals(enemy.board) : enemy.board != null) return false;
 
         return true;
     }

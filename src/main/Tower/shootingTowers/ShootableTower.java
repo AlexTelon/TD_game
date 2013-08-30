@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import main.action.GameAction;
 import main.board.Board;
 import main.board.IDesign;
-import main.enemies.EnemyWave;
+import main.enemy.EnemyWave;
 import main.board.Placeable;
 import main.Tower.Tower;
 import main.graphics.ColorHandler;

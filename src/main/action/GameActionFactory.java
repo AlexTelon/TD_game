@@ -1,7 +1,7 @@
 package main.action;
 
-import main.action.auraActions.DmgBuffAction;
-import main.action.auraActions.RangeBuffAction;
+import main.action.auraAction.DmgBuffAction;
+import main.action.auraAction.RangeBuffAction;
 
 /**
  * User: alete471 Date: 2012-10-18 Time: 15:25

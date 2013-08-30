@@ -1,11 +1,10 @@
 package main.Tower;
 
-import main.action.Attack;
 import main.action.GameAction;
 import main.board.Board;
-import main.enemies.EnemyWave;
+import main.enemy.Enemy;
+import main.enemy.EnemyWave;
 import main.board.Placeable;
-import main.enemies.Enemies;
 import main.graphics.ColorHandler;
 
 import java.awt.*;
@@ -31,8 +30,8 @@ public class Tower extends Placeable  {
     private double range = 200.0;
     private int kills = 0;
     private Board board;
-    private Enemies lastTarget;
-    private Enemies currentTarget;
+    private Enemy lastTarget;
+    private Enemy currentTarget;
     public enum TowerInformation {
         DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, extraDMG
     }
@@ -77,7 +76,7 @@ public class Tower extends Placeable  {
     private void updateAllObjects() {
         allPlaceables = new ArrayList<Placeable>(); // GS is going to have a fun time becouse of this... :(
         allPlaceables.addAll(board.getAllObjects());
-        for (Enemies currentEnemy : board.getAllEnemiesInCurrentWave()) {
+        for (Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             allPlaceables.add(currentEnemy);
         }
     }
@@ -111,11 +110,11 @@ public class Tower extends Placeable  {
     }
 
 
-    public void setLastTarget(Enemies currentTarget) {
+    public void setLastTarget(Enemy currentTarget) {
         this.lastTargets.add(currentTarget);
     }
 
-    public void removeFromCurrentPlacablesWithinRangeOfThisTower(Enemies currentEnemy) {
+    public void removeFromCurrentPlacablesWithinRangeOfThisTower(Enemy currentEnemy) {
         attackHelpClass.removeFromCurrentPlacablesWithinRangeOfThisTower(currentEnemy);
     }
 
@@ -145,11 +144,11 @@ public class Tower extends Placeable  {
         this.kills += newKills;
     }
 
-    public Enemies getLastTarget() {
+    public Enemy getLastTarget() {
         return lastTarget;
     }
 
-    public void setCurrentTarget(Enemies currentTarget) {
+    public void setCurrentTarget(Enemy currentTarget) {
         this.currentTarget = currentTarget;
     }
 
