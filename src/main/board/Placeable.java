@@ -1,6 +1,6 @@
 package main.board;
 
-import main.Tower.Tower;
+import main.tower.Tower;
 import main.action.GameAction;
 import main.graphics.ColorHandler;
 import main.position.*;

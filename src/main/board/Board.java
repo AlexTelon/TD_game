@@ -1,7 +1,7 @@
 package main.board;
 
-import main.Tower.NonShootableTower.NonShootableTower;
-import main.Tower.Tower;
+import main.tower.NonShootableTower.NonShootableTower;
+import main.tower.Tower;
 import main.action.GameAction;
 import main.enemy.Enemy;
 import main.enemy.EnemyWaves;

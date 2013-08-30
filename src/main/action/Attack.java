@@ -24,7 +24,7 @@ public class Attack {
     private Color color = Color.ORANGE;
    private ArrayList<GameAction> buffers = new ArrayList<GameAction>();
 
-    private int enemiesTowerCanShootAtTheSameFrame = 1;
+    private int enemiesTowerCanShootAtTheSameFrame = 3;
     private int enemiesTowerHasShoot = 0;
     private boolean rememberOldTarget = false;
 

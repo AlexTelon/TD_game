@@ -1,6 +1,6 @@
 package main.action.shootingAction;
 
-import main.Tower.Tower;
+import main.tower.Tower;
 import main.action.Attack;
 import main.action.GameAction;
 import main.board.Placeable;
@@ -38,13 +38,13 @@ public class ShootingAction extends GameAction {
         getAttack().resetEnemiesTowerHasShoot(); // reset enemies it has shot this frame.
         if (attack.canShootAtThisFrame()) {
 
-            if (((Enemy) currentEnemy).isActive() && ((Enemy) currentEnemy).isAlive()) { // can only handle active and alive enemies
+            if (currentEnemy.isActive() && currentEnemy.isAlive()) { // can only handle active and alive enemies
                 if (canShoot() && inRange(currentEnemy) && correctTarget(currentEnemy)) {
-                    shoot(((Enemy) currentEnemy));
-                    tower.setLastTarget(((Enemy) currentEnemy)); // why is lastTarget used? - does it only work as an iterator?
+                    shoot(currentEnemy);
+                    tower.setLastTarget(currentEnemy); // why is lastTarget used? - does it only work as an iterator?
 
-                    if (((Enemy) currentEnemy).isAlive()) { // ie enemy still is alive
-                        tower.setCurrentTarget(((Enemy) currentEnemy));
+                    if (currentEnemy.isAlive()) { // ie enemy still is alive
+                        tower.setCurrentTarget( currentEnemy);
                         tower.addToCurrentPlacablesWithinRangeOfThisTower(currentEnemy);
                     } else {
                         tower.setCurrentTarget(null);
@@ -80,7 +80,7 @@ public class ShootingAction extends GameAction {
         currentEnemy.attacked(attack.getDmg());
         attack.addEnemiesTowerHasShoot();
         if (!currentEnemy.isAlive()) {
-            tower.addKills(1); // TODO this cant be right?!
+            tower.addKills(1);
             tower.getLevelOfTower().addExperience(currentEnemy.getExperienceToTowers());
         }
     }

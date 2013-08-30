@@ -1,6 +1,6 @@
 package main.action;
 
-import main.Tower.Tower;
+import main.tower.Tower;
 import main.board.Placeable;
 import main.enemy.Enemy;
 
@@ -68,4 +68,5 @@ public class GameAction implements IGameActions {
 
     public void addBuffers(GameAction gameAction) {
     }
+
 }

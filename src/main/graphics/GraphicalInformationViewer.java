@@ -1,7 +1,7 @@
 package main.graphics;
 
-import main.Tower.shootingTowers.ShootableTower;
-import main.Tower.Tower;
+import main.tower.shootingTowers.ShootableTower;
+import main.tower.Tower;
 import main.action.GameAction;
 import main.board.Board;
 import main.board.IBoardListener;
@@ -105,7 +105,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
                 stringConverter((int) board.getCountdownToNextWave()), tmpX, tmpY);
         tmpY += smallSpacing;
         g2.setColor(Color.BLACK);
-        g2.drawString("main/Tower", tmpX, tmpY);
+        g2.drawString("main/tower", tmpX, tmpY);
         tmpX += spacingBeforeTowerText;
         for (Tower currentTower : board.getAllTowers()) {
             g2.drawString(currentTower.getPrice() + ", ", tmpX, tmpY);

@@ -2,7 +2,7 @@ package main.enemy;
 
 import main.action.GameAction;
 import main.board.Placeable;
-import main.Tower.Tower;
+import main.tower.Tower;
 import main.board.Board;
 import main.graphics.ColorHandler;
 import main.position.Point;
@@ -237,6 +237,7 @@ public class Enemy extends Placeable {
     public void attacked(int Dmg) {
         subtractHitpoints(Dmg);
         if (getHitpoints() <= 0) {
+            setToDead();
             // tower.addKills(1);
         }
     }
@@ -244,6 +245,7 @@ public class Enemy extends Placeable {
     public void setActive(boolean active) {
         this.active = active;
     }
+
 
     public boolean isActive() {
         return active;

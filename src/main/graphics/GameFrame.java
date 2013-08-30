@@ -1,7 +1,7 @@
 package main.graphics;
 
-import main.Tower.Tower;
-import main.Tower.TowerMaker;
+import main.tower.Tower;
+import main.tower.TowerMaker;
 import main.board.Board;
 import main.board.IBoardListener;
 import main.enemy.Enemy;

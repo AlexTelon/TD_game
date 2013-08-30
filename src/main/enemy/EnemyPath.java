@@ -23,6 +23,7 @@ public class EnemyPath {
     private static int y = new Random().nextInt(Board.getHeight());
     private static int x2 = new Random().nextInt(Board.getWidth()-Board.getCastleWidth());
     private static int y2 = new Random().nextInt(Board.getHeight());
+    private int pathLenght = 0;
     /*
     private static int x3 = new Random().nextInt(Board.getWidth());
     private static int y3 = new Random().nextInt(Board.getHeight());
@@ -60,8 +61,8 @@ public class EnemyPath {
 
     /**
      * Method that calculates the path that the enemies will take. Is now hardcoded to follow a certain pattern to
-     * the goals, but in the future this should be made to use the exact same method that enemies use for determening
-     * their path so that everything uses the same peice of code.
+     * the goals, but in the future this should be made to use the exact same method that enemies use for determining
+     * their path so that everything uses the same piece of code.
      * @param start
      */
     private void setPath(Point start) {

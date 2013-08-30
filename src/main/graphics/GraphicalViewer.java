@@ -1,6 +1,6 @@
 package main.graphics;
 
-import main.Tower.Tower;
+import main.tower.Tower;
 import main.board.*;
 import main.enemy.Enemy;
 import main.position.Point;

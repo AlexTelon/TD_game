@@ -1,6 +1,6 @@
 package main.action.auraAction;
 
-import main.Tower.Tower;
+import main.tower.Tower;
 import main.action.GameAction;
 import main.board.Placeable;
 
