@@ -73,6 +73,11 @@ public class Tower extends Placeable  {
         }
     }
 
+    public void delete() {
+        board.removeFromAllTowers(this);
+    }
+
+
     private void updateAllObjects() {
         allPlaceables = new ArrayList<Placeable>(); // GS is going to have a fun time becouse of this... :(
         allPlaceables.addAll(board.getAllObjects());
@@ -236,7 +241,7 @@ public class Tower extends Placeable  {
 
     @Override
     public void removeBuffer(GameAction action) {
-        super.removeBuffer(action);    //To change body of overridden methods use File | Settings | File Templates.
+        super.removeBuffer(action);
     }
 
     @Override

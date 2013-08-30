@@ -408,6 +408,16 @@ public class Board {
         return enemyWaves;
     }
 
+    public void removeFromAllTowers(Tower tower) {
+        allTowers.remove(tower);
+    }
+
+    public void removeFromNonShootableTower(Tower tower) {
+        allNonShootableTowers.remove(tower);
+    }
+
+
+
     /**
      * sets priorioty on the priorityMap to 0 again, player gains some gold, tower is removed from allTowers
      * @param currentTower
@@ -415,7 +425,7 @@ public class Board {
     public void sellTower(Tower currentTower) {
         addGold(currentTower.getPrice());
         resetBoard(currentTower.getPosition());
-        allTowers.remove(currentTower);
+        currentTower.delete();
 
         for (Placeable currentPlaceable : currentTower.getPlacablesWithinRangeOfThisTower()) {
             for (GameAction action : currentTower.getGameActions()) {

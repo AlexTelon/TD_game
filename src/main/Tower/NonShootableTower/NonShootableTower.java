@@ -23,6 +23,7 @@ public class NonShootableTower extends Tower {
     private Shapes shape = Shapes.Rectangle;
     private int extraRange = 0;
     private int extraDmg = 0;
+    private Board board;
 
     /**
      * For defensive towers
@@ -42,9 +43,31 @@ public class NonShootableTower extends Tower {
                              Dimension dimension, ColorHandler.Colour color, Shapes shape, int range, int price,
                              int extraDmg, double extraRange) {
         super(board, allObjects, gameAction, x, y, dimension, color, shape, price, difficulty);
+        this.board = board;
         this.range = range;
         this.difficulty = difficulty;
         super.addGameActions(new GameActionFactory().createGameAction(extraDmg, extraRange));
+    }
+
+    @Override
+    public void addBuffers(GameAction action) {
+        if (!action.hasAnAttack()) { // do not add attackin actions to the tower
+            super.addBuffers(action);
+        }
+    }
+
+    /**
+     * Non shootable towers can have no actions.
+     * @param action
+     */
+    @Override
+    public void addGameActions(GameAction action) {
+    }
+
+    @Override
+    public void delete() {
+     super.delete();
+        board.removeFromNonShootableTower(this);
     }
 
 }

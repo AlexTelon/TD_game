@@ -35,7 +35,7 @@ public class ShootableTower extends Tower {
      * if it can then which enemies it can shoot and then informs the enemy that it has been shoot.
      */
     public void tick(EnemyWave allEnemies) { // TODO Move to shootingAction so that we have only data in this class!
-
+    super.tick(allEnemies);
         }
 
 
@@ -60,4 +60,5 @@ public class ShootableTower extends Tower {
                 currentGameAction.getAttack().removeBuffers(action);
         }
     }
+
 }

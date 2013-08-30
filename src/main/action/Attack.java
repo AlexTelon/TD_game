@@ -123,9 +123,7 @@ public class Attack {
     }
 
     public void addBuffers(GameAction action) {
-        if (buffers.contains(action)) {
-            // do nothing if already there
-        } else {
+        if (!buffers.contains(action)) {
             this.buffers.add(action);
         }
     }

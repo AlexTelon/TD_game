@@ -58,7 +58,7 @@ public class TowerMaker {
                     // gör egentligen och om inte extraDMG och extraRange blir dubbel info då de kmr finnas
                     // i gameAction också.
                     DmgBuffAction dmgBuffAction = new DmgBuffAction(extraDMG);
-                    Tower NewTower = new NonShootableTower(board, board.getAllObjects(), dmgBuffAction, board.getDifficulty(),
+                    NonShootableTower NewTower = new NonShootableTower(board, board.getAllObjects(), dmgBuffAction, board.getDifficulty(),
                             position.getX(), position.getY(), dimension, ColorHandler.Colour.BLUE, IDesign.Shapes.Rectangle, range , price, extraDMG, extraRange);
 
                     board.addObject(NewTower);
