@@ -5,33 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffb3a02d-f355-4700-8085-964ced278c1f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/enemy/Enemy.java" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\.svn\entries" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\Enemies.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\EnemyPath.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\EnemyWave.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\EnemyWaves.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyType\DefaultEnemy.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyType\FastEnemy.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyType\SlowEnemy.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyType\StrongEnemy.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraActions\AuraAction.java" afterPath="$PROJECT_DIR$/src/main/action/auraAction/AuraAction.java" />
-      <change type="MOVED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraActions\DmgBuffAction.java" afterPath="$PROJECT_DIR$/src/main/action/auraAction/DmgBuffAction.java" />
-      <change type="MOVED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\action\auraActions\RangeBuffAction.java" afterPath="$PROJECT_DIR$/src/main/action/auraAction/RangeBuffAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/board/Board.java" afterPath="$PROJECT_DIR$/src/main/board/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/action/GameAction.java" afterPath="$PROJECT_DIR$/src/main/action/GameAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/action/GameActionFactory.java" afterPath="$PROJECT_DIR$/src/main/action/GameActionFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/graphics/GameFrame.java" afterPath="$PROJECT_DIR$/src/main/graphics/GameFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java" afterPath="$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java" afterPath="$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\DefaultEnemy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\FastEnemy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\SlowEnemy.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Alex\IdeaProjects\CustomTD\src\main\enemies\enemyTypes\StrongEnemy.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projektet.iws" afterPath="$PROJECT_DIR$/Projektet.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Tower/shootingTowers/ShootableTower.java" afterPath="$PROJECT_DIR$/src/main/Tower/shootingTowers/ShootableTower.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java" afterPath="$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Tower/Tower.java" afterPath="$PROJECT_DIR$/src/main/Tower/Tower.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Tower/TowerMaker.java" afterPath="$PROJECT_DIR$/src/main/Tower/TowerMaker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Tower/attackHelpClass.java" afterPath="$PROJECT_DIR$/src/main/Tower/attackHelpClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/enemies.uml" afterPath="$PROJECT_DIR$/enemies.uml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/enemieswithcMethods.uml" afterPath="$PROJECT_DIR$/enemieswithcMethods.uml" />
     </list>
     <list id="7cc6ea38-270f-4fd3-b6f4-ac40ed33ad76" name="Rejected commit: Default" comment="Imported the whole projekt" />
     <list id="1ae18aaf-70fe-4aaa-9c47-d108b1b7ab3e" name="Rejected commit: Default (2)" comment="Imported the whole projekt" />
@@ -39,16 +19,16 @@
     <list id="89370a58-e75d-4a9d-b045-8e3049b2fc34" name="Failed commit: Default" comment="Imported the whole projekt" />
     <ignored path="Projektet.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377891868789" ignored="false" />
+    <file path="/Dummy.txt" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377892633062" ignored="false" />
     <file path="/Towers.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1364926621261" ignored="false" />
     <file path="/Placeable.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377807958758" ignored="false" />
     <file path="/ShootingAction.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377809610569" ignored="false" />
     <file path="/DefensiveAuraTower.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360444636155" ignored="false" />
     <file path="/fragment.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377802981307" ignored="false" />
     <file path="/GameActions.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377793554255" ignored="false" />
-    <file path="/TowerMaker.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377806946913" ignored="false" />
+    <file path="/TowerMaker.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377893569111" ignored="false" />
     <file path="/Attack.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360447670650" ignored="false" />
-    <file path="/GraphicalViewer.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1375908880962" ignored="false" />
+    <file path="/GraphicalViewer.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377893271211" ignored="false" />
     <file path="/*.regexp" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360453252242" ignored="false" />
     <file path="/GraphicalInformationViewer.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377793970314" ignored="false" />
     <file path="/DmgBuffAction.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1360457011527" ignored="false" />
@@ -116,6 +96,7 @@
     <file path="/IDesign.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377807710125" ignored="false" />
     <file path="/EnemyWaves.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377892541120" ignored="false" />
     <file path="/SlowEnemy.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377892566424" ignored="false" />
+    <file path="/ShootableTower.java" changelist="ffb3a02d-f355-4700-8085-964ced278c1f" time="1377893637577" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +124,7 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/main/action/auraAction/DmgBuffAction.java" line="17" class="main.action.auraActions.DmgBuffAction" package="main.action.auraActions">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/action/auraAction/DmgBuffAction.java" line="17" class="main.action.auraAction.DmgBuffAction" package="main.action.auraAction">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -157,7 +138,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/action/auraAction/AuraAction.java" line="17" class="main.action.auraActions.AuraAction" package="main.action.auraActions">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/action/auraAction/AuraAction.java" line="17" class="main.action.auraAction.AuraAction" package="main.action.auraAction">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -171,21 +152,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/action/Attack.java" line="125" class="main.action.Attack" package="main.action">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/board/Placeable.java" line="172" class="main.board.Placeable" package="main.board">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java" line="56" class="main.graphics.GraphicalInformationViewer" package="main.graphics">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -244,19 +211,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NonShootableTower.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Tower/NonShootableTower/NonShootableTower.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="19" selection-start="954" selection-end="954" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EnemyWaves.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="EnemyWaves.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/enemy/EnemyWaves.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="987" selection-end="987" vertical-scroll-proportion="0.52858686">
+            <state line="20" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -264,10 +222,73 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultEnemy.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/enemy/enemyType/DefaultEnemy.java">
+      <file leaf-file-name="GraphicalInformationViewer.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0">
+            <state line="96" column="5" selection-start="2948" selection-end="2948" vertical-scroll-proportion="0.22396417">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TowerMaker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Tower/TowerMaker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="89" column="0" selection-start="3934" selection-end="3934" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShootableTower.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Tower/shootingTowers/ShootableTower.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="103" selection-start="1273" selection-end="1273" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Placeable.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/board/Placeable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="172" column="0" selection-start="5309" selection-end="5309" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphicalViewer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="121" column="17" selection-start="3840" selection-end="3840" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphicalIDebugViewer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/graphics/GraphicalIDebugViewer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="0" selection-start="1852" selection-end="1852" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/board/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="327" column="0" selection-start="10483" selection-end="10483" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameFrame.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/graphics/GameFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="94" column="33" selection-start="3447" selection-end="3447" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -277,62 +298,6 @@
         <entry file="file://$PROJECT_DIR$/src/main/enemy/enemyType/FastEnemy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="21" column="0" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Towers.uml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Towers.uml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="20" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="board.uml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/board.uml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="66" selection-start="1075" selection-end="1075" vertical-scroll-proportion="-14.64">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="action.uml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/action.uml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="48" selection-start="991" selection-end="991" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SlowEnemy.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/enemy/enemyType/SlowEnemy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="28" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Attack.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/action/Attack.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="27" selection-start="3412" selection-end="3412" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/board/Board.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="148" column="0" selection-start="5282" selection-end="5282" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -370,22 +335,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/enemies/EnemyWaves.java" />
         <option value="$PROJECT_DIR$/src/main/action/GameActions.java" />
-        <option value="$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java" />
         <option value="$PROJECT_DIR$/src/main/action/IGameActions.java" />
         <option value="$PROJECT_DIR$/src/main/action/auraActions/AuraAction.java" />
         <option value="$PROJECT_DIR$/src/main/action/auraActions/DmgBuffAction.java" />
         <option value="$PROJECT_DIR$/src/main/enemies/Enemies.java" />
         <option value="$PROJECT_DIR$/src/main/board/IDesign.java" />
-        <option value="$PROJECT_DIR$/src/main/board/Placeable.java" />
-        <option value="$PROJECT_DIR$/src/main/Tower/TowerMaker.java" />
         <option value="$PROJECT_DIR$/src/main/Tower/Tower.java" />
         <option value="$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java" />
         <option value="$PROJECT_DIR$/src/main/action/GameAction.java" />
         <option value="$PROJECT_DIR$/src/main/board/Board.java" />
         <option value="$PROJECT_DIR$/src/main/enemy/enemyType/SlowEnemy.java" />
         <option value="$PROJECT_DIR$/src/main/enemy/EnemyWaves.java" />
+        <option value="$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java" />
+        <option value="$PROJECT_DIR$/src/main/board/Placeable.java" />
+        <option value="$PROJECT_DIR$/src/main/Tower/TowerMaker.java" />
+        <option value="$PROJECT_DIR$/src/main/Tower/shootingTowers/ShootableTower.java" />
       </list>
     </option>
   </component>
@@ -1005,7 +970,11 @@
       <created>1377805957058</created>
       <updated>1377805957058</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactoring names.&#10;&#10;Changing things like enemies to enemy.">
+      <created>1377892641680</created>
+      <updated>1377892641680</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1102,7 +1071,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shoting graphics works, though after enemy death the shots linger" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring names.&#10;&#10;Changing things like enemies to enemy." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1120,6 +1089,7 @@
     <MESSAGE value="Cleaned up and fixed some things" />
     <MESSAGE value="towers now shoot down enemies" />
     <MESSAGE value="Shoting graphics works, though after enemy death the shots linger" />
+    <MESSAGE value="Refactoring names.&#10;&#10;Changing things like enemies to enemy." />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1167,71 +1137,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/action/shootingAction/ShootingAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="26" selection-start="4644" selection-end="4644" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/board/Placeable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="0" selection-start="5309" selection-end="5309" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Tower/shootingTowers/ShootableTower.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.7.0_11/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="409" column="19" selection-start="14919" selection-end="14919" vertical-scroll-proportion="0.05187638">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/action/GameAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1353" selection-end="1353" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/action/Attack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="27" selection-start="3412" selection-end="3412" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Tower/Tower.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="29" selection-start="5707" selection-end="5781" vertical-scroll-proportion="0.78194207">
-          <folding>
-            <element signature="e#934#945#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Tower/NonShootableTower/NonShootableTower.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="19" selection-start="954" selection-end="954" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/board/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="0" selection-start="5282" selection-end="5282" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Towers.uml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="20" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
@@ -1278,10 +1183,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/enemy/EnemyWaves.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="987" selection-end="987" vertical-scroll-proportion="0.52858686">
+        <state line="20" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/board/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="327" column="0" selection-start="10483" selection-end="10483" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/graphics/GraphicalIDebugViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="0" selection-start="1852" selection-end="1852" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/graphics/GameFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="33" selection-start="3447" selection-end="3447" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/graphics/GraphicalViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="17" selection-start="3840" selection-end="3840" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/action/Attack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="0" selection-start="3285" selection-end="3285" vertical-scroll-proportion="0.33203125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/board/Placeable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="172" column="0" selection-start="5309" selection-end="5309" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Tower/shootingTowers/ShootableTower.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="103" selection-start="1273" selection-end="1273" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Tower/TowerMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="0" selection-start="3934" selection-end="3934" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/graphics/GraphicalInformationViewer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="5" selection-start="2948" selection-end="2948" vertical-scroll-proportion="0.22396417">
+          <folding />
         </state>
       </provider>
     </entry>

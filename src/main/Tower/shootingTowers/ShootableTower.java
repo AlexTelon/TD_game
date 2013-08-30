@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import main.action.GameAction;
+import main.action.shootingAction.ShootingAction;
 import main.board.Board;
 import main.board.IDesign;
 import main.enemy.EnemyWave;
@@ -23,6 +24,10 @@ public class ShootableTower extends Tower {
 
         super(board, allObjects, gameAction, x, y, dimension, colourOfTower, shape, price, difficulty);
 
+    }
+
+    public ShootableTower(Board board, ArrayList<Placeable> allObjects, ShootingAction newShootingAction, int x, int y, Dimension dimension, ColorHandler.Colour colourOfTower, Shapes rectangle, int price, int difficulty) {
+        super(board,allObjects,newShootingAction,x,y,dimension,colourOfTower,rectangle,price,difficulty);
     }
 
     /**
