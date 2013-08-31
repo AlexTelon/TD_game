@@ -30,12 +30,8 @@ public class ShootableTower extends Tower {
         super(board,allObjects,newShootingAction,x,y,dimension,colourOfTower,rectangle,price,difficulty);
     }
 
-    /**
-     * Tick for towers is like all other tick in charge of gamemechanics. It checks if the tower can shoot,
-     * if it can then which enemies it can shoot and then informs the enemy that it has been shoot.
-     */
-    public void tick(EnemyWave allEnemies) { // TODO Move to shootingAction so that we have only data in this class!
-        super.tick(allEnemies);
+
+    public void tick(EnemyWave allEnemies) { // TODO Move to shootingAction so that we have only data in this class(?)
 
         //send action to all objects
         for (Placeable obj : super.getPlacablesWithinRangeOfThisTower()) {
@@ -47,6 +43,7 @@ public class ShootableTower extends Tower {
                 }
             }
         }
+        super.tick(allEnemies);
     }
 
 

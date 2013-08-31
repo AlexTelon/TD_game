@@ -102,6 +102,7 @@ public class Enemy extends Placeable {
 
             for (GameAction currentAction : super.getGameActions()) {
                 currentAction.tick(this);
+                System.out.println("Action");
             }
 
             moveEnemy(enemyPixelMovement(enemyPathing.getCurrentPixelGoal()));
@@ -112,7 +113,6 @@ public class Enemy extends Placeable {
 
         if (getHitpoints() <= 0 && isAlive()) {
             setToDead();
-            board.getPlayer().addGold(this.getGold());
             return;
         }
         if (isActive() && board.isWithinCastlePixelPos(this)) { // if enemy is on castle
@@ -295,7 +295,7 @@ public class Enemy extends Placeable {
         int pointY = point.getY();
 
         // if point is between the leftmost and rightmost pixel of the object in X
-        // and between the highest and lowerst pixel in Y return true.
+        // and between the highest and lowest pixel in Y return true.
         if ((enemyX <= pointX && pointX <= (enemyX+width)) &&
                 (enemyY <= pointY && pointY <= (enemyY+height))) {
             return true;
@@ -310,5 +310,15 @@ public class Enemy extends Placeable {
 
     public Board getBoard() {
         return board;
+    }
+
+    @Override
+    public void addBuffers(GameAction action) {
+      // as of now there are no buffers for enemies.
+    }
+
+    @Override
+    public void removeBuffer(GameAction action) {
+        // as of now there are no buffers for enemies.
     }
 }

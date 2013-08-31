@@ -24,8 +24,10 @@ public class attackHelpClass {
             assert(allObjects != null);
             clearPlacablesWithinRangeOfThisTower();
             for (Placeable obj : allObjects) {
-                if (isObjectWithinRange(obj, referencePoint)) {
-                    addToCurrentPlacablesWithinRangeOfThisTower(obj);
+                if (obj != referencePoint) {
+                    if (isObjectWithinRange(obj, referencePoint)) {
+                        addToCurrentPlacablesWithinRangeOfThisTower(obj);
+                    }
                 }
             }
         }

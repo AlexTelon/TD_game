@@ -405,11 +405,7 @@ public class Board {
         resetBoard(currentTower.getPosition());
         currentTower.delete();
 
-        for (Placeable currentPlaceable : currentTower.getPlacablesWithinRangeOfThisTower()) {
-            for (GameAction action : currentTower.getGameActions()) {
-                currentPlaceable.removeBuffer(action);
-            }
-        }
+
     }
 
     public Player getPlayer() {

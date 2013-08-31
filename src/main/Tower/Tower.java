@@ -6,6 +6,7 @@ import main.enemy.Enemy;
 import main.enemy.EnemyWave;
 import main.board.Placeable;
 import main.graphics.ColorHandler;
+import main.player.Player;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class Tower extends Placeable  {
     }
 
     /*
-        Adds the towers GameAction to all placeables in range.
+
          */
     public void tick(EnemyWave allEnemies) {
         for (GameAction currentAction : super.getGameActions()) {
@@ -61,8 +62,18 @@ public class Tower extends Placeable  {
 
     }
 
+    /**
+     * Delete itself and remove all its effects.
+     */
     public void delete() {
         board.removeFromAllTowers(this);
+        board.removeFromAllTowers(this);
+        for (Placeable currentPlaceable : this.getPlacablesWithinRangeOfThisTower()) {
+            for (GameAction action : this.getGameActions()) {
+                currentPlaceable.removeBuffer(action);
+                currentPlaceable.removeGameAction(action);
+            }
+        }
     }
 
 
@@ -230,4 +241,10 @@ public class Tower extends Placeable  {
     public boolean isImortal() {
         return true;
     }
+
+    public Player getPlayer() {
+        return this.board.getPlayer();
+    }
+
+
 }

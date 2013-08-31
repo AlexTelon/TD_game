@@ -210,5 +210,9 @@ public class Placeable implements IDesign{
     public void setImortality(Boolean imortal) {
         isImortal = imortal;
     }
+
+    public void removeGameAction(GameAction action) {
+        this.actions.remove(action);
+    }
 }
 

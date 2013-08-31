@@ -68,7 +68,7 @@ public class NonShootableTower extends Tower {
 
     @Override
     public void addBuffers(GameAction action) {
-        if (!action.hasAnAttack()) { // do not add attackin actions to the tower
+        if (!action.hasAnAttack()) { // do not add attacking actions to the tower
             super.addBuffers(action);
         }
     }
