@@ -112,12 +112,12 @@ public class Enemy extends Placeable {
 
         if (getHitpoints() <= 0 && isAlive()) {
             setToDead();
-            board.addGold(this.getGold());
+            board.getPlayer().addGold(this.getGold());
             return;
         }
         if (isActive() && board.isWithinCastlePixelPos(this)) { // if enemy is on castle
-            board.subtractLives(dmgToBase);
-            board.subtractGold(gold);
+            board.getPlayer().subtractLives(dmgToBase);
+            board.getPlayer().subtractGold(gold);
             setToDead();
         }
     }

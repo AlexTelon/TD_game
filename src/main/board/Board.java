@@ -1,5 +1,6 @@
 package main.board;
 
+import main.player.Player;
 import main.tower.NonShootableTower.NonShootableTower;
 import main.tower.Tower;
 import main.action.GameAction;
@@ -29,10 +30,9 @@ public class Board {
     private static final int PIXELWIDTH = WIDTH*SQUARE_WIDTH;
     private static final int PIXELHEIGHT = HEIGHT*SQUARE_HEIGHT;
     private static final int CASTLE_SIDE = 2;
-    private int gold = 40;
-    private int lives = 100;
+    private Player player = new Player();
     private boolean gameover = false;
-    private final int difficulty = 1;
+    private final int difficulty = 1; // TODO move to player class
     private double currentTime = 0;
     private double countdownToNextWave = 0;
     private final ArrayList<IBoardListener> boardListener  = new ArrayList<IBoardListener>();
@@ -107,7 +107,7 @@ public class Board {
                     }
 
                 }
-                if (lives <= 0) {
+                if (player.getLives() <= 0) {
                     gameOver();
                 }
                 for ( Tower currentTower : allTowers) {
@@ -287,14 +287,6 @@ public class Board {
         this.gameover = true;
     }
 
-    public int getLives() {
-        return lives;
-    }
-
-    public void subtractLives(int dmg) {
-        lives -= dmg;
-    }
-
     public static int getCastleWidth() {
         return CASTLE_SIDE;
     }
@@ -305,14 +297,6 @@ public class Board {
 
     public Point getCastlePos() {
         return castle.getPosition();
-    }
-
-    public int getGold() {
-        return gold;
-    }
-
-    public void addGold(int gold) {
-        this.gold += gold;
     }
 
     public void resetBoard(Point point) {
@@ -330,12 +314,6 @@ public class Board {
 
     public static int getWidth() {
         return WIDTH;
-    }
-
-    public void subtractGold(int goldloss) {
-        gold -= goldloss;
-        if ( gold < 0)
-            gold = 0;
     }
 
     public int getDifficulty() {
@@ -423,7 +401,7 @@ public class Board {
      * @param currentTower
      */
     public void sellTower(Tower currentTower) {
-        addGold(currentTower.getPrice());
+        player.addGold(currentTower.getPrice());
         resetBoard(currentTower.getPosition());
         currentTower.delete();
 
@@ -434,4 +412,7 @@ public class Board {
         }
     }
 
+    public Player getPlayer() {
+        return player;
+    }
 }

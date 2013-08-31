@@ -1,4 +1,4 @@
-package main.Tower;
+package main.tower;
 
 import main.action.GameAction;
 import main.board.Board;
@@ -20,12 +20,12 @@ import java.util.ArrayList;
  */
 
 public class Tower extends Placeable  {
-    private final main.Tower.attackHelpClass attackHelpClass = new main.Tower.attackHelpClass();
+    private final main.tower.attackHelpClass attackHelpClass = new main.tower.attackHelpClass();
     protected LevelOfTower levelOfTower;
     protected int hasGainedLevels = 0;
     private int price;
     private ArrayList<Placeable> lastTargets = new ArrayList<Placeable>();
-    private ArrayList<Placeable>  PlacablesWithinRangeOfThisTower = new ArrayList<Placeable>();
+    private ArrayList<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
     private ArrayList<Placeable> allPlaceables;
     private double range = 200.0;
     private int kills = 0;
@@ -50,27 +50,15 @@ public class Tower extends Placeable  {
         Adds the towers GameAction to all placeables in range.
          */
     public void tick(EnemyWave allEnemies) {
-//<<<<<<< Updated upstream
         for (GameAction currentAction : super.getGameActions()) {
             currentAction.tick(this);
         }
-        //       recalcLevel();
-//        attackHelpClass.findObjectsWithinRange(attackHelpClass.getAllObjects());
-//=======
+
         updateAllObjects();
         recalcLevel();
 
-        PlacablesWithinRangeOfThisTower = attackHelpClass.findObjectsWithinRange(allPlaceables, this);
-//>>>>>>> Stashed changes
+        placablesWithinRangeOfThisTower = attackHelpClass.findObjectsWithinRange(allPlaceables, this);
 
-        //send action to all objects
-        for (Placeable obj : PlacablesWithinRangeOfThisTower) {
-            if (obj != this) {
-              for (GameAction currentAction : super.getGameActions()) {
-                    obj.addGameActions(currentAction);
-                }
-            }
-        }
     }
 
     public void delete() {
@@ -79,7 +67,7 @@ public class Tower extends Placeable  {
 
 
     private void updateAllObjects() {
-        allPlaceables = new ArrayList<Placeable>(); // GS is going to have a fun time becouse of this... :(
+        allPlaceables = new ArrayList<Placeable>(); // GC is going to have a fun time because of this... :(
         allPlaceables.addAll(board.getAllObjects());
         for (Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             allPlaceables.add(currentEnemy);
@@ -108,7 +96,7 @@ public class Tower extends Placeable  {
 
 
     /*
-    Things regarding PlacablesWithinRangeOfThisTower
+    Things regarding placablesWithinRangeOfThisTower
      */
     public void addToCurrentPlacablesWithinRangeOfThisTower(Placeable obj) {
         attackHelpClass.addToCurrentPlacablesWithinRangeOfThisTower(obj);
@@ -127,15 +115,9 @@ public class Tower extends Placeable  {
         return attackHelpClass.getPlacablesWithinRangeOfThisTower();
     }
 
-    //<<<<<<< Updated upstream
     public ArrayList<Placeable> getAllObjects() {
         return attackHelpClass.getAllObjects();
     }
-    //=======
- //   public ArrayList<Placeable> getAllPlaceables() {
-  //      return allPlaceables;
-//>>>>>>> Stashed changes
-  //  }
 
     public int getKills() {
         return kills;

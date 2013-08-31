@@ -77,9 +77,12 @@ public class ShootingAction extends GameAction {
 
 
     private void shoot(Enemy currentEnemy) {
+
         currentEnemy.attacked(attack.getDmg());
         attack.addEnemiesTowerHasShoot();
+
         if (!currentEnemy.isAlive()) {
+
             tower.addKills(1);
             tower.getLevelOfTower().addExperience(currentEnemy.getExperienceToTowers());
         }

@@ -1,4 +1,4 @@
-package main.Tower.shootingTowers;
+package main.tower.shootingTowers;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import main.board.Board;
 import main.board.IDesign;
 import main.enemy.EnemyWave;
 import main.board.Placeable;
-import main.Tower.Tower;
+import main.tower.Tower;
 import main.graphics.ColorHandler;
 
 import static java.lang.Math.abs;
@@ -35,8 +35,19 @@ public class ShootableTower extends Tower {
      * if it can then which enemies it can shoot and then informs the enemy that it has been shoot.
      */
     public void tick(EnemyWave allEnemies) { // TODO Move to shootingAction so that we have only data in this class!
-    super.tick(allEnemies);
+        super.tick(allEnemies);
+
+        //send action to all objects
+        for (Placeable obj : super.getPlacablesWithinRangeOfThisTower()) {
+            if (obj != this) {
+                for (GameAction currentAction : super.getGameActions()) {
+                    if (currentAction.hasAnAttack()) {
+                        obj.addGameActions(currentAction);
+                    }
+                }
+            }
         }
+    }
 
 
     @Override

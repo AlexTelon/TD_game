@@ -1,4 +1,4 @@
-package main.Tower;
+package main.tower;
 
 /**
  * Created with IntelliJ IDEA.

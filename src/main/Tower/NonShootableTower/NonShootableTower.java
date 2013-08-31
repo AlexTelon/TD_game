@@ -1,10 +1,11 @@
-package main.Tower.NonShootableTower;
+package main.tower.NonShootableTower;
 
-import main.Tower.Tower;
+import main.tower.Tower;
 import main.action.GameAction;
 import main.action.GameActionFactory;
 import main.board.Board;
 import main.board.Placeable;
+import main.enemy.EnemyWave;
 import main.graphics.ColorHandler;
 
 import java.awt.*;
@@ -50,11 +51,28 @@ public class NonShootableTower extends Tower {
     }
 
     @Override
+    public void tick(EnemyWave allEnemies) {
+        super.tick(allEnemies);
+
+        //send action to all objects
+        for (Placeable obj : super.getPlacablesWithinRangeOfThisTower()) {
+            if (obj != this) {
+                for (GameAction currentAction : super.getGameActions()) {
+                    if (!currentAction.hasAnAttack()) {
+                        obj.addGameActions(currentAction);
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
     public void addBuffers(GameAction action) {
         if (!action.hasAnAttack()) { // do not add attackin actions to the tower
             super.addBuffers(action);
         }
     }
+
 
     /**
      * Non shootable towers can have no actions.
@@ -66,7 +84,7 @@ public class NonShootableTower extends Tower {
 
     @Override
     public void delete() {
-     super.delete();
+        super.delete();
         board.removeFromNonShootableTower(this);
     }
 

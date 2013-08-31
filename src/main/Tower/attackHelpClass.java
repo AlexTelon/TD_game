@@ -1,4 +1,4 @@
-package main.Tower;
+package main.tower;
 
 import main.board.Placeable;
 import main.enemy.Enemy;
@@ -6,7 +6,7 @@ import main.enemy.Enemy;
 import java.util.ArrayList;
 
 public class attackHelpClass {
-    ArrayList<Placeable> PlacablesWithinRangeOfThisTower = new ArrayList<Placeable>();
+    ArrayList<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
     ArrayList<Placeable> allObjects;
     double range = 200.0;
 
@@ -22,13 +22,14 @@ public class attackHelpClass {
     public ArrayList<Placeable> findObjectsWithinRange(ArrayList<Placeable> allObjects, Placeable referencePoint) {
         if (!allObjects.isEmpty()) {
             assert(allObjects != null);
+            clearPlacablesWithinRangeOfThisTower();
             for (Placeable obj : allObjects) {
                 if (isObjectWithinRange(obj, referencePoint)) {
                     addToCurrentPlacablesWithinRangeOfThisTower(obj);
                 }
             }
         }
-        return PlacablesWithinRangeOfThisTower;
+        return placablesWithinRangeOfThisTower;
     }
 
     /**
@@ -43,21 +44,25 @@ public class attackHelpClass {
         }
         return false;
     }/*
-    Things regarding PlacablesWithinRangeOfThisTower
+    Things regarding placablesWithinRangeOfThisTower
      */
 
     public void addToCurrentPlacablesWithinRangeOfThisTower(Placeable obj) {
-        if (!PlacablesWithinRangeOfThisTower.contains(obj)) {
-            this.PlacablesWithinRangeOfThisTower.add(obj);
+        if (!placablesWithinRangeOfThisTower.contains(obj)) {
+            this.placablesWithinRangeOfThisTower.add(obj);
         }
     }
 
     public void removeFromCurrentPlacablesWithinRangeOfThisTower(Enemy currentEnemy) {
-        this.PlacablesWithinRangeOfThisTower.remove(currentEnemy);
+        this.placablesWithinRangeOfThisTower.remove(currentEnemy);
+    }
+
+    public void clearPlacablesWithinRangeOfThisTower() {
+        this.placablesWithinRangeOfThisTower.clear();
     }
 
     public ArrayList<Placeable> getPlacablesWithinRangeOfThisTower() {
-        return PlacablesWithinRangeOfThisTower;
+        return placablesWithinRangeOfThisTower;
     }
 
     public ArrayList<Placeable> getAllObjects() {

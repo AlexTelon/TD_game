@@ -112,9 +112,9 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
             tmpX += smallSpacing;
         }
         tmpY += smallSpacing;
-        g2.drawString("Gold: "+ stringConverter(board.getGold()), 10, tmpY);
+        g2.drawString("Gold: "+ stringConverter(board.getPlayer().getGold()), 10, tmpY);
         tmpY += smallSpacing;
-        g2.drawString("Lives: "+ stringConverter(board.getLives()), 10, tmpY);
+        g2.drawString("Lives: "+ stringConverter(board.getPlayer().getLives()), 10, tmpY);
 
 
     }

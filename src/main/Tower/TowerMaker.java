@@ -1,7 +1,7 @@
-package main.Tower;
+package main.tower;
 
-import main.Tower.NonShootableTower.NonShootableTower;
-import main.Tower.shootingTowers.ShootableTower;
+import main.tower.NonShootableTower.NonShootableTower;
+import main.tower.shootingTowers.ShootableTower;
 import main.action.Attack;
 import main.action.auraAction.DmgBuffAction;
 import main.action.shootingAction.ShootingAction;
@@ -31,15 +31,15 @@ public class TowerMaker {
                 int dmg = 5;
                 int range = 100;
                 int rOF = 1;
-                int enemiesTowerCanShootAtTheSameTime = 1;
+                int enemiesTowerCanShootAtTheSameTime = 3;
                 ColorHandler.Colour colour = ColorHandler.Colour.ORANGE;
                 ColorHandler.Colour colourOfShoots = ColorHandler.Colour.BLACK;
                 Dimension dimension = new Dimension(1,1);
-                if (board.isValidPositions(position, priority, dimension) && board.getGold() >= price) {
+                if (board.isValidPositions(position, priority, dimension) && board.getPlayer().getGold() >= price) {
                     createTower(board, position, colour, colourOfShoots, dmg, range, rOF,
                             enemiesTowerCanShootAtTheSameTime, price,
                             dimension);
-                    board.subtractGold(price);
+                    board.getPlayer().subtractGold(price);
                 } else
                     System.out.println("Not enough gold or invalid position");
                 return;
@@ -52,7 +52,7 @@ public class TowerMaker {
                 int extraDMG = 5;
                 int extraRange = 0;
 
-                if (board.isValidPositions(position, priority, dimension) && board.getGold() >= price) {
+                if (board.isValidPositions(position, priority, dimension) && board.getPlayer().getGold() >= price) {
 
                     // TODO fixa här, Gör en gameAction som du skickar in nedan. Sedan kolla upp vad gameActionFactoryn
                     // gör egentligen och om inte extraDMG och extraRange blir dubbel info då de kmr finnas
@@ -63,7 +63,7 @@ public class TowerMaker {
 
                     board.addObject(NewTower);
 
-                    board.subtractGold(price);
+                    board.getPlayer().subtractGold(price);
                 } else
                     System.out.println("Not enough gold or invalid position");
                 return;
