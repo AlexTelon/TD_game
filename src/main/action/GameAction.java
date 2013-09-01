@@ -18,9 +18,6 @@ public class GameAction implements IGameActions {
     }
 
     public void tick(Tower tower) {
-   /*     if (obj instanceof ShootableTower) {
-            ((ShootableTower) obj).getAttack().addBuffers(this); // DÅLIGT MEN NÅT SÅNTHÄR SKA DE VA
-        } */
         tower.addBuffers(this);
     }
 
@@ -32,7 +29,6 @@ public class GameAction implements IGameActions {
         this.extraDmg = extraDmg;
         this.extraRange = extraRange;
     }
-
 
     public int getExtraDmg() {
         return extraDmg;

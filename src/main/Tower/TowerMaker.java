@@ -62,7 +62,6 @@ public class TowerMaker {
                             position.getX(), position.getY(), dimension, ColorHandler.Colour.BLUE, IDesign.Shapes.Rectangle, range , price, extraDMG, extraRange);
 
                     board.addObject(NewTower);
-
                     board.getPlayer().subtractGold(price);
                 } else
                     System.out.println("Not enough gold or invalid position");

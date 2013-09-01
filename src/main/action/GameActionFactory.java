@@ -11,22 +11,16 @@ public class GameActionFactory implements IGameActionFactory {
 
     @Override
     public GameAction createGameAction(int extraDmg, double extraRange) {
-if (extraDmg != 0 && extraRange != 0) {
-    return new GameAction(extraDmg, extraRange);
-
-}
+        if (extraDmg != 0 && extraRange != 0) {
+            return new GameAction(extraDmg, extraRange);
+        }
         if (extraDmg != 0) {
-
-           DmgBuffAction dmgBuffAction = new DmgBuffAction(extraDmg);
-           return dmgBuffAction;
-
+            return new DmgBuffAction(extraDmg);
         }
         if (extraRange != 0) {
-            RangeBuffAction rangeBuffAction = new RangeBuffAction(extraRange);
-            return rangeBuffAction;
-
+            return new RangeBuffAction(extraRange);
         }
-        return null; // TODO this could cause error, change to "return new GameAction(extraDmg, extraRange);" ?
+        return null; // TODO this could cause errors, change to "return new GameAction(extraDmg, extraRange);" ?
     }
 
 }
