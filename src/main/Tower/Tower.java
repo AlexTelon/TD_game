@@ -27,7 +27,7 @@ public class Tower extends Placeable  {
     private int price;
     private ArrayList<Placeable> lastTargets = new ArrayList<Placeable>();
     private ArrayList<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
-    private ArrayList<Placeable> allPlaceables;
+    private ArrayList<Placeable> allPlaceables = new ArrayList<Placeable>();
     private double range = 200.0;
     private int kills = 0;
     private Board board;
