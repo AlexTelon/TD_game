@@ -19,7 +19,6 @@ public class AttackHelpClass
      */
     public List<Placeable> findObjectsWithinRange(List<Placeable> allObjects, Placeable referencePoint) {
         if (!allObjects.isEmpty()) {
-            assert(allObjects != null);
             clearPlaceablesWithinRangeOfThisTower();
             for (Placeable obj : allObjects) {
                 if (obj != referencePoint) {

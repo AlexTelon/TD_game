@@ -32,7 +32,7 @@ public class Board {
     private static final int CASTLE_SIDE = 2;
     private Player player = new Player();
     private boolean gameover = false;
-    private final int difficulty = 1; // TODO move to player class
+    private static final int difficulty = 1; // TODO move to player class
     private double currentTime = 0;
     private double countdownToNextWave = 0;
     private final List<IBoardListener> boardListener  = new ArrayList<IBoardListener>();
@@ -50,7 +50,7 @@ public class Board {
             new Dimension(CASTLE_SIDE,
                     CASTLE_SIDE), Colour.RED, Shapes.RECTANGLE, 8); //only enemies are above this
 
-    private final Color backgroundColor = Color.GREEN;
+    private static final Color backgroundColor = Color.GREEN;
     private double frameRate = 50;
     private EnemyWaves enemyWaves = new EnemyWaves(this, difficulty, castle.getPosition(), new Point(0, getHeight()/2));
     private EnemyWave allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();

@@ -209,14 +209,6 @@ public class Placeable implements IDesign{
         return actions;
     }
 
-    /**
-     * Calculates if a object is within range of the tower.
-     *
-     * @param tower@return true if it is in range.
-     */
-    public boolean isObjectWithinRange(Tower tower) {
-        return tower.isObjectWithinRange(tower);
-    }
 
     /**
      * As default placables are NOT imortal, towers for example might be.
