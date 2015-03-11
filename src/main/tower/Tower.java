@@ -22,7 +22,7 @@ import java.util.List;
  */
 
 public class Tower extends Placeable  {
-    private final main.tower.attackHelpClass attackHelpClass = new main.tower.attackHelpClass();
+    private final AttackHelpClass attackHelpClass = new AttackHelpClass();
     protected LevelOfTower levelOfTower;
     protected int hasGainedLevels = 0;
     private int price;

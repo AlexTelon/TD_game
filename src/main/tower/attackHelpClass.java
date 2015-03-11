@@ -5,9 +5,10 @@ import main.enemy.Enemy;
 import java.util.List;
 import java.util.ArrayList;
 
-public class attackHelpClass {
+public class AttackHelpClass
+{
     List<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
-    ArrayList<Placeable> allObjects;
+    ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
     double range = 200.0;
 
     /**

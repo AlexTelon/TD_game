@@ -36,9 +36,8 @@ public class Board {
     private double currentTime = 0;
     private double countdownToNextWave = 0;
     private final List<IBoardListener> boardListener  = new ArrayList<IBoardListener>();
-    private EnemyWaves enemyWaves;
 
-    private EnemyWave allEnemiesInCurrentWave;
+
     private final List<Tower> allTowers = new ArrayList<Tower>();
     private List<NonShootableTower> allNonShootableTowers = new ArrayList<NonShootableTower>();
     private final ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
@@ -53,13 +52,13 @@ public class Board {
 
     private final Color backgroundColor = Color.GREEN;
     private double frameRate = 50;
+    private EnemyWaves enemyWaves = new EnemyWaves(this, difficulty, castle.getPosition(), new Point(0, getHeight()/2));
+    private EnemyWave allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();
 
 
 
     public Board(double framerate) {
         setFramerate(framerate);
-        enemyWaves = new EnemyWaves(this, difficulty, castle.getPosition(), new Point(0, getHeight()/2));
-        allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();
 
         placeEnemyPathOnBoard();
         placeObjectOnBoard(castle);
