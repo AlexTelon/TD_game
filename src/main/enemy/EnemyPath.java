@@ -86,8 +86,8 @@ public class EnemyPath {
                     currentYPos += changeInY; // update current YPos
                 }
 
-		Point PathPoint = new Point(currentXPos, currentYPos);
-		path.add(PathPoint);
+		Point pathPoint = new Point(currentXPos, currentYPos);
+		path.add(pathPoint);
 
             }
             assert (goal.isEmpty());

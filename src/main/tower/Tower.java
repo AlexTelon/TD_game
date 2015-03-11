@@ -35,7 +35,7 @@ public class Tower extends Placeable  {
     private Enemy lastTarget;
     private Enemy currentTarget;
     public enum TowerInformation {
-        DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, extraDMG
+        DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, EXTRA_DMG
     }
 
     public Tower(Board board, List<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, Colour color,
@@ -110,8 +110,8 @@ public class Tower extends Placeable  {
     /*
     Things regarding placablesWithinRangeOfThisTower
      */
-    public void addToCurrentPlacablesWithinRangeOfThisTower(Placeable obj) {
-        attackHelpClass.addToCurrentPlacablesWithinRangeOfThisTower(obj);
+    public void addToCurrentPlaceablesWithinRangeOfThisTower(Placeable obj) {
+        attackHelpClass.addToCurrentPlaceablesWithinRangeOfThisTower(obj);
     }
 
 
@@ -119,12 +119,12 @@ public class Tower extends Placeable  {
         this.lastTargets.add(currentTarget);
     }
 
-    public void removeFromCurrentPlacablesWithinRangeOfThisTower(Enemy currentEnemy) {
-        attackHelpClass.removeFromCurrentPlacablesWithinRangeOfThisTower(currentEnemy);
+    public void removeFromCurrentPlaceablesWithinRangeOfThisTower(Enemy currentEnemy) {
+        attackHelpClass.removeFromCurrentPlaceablesWithinRangeOfThisTower(currentEnemy);
     }
 
     public List<Placeable> getPlacablesWithinRangeOfThisTower() {
-        return attackHelpClass.getPlacablesWithinRangeOfThisTower();
+        return attackHelpClass.getPlaceablesWithinRangeOfThisTower();
     }
 
     public ArrayList<Placeable> getAllObjects() {
@@ -152,7 +152,7 @@ public class Tower extends Placeable  {
     }
 
     public boolean hasTarget() {
-        if (attackHelpClass.getPlacablesWithinRangeOfThisTower().isEmpty()) {
+        if (attackHelpClass.getPlaceablesWithinRangeOfThisTower().isEmpty()) {
             return false;
         }
         return true;
@@ -195,7 +195,7 @@ public class Tower extends Placeable  {
                     case DPS:
                         counter += currentGameAction.getAttack().getDPS();
                         break;
-                    case extraDMG:
+                    case EXTRA_DMG:
                         counter += currentGameAction.getExtraDmg();
                         break;
 

@@ -1,10 +1,10 @@
-package main.tower.shootingTowers;
+package main.tower.shootingtowers;
 
 import java.awt.*;
 import java.util.ArrayList;
 
 import main.action.GameAction;
-import main.action.shootingAction.ShootingAction;
+import main.action.shootingaction.ShootingAction;
 import main.board.Board;
 import main.enemy.EnemyWave;
 import main.board.Placeable;

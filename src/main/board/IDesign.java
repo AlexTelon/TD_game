@@ -15,7 +15,9 @@ public interface IDesign {
      * Enum class used to have a form for each object
      * <br></br> OBS not implemented well yet!
      */
-    public enum Shapes {Rectangle, Circle, Triangle}
+    public enum Shapes {
+	RECTANGLE, CIRCLE, TRIANGLE
+    }
 
     /**
      * Gives dimensions of the object in terms of the grid.

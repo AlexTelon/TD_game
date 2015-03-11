@@ -27,13 +27,13 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
     }
 
     public Dimension getPreferredSize() {
-        return new Dimension(PreferredWidth(),PreferredHeight());
+        return new Dimension(preferredWidth(), preferredHeight());
     }
 
-    private int PreferredHeight() {
+    private int preferredHeight() {
         return Board.getSquareHeight() * Board.getHeight();
     }
-    private int PreferredWidth() {
+    private int preferredWidth() {
         return Board.getSquareWidth() * Board.getWidth();
     }
 

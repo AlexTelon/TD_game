@@ -20,11 +20,11 @@ public class AttackHelpClass
     public List<Placeable> findObjectsWithinRange(List<Placeable> allObjects, Placeable referencePoint) {
         if (!allObjects.isEmpty()) {
             assert(allObjects != null);
-            clearPlacablesWithinRangeOfThisTower();
+            clearPlaceablesWithinRangeOfThisTower();
             for (Placeable obj : allObjects) {
                 if (obj != referencePoint) {
                     if (isObjectWithinRange(obj, referencePoint)) {
-                        addToCurrentPlacablesWithinRangeOfThisTower(obj);
+                        addToCurrentPlaceablesWithinRangeOfThisTower(obj);
                     }
                 }
             }
@@ -47,21 +47,21 @@ public class AttackHelpClass
     Things regarding placablesWithinRangeOfThisTower
      */
 
-    public void addToCurrentPlacablesWithinRangeOfThisTower(Placeable obj) {
+    public void addToCurrentPlaceablesWithinRangeOfThisTower(Placeable obj) {
         if (!placablesWithinRangeOfThisTower.contains(obj)) {
             this.placablesWithinRangeOfThisTower.add(obj);
         }
     }
 
-    public void removeFromCurrentPlacablesWithinRangeOfThisTower(Enemy currentEnemy) {
+    public void removeFromCurrentPlaceablesWithinRangeOfThisTower(Enemy currentEnemy) {
         this.placablesWithinRangeOfThisTower.remove(currentEnemy);
     }
 
-    public void clearPlacablesWithinRangeOfThisTower() {
+    public void clearPlaceablesWithinRangeOfThisTower() {
         this.placablesWithinRangeOfThisTower.clear();
     }
 
-    public List<Placeable> getPlacablesWithinRangeOfThisTower() {
+    public List<Placeable> getPlaceablesWithinRangeOfThisTower() {
         return placablesWithinRangeOfThisTower;
     }
 

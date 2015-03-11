@@ -171,7 +171,7 @@ public class Enemy extends Placeable {
         //     makeDeadBody();
 
         for( Tower currentTower : board.getAllTowers()) {
-            currentTower.removeFromCurrentPlacablesWithinRangeOfThisTower(this);
+            currentTower.removeFromCurrentPlaceablesWithinRangeOfThisTower(this);
         }
 
         setActive(false);
@@ -240,11 +240,11 @@ public class Enemy extends Placeable {
 
     /**
      * remember to add a kill in the caller!
-     * @param Dmg
+     * @param dmg
      * @return
      */
-    public void attacked(int Dmg) {
-        subtractHitpoints(Dmg);
+    public void attacked(int dmg) {
+        subtractHitpoints(dmg);
         if (getHitpoints() <= 0) {
             setToDead();
             // tower.addKills(1);

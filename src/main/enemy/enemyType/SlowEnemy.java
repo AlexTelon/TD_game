@@ -1,4 +1,4 @@
-package main.enemy.enemyType;
+package main.enemy.enemytype;
 
 import main.board.Board;
 import main.enemy.Enemy;

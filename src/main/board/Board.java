@@ -1,7 +1,7 @@
 package main.board;
 
 import main.player.Player;
-import main.tower.NonShootableTower.NonShootableTower;
+import main.tower.nonshootabletower.NonShootableTower;
 import main.tower.Tower;
 import main.board.IDesign.Shapes;
 import main.enemy.Enemy;
@@ -48,7 +48,7 @@ public class Board {
     // Things that are constant and placed on the grid from the getgo.
     private final Placeable castle = new Placeable(WIDTH-CASTLE_SIDE, getHeight()/2,
             new Dimension(CASTLE_SIDE,
-                    CASTLE_SIDE), Colour.RED, Shapes.Rectangle, 8); //only enemies are above this
+                    CASTLE_SIDE), Colour.RED, Shapes.RECTANGLE, 8); //only enemies are above this
 
     private final Color backgroundColor = Color.GREEN;
     private double frameRate = 50;

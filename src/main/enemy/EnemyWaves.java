@@ -1,10 +1,10 @@
 package main.enemy;
 
 import main.board.Board;
-import main.enemy.enemyType.DefaultEnemy;
-import main.enemy.enemyType.FastEnemy;
-import main.enemy.enemyType.SlowEnemy;
-import main.enemy.enemyType.StrongEnemy;
+import main.enemy.enemytype.DefaultEnemy;
+import main.enemy.enemytype.FastEnemy;
+import main.enemy.enemytype.SlowEnemy;
+import main.enemy.enemytype.StrongEnemy;
 import main.position.Point;
 
 import java.util.ArrayList;

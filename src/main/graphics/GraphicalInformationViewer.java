@@ -1,6 +1,6 @@
 package main.graphics;
 
-import main.tower.shootingTowers.ShootableTower;
+import main.tower.shootingtowers.ShootableTower;
 import main.tower.Tower;
 import main.action.GameAction;
 import main.board.Board;
@@ -39,13 +39,13 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     }
 
     public Dimension getPreferredSize() {
-        return new Dimension(PreferredWidth(),PreferredHeight());
+        return new Dimension(preferredWidth(), preferredHeight());
     }
 
-    private int PreferredHeight() {
+    private int preferredHeight() {
         return Board.getSquareHeight() * Board.getHeight();
     }
-    private int PreferredWidth() {
+    private int preferredWidth() {
         return 300;
     }
 
@@ -159,7 +159,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
 
 	tmpY += smallSpacing;
         g2.drawString("DPS  " + tower.getTowerInformation(Tower.TowerInformation.DPS) + "    Dmg  " + stringConverter(tower
-                .getTowerInformation(Tower.TowerInformation.DMG)) + " ( " +"+ " + stringConverter(tower.getTowerInformation(Tower.TowerInformation.extraDMG)) + ")" , 0, tmpY);
+                .getTowerInformation(Tower.TowerInformation.DMG)) + " ( " +"+ " + stringConverter(tower.getTowerInformation(Tower.TowerInformation.EXTRA_DMG)) + ")" , 0, tmpY);
 
     }
 

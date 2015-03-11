@@ -26,7 +26,7 @@ public class Placeable implements IDesign{
     private Dimension dimension = new Dimension(1,1);
     private ColorHandler colorHandler = ColorHandler.getInstance();
     private Colour color = Colour.WHITE;
-    private Shapes shapes = Shapes.Rectangle;
+    private Shapes shapes = Shapes.RECTANGLE;
     private int priority = 1;
     private Point pixelPosition;
     private String nameText = "Placeholder";
@@ -56,7 +56,7 @@ public class Placeable implements IDesign{
     }
 
     public Placeable(int x, int y, int hitpoints, Colour color, int priority) {
-        this(x, y, new Dimension(1,1), color, Shapes.Rectangle, priority);
+        this(x, y, new Dimension(1,1), color, Shapes.RECTANGLE, priority);
         this.hitpoints = hitpoints;
     }
 

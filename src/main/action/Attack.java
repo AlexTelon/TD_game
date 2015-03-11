@@ -90,12 +90,12 @@ public class Attack {
     }
 
     public int getBufferDmg() {
-        int DmgFromBuffers = 0;
+        int dmgFromBuffers = 0;
         for (GameAction action: getBuffers()) {
-            DmgFromBuffers += action.getExtraDmg();
+            dmgFromBuffers += action.getExtraDmg();
         }
-        extraDmg = DmgFromBuffers;
-        return DmgFromBuffers;
+        extraDmg = dmgFromBuffers;
+        return dmgFromBuffers;
     }
 
     public int getExtraDmg() {

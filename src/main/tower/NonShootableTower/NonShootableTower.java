@@ -1,4 +1,4 @@
-package main.tower.NonShootableTower;
+package main.tower.nonshootabletower;
 
 import main.tower.Tower;
 import main.action.GameAction;
@@ -21,7 +21,7 @@ public class NonShootableTower extends Tower {
     private int range = 200;
     private Colour colourOfTower = Colour.DARKBLUE;
     private Dimension dimension = new Dimension(1,1);
-    private Shapes shape = Shapes.Rectangle;
+    private Shapes shape = Shapes.RECTANGLE;
     private int extraRange = 0;
     private int extraDmg = 0;
     private Board board;

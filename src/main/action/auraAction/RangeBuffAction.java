@@ -1,6 +1,4 @@
-package main.action.auraAction;
-
-import main.board.Placeable;
+package main.action.auraaction;
 
 /**
  * User: alete471 Date: 2012-10-08 Time: 14:27
