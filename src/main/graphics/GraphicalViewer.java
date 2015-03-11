@@ -7,7 +7,6 @@ import main.position.Point;
 
 import javax.swing.*;
 import java.awt.*;
-import java.lang.Iterable;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,12 +31,10 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
     }
 
     private int PreferredHeight() {
-        int height = Board.getSquareHeight() * Board.getHeight();
-        return height;
+        return Board.getSquareHeight() * Board.getHeight();
     }
     private int PreferredWidth() {
-        int width = Board.getSquareWidth() * Board.getWidth();
-        return width;
+        return Board.getSquareWidth() * Board.getWidth();
     }
 
     /**

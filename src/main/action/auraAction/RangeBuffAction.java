@@ -11,10 +11,4 @@ public class RangeBuffAction extends AuraAction {
     public RangeBuffAction(double extraRange) {
         super(0, extraRange);
       }
-
-    @Override
-    public void tick(Placeable obj) {
-        super.tick(obj);
-    }
-
 }

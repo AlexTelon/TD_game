@@ -10,7 +10,6 @@ import java.awt.*;
 import java.util.ArrayList;
 import main.position.Point;
 import java.util.List;
-import java.lang.Iterable;
 
 import static java.lang.StrictMath.round;
 
@@ -80,6 +79,22 @@ public class Placeable implements IDesign{
 
     public int getPriority() {
         return priority;
+    }
+
+    @Override public int hashCode() {
+	int result = position != null ? position.hashCode() : 0;
+	result = 31 * result + (dimension != null ? dimension.hashCode() : 0);
+	result = 31 * result + (colorHandler != null ? colorHandler.hashCode() : 0);
+	result = 31 * result + (color != null ? color.hashCode() : 0);
+	result = 31 * result + (shapes != null ? shapes.hashCode() : 0);
+	result = 31 * result + priority;
+	result = 31 * result + (pixelPosition != null ? pixelPosition.hashCode() : 0);
+	result = 31 * result + (nameText != null ? nameText.hashCode() : 0);
+	result = 31 * result + hitpoints;
+	result = 31 * result + (isImortal != null ? isImortal.hashCode() : 0);
+	result = 31 * result + (buffers != null ? buffers.hashCode() : 0);
+	result = 31 * result + (actions != null ? actions.hashCode() : 0);
+	return result;
     }
 
     @Override

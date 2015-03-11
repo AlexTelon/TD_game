@@ -234,11 +234,6 @@ public class Tower extends Placeable  {
     }
 
     @Override
-    public void removeBuffer(GameAction action) {
-        super.removeBuffer(action);
-    }
-
-    @Override
     public boolean isImortal() {
         return true;
     }

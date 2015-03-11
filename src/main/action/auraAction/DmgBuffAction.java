@@ -14,11 +14,6 @@ public class DmgBuffAction extends AuraAction {
      }
 
     @Override
-    public void tick(Placeable obj) {
-        super.tick(obj);
-    }
-
-    @Override
     public void tick(Tower tower) {
         tower.addBuffers(this);
     }

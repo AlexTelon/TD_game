@@ -43,12 +43,10 @@ public class EnemyPath {
     }
 
     /**
-     * Gets the position for the next goalPoint for enemies
-     * @return
+     * Updates the position for the next goalPoint for enemies
      */
-    public Point getNextGoal() {
+    public void updateGoal() {
         currentGoal++;
-        return mainPath.get(currentGoal-1);
     }
 
     public Point getCurrentPixelGoal() {
@@ -67,20 +65,18 @@ public class EnemyPath {
      */
     private void setPath(Point start) {
         int counter = 0;
-        Point PathPoint;
-        path.add(start);
+	path.add(start);
         Point goal = mainPath.get(counter);
         counter++;
 
         int currentXPos = start.getX();
         int currentYPos = start.getY();
-        int deltaX;
-        int deltaY;
+
 
         while(true) {
             while (goal.getX() != currentXPos || goal.getY() != currentYPos) {
-                deltaX = goal.getX()-currentXPos;
-                deltaY = goal.getY()-currentYPos;
+		int deltaX = goal.getX() - currentXPos;
+		int deltaY = goal.getY()-currentYPos;
 
                 if (deltaX != 0) {
                     int changeInX = deltaX/abs(deltaX); // +/- 1
@@ -90,8 +86,8 @@ public class EnemyPath {
                     currentYPos += changeInY; // update current YPos
                 }
 
-                PathPoint = new Point(currentXPos, currentYPos);
-                path.add(PathPoint);
+		Point PathPoint = new Point(currentXPos, currentYPos);
+		path.add(PathPoint);
 
             }
             assert (goal.isEmpty());

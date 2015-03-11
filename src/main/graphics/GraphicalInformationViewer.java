@@ -43,12 +43,10 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     }
 
     private int PreferredHeight() {
-        int height = Board.getSquareHeight() * Board.getHeight();
-        return height;
+        return Board.getSquareHeight() * Board.getHeight();
     }
     private int PreferredWidth() {
-        int width = 300;
-        return width;
+        return 300;
     }
 
     public void paintComponent(Graphics g) {

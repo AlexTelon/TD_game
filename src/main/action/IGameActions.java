@@ -1,6 +1,5 @@
 package main.action;
 
-import main.board.Placeable;
 
 /**
  * User: alete471 Date: 2012-10-18 Time: 15:14

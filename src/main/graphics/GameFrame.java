@@ -24,7 +24,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
     private final JMenu menu = new JMenu("Menu");
     private Board board;
     private GraphicalViewer graphicalViewer;
-    public GraphicalInformationViewer graphicalInformationViewer;
+    private GraphicalInformationViewer graphicalInformationViewer;
     private GraphicalIDebugViewer graphicalIDebugViewer;
     private Point lastClickedPosition;
     private TowerMaker towerFactory = new TowerMaker();
@@ -98,22 +98,18 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        return;
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        return;
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        return;
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        return;
     }
 
     Action buildTowerTypeAAction = new AbstractAction("Build tower A") {

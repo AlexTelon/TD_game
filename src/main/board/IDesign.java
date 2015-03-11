@@ -1,7 +1,6 @@
 package main.board;
 
 import java.awt.*;
-import java.security.PublicKey;
 
 /**
  * Created with IntelliJ IDEA.

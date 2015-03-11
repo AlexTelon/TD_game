@@ -4,7 +4,6 @@ import main.player.Player;
 import main.tower.NonShootableTower.NonShootableTower;
 import main.tower.Tower;
 import main.board.IDesign.Shapes;
-import main.action.GameAction;
 import main.enemy.Enemy;
 import main.enemy.EnemyWaves;
 import main.enemy.EnemyWave;
@@ -14,7 +13,6 @@ import main.position.Point;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.lang.Iterable;
 /**
  * Created with IntelliJ IDEA.
  * User: alete471
@@ -69,11 +67,10 @@ public class Board {
 
     private void placeEnemyPathOnBoard() {
         int priority = enemyWaves.getPriority();
-        int x, y;
-        for (Point currentPoint : enemyWaves.getEnemyPath()) {
-            x = currentPoint.getX();
-            y = currentPoint.getY();
-            priorityMap.setPriorityMap(x,y, priority);
+	for (Point currentPoint : enemyWaves.getEnemyPath()) {
+	    int x = currentPoint.getX();
+	    int y = currentPoint.getY();
+	    priorityMap.setPriorityMap(x,y, priority);
         }
     }
 
@@ -104,7 +101,7 @@ public class Board {
                         allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();
                         currentTime = 0;
                     } else {
-                        playerWins(this);
+                        playerWins();
                         notifyListeners();
                     }
 
@@ -119,7 +116,7 @@ public class Board {
         }
     }
 
-    private void playerWins(Board board) {
+    private void playerWins() {
         System.out.println();
         System.out.println("You won!!!");
         System.out.println();

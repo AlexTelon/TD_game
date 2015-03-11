@@ -107,7 +107,7 @@ public class Enemy extends Placeable {
 
             moveEnemy(enemyPixelMovement(enemyPathing.getCurrentPixelGoal()));
             if (enemyPathing.getCurrentPixelGoal().equals(getPixelPosition())) {
-                enemyPathing.getNextGoal();
+                enemyPathing.updateGoal();
             }
         }
 
@@ -183,10 +183,6 @@ public class Enemy extends Placeable {
    Enkla Getters och Setter nedanför
     */
 
-    public Point getPosition() {
-        return super.getPosition();
-    }
-
     public int getGold() {
         return gold;
     }
@@ -203,8 +199,21 @@ public class Enemy extends Placeable {
         return dmgToBase;
     }
 
-    public int getHitpoints() {
-        return super.getHitpoints();
+    @Override public int hashCode() {
+	int result;
+	long temp;
+	result = hitPoints;
+	result = 31 * result + pixelSpeed;
+	result = 31 * result + dmgToBase;
+	result = 31 * result + gold;
+	result = 31 * result + (alive ? 1 : 0);
+	result = 31 * result + (active ? 1 : 0);
+	result = 31 * result + (board != null ? board.hashCode() : 0);
+	temp = Double.doubleToLongBits(activationTime);
+	result = 31 * result + (int) (temp ^ (temp >>> 32));
+	result = 31 * result + experienceToTowers;
+	result = 31 * result + (enemyPathing != null ? enemyPathing.hashCode() : 0);
+	return result;
     }
 
     @Override
