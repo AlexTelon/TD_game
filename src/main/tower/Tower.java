@@ -26,7 +26,7 @@ public class Tower extends Placeable  {
     protected int hasGainedLevels = 0;
     private int price;
     private ArrayList<Placeable> lastTargets = new ArrayList<Placeable>();
-    private ArrayList<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
+    private java.util.List<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
     private ArrayList<Placeable> allPlaceables = new ArrayList<Placeable>();
     private double range = 200.0;
     private int kills = 0;
@@ -122,7 +122,7 @@ public class Tower extends Placeable  {
         attackHelpClass.removeFromCurrentPlacablesWithinRangeOfThisTower(currentEnemy);
     }
 
-    public ArrayList<Placeable> getPlacablesWithinRangeOfThisTower() {
+    public java.util.List<Placeable> getPlacablesWithinRangeOfThisTower() {
         return attackHelpClass.getPlacablesWithinRangeOfThisTower();
     }
 

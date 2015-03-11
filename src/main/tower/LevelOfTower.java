@@ -23,7 +23,7 @@ public class LevelOfTower {
         int addedlevels = 0;
         int requiredExp = getExpRequirement(level);
         while (exp >= requiredExp) {
-            exp = exp-requiredExp;
+            exp -= requiredExp;
             if (exp < 0) { exp = 0; } // so that experience is never below 0
             addedlevels++;
             addLevel();

@@ -84,10 +84,10 @@ public class EnemyPath {
 
                 if (deltaX != 0) {
                     int changeInX = deltaX/abs(deltaX); // +/- 1
-                    currentXPos = currentXPos + changeInX; // update current XPos
+                    currentXPos += changeInX; // update current XPos
                 } else if (deltaY != 0) {
                     int changeInY = deltaY/abs(deltaY); // +/- 1
-                    currentYPos = currentYPos + changeInY; // update current YPos
+                    currentYPos += changeInY; // update current YPos
                 }
 
                 PathPoint = new Point(currentXPos, currentYPos);

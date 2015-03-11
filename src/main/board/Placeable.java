@@ -29,8 +29,8 @@ public class Placeable implements IDesign{
     private String nameText = "Placeholder";
     private int hitpoints = 99999;
     private Boolean isImortal = false;
-    private ArrayList<GameAction> buffers = new ArrayList<GameAction>(); // TODO change to sets?
-    private ArrayList<GameAction> actions = new ArrayList<GameAction>();
+    private java.util.List<GameAction> buffers = new ArrayList<GameAction>(); // TODO change to sets?
+    private java.util.List<GameAction> actions = new ArrayList<GameAction>();
     //   private GameAction gameActions = new GameAction();
 
     public Placeable(int x, int y, Dimension dimension, ColorHandler.Colour color, Shapes shape, int priority) {
@@ -165,7 +165,7 @@ public class Placeable implements IDesign{
     }
 
 
-    public ArrayList<GameAction> getBuffers() {
+    public java.util.List<GameAction> getBuffers() {
         return buffers;
     }
 
@@ -186,7 +186,7 @@ public class Placeable implements IDesign{
         this.actions.add(action); // only adds new actions
     }
 
-    public ArrayList<GameAction> getGameActions() {
+    public java.lang.Iterable<GameAction> getGameActions() {
         return actions;
     }
 

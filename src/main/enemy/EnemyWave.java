@@ -10,7 +10,7 @@ import java.util.Iterator;
  */
 
 public class EnemyWave implements Iterable<Enemy> {
-    private ArrayList<Enemy> enemiesInCurrentWave = new ArrayList<Enemy>();
+    private java.util.List<Enemy> enemiesInCurrentWave = new ArrayList<Enemy>();
     private double groupActivationTime;
 
     /**

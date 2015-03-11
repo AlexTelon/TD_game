@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 
 public class EnemyWaves {
-    private ArrayList<EnemyWave> allEnemyWaves = new ArrayList<EnemyWave>();
+    private java.util.List<EnemyWave> allEnemyWaves = new ArrayList<EnemyWave>();
     private ArrayList<Point> path = new ArrayList<Point>();
     private EnemyPath enemyPathing;
     private final int priority = 5;
@@ -95,7 +95,7 @@ public class EnemyWaves {
         return currentGroupIndex;
     }
 
-    public ArrayList<Point> getEnemyPath() {
+    public java.util.List<Point> getEnemyPath() {
         return path;
     }
 

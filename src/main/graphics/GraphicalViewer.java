@@ -84,7 +84,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      * its only a matter of getting it from a list.
      * @param g2
      */
-    private void paintEnemyPath(Graphics2D g2, ArrayList<Point> enemyPath) {
+    private void paintEnemyPath(Graphics2D g2, java.lang.Iterable<Point> enemyPath) {
 
         g2.setColor(Color.gray);
         for (Point currentGridPoint : enemyPath) {
@@ -129,12 +129,12 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
             tmpX += someArbritarySpacing ;
         }
         tmpX = someArbritarySpacing ;
-        g2.drawString("Alive", 0, 30);
+        g2.drawString("Alive", 0, someArbritarySpacing);
         for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             if (currentEnemy.isAlive()) {
-                g2.drawString("A", tmpX, 30);
+                g2.drawString("A", tmpX, someArbritarySpacing);
             } else {
-                g2.drawString("D", tmpX, 30);
+                g2.drawString("D", tmpX, someArbritarySpacing);
             }
             tmpX += someArbritarySpacing ;
         }

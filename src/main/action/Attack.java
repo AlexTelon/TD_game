@@ -22,13 +22,13 @@ public class Attack {
     private double rateOfFireCounter;
     private ColorHandler colorHandler = ColorHandler.getInstance();
     private Color color = Color.ORANGE;
-   private ArrayList<GameAction> buffers = new ArrayList<GameAction>();
+    private java.util.List<GameAction> buffers = new ArrayList<GameAction>();
 
     private int enemiesTowerCanShootAtTheSameFrame = 1;
     private int enemiesTowerHasShoot = 0;
     private boolean rememberOldTarget = false;
 
-    public Attack(ArrayList<GameAction> buffers) {
+    public Attack(java.util.List<GameAction> buffers) {
         this.dmg = 3;
         this.range = 200;
         this.rateOfFire = 2;
@@ -118,7 +118,7 @@ public class Attack {
         addDmg(levels);
     }
 
-    public ArrayList<GameAction> getBuffers() {
+    public java.lang.Iterable<GameAction> getBuffers() {
         return buffers;
     }
 

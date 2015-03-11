@@ -35,12 +35,12 @@ public class Board {
     private final int difficulty = 1; // TODO move to player class
     private double currentTime = 0;
     private double countdownToNextWave = 0;
-    private final ArrayList<IBoardListener> boardListener  = new ArrayList<IBoardListener>();
+    private final java.util.List<IBoardListener> boardListener  = new ArrayList<IBoardListener>();
     private EnemyWaves enemyWaves;
 
     private EnemyWave allEnemiesInCurrentWave;
-    private final ArrayList<Tower> allTowers = new ArrayList<Tower>();
-    private ArrayList<NonShootableTower> allNonShootableTowers = new ArrayList<NonShootableTower>();
+    private final java.util.List<Tower> allTowers = new ArrayList<Tower>();
+    private java.util.List<NonShootableTower> allNonShootableTowers = new ArrayList<NonShootableTower>();
     private final ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
 
     // A datatype containing all the priority for all positions.
@@ -328,7 +328,7 @@ public class Board {
         return backgroundColor;
     }
 
-    public ArrayList<Tower> getAllTowers() {
+    public java.lang.Iterable<Tower> getAllTowers() {
         return allTowers;
     }
 

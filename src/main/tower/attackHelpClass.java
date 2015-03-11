@@ -19,7 +19,7 @@ public class attackHelpClass {
      * @param referencePoint - a placeable from which we want to find which objects are within range of
      * @return
      */
-    public ArrayList<Placeable> findObjectsWithinRange(ArrayList<Placeable> allObjects, Placeable referencePoint) {
+    public java.util.List<Placeable> findObjectsWithinRange(java.util.List<Placeable> allObjects, Placeable referencePoint) {
         if (!allObjects.isEmpty()) {
             assert(allObjects != null);
             clearPlacablesWithinRangeOfThisTower();
@@ -63,7 +63,7 @@ public class attackHelpClass {
         this.placablesWithinRangeOfThisTower.clear();
     }
 
-    public ArrayList<Placeable> getPlacablesWithinRangeOfThisTower() {
+    public java.util.List<Placeable> getPlacablesWithinRangeOfThisTower() {
         return placablesWithinRangeOfThisTower;
     }
 
