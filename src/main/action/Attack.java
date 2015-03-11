@@ -1,7 +1,6 @@
 package main.action;
 
-import main.graphics.ColorHandler;
-
+import main.graphics.ColorHandler.Colour;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -35,7 +34,7 @@ public class Attack {
         this.buffers = buffers;
     }
 
-    public Attack(int dmg, double range, double rateOfFire, int enemiesTowerCanShootAtTheSameFrame, ColorHandler.Colour colour, double framerate) {
+    public Attack(int dmg, double range, double rateOfFire, int enemiesTowerCanShootAtTheSameFrame, Colour colour, double framerate) {
         this.dmg = dmg;
         this.range = range;
         this.rateOfFire = rateOfFire;

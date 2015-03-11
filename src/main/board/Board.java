@@ -7,7 +7,7 @@ import main.action.GameAction;
 import main.enemy.Enemy;
 import main.enemy.EnemyWaves;
 import main.enemy.EnemyWave;
-import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 import main.position.Point;
 
 import java.awt.*;
@@ -49,7 +49,7 @@ public class Board {
     // Things that are constant and placed on the grid from the getgo.
     private final Placeable castle = new Placeable(WIDTH-CASTLE_SIDE, getHeight()/2,
             new Dimension(CASTLE_SIDE,
-                    CASTLE_SIDE), ColorHandler.Colour.RED, IDesign.Shapes.Rectangle, 8); //only enemies are above this
+                    CASTLE_SIDE), Colour.RED, IDesign.Shapes.Rectangle, 8); //only enemies are above this
 
     private final Color backgroundColor = Color.GREEN;
     private double frameRate = 50;

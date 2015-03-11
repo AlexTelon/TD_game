@@ -150,17 +150,16 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
 
         tmpY += smallSpacing;
         tmpX = smallSpacing;
-        if (tower.getBuffers().size() != 0 ) {
-            if (tower.getBuffers().size() != 0 ) {
-                g2.drawString("Buffers:  ", 0, tmpY);
-                for (GameAction actions : tower.getBuffers()) {
-                    tmpX += spacingBetweenBuffers;
-                    g2.drawString(String.valueOf(actions.getExtraDmg() + " " + actions.getExtraRange()), tmpX, tmpY);
-                }
-            } else System.out.println("No targets");
-        }
+	if (!tower.getBuffers().isEmpty()) {
+	    g2.drawString("Buffers:  ", 0, tmpY);
+	    for (GameAction actions : tower.getBuffers()) {
+		tmpX += spacingBetweenBuffers;
+		g2.drawString(String.valueOf(actions.getExtraDmg() + " " + actions.getExtraRange()), tmpX, tmpY);
+	    }
+	} else System.out.println("No targets");
 
-        tmpY += smallSpacing;
+
+	tmpY += smallSpacing;
         g2.drawString("DPS  " + String.valueOf(tower.getTowerInformation(Tower.TowerInformation.DPS)) + "    Dmg  " + stringConverter(tower
                 .getTowerInformation(Tower.TowerInformation.DMG)) + " ( " +"+ " + stringConverter(tower.getTowerInformation(Tower.TowerInformation.extraDMG)) + ")" , 0, tmpY);
 

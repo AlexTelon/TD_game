@@ -6,12 +6,9 @@ import main.enemy.Enemy;
 import java.util.ArrayList;
 
 public class attackHelpClass {
-    ArrayList<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
+    java.util.List<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
     ArrayList<Placeable> allObjects;
     double range = 200.0;
-
-    public attackHelpClass() {
-    }
 
     /**
      * Finds all placebles within range and returns them
