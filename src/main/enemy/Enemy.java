@@ -50,7 +50,7 @@ public class Enemy extends Placeable {
         active = false;
         this.gold = gold;
         this.experienceToTowers = experienceToTowers;
-        enemyPathing = new EnemyPath(super.getPosition(), board.getCastlePos());
+        enemyPathing = new EnemyPath(getPosition(), board.getCastlePos());
 
     }
 
@@ -82,7 +82,7 @@ public class Enemy extends Placeable {
         this.gold = enemyPrototype.getGold();
         this.activationTime = activationTime;
         this.experienceToTowers = enemyPrototype.getExperienceToTowers();
-        enemyPathing = new EnemyPath(super.getPosition(), board.getCastlePos());
+        enemyPathing = new EnemyPath(getPosition(), board.getCastlePos());
     }
 
     public Enemy(int x, int y, Dimension dimension, Colour color, Shapes shape) {
@@ -102,7 +102,6 @@ public class Enemy extends Placeable {
 
             for (GameAction currentAction : getGameActions()) {
                 currentAction.tick(this);
-                System.out.println("Action");
             }
 
             moveEnemy(enemyPixelMovement(enemyPathing.getCurrentPixelGoal()));

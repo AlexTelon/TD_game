@@ -17,7 +17,7 @@ public class EnemyWaves {
     private List<EnemyWave> allEnemyWaves = new ArrayList<EnemyWave>();
     private List<Point> path = new ArrayList<Point>();
     private EnemyPath enemyPathing;
-    private static final int priority = 5;
+    private static final int PRIORITY = 5;
 
     private int currentGroupIndex = 0;
      // private ColorHandler colorHandler = ColorHandler.getInstance();
@@ -102,6 +102,6 @@ public class EnemyWaves {
     }
 
     public int getPriority() {
-        return priority;
+        return PRIORITY;
     }
 }

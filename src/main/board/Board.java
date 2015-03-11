@@ -32,7 +32,7 @@ public class Board {
     private static final int CASTLE_SIDE = 2;
     private Player player = new Player();
     private boolean gameover = false;
-    private static final int difficulty = 1; // TODO move to player class
+    private static final int DIFFICULTY = 1; // TODO move to player class
     private double currentTime = 0;
     private double countdownToNextWave = 0;
     private final List<IBoardListener> boardListener  = new ArrayList<IBoardListener>();
@@ -50,9 +50,9 @@ public class Board {
             new Dimension(CASTLE_SIDE,
                     CASTLE_SIDE), Colour.RED, Shapes.RECTANGLE, 8); //only enemies are above this
 
-    private static final Color backgroundColor = Color.GREEN;
+    private static final Color BACKGROUND_COLOR = Color.GREEN;
     private double frameRate = 50;
-    private EnemyWaves enemyWaves = new EnemyWaves(this, difficulty, castle.getPosition(), new Point(0, getHeight()/2));
+    private EnemyWaves enemyWaves = new EnemyWaves(this, DIFFICULTY, castle.getPosition(), new Point(0, getHeight()/2));
     private EnemyWave allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();
 
 
@@ -131,18 +131,16 @@ public class Board {
 
         if (isValidPositions(obj)) {
             allObjects.add(0, obj);
-            if (obj instanceof Enemy) {
-                System.out.println("Why would you add enemies to a wave here? - in addObject");
-            } else if ( obj instanceof Tower) {
-                allTowers.add(0, (Tower) obj);
-                setPriority(obj);
+	    if ( obj instanceof Tower) {
+		allTowers.add(0, (Tower) obj);
+		setPriority(obj);
 
-                if (obj instanceof NonShootableTower) {
-                    allNonShootableTowers.add(0, (NonShootableTower) obj);
-                }
+		if (obj instanceof NonShootableTower) {
+		    allNonShootableTowers.add(0, (NonShootableTower) obj);
+		}
 
-            }
-        }
+	    }
+	}
     }
 
     public Board(Placeable obj) {
@@ -315,7 +313,7 @@ public class Board {
     }
 
     public int getDifficulty() {
-        return difficulty;
+        return DIFFICULTY;
     }
 
     public EnemyWave getAllEnemiesInCurrentWave() {
@@ -323,7 +321,7 @@ public class Board {
     }
 
     public Color getBackgroundColor() {
-        return backgroundColor;
+        return BACKGROUND_COLOR;
     }
 
     public Iterable<Tower> getAllTowers() {
