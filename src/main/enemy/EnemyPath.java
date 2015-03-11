@@ -5,7 +5,7 @@ import main.position.Point;
 
 import java.util.ArrayList;
 import java.util.Random;
-
+import java.util.List;
 import static java.lang.Math.abs;
 
 /**
@@ -101,7 +101,7 @@ public class EnemyPath {
         }
     }
 
-    public ArrayList<Point> getPath() {
+    public List<Point> getPath() {
         return path;
     }
 }

@@ -2,7 +2,7 @@ package main.enemy.enemyType;
 
 import main.board.Board;
 import main.enemy.Enemy;
-import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +17,7 @@ public class DefaultEnemy extends Enemy {
     private static final int gold = 5;
     private static final int hitPoints = 10;
     private static final int pixelSpeed = 8;
-    private static final ColorHandler.Colour colour = ColorHandler.Colour.LIGHTBLUE;
+    private static final Colour colour = Colour.LIGHTBLUE;
 
 
     /**

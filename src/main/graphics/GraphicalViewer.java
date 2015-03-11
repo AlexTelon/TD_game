@@ -7,10 +7,7 @@ import main.position.Point;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-
-import static java.lang.Math.abs;
-import static java.lang.StrictMath.round;
+import java.lang.Iterable;
 
 /**
  * Created with IntelliJ IDEA.
@@ -84,7 +81,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      * its only a matter of getting it from a list.
      * @param g2
      */
-    private void paintEnemyPath(Graphics2D g2, java.lang.Iterable<Point> enemyPath) {
+    private void paintEnemyPath(Graphics2D g2, Iterable<Point> enemyPath) {
 
         g2.setColor(Color.gray);
         for (Point currentGridPoint : enemyPath) {

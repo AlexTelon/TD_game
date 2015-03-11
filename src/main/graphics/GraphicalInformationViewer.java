@@ -160,7 +160,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
 
 
 	tmpY += smallSpacing;
-        g2.drawString("DPS  " + String.valueOf(tower.getTowerInformation(Tower.TowerInformation.DPS)) + "    Dmg  " + stringConverter(tower
+        g2.drawString("DPS  " + tower.getTowerInformation(Tower.TowerInformation.DPS) + "    Dmg  " + stringConverter(tower
                 .getTowerInformation(Tower.TowerInformation.DMG)) + " ( " +"+ " + stringConverter(tower.getTowerInformation(Tower.TowerInformation.extraDMG)) + ")" , 0, tmpY);
 
     }

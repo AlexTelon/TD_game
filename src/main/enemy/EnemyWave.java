@@ -2,6 +2,7 @@ package main.enemy;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * User: alete471 Date: 2012-10-16 Time: 17:40
@@ -10,7 +11,7 @@ import java.util.Iterator;
  */
 
 public class EnemyWave implements Iterable<Enemy> {
-    private java.util.List<Enemy> enemiesInCurrentWave = new ArrayList<Enemy>();
+    private List<Enemy> enemiesInCurrentWave = new ArrayList<Enemy>();
     private double groupActivationTime;
 
     /**

@@ -7,13 +7,8 @@ import main.position.Point;
  * board. Higher values have higher priority. A lower value cannot be placed on a higher.
  */
 public class PriorityMap {
+    // Initzialize by doing nothing which makes all integers 0 in this 'matrix'
     private int[][] PriorityMap = new int[Board.getHeight()][Board.getWidth()];
-
-    /**
-     *  Initzialize by doing nothing which makes all integers 0 in this 'matrix'
-     */
-    public PriorityMap() {
-    }
 
     public int getPriorityMap(int x, int y) {
         return PriorityMap[y][x];

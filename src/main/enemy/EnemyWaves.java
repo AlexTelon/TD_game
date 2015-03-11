@@ -8,14 +8,14 @@ import main.enemy.enemyType.StrongEnemy;
 import main.position.Point;
 
 import java.util.ArrayList;
-
+import java.util.List;
 /**
  * Class that groups all enemy waves together to one large group
  */
 
 public class EnemyWaves {
-    private java.util.List<EnemyWave> allEnemyWaves = new ArrayList<EnemyWave>();
-    private java.util.List<Point> path = new ArrayList<Point>();
+    private List<EnemyWave> allEnemyWaves = new ArrayList<EnemyWave>();
+    private List<Point> path = new ArrayList<Point>();
     private EnemyPath enemyPathing;
     private final int priority = 5;
 
@@ -97,7 +97,7 @@ public class EnemyWaves {
         return currentGroupIndex;
     }
 
-    public java.util.List<Point> getEnemyPath() {
+    public List<Point> getEnemyPath() {
         return path;
     }
 

@@ -2,7 +2,7 @@ package main.enemy.enemyType;
 
 import main.board.Board;
 import main.enemy.Enemy;
-import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +17,7 @@ public class StrongEnemy extends Enemy {
     private static final int gold = 20;
     private static final int hitPoints = 100;
     private static final int pixelSpeed = 1;
-    private static final ColorHandler.Colour colour = ColorHandler.Colour.GREEN;
+    private static final Colour colour = Colour.GREEN;
 
     /**
      * The first constructor for this class, this one requires all parameters to be set manually. <b>Another class
@@ -33,7 +33,7 @@ public class StrongEnemy extends Enemy {
      * @param hitPoints Hitpoints of the enemy  <b>Should be relatively high</b>
      * @see StrongEnemy#StrongEnemy(main.board.Board, int, int)
      */
-    public StrongEnemy(Board board, int x, int y, ColorHandler.Colour colour, int experienceToTowers, int pixelSpeed,
+    public StrongEnemy(Board board, int x, int y, Colour colour, int experienceToTowers, int pixelSpeed,
                        int dmgToBase, int gold, int hitPoints) {
         super(board, x, y, colour, experienceToTowers, pixelSpeed, dmgToBase, gold, hitPoints);
     }
@@ -49,7 +49,7 @@ public class StrongEnemy extends Enemy {
      * @param board the board (/map) that the enemy will be placed on
      * @param x starting position of the enemy
      * @param y starting position of the enemy
-     * @see StrongEnemy#StrongEnemy(main.board.Board, int, int, main.graphics.ColorHandler.Colour, int, int, int, int, int)
+     * @see StrongEnemy#StrongEnemy(main.board.Board, int, int, Colour, int, int, int, int, int)
      *
      */
     public StrongEnemy(Board board, int x, int y) {

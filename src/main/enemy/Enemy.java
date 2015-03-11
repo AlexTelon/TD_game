@@ -4,7 +4,7 @@ import main.action.GameAction;
 import main.board.Placeable;
 import main.tower.Tower;
 import main.board.Board;
-import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 import main.position.Point;
 import main.position.Vector;
 
@@ -33,7 +33,7 @@ public class Enemy extends Placeable {
 
     private EnemyPath enemyPathing;
 
-    public Enemy(Board board, int x, int y, ColorHandler.Colour colour,
+    public Enemy(Board board, int x, int y, Colour colour,
                  int experienceToTowers, int pixelSpeed, int dmgToBase, int gold, int hitPoints) {
         super(x, y, hitPoints , colour, 9);
         this.board = board;
@@ -85,7 +85,7 @@ public class Enemy extends Placeable {
         enemyPathing = new EnemyPath(super.getPosition(), board.getCastlePos());
     }
 
-    public Enemy(int x, int y, Dimension dimension, ColorHandler.Colour color, Shapes shape) {
+    public Enemy(int x, int y, Dimension dimension, Colour color, Shapes shape) {
         super(x, y, dimension, color, shape);
     }
 
@@ -100,7 +100,7 @@ public class Enemy extends Placeable {
         if (getActivationTime() <= time && isAlive()) {
             setActive(true);
 
-            for (GameAction currentAction : super.getGameActions()) {
+            for (GameAction currentAction : getGameActions()) {
                 currentAction.tick(this);
                 System.out.println("Action");
             }
@@ -167,7 +167,7 @@ public class Enemy extends Placeable {
 
     public void setToDead() {
         setAlive(false);
-        super.setImortality(true);
+        setImortality(true);
         //     makeDeadBody();
 
         for( Tower currentTower : board.getAllTowers()) {

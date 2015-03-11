@@ -5,11 +5,12 @@ import main.board.Board;
 import main.enemy.Enemy;
 import main.enemy.EnemyWave;
 import main.board.Placeable;
-import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 import main.player.Player;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,8 +27,8 @@ public class Tower extends Placeable  {
     protected int hasGainedLevels = 0;
     private int price;
     private ArrayList<Placeable> lastTargets = new ArrayList<Placeable>();
-    private java.util.List<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
-    private java.util.List<Placeable> allPlaceables = new ArrayList<Placeable>();
+    private List<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
+    private List<Placeable> allPlaceables = new ArrayList<Placeable>();
     private double range = 200.0;
     private int kills = 0;
     private Board board;
@@ -37,7 +38,7 @@ public class Tower extends Placeable  {
         DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, extraDMG
     }
 
-    public Tower(Board board, ArrayList<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, ColorHandler.Colour color,
+    public Tower(Board board, List<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, Colour color,
                  Shapes shape, int price, int difficulty) {
         super(x, y, dimension, color, shape, gameAction);
         this.board = board;
@@ -51,7 +52,7 @@ public class Tower extends Placeable  {
 
          */
     public void tick(EnemyWave allEnemies) {
-        for (GameAction currentAction : super.getGameActions()) {
+        for (GameAction currentAction : getGameActions()) {
             currentAction.tick(this);
         }
 
@@ -122,7 +123,7 @@ public class Tower extends Placeable  {
         attackHelpClass.removeFromCurrentPlacablesWithinRangeOfThisTower(currentEnemy);
     }
 
-    public java.util.List<Placeable> getPlacablesWithinRangeOfThisTower() {
+    public List<Placeable> getPlacablesWithinRangeOfThisTower() {
         return attackHelpClass.getPlacablesWithinRangeOfThisTower();
     }
 

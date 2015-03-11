@@ -2,7 +2,7 @@ package main.enemy.enemyType;
 
 import main.board.Board;
 import main.enemy.Enemy;
-import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +17,7 @@ public class FastEnemy extends Enemy {
     private static final int gold = 5;
     private static final int hitPoints = 10;
     private static final int pixelSpeed = 4;
-    private static final ColorHandler.Colour colour = ColorHandler.Colour.LIGHTBLUE;
+    private static final Colour colour = Colour.LIGHTBLUE;
 
 
     /**
@@ -34,7 +34,7 @@ public class FastEnemy extends Enemy {
      * @param hitPoints Hitpoints of the enemy
      * @see FastEnemy#FastEnemy(main.board.Board, int, int)
      */
-    public FastEnemy(Board board, int x, int y, ColorHandler.Colour colour, int experienceToTowers, int pixelSpeed,
+    public FastEnemy(Board board, int x, int y, Colour colour, int experienceToTowers, int pixelSpeed,
                      int dmgToBase, int gold, int hitPoints) {
         super(board, x, y, colour, experienceToTowers, pixelSpeed, dmgToBase,
                 gold, hitPoints);
@@ -51,7 +51,7 @@ public class FastEnemy extends Enemy {
      * @param board the board (/map) that the enemy will be placed on
      * @param x starting position of the enemy
      * @param y starting position of the enemy
-     * @see FastEnemy#FastEnemy(main.board.Board, int, int, main.graphics.ColorHandler.Colour, int, int, int, int, int)
+     * @see FastEnemy#FastEnemy(main.board.Board, int, int, Colour, int, int, int, int, int)
      *
      */
     public FastEnemy(Board board, int x, int y) {

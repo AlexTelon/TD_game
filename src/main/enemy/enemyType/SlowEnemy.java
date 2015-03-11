@@ -2,7 +2,7 @@ package main.enemy.enemyType;
 
 import main.board.Board;
 import main.enemy.Enemy;
-import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +17,7 @@ public class SlowEnemy extends Enemy {
     private static final int gold = 5;
     private static final int hitPoints = 20;
     private static final int pixelSpeed = 1;
-    private static final ColorHandler.Colour colour = ColorHandler.Colour.YELLOW;
+    private static final Colour colour = Colour.YELLOW;
 
     /**
      * The first constructor for this class, this one requires all parameters to be set manually. <b>Another class
@@ -33,7 +33,7 @@ public class SlowEnemy extends Enemy {
      * @param hitPoints Hitpoints of the enemy
      * @see SlowEnemy#SlowEnemy(main.board.Board, int, int)
      */
-    public SlowEnemy(Board board, int x, int y, ColorHandler.Colour colour, int experienceToTowers, int pixelSpeed,
+    public SlowEnemy(Board board, int x, int y, Colour colour, int experienceToTowers, int pixelSpeed,
                      int dmgToBase, int gold, int hitPoints) {
         super(board, x, y, colour, experienceToTowers, pixelSpeed, dmgToBase, gold, hitPoints);
     }
@@ -49,7 +49,7 @@ public class SlowEnemy extends Enemy {
      * @param board the board (/map) that the enemy will be placed on
      * @param x starting position of the enemy
      * @param y starting position of the enemy
-     * @see SlowEnemy#SlowEnemy(main.board.Board, int, int, main.graphics.ColorHandler.Colour, int, int, int, int, int)
+     * @see SlowEnemy#SlowEnemy(main.board.Board, int, int, Colour, int, int, int, int, int)
      *
      */
     public SlowEnemy(Board board, int x, int y) {

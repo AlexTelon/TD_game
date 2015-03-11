@@ -3,6 +3,7 @@ package main.board;
 import main.player.Player;
 import main.tower.NonShootableTower.NonShootableTower;
 import main.tower.Tower;
+import main.board.IDesign.Shapes;
 import main.action.GameAction;
 import main.enemy.Enemy;
 import main.enemy.EnemyWaves;
@@ -12,7 +13,8 @@ import main.position.Point;
 
 import java.awt.*;
 import java.util.ArrayList;
-
+import java.util.List;
+import java.lang.Iterable;
 /**
  * Created with IntelliJ IDEA.
  * User: alete471
@@ -35,12 +37,12 @@ public class Board {
     private final int difficulty = 1; // TODO move to player class
     private double currentTime = 0;
     private double countdownToNextWave = 0;
-    private final java.util.List<IBoardListener> boardListener  = new ArrayList<IBoardListener>();
+    private final List<IBoardListener> boardListener  = new ArrayList<IBoardListener>();
     private EnemyWaves enemyWaves;
 
     private EnemyWave allEnemiesInCurrentWave;
-    private final java.util.List<Tower> allTowers = new ArrayList<Tower>();
-    private java.util.List<NonShootableTower> allNonShootableTowers = new ArrayList<NonShootableTower>();
+    private final List<Tower> allTowers = new ArrayList<Tower>();
+    private List<NonShootableTower> allNonShootableTowers = new ArrayList<NonShootableTower>();
     private final ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
 
     // A datatype containing all the priority for all positions.
@@ -49,7 +51,7 @@ public class Board {
     // Things that are constant and placed on the grid from the getgo.
     private final Placeable castle = new Placeable(WIDTH-CASTLE_SIDE, getHeight()/2,
             new Dimension(CASTLE_SIDE,
-                    CASTLE_SIDE), Colour.RED, IDesign.Shapes.Rectangle, 8); //only enemies are above this
+                    CASTLE_SIDE), Colour.RED, Shapes.Rectangle, 8); //only enemies are above this
 
     private final Color backgroundColor = Color.GREEN;
     private double frameRate = 50;
@@ -328,7 +330,7 @@ public class Board {
         return backgroundColor;
     }
 
-    public java.lang.Iterable<Tower> getAllTowers() {
+    public Iterable<Tower> getAllTowers() {
         return allTowers;
     }
 
