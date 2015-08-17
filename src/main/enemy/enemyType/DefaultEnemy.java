@@ -1,8 +1,8 @@
-package main.enemy.enemytype;
+package main.enemy.enemyType;
 
 import main.board.Board;
 import main.enemy.Enemy;
-import main.graphics.ColorHandler.Colour;
+import main.graphics.ColorHandlerSingleton.Colour;
 
 /**
  * Created with IntelliJ IDEA.

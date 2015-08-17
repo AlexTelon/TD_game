@@ -1,20 +1,20 @@
-package main.tower.shootingtowers;
+package main.tower.shootingTowers;
 
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.Collection;
 
 import main.action.GameAction;
-import main.action.shootingaction.ShootingAction;
+import main.action.shootingAction.ShootingAction;
 import main.board.Board;
 import main.enemy.EnemyWave;
 import main.board.Placeable;
 import main.tower.Tower;
-import main.graphics.ColorHandler.Colour;
+import main.graphics.ColorHandlerSingleton.Colour;
 
 
 public class ShootableTower extends Tower {
 
-    public ShootableTower(Board board, ArrayList<Placeable> allObjects, ShootingAction newShootingAction, int x, int y, Dimension dimension, Colour colourOfTower, Shapes rectangle, int price, int difficulty) {
+    public ShootableTower(Board board, Collection<Placeable> allObjects, ShootingAction newShootingAction, int x, int y, Dimension dimension, Colour colourOfTower, Shapes rectangle, int price, int difficulty) {
         super(board,allObjects,newShootingAction,x,y,dimension,colourOfTower,rectangle,price,difficulty);
     }
 

@@ -15,25 +15,25 @@ public interface IDesign {
      * Enum class used to have a form for each object
      * <br></br> OBS not implemented well yet!
      */
-    public enum Shapes {
+    enum Shapes {
 	RECTANGLE, CIRCLE, TRIANGLE
     }
 
     /**
      * Gives dimensions of the object in terms of the grid.
      */
-    public Dimension getSize();
+    Dimension getSize();
 
      /**
      * This returns the colour of an Placable object
      * @return the color of the object in java form
      */
-    public Color getGUIColor();
+    Color getGUIColor();
 
     /**
      * @return the enum shape
      *
      */
-    public Shapes getShape();
+    Shapes getShape();
 
 }

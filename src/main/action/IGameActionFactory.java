@@ -5,7 +5,7 @@ package main.action;
  * Not so useful now..
  */
 public interface IGameActionFactory {
-    public GameAction createGameAction(int extraDmg, double extraRange);
+    GameAction createGameAction(int extraDmg, double extraRange);
 }
 
 

@@ -11,5 +11,5 @@ public interface IBoardListener {
     /**
      * Notifies all listners that something has happened - normal usage is to repaint with the use of this
      */
-    public void boardChanged();
+    void boardChanged();
 }

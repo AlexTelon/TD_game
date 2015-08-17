@@ -18,7 +18,7 @@ import static java.lang.Math.abs;
 public class EnemyPath {
     private final ArrayList<Point> mainPath = new ArrayList<Point>();
     private int currentGoal = 0;
-    private ArrayList<Point> path = new ArrayList<Point>();
+    private List<Point> path = new ArrayList<Point>();
     private static int x = new Random().nextInt(Board.getWidth()-Board.getCastleWidth());
     private static int y = new Random().nextInt(Board.getHeight());
     private static int x2 = new Random().nextInt(Board.getWidth()-Board.getCastleWidth());

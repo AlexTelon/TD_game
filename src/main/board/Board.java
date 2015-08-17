@@ -1,13 +1,13 @@
 package main.board;
 
 import main.player.Player;
-import main.tower.nonshootabletower.NonShootableTower;
+import main.tower.nonShootableTower.NonShootableTower;
 import main.tower.Tower;
 import main.board.IDesign.Shapes;
 import main.enemy.Enemy;
 import main.enemy.EnemyWaves;
 import main.enemy.EnemyWave;
-import main.graphics.ColorHandler.Colour;
+import main.graphics.ColorHandlerSingleton.Colour;
 import main.position.Point;
 
 import java.awt.*;

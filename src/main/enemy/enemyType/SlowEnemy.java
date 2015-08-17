@@ -1,8 +1,8 @@
-package main.enemy.enemytype;
+package main.enemy.enemyType;
 
 import main.board.Board;
 import main.enemy.Enemy;
-import main.graphics.ColorHandler.Colour;
+import main.graphics.ColorHandlerSingleton.Colour;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,7 +31,7 @@ public class SlowEnemy extends Enemy {
      * @param dmgToBase damage done to base (/castle) once it reaches it
      * @param gold GOLD towers gain for a kill
      * @param hitPoints Hitpoints of the enemy
-     * @see SlowEnemy#SlowEnemy(main.board.Board, int, int)
+     * @see SlowEnemy#SlowEnemy(Board, int, int)
      */
     public SlowEnemy(Board board, int x, int y, Colour colour, int experienceToTowers, int pixelSpeed,
                      int dmgToBase, int gold, int hitPoints) {
@@ -49,7 +49,7 @@ public class SlowEnemy extends Enemy {
      * @param board the board (/map) that the enemy will be placed on
      * @param x starting position of the enemy
      * @param y starting position of the enemy
-     * @see SlowEnemy#SlowEnemy(main.board.Board, int, int, Colour, int, int, int, int, int)
+     * @see SlowEnemy#SlowEnemy(Board, int, int, Colour, int, int, int, int, int)
      *
      */
     public SlowEnemy(Board board, int x, int y) {

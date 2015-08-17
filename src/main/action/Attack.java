@@ -1,12 +1,11 @@
 package main.action;
 
-import main.graphics.ColorHandler;
-import main.graphics.ColorHandler.Colour;
+import main.graphics.ColorHandlerSingleton;
+import main.graphics.ColorHandlerSingleton.Colour;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Created with IntelliJ IDEA.
  * User: alete471
@@ -22,7 +21,6 @@ public class Attack {
     private double rateOfFire; // attacks per second
     private double rateOfFirePerFrame;
     private double rateOfFireCounter;
-    private ColorHandler colorHandler = ColorHandler.getInstance();
     private Color color = Color.ORANGE;
     private List<GameAction> buffers = new ArrayList<GameAction>();
 
@@ -30,7 +28,7 @@ public class Attack {
     private int enemiesTowerHasShoot = 0;
     private boolean rememberOldTarget = false;
 
-    public Attack(ArrayList<GameAction> buffers) {
+    public Attack(List<GameAction> buffers) {
         this.dmg = 3;
         this.range = 200;
         this.rateOfFire = 2;
@@ -41,7 +39,7 @@ public class Attack {
         this.dmg = dmg;
         this.range = range;
         this.rateOfFire = rateOfFire;
-        this.color = colorHandler.getGUIColour(colour);
+        this.color = ColorHandlerSingleton.getInstance().getGUIColour(colour);
         this.setRateOfFirePerFrame(framerate);
         this.enemiesTowerCanShootAtTheSameFrame = enemiesTowerCanShootAtTheSameFrame;
     }

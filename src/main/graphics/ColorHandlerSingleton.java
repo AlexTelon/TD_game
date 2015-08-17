@@ -9,18 +9,19 @@ import java.awt.*;
  * Time: 19:09
  * To change this template use File | Settings | File Templates.
  */
-public class ColorHandler {
-    private static ColorHandler ourInstance = new ColorHandler();
+public final class ColorHandlerSingleton
+{
+    private static ColorHandlerSingleton ourInstance = new ColorHandlerSingleton();
 
     public enum Colour {
         WHITE, GRAY, BLACK, YELLOW, ORANGE, GREEN, PURPLE, DARKBLUE, LIGHTBLUE, RED, BLUE
     }
 
-    public static ColorHandler getInstance() {
+    public static ColorHandlerSingleton getInstance() {
         return ourInstance;
     }
 
-    private ColorHandler() {
+    private ColorHandlerSingleton() {
     }
 
     /**

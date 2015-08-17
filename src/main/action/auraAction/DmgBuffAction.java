@@ -1,4 +1,4 @@
-package main.action.auraaction;
+package main.action.auraAction;
 
 /**
  * User: alete471 Date: 2012-10-08 Time: 14:27

@@ -4,7 +4,7 @@ import main.action.GameAction;
 import main.board.Placeable;
 import main.tower.Tower;
 import main.board.Board;
-import main.graphics.ColorHandler.Colour;
+import main.graphics.ColorHandlerSingleton.Colour;
 import main.position.Point;
 import main.position.Vector;
 

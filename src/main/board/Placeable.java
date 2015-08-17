@@ -1,14 +1,15 @@
 package main.board;
 
 import main.action.GameAction;
-import main.graphics.ColorHandler;
-import main.graphics.ColorHandler.Colour;
+import main.graphics.ColorHandlerSingleton;
+import main.graphics.ColorHandlerSingleton.Colour;
 import main.position.*;
 
 import java.awt.*;
 import java.util.ArrayList;
 import main.position.Point;
-import java.util.List;
+
+import java.util.Collection;
 
 import static java.lang.StrictMath.round;
 
@@ -23,7 +24,7 @@ import static java.lang.StrictMath.round;
 public class Placeable implements IDesign{
     private Point position;
     private Dimension dimension = new Dimension(1,1);
-    private ColorHandler colorHandler = ColorHandler.getInstance();
+    private ColorHandlerSingleton colorHandlerSingleton = ColorHandlerSingleton.getInstance();
     private Colour color = Colour.WHITE;
     private Shapes shapes = Shapes.RECTANGLE;
     private int priority = 1;
@@ -31,8 +32,8 @@ public class Placeable implements IDesign{
     private String nameText = "Placeholder";
     private int hitpoints = 99999;
     private Boolean isImortal = false;
-    private List<GameAction> buffers = new ArrayList<GameAction>(); // TODO change to sets?
-    private List<GameAction> actions = new ArrayList<GameAction>();
+    private Collection<GameAction> buffers = new ArrayList<GameAction>(); // TODO change to sets?
+    private Collection<GameAction> actions = new ArrayList<GameAction>();
     //   private GameAction gameActions = new GameAction();
 
     public Placeable(int x, int y, Dimension dimension, Colour color, Shapes shape, int priority) {
@@ -83,7 +84,7 @@ public class Placeable implements IDesign{
     @Override public int hashCode() {
 	int result = position != null ? position.hashCode() : 0;
 	result = 31 * result + (dimension != null ? dimension.hashCode() : 0);
-	result = 31 * result + (colorHandler != null ? colorHandler.hashCode() : 0);
+	result = 31 * result + (colorHandlerSingleton != null ? colorHandlerSingleton.hashCode() : 0);
 	result = 31 * result + (color != null ? color.hashCode() : 0);
 	result = 31 * result + (shapes != null ? shapes.hashCode() : 0);
 	result = 31 * result + priority;
@@ -123,7 +124,7 @@ public class Placeable implements IDesign{
     }
 
     public Color getGUIColor() {
-        return colorHandler.getGUIColour(color);
+        return colorHandlerSingleton.getGUIColour(color);
     }
 
     public Colour getColour() {
@@ -183,7 +184,7 @@ public class Placeable implements IDesign{
     }
 
 
-    public List<GameAction> getBuffers() {
+    public Collection<GameAction> getBuffers() {
         return buffers;
     }
 

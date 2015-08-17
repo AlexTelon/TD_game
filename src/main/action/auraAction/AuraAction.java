@@ -1,4 +1,4 @@
-package main.action.auraaction;
+package main.action.auraAction;
 
 import main.action.GameAction;
 import main.board.Placeable;

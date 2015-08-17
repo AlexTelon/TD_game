@@ -1,4 +1,4 @@
-package main.action.shootingaction;
+package main.action.shootingAction;
 
 import main.tower.Tower;
 import main.action.Attack;

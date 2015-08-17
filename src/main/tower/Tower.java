@@ -5,11 +5,12 @@ import main.board.Board;
 import main.enemy.Enemy;
 import main.enemy.EnemyWave;
 import main.board.Placeable;
-import main.graphics.ColorHandler.Colour;
+import main.graphics.ColorHandlerSingleton.Colour;
 import main.player.Player;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -27,9 +28,7 @@ public class Tower extends Placeable  {
     protected int hasGainedLevels = 0;
     private int price;
     private ArrayList<Placeable> lastTargets = new ArrayList<Placeable>();
-    private List<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
-    private List<Placeable> allPlaceables = new ArrayList<Placeable>();
-    private double range = 200.0;
+    private Collection<Placeable> allPlaceables = new ArrayList<Placeable>();
     private int kills = 0;
     private Board board;
     private Enemy lastTarget;
@@ -38,19 +37,18 @@ public class Tower extends Placeable  {
         DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, EXTRA_DMG
     }
 
-    public Tower(Board board, List<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, Colour color,
+    public Tower(Board board, Collection<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, Colour color,
                  Shapes shape, int price, int difficulty) {
         super(x, y, dimension, color, shape, gameAction);
         this.board = board;
         this.price = price;
         this.allPlaceables = allPlaceables;
         this.levelOfTower = new LevelOfTower(difficulty);
-
     }
 
     /*
 
-         */
+     */
     public void tick(EnemyWave allEnemies) {
         for (GameAction currentAction : getGameActions()) {
             currentAction.tick(this);
@@ -59,7 +57,7 @@ public class Tower extends Placeable  {
         updateAllObjects();
         recalcLevel();
 
-        placablesWithinRangeOfThisTower = attackHelpClass.findObjectsWithinRange(allPlaceables, this);
+        attackHelpClass.findObjectsWithinRange(allPlaceables, this);
 
     }
 
@@ -123,7 +121,7 @@ public class Tower extends Placeable  {
         attackHelpClass.removeFromCurrentPlaceablesWithinRangeOfThisTower(currentEnemy);
     }
 
-    public List<Placeable> getPlacablesWithinRangeOfThisTower() {
+    public Collection<Placeable> getPlacablesWithinRangeOfThisTower() {
         return attackHelpClass.getPlaceablesWithinRangeOfThisTower();
     }
 

@@ -24,9 +24,8 @@ public class EnemyWave implements Iterable<Enemy> {
      *                            before the first group of enemies start to come.
      */
     public EnemyWave(Enemy enemyPrototype, int nrOfEnemies, double groupActivationTime, double activationTime) {
-        double totalActivationTime;
-        for (int i = 0; i < nrOfEnemies; i++) {
-            totalActivationTime = i*activationTime;
+         for (int i = 0; i < nrOfEnemies; i++) {
+            double totalActivationTime = i*activationTime;
             enemiesInCurrentWave.add(i,new Enemy(enemyPrototype, totalActivationTime));
         }
         this.groupActivationTime = groupActivationTime;

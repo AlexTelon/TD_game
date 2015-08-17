@@ -4,7 +4,11 @@ package main.board;
  * User: alete471 Date: 2012-10-28 Time: 15:57
  * A class for converting grid positions to pixel positions
  */
-public class GlobalPositioning {
+public final class GlobalPositioning {
+
+    private GlobalPositioning() {
+       }
+
     /**
      * getXPixel returns the pixelPosition from a grid position
      * @param x

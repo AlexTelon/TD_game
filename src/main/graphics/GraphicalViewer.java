@@ -122,7 +122,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
             g2.drawString(currentEnemy.getHealthText(), tmpX, 10);
             tmpX += someArbritarySpacing ;
         }
-        tmpX = someArbritarySpacing ;
+        tmpX = someArbritarySpacing;
         g2.drawString("Alive", 0, someArbritarySpacing);
         for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             if (currentEnemy.isAlive()) {
@@ -134,9 +134,8 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
         }
         tmpX = someArbritarySpacing ;
         g2.drawString("Active", 0, 55);
-        int localtime;
         for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
-            localtime =((int) currentEnemy.getActivationTime() - (int) board.getCurrentTime())/1000;
+            int localtime =((int) currentEnemy.getActivationTime() - (int) board.getCurrentTime())/1000;
             if (localtime < 0) localtime = 0;
             g2.drawString(stringConverter(localtime), tmpX, 50);
             tmpX += someArbritarySpacing ;

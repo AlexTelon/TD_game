@@ -1,4 +1,4 @@
-package main.tower.nonshootabletower;
+package main.tower.nonShootableTower;
 
 import main.tower.Tower;
 import main.action.GameAction;
@@ -6,10 +6,10 @@ import main.action.GameActionFactory;
 import main.board.Board;
 import main.board.Placeable;
 import main.enemy.EnemyWave;
-import main.graphics.ColorHandler.Colour;
+import main.graphics.ColorHandlerSingleton.Colour;
 
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * User: alete471 Date: 2012-10-07 Time: 19:05
@@ -40,7 +40,7 @@ public class NonShootableTower extends Tower {
      * @param extraDmg
      * @param extraRange
      */
-    public NonShootableTower(Board board, ArrayList<Placeable> allObjects, GameAction gameAction, int difficulty, int x, int y,
+    public NonShootableTower(Board board, Collection<Placeable> allObjects, GameAction gameAction, int difficulty, int x, int y,
                              Dimension dimension, Colour color, Shapes shape, int range, int price,
                              int extraDmg, double extraRange) {
         super(board, allObjects, gameAction, x, y, dimension, color, shape, price, difficulty);

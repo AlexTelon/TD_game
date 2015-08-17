@@ -25,7 +25,6 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
     private Board board;
     private GraphicalViewer graphicalViewer;
     private GraphicalInformationViewer graphicalInformationViewer;
-    private GraphicalIDebugViewer graphicalIDebugViewer;
     private Point lastClickedPosition;
     private TowerMaker towerFactory = new TowerMaker();
 
@@ -34,9 +33,11 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
 	this.board = board;
         this.graphicalViewer = new GraphicalViewer(board);
         this.graphicalInformationViewer = new GraphicalInformationViewer(board);
-        this.graphicalIDebugViewer = new GraphicalIDebugViewer(board); // this is the left side information,
-        // not very interesting in a final verision but for someone examining the program we felt it could be left to
-        // show the priorityMap and how it works.
+
+        /* this is the left side information,
+            not very interesting in a final verision but for someone examining the program we felt it could be left to
+            show the priorityMap and how it works.*/
+        GraphicalIDebugViewer graphicalIDebugViewer = new GraphicalIDebugViewer(board);
         this.graphicalViewer.addMouseListener(this);
 
 

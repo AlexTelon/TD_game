@@ -2,6 +2,8 @@ package main.tower;
 
 import main.board.Placeable;
 import main.enemy.Enemy;
+
+import java.util.Collection;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -17,7 +19,7 @@ public class AttackHelpClass
      * @param referencePoint - a placeable from which we want to find which objects are within range of
      * @return
      */
-    public List<Placeable> findObjectsWithinRange(List<Placeable> allObjects, Placeable referencePoint) {
+    public void findObjectsWithinRange(Collection<Placeable> allObjects, Placeable referencePoint) {
         if (!allObjects.isEmpty()) {
             clearPlaceablesWithinRangeOfThisTower();
             for (Placeable obj : allObjects) {
@@ -28,7 +30,6 @@ public class AttackHelpClass
                 }
             }
         }
-        return placablesWithinRangeOfThisTower;
     }
 
     /**
@@ -60,7 +61,7 @@ public class AttackHelpClass
         this.placablesWithinRangeOfThisTower.clear();
     }
 
-    public List<Placeable> getPlaceablesWithinRangeOfThisTower() {
+    public Collection<Placeable> getPlaceablesWithinRangeOfThisTower() {
         return placablesWithinRangeOfThisTower;
     }
 
