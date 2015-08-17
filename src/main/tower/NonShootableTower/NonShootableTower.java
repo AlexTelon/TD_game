@@ -1,4 +1,4 @@
-package main.tower.NonShootableTower;
+package main.tower.nonshootabletower;
 
 import main.tower.Tower;
 import main.action.GameAction;
@@ -6,7 +6,7 @@ import main.action.GameActionFactory;
 import main.board.Board;
 import main.board.Placeable;
 import main.enemy.EnemyWave;
-import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -19,9 +19,9 @@ public class NonShootableTower extends Tower {
     private int difficulty = 1;
     private final int price = 20;
     private int range = 200;
-    private ColorHandler.Colour colourOfTower = ColorHandler.Colour.DARKBLUE;
+    private Colour colourOfTower = Colour.DARKBLUE;
     private Dimension dimension = new Dimension(1,1);
-    private Shapes shape = Shapes.Rectangle;
+    private Shapes shape = Shapes.RECTANGLE;
     private int extraRange = 0;
     private int extraDmg = 0;
     private Board board;
@@ -41,7 +41,7 @@ public class NonShootableTower extends Tower {
      * @param extraRange
      */
     public NonShootableTower(Board board, ArrayList<Placeable> allObjects, GameAction gameAction, int difficulty, int x, int y,
-                             Dimension dimension, ColorHandler.Colour color, Shapes shape, int range, int price,
+                             Dimension dimension, Colour color, Shapes shape, int range, int price,
                              int extraDmg, double extraRange) {
         super(board, allObjects, gameAction, x, y, dimension, color, shape, price, difficulty);
         this.board = board;
@@ -55,9 +55,9 @@ public class NonShootableTower extends Tower {
         super.tick(allEnemies);
 
         //send action to all objects
-        for (Placeable obj : super.getPlacablesWithinRangeOfThisTower()) {
+        for (Placeable obj : getPlacablesWithinRangeOfThisTower()) {
             if (obj != this) {
-                for (GameAction currentAction : super.getGameActions()) {
+                for (GameAction currentAction : getGameActions()) {
                     if (!currentAction.hasAnAttack()) {
                         obj.addGameActions(currentAction);
                     }

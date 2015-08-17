@@ -1,23 +1,23 @@
 package main.enemy;
 
 import main.board.Board;
-import main.enemy.enemyType.DefaultEnemy;
-import main.enemy.enemyType.FastEnemy;
-import main.enemy.enemyType.SlowEnemy;
-import main.enemy.enemyType.StrongEnemy;
+import main.enemy.enemytype.DefaultEnemy;
+import main.enemy.enemytype.FastEnemy;
+import main.enemy.enemytype.SlowEnemy;
+import main.enemy.enemytype.StrongEnemy;
 import main.position.Point;
 
 import java.util.ArrayList;
-
+import java.util.List;
 /**
  * Class that groups all enemy waves together to one large group
  */
 
 public class EnemyWaves {
-    private ArrayList<EnemyWave> allEnemyWaves = new ArrayList<EnemyWave>();
-    private ArrayList<Point> path = new ArrayList<Point>();
+    private List<EnemyWave> allEnemyWaves = new ArrayList<EnemyWave>();
+    private List<Point> path = new ArrayList<Point>();
     private EnemyPath enemyPathing;
-    private final int priority = 5;
+    private static final int PRIORITY = 5;
 
     private int currentGroupIndex = 0;
      // private ColorHandler colorHandler = ColorHandler.getInstance();
@@ -72,7 +72,9 @@ public class EnemyWaves {
      * @return ArrayList<main.enemy.Enemy>
      */
     public EnemyWave getNextEnemyWave() {
-        return allEnemyWaves.get(currentGroupIndex++);
+	int ret = currentGroupIndex;
+	currentGroupIndex++;
+        return allEnemyWaves.get(ret);
     }
 
     private void addEnemyGroupToAllGroups(EnemyWave newEnemyGroup) {
@@ -95,11 +97,11 @@ public class EnemyWaves {
         return currentGroupIndex;
     }
 
-    public ArrayList<Point> getEnemyPath() {
+    public List<Point> getEnemyPath() {
         return path;
     }
 
     public int getPriority() {
-        return priority;
+        return PRIORITY;
     }
 }

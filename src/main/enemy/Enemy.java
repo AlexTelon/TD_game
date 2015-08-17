@@ -4,7 +4,7 @@ import main.action.GameAction;
 import main.board.Placeable;
 import main.tower.Tower;
 import main.board.Board;
-import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 import main.position.Point;
 import main.position.Vector;
 
@@ -33,7 +33,7 @@ public class Enemy extends Placeable {
 
     private EnemyPath enemyPathing;
 
-    public Enemy(Board board, int x, int y, ColorHandler.Colour colour,
+    public Enemy(Board board, int x, int y, Colour colour,
                  int experienceToTowers, int pixelSpeed, int dmgToBase, int gold, int hitPoints) {
         super(x, y, hitPoints , colour, 9);
         this.board = board;
@@ -50,7 +50,7 @@ public class Enemy extends Placeable {
         active = false;
         this.gold = gold;
         this.experienceToTowers = experienceToTowers;
-        enemyPathing = new EnemyPath(super.getPosition(), board.getCastlePos());
+        enemyPathing = new EnemyPath(getPosition(), board.getCastlePos());
 
     }
 
@@ -82,10 +82,10 @@ public class Enemy extends Placeable {
         this.gold = enemyPrototype.getGold();
         this.activationTime = activationTime;
         this.experienceToTowers = enemyPrototype.getExperienceToTowers();
-        enemyPathing = new EnemyPath(super.getPosition(), board.getCastlePos());
+        enemyPathing = new EnemyPath(getPosition(), board.getCastlePos());
     }
 
-    public Enemy(int x, int y, Dimension dimension, ColorHandler.Colour color, Shapes shape) {
+    public Enemy(int x, int y, Dimension dimension, Colour color, Shapes shape) {
         super(x, y, dimension, color, shape);
     }
 
@@ -100,14 +100,13 @@ public class Enemy extends Placeable {
         if (getActivationTime() <= time && isAlive()) {
             setActive(true);
 
-            for (GameAction currentAction : super.getGameActions()) {
+            for (GameAction currentAction : getGameActions()) {
                 currentAction.tick(this);
-                System.out.println("Action");
             }
 
             moveEnemy(enemyPixelMovement(enemyPathing.getCurrentPixelGoal()));
             if (enemyPathing.getCurrentPixelGoal().equals(getPixelPosition())) {
-                enemyPathing.getNextGoal();
+                enemyPathing.updateGoal();
             }
         }
 
@@ -167,11 +166,11 @@ public class Enemy extends Placeable {
 
     public void setToDead() {
         setAlive(false);
-        super.setImortality(true);
+        setImortality(true);
         //     makeDeadBody();
 
         for( Tower currentTower : board.getAllTowers()) {
-            currentTower.removeFromCurrentPlacablesWithinRangeOfThisTower(this);
+            currentTower.removeFromCurrentPlaceablesWithinRangeOfThisTower(this);
         }
 
         setActive(false);
@@ -182,10 +181,6 @@ public class Enemy extends Placeable {
     /*
    Enkla Getters och Setter nedanför
     */
-
-    public Point getPosition() {
-        return super.getPosition();
-    }
 
     public int getGold() {
         return gold;
@@ -203,8 +198,21 @@ public class Enemy extends Placeable {
         return dmgToBase;
     }
 
-    public int getHitpoints() {
-        return super.getHitpoints();
+    @Override public int hashCode() {
+	int result;
+	long temp;
+	result = hitPoints;
+	result = 31 * result + pixelSpeed;
+	result = 31 * result + dmgToBase;
+	result = 31 * result + gold;
+	result = 31 * result + (alive ? 1 : 0);
+	result = 31 * result + (active ? 1 : 0);
+	result = 31 * result + (board != null ? board.hashCode() : 0);
+	temp = Double.doubleToLongBits(activationTime);
+	result = 31 * result + (int) (temp ^ (temp >>> 32));
+	result = 31 * result + experienceToTowers;
+	result = 31 * result + (enemyPathing != null ? enemyPathing.hashCode() : 0);
+	return result;
     }
 
     @Override
@@ -231,11 +239,11 @@ public class Enemy extends Placeable {
 
     /**
      * remember to add a kill in the caller!
-     * @param Dmg
+     * @param dmg
      * @return
      */
-    public void attacked(int Dmg) {
-        subtractHitpoints(Dmg);
+    public void attacked(int dmg) {
+        subtractHitpoints(dmg);
         if (getHitpoints() <= 0) {
             setToDead();
             // tower.addKills(1);

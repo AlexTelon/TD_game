@@ -1,18 +1,18 @@
 package main.board;
 
 import main.player.Player;
-import main.tower.NonShootableTower.NonShootableTower;
+import main.tower.nonshootabletower.NonShootableTower;
 import main.tower.Tower;
-import main.action.GameAction;
+import main.board.IDesign.Shapes;
 import main.enemy.Enemy;
 import main.enemy.EnemyWaves;
 import main.enemy.EnemyWave;
-import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 import main.position.Point;
 
 import java.awt.*;
 import java.util.ArrayList;
-
+import java.util.List;
 /**
  * Created with IntelliJ IDEA.
  * User: alete471
@@ -32,15 +32,14 @@ public class Board {
     private static final int CASTLE_SIDE = 2;
     private Player player = new Player();
     private boolean gameover = false;
-    private final int difficulty = 1; // TODO move to player class
+    private static final int DIFFICULTY = 1; // TODO move to player class
     private double currentTime = 0;
     private double countdownToNextWave = 0;
-    private final ArrayList<IBoardListener> boardListener  = new ArrayList<IBoardListener>();
-    private EnemyWaves enemyWaves;
+    private final List<IBoardListener> boardListener  = new ArrayList<IBoardListener>();
 
-    private EnemyWave allEnemiesInCurrentWave;
-    private final ArrayList<Tower> allTowers = new ArrayList<Tower>();
-    private ArrayList<NonShootableTower> allNonShootableTowers = new ArrayList<NonShootableTower>();
+
+    private final List<Tower> allTowers = new ArrayList<Tower>();
+    private List<NonShootableTower> allNonShootableTowers = new ArrayList<NonShootableTower>();
     private final ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
 
     // A datatype containing all the priority for all positions.
@@ -49,17 +48,17 @@ public class Board {
     // Things that are constant and placed on the grid from the getgo.
     private final Placeable castle = new Placeable(WIDTH-CASTLE_SIDE, getHeight()/2,
             new Dimension(CASTLE_SIDE,
-                    CASTLE_SIDE), ColorHandler.Colour.RED, IDesign.Shapes.Rectangle, 8); //only enemies are above this
+                    CASTLE_SIDE), Colour.RED, Shapes.RECTANGLE, 8); //only enemies are above this
 
-    private final Color backgroundColor = Color.GREEN;
+    private static final Color BACKGROUND_COLOR = Color.GREEN;
     private double frameRate = 50;
+    private EnemyWaves enemyWaves = new EnemyWaves(this, DIFFICULTY, castle.getPosition(), new Point(0, getHeight()/2));
+    private EnemyWave allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();
 
 
 
     public Board(double framerate) {
         setFramerate(framerate);
-        enemyWaves = new EnemyWaves(this, difficulty, castle.getPosition(), new Point(0, getHeight()/2));
-        allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();
 
         placeEnemyPathOnBoard();
         placeObjectOnBoard(castle);
@@ -67,11 +66,10 @@ public class Board {
 
     private void placeEnemyPathOnBoard() {
         int priority = enemyWaves.getPriority();
-        int x, y;
-        for (Point currentPoint : enemyWaves.getEnemyPath()) {
-            x = currentPoint.getX();
-            y = currentPoint.getY();
-            priorityMap.setPriorityMap(x,y, priority);
+	for (Point currentPoint : enemyWaves.getEnemyPath()) {
+	    int x = currentPoint.getX();
+	    int y = currentPoint.getY();
+	    priorityMap.setPriorityMap(x,y, priority);
         }
     }
 
@@ -102,7 +100,7 @@ public class Board {
                         allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();
                         currentTime = 0;
                     } else {
-                        playerWins(this);
+                        playerWins();
                         notifyListeners();
                     }
 
@@ -117,7 +115,7 @@ public class Board {
         }
     }
 
-    private void playerWins(Board board) {
+    private void playerWins() {
         System.out.println();
         System.out.println("You won!!!");
         System.out.println();
@@ -133,18 +131,16 @@ public class Board {
 
         if (isValidPositions(obj)) {
             allObjects.add(0, obj);
-            if (obj instanceof Enemy) {
-                System.out.println("Why would you add enemies to a wave here? - in addObject");
-            } else if ( obj instanceof Tower) {
-                allTowers.add(0, (Tower) obj);
-                setPriority(obj);
+	    if ( obj instanceof Tower) {
+		allTowers.add(0, (Tower) obj);
+		setPriority(obj);
 
-                if (obj instanceof NonShootableTower) {
-                    allNonShootableTowers.add(0, (NonShootableTower) obj);
-                }
+		if (obj instanceof NonShootableTower) {
+		    allNonShootableTowers.add(0, (NonShootableTower) obj);
+		}
 
-            }
-        }
+	    }
+	}
     }
 
     public Board(Placeable obj) {
@@ -317,7 +313,7 @@ public class Board {
     }
 
     public int getDifficulty() {
-        return difficulty;
+        return DIFFICULTY;
     }
 
     public EnemyWave getAllEnemiesInCurrentWave() {
@@ -325,10 +321,10 @@ public class Board {
     }
 
     public Color getBackgroundColor() {
-        return backgroundColor;
+        return BACKGROUND_COLOR;
     }
 
-    public ArrayList<Tower> getAllTowers() {
+    public Iterable<Tower> getAllTowers() {
         return allTowers;
     }
 

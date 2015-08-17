@@ -5,11 +5,12 @@ import main.board.Board;
 import main.enemy.Enemy;
 import main.enemy.EnemyWave;
 import main.board.Placeable;
-import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 import main.player.Player;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,23 +22,23 @@ import java.util.ArrayList;
  */
 
 public class Tower extends Placeable  {
-    private final main.tower.attackHelpClass attackHelpClass = new main.tower.attackHelpClass();
+    private final AttackHelpClass attackHelpClass = new AttackHelpClass();
     protected LevelOfTower levelOfTower;
     protected int hasGainedLevels = 0;
     private int price;
     private ArrayList<Placeable> lastTargets = new ArrayList<Placeable>();
-    private ArrayList<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
-    private ArrayList<Placeable> allPlaceables = new ArrayList<Placeable>();
+    private List<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
+    private List<Placeable> allPlaceables = new ArrayList<Placeable>();
     private double range = 200.0;
     private int kills = 0;
     private Board board;
     private Enemy lastTarget;
     private Enemy currentTarget;
     public enum TowerInformation {
-        DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, extraDMG
+        DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, EXTRA_DMG
     }
 
-    public Tower(Board board, ArrayList<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, ColorHandler.Colour color,
+    public Tower(Board board, List<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, Colour color,
                  Shapes shape, int price, int difficulty) {
         super(x, y, dimension, color, shape, gameAction);
         this.board = board;
@@ -51,7 +52,7 @@ public class Tower extends Placeable  {
 
          */
     public void tick(EnemyWave allEnemies) {
-        for (GameAction currentAction : super.getGameActions()) {
+        for (GameAction currentAction : getGameActions()) {
             currentAction.tick(this);
         }
 
@@ -109,8 +110,8 @@ public class Tower extends Placeable  {
     /*
     Things regarding placablesWithinRangeOfThisTower
      */
-    public void addToCurrentPlacablesWithinRangeOfThisTower(Placeable obj) {
-        attackHelpClass.addToCurrentPlacablesWithinRangeOfThisTower(obj);
+    public void addToCurrentPlaceablesWithinRangeOfThisTower(Placeable obj) {
+        attackHelpClass.addToCurrentPlaceablesWithinRangeOfThisTower(obj);
     }
 
 
@@ -118,12 +119,12 @@ public class Tower extends Placeable  {
         this.lastTargets.add(currentTarget);
     }
 
-    public void removeFromCurrentPlacablesWithinRangeOfThisTower(Enemy currentEnemy) {
-        attackHelpClass.removeFromCurrentPlacablesWithinRangeOfThisTower(currentEnemy);
+    public void removeFromCurrentPlaceablesWithinRangeOfThisTower(Enemy currentEnemy) {
+        attackHelpClass.removeFromCurrentPlaceablesWithinRangeOfThisTower(currentEnemy);
     }
 
-    public ArrayList<Placeable> getPlacablesWithinRangeOfThisTower() {
-        return attackHelpClass.getPlacablesWithinRangeOfThisTower();
+    public List<Placeable> getPlacablesWithinRangeOfThisTower() {
+        return attackHelpClass.getPlaceablesWithinRangeOfThisTower();
     }
 
     public ArrayList<Placeable> getAllObjects() {
@@ -151,7 +152,7 @@ public class Tower extends Placeable  {
     }
 
     public boolean hasTarget() {
-        if (attackHelpClass.getPlacablesWithinRangeOfThisTower().isEmpty()) {
+        if (attackHelpClass.getPlaceablesWithinRangeOfThisTower().isEmpty()) {
             return false;
         }
         return true;
@@ -194,7 +195,7 @@ public class Tower extends Placeable  {
                     case DPS:
                         counter += currentGameAction.getAttack().getDPS();
                         break;
-                    case extraDMG:
+                    case EXTRA_DMG:
                         counter += currentGameAction.getExtraDmg();
                         break;
 
@@ -230,11 +231,6 @@ public class Tower extends Placeable  {
         for (GameAction currentGameAction : getGameActions()) {
             currentGameAction.addBuffers(currentGameAction);
         }
-    }
-
-    @Override
-    public void removeBuffer(GameAction action) {
-        super.removeBuffer(action);
     }
 
     @Override

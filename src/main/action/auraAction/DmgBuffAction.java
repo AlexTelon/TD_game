@@ -1,7 +1,4 @@
-package main.action.auraAction;
-
-import main.tower.Tower;
-import main.board.Placeable;
+package main.action.auraaction;
 
 /**
  * User: alete471 Date: 2012-10-08 Time: 14:27
@@ -12,16 +9,4 @@ public class DmgBuffAction extends AuraAction {
     public DmgBuffAction(int extraDmg) {
         super(extraDmg, 0);
      }
-
-    @Override
-    public void tick(Placeable obj) {
-        super.tick(obj);
-    }
-
-    @Override
-    public void tick(Tower tower) {
-        tower.addBuffers(this);
-    }
-
-
 }

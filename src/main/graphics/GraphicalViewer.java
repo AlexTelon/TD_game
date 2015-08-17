@@ -7,10 +7,6 @@ import main.position.Point;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-
-import static java.lang.Math.abs;
-import static java.lang.StrictMath.round;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,16 +27,14 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
     }
 
     public Dimension getPreferredSize() {
-        return new Dimension(PreferredWidth(),PreferredHeight());
+        return new Dimension(preferredWidth(), preferredHeight());
     }
 
-    private int PreferredHeight() {
-        int height = Board.getSquareHeight() * Board.getHeight();
-        return height;
+    private int preferredHeight() {
+        return Board.getSquareHeight() * Board.getHeight();
     }
-    private int PreferredWidth() {
-        int width = Board.getSquareWidth() * Board.getWidth();
-        return width;
+    private int preferredWidth() {
+        return Board.getSquareWidth() * Board.getWidth();
     }
 
     /**
@@ -84,7 +78,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      * its only a matter of getting it from a list.
      * @param g2
      */
-    private void paintEnemyPath(Graphics2D g2, ArrayList<Point> enemyPath) {
+    private void paintEnemyPath(Graphics2D g2, Iterable<Point> enemyPath) {
 
         g2.setColor(Color.gray);
         for (Point currentGridPoint : enemyPath) {
@@ -129,12 +123,12 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
             tmpX += someArbritarySpacing ;
         }
         tmpX = someArbritarySpacing ;
-        g2.drawString("Alive", 0, 30);
+        g2.drawString("Alive", 0, someArbritarySpacing);
         for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             if (currentEnemy.isAlive()) {
-                g2.drawString("A", tmpX, 30);
+                g2.drawString("A", tmpX, someArbritarySpacing);
             } else {
-                g2.drawString("D", tmpX, 30);
+                g2.drawString("D", tmpX, someArbritarySpacing);
             }
             tmpX += someArbritarySpacing ;
         }

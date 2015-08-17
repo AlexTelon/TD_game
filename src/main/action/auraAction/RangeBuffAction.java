@@ -1,6 +1,4 @@
-package main.action.auraAction;
-
-import main.board.Placeable;
+package main.action.auraaction;
 
 /**
  * User: alete471 Date: 2012-10-08 Time: 14:27
@@ -11,10 +9,4 @@ public class RangeBuffAction extends AuraAction {
     public RangeBuffAction(double extraRange) {
         super(0, extraRange);
       }
-
-    @Override
-    public void tick(Placeable obj) {
-        super.tick(obj);
-    }
-
 }

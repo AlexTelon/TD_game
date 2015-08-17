@@ -1,6 +1,5 @@
-package main.action.auraAction;
+package main.action.auraaction;
 
-import main.tower.Tower;
 import main.action.GameAction;
 import main.board.Placeable;
 
@@ -16,10 +15,6 @@ public class AuraAction extends GameAction {
 
     public void tick(Placeable obj) {
         obj.addBuffers(this);
-    }
-
-    public void tick(Tower tower) {
-        tower.addBuffers(this);
     }
 
 /*

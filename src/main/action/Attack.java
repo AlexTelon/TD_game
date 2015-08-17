@@ -1,9 +1,11 @@
 package main.action;
 
 import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,7 +24,7 @@ public class Attack {
     private double rateOfFireCounter;
     private ColorHandler colorHandler = ColorHandler.getInstance();
     private Color color = Color.ORANGE;
-   private ArrayList<GameAction> buffers = new ArrayList<GameAction>();
+    private List<GameAction> buffers = new ArrayList<GameAction>();
 
     private int enemiesTowerCanShootAtTheSameFrame = 1;
     private int enemiesTowerHasShoot = 0;
@@ -35,7 +37,7 @@ public class Attack {
         this.buffers = buffers;
     }
 
-    public Attack(int dmg, double range, double rateOfFire, int enemiesTowerCanShootAtTheSameFrame, ColorHandler.Colour colour, double framerate) {
+    public Attack(int dmg, double range, double rateOfFire, int enemiesTowerCanShootAtTheSameFrame, Colour colour, double framerate) {
         this.dmg = dmg;
         this.range = range;
         this.rateOfFire = rateOfFire;
@@ -88,12 +90,12 @@ public class Attack {
     }
 
     public int getBufferDmg() {
-        int DmgFromBuffers = 0;
+        int dmgFromBuffers = 0;
         for (GameAction action: getBuffers()) {
-            DmgFromBuffers += action.getExtraDmg();
+            dmgFromBuffers += action.getExtraDmg();
         }
-        extraDmg = DmgFromBuffers;
-        return DmgFromBuffers;
+        extraDmg = dmgFromBuffers;
+        return dmgFromBuffers;
     }
 
     public int getExtraDmg() {
@@ -118,7 +120,7 @@ public class Attack {
         addDmg(levels);
     }
 
-    public ArrayList<GameAction> getBuffers() {
+    public Iterable<GameAction> getBuffers() {
         return buffers;
     }
 

@@ -1,12 +1,14 @@
 package main.board;
 
-import main.tower.Tower;
 import main.action.GameAction;
 import main.graphics.ColorHandler;
+import main.graphics.ColorHandler.Colour;
 import main.position.*;
 
 import java.awt.*;
 import java.util.ArrayList;
+import main.position.Point;
+import java.util.List;
 
 import static java.lang.StrictMath.round;
 
@@ -19,22 +21,22 @@ import static java.lang.StrictMath.round;
  */
 
 public class Placeable implements IDesign{
-    private main.position.Point position;
+    private Point position;
     private Dimension dimension = new Dimension(1,1);
     private ColorHandler colorHandler = ColorHandler.getInstance();
-    private ColorHandler.Colour color = ColorHandler.Colour.WHITE;
-    private Shapes shapes = Shapes.Rectangle;
+    private Colour color = Colour.WHITE;
+    private Shapes shapes = Shapes.RECTANGLE;
     private int priority = 1;
-    private main.position.Point pixelPosition;
+    private Point pixelPosition;
     private String nameText = "Placeholder";
     private int hitpoints = 99999;
     private Boolean isImortal = false;
-    private ArrayList<GameAction> buffers = new ArrayList<GameAction>(); // TODO change to sets?
-    private ArrayList<GameAction> actions = new ArrayList<GameAction>();
+    private List<GameAction> buffers = new ArrayList<GameAction>(); // TODO change to sets?
+    private List<GameAction> actions = new ArrayList<GameAction>();
     //   private GameAction gameActions = new GameAction();
 
-    public Placeable(int x, int y, Dimension dimension, ColorHandler.Colour color, Shapes shape, int priority) {
-        this.position = new main.position.Point(x,y);
+    public Placeable(int x, int y, Dimension dimension, Colour color, Shapes shape, int priority) {
+        this.position = new Point(x,y);
         this.pixelPosition = position.getPixelPos();
         this.dimension = dimension;
         this.color = color;
@@ -42,18 +44,18 @@ public class Placeable implements IDesign{
         this.priority = priority;
     }
 
-    public Placeable(int x, int y, Dimension dimension, ColorHandler.Colour color, Shapes shape) {
+    public Placeable(int x, int y, Dimension dimension, Colour color, Shapes shape) {
         this(x, y, dimension, color, shape, 1);
     }
 
 
-    public Placeable(int x, int y, Dimension dimension, ColorHandler.Colour color, Shapes shape, GameAction gameAction) {
+    public Placeable(int x, int y, Dimension dimension, Colour color, Shapes shape, GameAction gameAction) {
         this(x, y, dimension,color,shape,1);
         this.addGameActions(gameAction);
     }
 
-    public Placeable(int x, int y, int hitpoints, ColorHandler.Colour color, int priority) {
-        this(x, y, new Dimension(1,1), color, Shapes.Rectangle, priority);
+    public Placeable(int x, int y, int hitpoints, Colour color, int priority) {
+        this(x, y, new Dimension(1,1), color, Shapes.RECTANGLE, priority);
         this.hitpoints = hitpoints;
     }
 
@@ -63,19 +65,35 @@ public class Placeable implements IDesign{
      * - maybe this should be added into the datatype later on instead?
      * @return a point to the center of the object
      */
-    public main.position.Point getCenterOfObject() {
+    public Point getCenterOfObject() {
         double width = GlobalPositioning.getXPixel(getDimension().width);
         double height = GlobalPositioning.getYPixel(getDimension().height);
         double xPos = getPixelPosition().getX();
         double yPos = getPixelPosition().getY();
         int midX = (int) round(xPos + width / 2);
         int midY = (int) round(yPos + height / 2);
-        return new main.position.Point(midX, midY);
+        return new Point(midX, midY);
     }
 
 
     public int getPriority() {
         return priority;
+    }
+
+    @Override public int hashCode() {
+	int result = position != null ? position.hashCode() : 0;
+	result = 31 * result + (dimension != null ? dimension.hashCode() : 0);
+	result = 31 * result + (colorHandler != null ? colorHandler.hashCode() : 0);
+	result = 31 * result + (color != null ? color.hashCode() : 0);
+	result = 31 * result + (shapes != null ? shapes.hashCode() : 0);
+	result = 31 * result + priority;
+	result = 31 * result + (pixelPosition != null ? pixelPosition.hashCode() : 0);
+	result = 31 * result + (nameText != null ? nameText.hashCode() : 0);
+	result = 31 * result + hitpoints;
+	result = 31 * result + (isImortal != null ? isImortal.hashCode() : 0);
+	result = 31 * result + (buffers != null ? buffers.hashCode() : 0);
+	result = 31 * result + (actions != null ? actions.hashCode() : 0);
+	return result;
     }
 
     @Override
@@ -108,7 +126,7 @@ public class Placeable implements IDesign{
         return colorHandler.getGUIColour(color);
     }
 
-    public ColorHandler.Colour getColour() {
+    public Colour getColour() {
         return color;
     }
 
@@ -123,8 +141,8 @@ public class Placeable implements IDesign{
      * @return a double
      */
     public double distanceTo(Placeable a) {
-        main.position.Point aPos = a.getPixelPosition();
-        main.position.Point bPos = this.getPixelPosition();
+        Point aPos = a.getPixelPosition();
+        Point bPos = this.getPixelPosition();
         int deltaX = aPos.getX()-bPos.getX();
         int deltaY = aPos.getY()-bPos.getY();
 
@@ -136,7 +154,7 @@ public class Placeable implements IDesign{
         return dimension;
     }
 
-    public main.position.Point getPosition() {
+    public Point getPosition() {
         return position;
     }
 
@@ -144,11 +162,11 @@ public class Placeable implements IDesign{
         this.hitpoints -= hitpoints;
     }
 
-    public main.position.Point getPixelPosition() {
+    public Point getPixelPosition() {
         return pixelPosition;
     }
 
-    public void setPixelPosition(main.position.Point pixelPosition) {
+    public void setPixelPosition(Point pixelPosition) {
         this.pixelPosition = pixelPosition;
     }
 
@@ -160,12 +178,12 @@ public class Placeable implements IDesign{
         return hitpoints;
     }
 
-    public void setColour(ColorHandler.Colour color) {
+    public void setColour(Colour color) {
         this.color = color;
     }
 
 
-    public ArrayList<GameAction> getBuffers() {
+    public List<GameAction> getBuffers() {
         return buffers;
     }
 
@@ -186,18 +204,10 @@ public class Placeable implements IDesign{
         this.actions.add(action); // only adds new actions
     }
 
-    public ArrayList<GameAction> getGameActions() {
+    public Iterable<GameAction> getGameActions() {
         return actions;
     }
 
-    /**
-     * Calculates if a object is within range of the tower.
-     *
-     * @param tower@return true if it is in range.
-     */
-    public boolean isObjectWithinRange(Tower tower) {
-        return tower.isObjectWithinRange(tower);
-    }
 
     /**
      * As default placables are NOT imortal, towers for example might be.

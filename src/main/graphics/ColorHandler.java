@@ -30,7 +30,7 @@ public class ColorHandler {
      * @param colour
      * @return a color that the GUI can use
      */
-    public Color getGUIColour(ColorHandler.Colour colour) {
+    public Color getGUIColour(Colour colour) {
         switch (colour) {
             case WHITE: return Color.WHITE;
             case GRAY: return Color.GRAY;

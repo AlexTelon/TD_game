@@ -1,6 +1,6 @@
 package main.graphics;
 
-import main.tower.shootingTowers.ShootableTower;
+import main.tower.shootingtowers.ShootableTower;
 import main.tower.Tower;
 import main.action.GameAction;
 import main.board.Board;
@@ -39,16 +39,14 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     }
 
     public Dimension getPreferredSize() {
-        return new Dimension(PreferredWidth(),PreferredHeight());
+        return new Dimension(preferredWidth(), preferredHeight());
     }
 
-    private int PreferredHeight() {
-        int height = Board.getSquareHeight() * Board.getHeight();
-        return height;
+    private int preferredHeight() {
+        return Board.getSquareHeight() * Board.getHeight();
     }
-    private int PreferredWidth() {
-        int width = 300;
-        return width;
+    private int preferredWidth() {
+        return 300;
     }
 
     public void paintComponent(Graphics g) {
@@ -150,19 +148,18 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
 
         tmpY += smallSpacing;
         tmpX = smallSpacing;
-        if (tower.getBuffers().size() != 0 ) {
-            if (tower.getBuffers().size() != 0 ) {
-                g2.drawString("Buffers:  ", 0, tmpY);
-                for (GameAction actions : tower.getBuffers()) {
-                    tmpX += spacingBetweenBuffers;
-                    g2.drawString(String.valueOf(actions.getExtraDmg() + " " + actions.getExtraRange()), tmpX, tmpY);
-                }
-            } else System.out.println("No targets");
-        }
+	if (!tower.getBuffers().isEmpty()) {
+	    g2.drawString("Buffers:  ", 0, tmpY);
+	    for (GameAction actions : tower.getBuffers()) {
+		tmpX += spacingBetweenBuffers;
+		g2.drawString(String.valueOf(actions.getExtraDmg() + " " + actions.getExtraRange()), tmpX, tmpY);
+	    }
+	} else System.out.println("No targets");
 
-        tmpY += smallSpacing;
-        g2.drawString("DPS  " + String.valueOf(tower.getTowerInformation(Tower.TowerInformation.DPS)) + "    Dmg  " + stringConverter(tower
-                .getTowerInformation(Tower.TowerInformation.DMG)) + " ( " +"+ " + stringConverter(tower.getTowerInformation(Tower.TowerInformation.extraDMG)) + ")" , 0, tmpY);
+
+	tmpY += smallSpacing;
+        g2.drawString("DPS  " + tower.getTowerInformation(Tower.TowerInformation.DPS) + "    Dmg  " + stringConverter(tower
+                .getTowerInformation(Tower.TowerInformation.DMG)) + " ( " +"+ " + stringConverter(tower.getTowerInformation(Tower.TowerInformation.EXTRA_DMG)) + ")" , 0, tmpY);
 
     }
 

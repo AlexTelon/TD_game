@@ -21,16 +21,14 @@ public class GraphicalIDebugViewer extends JComponent implements IBoardListener 
     }
 
     public Dimension getPreferredSize() {
-        return new Dimension(PreferredWidth(),PreferredHeight());
+        return new Dimension(preferredWidth(), preferredHeight());
     }
 
-    private int PreferredHeight() {
-        int height = Board.getSquareHeight() * Board.getHeight();
-        return height;
+    private int preferredHeight() {
+        return Board.getSquareHeight() * Board.getHeight();
     }
-    private int PreferredWidth() {
-        int width = Board.getSquareWidth() * Board.getWidth();
-        return width;
+    private int preferredWidth() {
+        return Board.getSquareWidth() * Board.getWidth();
     }
 
     public void paintComponent(Graphics g) {

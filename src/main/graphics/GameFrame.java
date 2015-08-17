@@ -22,16 +22,16 @@ import java.awt.event.MouseListener;
  */
 public class GameFrame extends JFrame implements IBoardListener, MouseListener {
     private final JMenu menu = new JMenu("Menu");
-    private static Board board;
+    private Board board;
     private GraphicalViewer graphicalViewer;
-    public GraphicalInformationViewer graphicalInformationViewer;
+    private GraphicalInformationViewer graphicalInformationViewer;
     private GraphicalIDebugViewer graphicalIDebugViewer;
     private Point lastClickedPosition;
     private TowerMaker towerFactory = new TowerMaker();
 
     public GameFrame(Board board) throws HeadlessException {
         super("SmartTD 0.1");
-        this.board = board;
+	this.board = board;
         this.graphicalViewer = new GraphicalViewer(board);
         this.graphicalInformationViewer = new GraphicalInformationViewer(board);
         this.graphicalIDebugViewer = new GraphicalIDebugViewer(board); // this is the left side information,
@@ -98,22 +98,18 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        return;
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        return;
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        return;
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        return;
     }
 
     Action buildTowerTypeAAction = new AbstractAction("Build tower A") {

@@ -26,6 +26,13 @@ public class Vector {
         return y;
     }
 
+
+    @Override public int hashCode() {
+	int result = x;
+	result = 31 * result + y;
+	return result;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -42,8 +49,7 @@ public class Vector {
     public double length() {
         double x = getX();
         double y = getY();
-        double range = sqrt((pow(x,2)+pow(y,2)));
-        return range;
+        return sqrt((pow(x,2)+pow(y,2)));
     }
 
 }

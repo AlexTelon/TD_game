@@ -1,13 +1,13 @@
 package main.tower;
 
-import main.tower.NonShootableTower.NonShootableTower;
-import main.tower.shootingTowers.ShootableTower;
+import main.tower.nonshootabletower.NonShootableTower;
+import main.tower.shootingtowers.ShootableTower;
 import main.action.Attack;
-import main.action.auraAction.DmgBuffAction;
-import main.action.shootingAction.ShootingAction;
+import main.action.auraaction.DmgBuffAction;
+import main.action.shootingaction.ShootingAction;
 import main.board.Board;
-import main.board.IDesign;
-import main.graphics.ColorHandler;
+import main.board.IDesign.Shapes;
+import main.graphics.ColorHandler.Colour;
 import main.position.Point;
 
 import java.awt.*;
@@ -32,8 +32,8 @@ public class TowerMaker {
                 int range = 100;
                 int rOF = 1;
                 int enemiesTowerCanShootAtTheSameTime = 3;
-                ColorHandler.Colour colour = ColorHandler.Colour.ORANGE;
-                ColorHandler.Colour colourOfShoots = ColorHandler.Colour.BLACK;
+                Colour colour = Colour.ORANGE;
+                Colour colourOfShoots = Colour.BLACK;
                 Dimension dimension = new Dimension(1,1);
                 if (board.isValidPositions(position, priority, dimension) && board.getPlayer().getGold() >= price) {
                     createTower(board, position, colour, colourOfShoots, dmg, range, rOF,
@@ -55,13 +55,13 @@ public class TowerMaker {
                 if (board.isValidPositions(position, priority, dimension) && board.getPlayer().getGold() >= price) {
 
                     // TODO fixa här, Gör en gameAction som du skickar in nedan. Sedan kolla upp vad gameActionFactoryn
-                    // gör egentligen och om inte extraDMG och extraRange blir dubbel info då de kmr finnas
+                    // gör egentligen och om inte EXTRA_DMG och extraRange blir dubbel info då de kmr finnas
                     // i gameAction också.
                     DmgBuffAction dmgBuffAction = new DmgBuffAction(extraDMG);
-                    NonShootableTower NewTower = new NonShootableTower(board, board.getAllObjects(), dmgBuffAction, board.getDifficulty(),
-                            position.getX(), position.getY(), dimension, ColorHandler.Colour.BLUE, IDesign.Shapes.Rectangle, range , price, extraDMG, extraRange);
+                    NonShootableTower newTower = new NonShootableTower(board, board.getAllObjects(), dmgBuffAction, board.getDifficulty(),
+                            position.getX(), position.getY(), dimension, Colour.BLUE, Shapes.RECTANGLE, range , price, extraDMG, extraRange);
 
-                    board.addObject(NewTower);
+                    board.addObject(newTower);
                     board.getPlayer().subtractGold(price);
                 } else
                     System.out.println("Not enough gold or invalid position");
@@ -74,14 +74,14 @@ public class TowerMaker {
         }
     }
 
-    private void createTower(Board board, main.position.Point position, ColorHandler.Colour colourOfTower, ColorHandler.Colour colourOfShoots, int dmg,
+    private void createTower(Board board, main.position.Point position, Colour colourOfTower, Colour colourOfShoots, int dmg,
                              int range, int rOF,
                              int enemiesTowerCanShootAtTheSameTime, int price, Dimension dimension) {
 
         Attack newAttack = new Attack(dmg, range, rOF, enemiesTowerCanShootAtTheSameTime ,colourOfShoots, board.getFrameRate());
         ShootingAction newShootingAction = new ShootingAction(newAttack);
         ShootableTower newTower = new ShootableTower(board, board.getAllObjects(), newShootingAction, position.getX(), position.getY(),
-                dimension, colourOfTower, IDesign.Shapes.Rectangle, price, board.getDifficulty());
+                dimension, colourOfTower, Shapes.RECTANGLE, price, board.getDifficulty());
         newShootingAction.setTower(newTower); // the gameaction is now attatched to the newTower.
 
         board.addObject(newTower);

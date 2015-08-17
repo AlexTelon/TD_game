@@ -1,6 +1,5 @@
 package main.position;
 
-import main.board.Board;
 import main.board.GlobalPositioning;
 
 /**
@@ -42,6 +41,12 @@ public class Point {
 
     public int getY() {
         return y;
+    }
+
+    @Override public int hashCode() {
+	int result = x;
+	result = 31 * result + y;
+	return result;
     }
 
     @Override

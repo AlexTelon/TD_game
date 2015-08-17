@@ -1,4 +1,4 @@
-package main.action.shootingAction;
+package main.action.shootingaction;
 
 import main.tower.Tower;
 import main.action.Attack;
@@ -33,19 +33,18 @@ public class ShootingAction extends GameAction {
         Makes its thing on one enemy
          */
     @Override
-    public void tick(Enemy currentEnemy) {
-
+    public void tick(Enemy enemy) {
         getAttack().resetEnemiesTowerHasShoot(); // reset enemies it has shot this frame.
         if (attack.canShootAtThisFrame()) {
 
-            if (currentEnemy.isActive() && currentEnemy.isAlive()) { // can only handle active and alive enemies
-                if (canShoot() && inRange(currentEnemy) && correctTarget(currentEnemy)) {
-                    shoot(currentEnemy);
-                    tower.setLastTarget(currentEnemy); // why is lastTarget used? - does it only work as an iterator?
+            if (enemy.isActive() && enemy.isAlive()) { // can only handle active and alive enemies
+                if (canShoot() && isInRange(enemy) && isCorrectTarget(enemy)) {
+                    shoot(enemy);
+                    tower.setLastTarget(enemy); // why is lastTarget used? - does it only work as an iterator?
 
-                    if (currentEnemy.isAlive()) { // ie enemy still is alive
-                        tower.setCurrentTarget( currentEnemy);
-                        tower.addToCurrentPlacablesWithinRangeOfThisTower(currentEnemy);
+                    if (enemy.isAlive()) { // ie enemy still is alive
+                        tower.setCurrentTarget( enemy);
+                        tower.addToCurrentPlaceablesWithinRangeOfThisTower(enemy);
                     } else {
                         tower.setCurrentTarget(null);
                     }
@@ -61,8 +60,8 @@ public class ShootingAction extends GameAction {
      * @param currentEnemy
      * @return
      */
-    private boolean correctTarget(Placeable currentEnemy) {
-        if (tower.getLastTarget() != null || !inRange(currentEnemy)) { // if no last target skip below and return
+    private boolean isCorrectTarget(Placeable currentEnemy) {
+        if (tower.getLastTarget() != null || !isInRange(currentEnemy)) { // if no last target skip below and return
             if (attack.isRememberOldTarget()) { //if it does not care about keeping track of old target
                 if (tower.getLastTarget().isActive() || tower.getLastTarget().isAlive() ) { // if enemy is dead, skip
                     if (currentEnemy.equals(tower.getLastTarget())) {
@@ -93,7 +92,7 @@ public class ShootingAction extends GameAction {
      * @param currentTarget
      * @return true if it is in range, false otherwise
      */
-    private boolean inRange(Placeable currentTarget) {
+    private boolean isInRange(Placeable currentTarget) {
         double rangeToTarget;
         rangeToTarget = currentTarget.distanceTo(tower);
         if (attack.getRange() >= rangeToTarget) {
@@ -116,7 +115,7 @@ public class ShootingAction extends GameAction {
     @Override
     public boolean canShoot(Placeable obj) {
         if (!obj.isImortal()) {
-            return (canShoot() && inRange(obj) && correctTarget(obj));
+            return (canShoot() && isInRange(obj) && isCorrectTarget(obj));
         }
         return false;
     }
