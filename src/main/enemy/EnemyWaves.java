@@ -19,7 +19,7 @@ public class EnemyWaves {
      // private ColorHandlerSingleton colorHandler = ColorHandlerSingleton.getInstance();
 
 
-    public EnemyWaves(Board board, int difficulty, Point castlePos, Point enemyStartingPosition) {
+    public EnemyWaves(Board board,Point castlePos, Point enemyStartingPosition) {
         int nrOfWaves = 10;
         double groupActivationTime = 1000.0;
         int y = board.getCastlePos().getY();

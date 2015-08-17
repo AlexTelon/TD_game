@@ -28,13 +28,6 @@ public class Attack {
     private int enemiesTowerHasShoot = 0;
     private boolean rememberOldTarget = false;
 
-    public Attack(List<GameAction> buffers) {
-        this.dmg = 3;
-        this.range = 200;
-        this.rateOfFire = 2;
-        this.buffers = buffers;
-    }
-
     public Attack(int dmg, double range, double rateOfFire, int enemiesTowerCanShootAtTheSameFrame, Colour colour, double framerate) {
         this.dmg = dmg;
         this.range = range;

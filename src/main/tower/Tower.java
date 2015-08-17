@@ -38,12 +38,12 @@ public class Tower extends Placeable  {
     }
 
     public Tower(Board board, Collection<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, Colour color,
-                 Shapes shape, int price, int difficulty) {
+                 Shapes shape, int price) {
         super(x, y, dimension, color, shape, gameAction);
         this.board = board;
         this.price = price;
         this.allPlaceables = allPlaceables;
-        this.levelOfTower = new LevelOfTower(difficulty);
+        this.levelOfTower = new LevelOfTower();
     }
 
     /*

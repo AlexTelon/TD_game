@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 public class AttackHelpClass
 {
-    List<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
-    ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
-    double range = 200.0;
+    private List<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
+    private ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
+    private double range = 200.0;
 
     /**
      * Finds all placebles within range and returns them

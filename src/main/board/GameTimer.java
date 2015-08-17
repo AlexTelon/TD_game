@@ -16,7 +16,7 @@ import java.util.Timer;
  */
 public class GameTimer {
     private final Board board = new Board(refreshRate);
-    static int refreshRate = 50;
+    private static int refreshRate = 50;
 
     public GameTimer() {
         board.setFramerate(refreshRate);

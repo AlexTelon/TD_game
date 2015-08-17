@@ -113,7 +113,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
     public void mouseExited(MouseEvent e) {
     }
 
-    Action buildTowerTypeAAction = new AbstractAction("Build tower A") {
+    private Action buildTowerTypeAAction = new AbstractAction("Build tower A") {
         {
             putValue(SHORT_DESCRIPTION, "Put in how much Gold they cost later...");
         }
@@ -122,7 +122,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
         }
     };
 
-    Action buildTowerTypeBAction = new AbstractAction("Build tower B") {
+    private Action buildTowerTypeBAction = new AbstractAction("Build tower B") {
         {
             putValue(SHORT_DESCRIPTION, "Put in how much Gold they cost later...");
         }
@@ -131,7 +131,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
         }
     };
 
-    Action sellTowerAction = new AbstractAction("Sell") {
+    private Action sellTowerAction = new AbstractAction("Sell") {
         {
             putValue(SHORT_DESCRIPTION, "Put in how much Gold you get back later...");
         }
@@ -147,7 +147,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
         }
     };
 
-    Action closeAction = new AbstractAction("Close !") {
+    private Action closeAction = new AbstractAction("Close !") {
         {
             putValue(SHORT_DESCRIPTION, "Closes the game");
         }

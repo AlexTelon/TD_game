@@ -16,7 +16,6 @@ import java.util.Collection;
  * Remember to write something useful here!!
  */
 public class NonShootableTower extends Tower {
-    private int difficulty = 1;
     private final int price = 20;
     private int range = 200;
     private Colour colourOfTower = Colour.DARKBLUE;
@@ -29,7 +28,6 @@ public class NonShootableTower extends Tower {
     /**
      * For defensive towers
      * @param allObjects
-     * @param difficulty
      * @param x
      * @param y
      * @param dimension
@@ -40,13 +38,12 @@ public class NonShootableTower extends Tower {
      * @param extraDmg
      * @param extraRange
      */
-    public NonShootableTower(Board board, Collection<Placeable> allObjects, GameAction gameAction, int difficulty, int x, int y,
-                             Dimension dimension, Colour color, Shapes shape, int range, int price,
+    public NonShootableTower(Board board, Collection<Placeable> allObjects, GameAction gameAction,
+                             int x, int y, Dimension dimension, Colour color, Shapes shape, int range, int price,
                              int extraDmg, double extraRange) {
-        super(board, allObjects, gameAction, x, y, dimension, color, shape, price, difficulty);
+        super(board, allObjects, gameAction, x, y, dimension, color, shape, price);
         this.board = board;
         this.range = range;
-        this.difficulty = difficulty;
         super.addGameActions(new GameActionFactory().createGameAction(extraDmg, extraRange));
     }
 

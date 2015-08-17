@@ -60,7 +60,7 @@ public class TowerMaker {
                     // gör egentligen och om inte EXTRA_DMG och extraRange blir dubbel info då de kmr finnas
                     // i gameAction också.
                     DmgBuffAction dmgBuffAction = new DmgBuffAction(extraDMG);
-                    NonShootableTower newTower = new NonShootableTower(board, board.getAllObjects(), dmgBuffAction, board.getDifficulty(),
+                    NonShootableTower newTower = new NonShootableTower(board, board.getAllObjects(), dmgBuffAction,
                             position.getX(), position.getY(), dimension, Colour.BLUE, Shapes.RECTANGLE, range , price, extraDMG, extraRange);
 
                     board.addObject(newTower);
@@ -82,8 +82,8 @@ public class TowerMaker {
 
         Attack newAttack = new Attack(dmg, range, rOF, enemiesTowerCanShootAtTheSameTime ,colourOfShoots, board.getFrameRate());
         ShootingAction newShootingAction = new ShootingAction(newAttack);
-        ShootableTower newTower = new ShootableTower(board, board.getAllObjects(), newShootingAction, position.getX(), position.getY(),
-                dimension, colourOfTower, Shapes.RECTANGLE, price, board.getDifficulty());
+        ShootableTower newTower = new ShootableTower(board, board.getAllObjects(), newShootingAction, position.getX(),
+                                                     position.getY(), dimension, colourOfTower, Shapes.RECTANGLE, price);
         newShootingAction.setTower(newTower); // the gameaction is now attatched to the newTower.
 
         board.addObject(newTower);

@@ -10,10 +10,8 @@ package main.tower;
 public class LevelOfTower {
     private int level = 1;
     private int exp = 0;
-    private int difficulty;
 
-    public LevelOfTower(int difficulty) {
-        this.difficulty = difficulty;
+    public LevelOfTower() {
         this.level = 1;
         this.exp = 0;
     }
@@ -35,7 +33,7 @@ public class LevelOfTower {
 
     // A formula for the exp requirement for each tower level.
     private int getExpRequirement(int level) {
-        return level*100*difficulty;
+        return level*100;
     }
 
     public int getExp() {
