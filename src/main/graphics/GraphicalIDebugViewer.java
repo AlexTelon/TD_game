@@ -20,6 +20,7 @@ public class GraphicalIDebugViewer extends JComponent implements IBoardListener 
         this.board = board;
     }
 
+    @Override
     public Dimension getPreferredSize() {
         return new Dimension(preferredWidth(), preferredHeight());
     }
@@ -30,6 +31,7 @@ public class GraphicalIDebugViewer extends JComponent implements IBoardListener 
     private int preferredWidth() {
         return Board.getSquareWidth() * Board.getWidth();
     }
+
 
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;

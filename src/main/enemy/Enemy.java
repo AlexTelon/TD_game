@@ -320,7 +320,7 @@ public class Enemy extends Placeable {
         return board;
     }
 
-    @Override
+    @Override // "Method X ignores defined method in superclass errors are ok in my book if it is an override like this.
     public void addBuffers(GameAction action) {
       // as of now there are no buffers for enemies.
     }
