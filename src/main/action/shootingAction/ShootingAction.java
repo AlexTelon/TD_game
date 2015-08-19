@@ -1,4 +1,4 @@
-package main.action.shootingAction;
+package main.action.shootingaction;
 
 import main.tower.Tower;
 import main.action.Attack;
@@ -12,7 +12,7 @@ import main.enemy.Enemy;
  * data itself. The Data is in tower and in attack
  */
 public class ShootingAction extends GameAction {
-    private Tower tower;
+    private Tower tower = null;
     private Attack attack;
 
 
@@ -30,11 +30,11 @@ public class ShootingAction extends GameAction {
     }
 
     /*
-        Makes its thing on one enemy
-         */
+     * Makes its thing on one enemy
+     */
     @Override
     public void tick(Enemy enemy) {
-        getAttack().resetEnemiesTowerHasShoot(); // reset enemies it has shot this frame.
+        attack.resetEnemiesTowerHasShoot(); // reset enemies it has shot this frame.
         if (attack.canShootAtThisFrame()) {
 
             if (enemy.isActive() && enemy.isAlive()) { // can only handle active and alive enemies
@@ -44,7 +44,7 @@ public class ShootingAction extends GameAction {
 
                     if (enemy.isAlive()) { // ie enemy still is alive
                         tower.setCurrentTarget( enemy);
-                        tower.addToCurrentPlaceablesWithinRangeOfThisTower(enemy);
+                        tower.addToCurrentPlaceablesInRangeOfThisTower(enemy);
                     } else {
                         tower.setCurrentTarget(null);
                     }
@@ -139,10 +139,7 @@ public class ShootingAction extends GameAction {
 
     @Override
     public boolean hasAnAttack() {
-        if (this.attack != null) {
-            return true;
-        }
-        return false;
+        return (this.attack != null);
     }
     @Override
     public void addBuffers(GameAction gameAction) {

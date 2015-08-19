@@ -1,7 +1,7 @@
 package main.enemy;
 
 import main.board.Board;
-import main.enemy.enemyType.*;
+import main.enemy.enemytype.*;
 import main.position.Point;
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class EnemyWaves {
     private List<Point> path = new ArrayList<Point>();
     private static final int PRIORITY = 5;
 
-    private int currentGroupIndex = 0;
+    private int currentGroupNr = 0;
      // private ColorHandlerSingleton colorHandler = ColorHandlerSingleton.getInstance();
 
 
@@ -66,8 +66,8 @@ public class EnemyWaves {
      * @return ArrayList<main.enemy.Enemy>
      */
     public EnemyWave getNextEnemyWave() {
-	int ret = currentGroupIndex;
-	currentGroupIndex++;
+	int ret = currentGroupNr;
+	currentGroupNr++;
         return allEnemyWaves.get(ret);
     }
 
@@ -77,18 +77,18 @@ public class EnemyWaves {
 
 
     public boolean isThereMoreGroups() {
-        if (allEnemyWaves.size() > currentGroupIndex) {
+        if (allEnemyWaves.size() > currentGroupNr) {
             return true;
         }
         return false;
     }
 
     public double getNextGroupsActivationTime() {
-        return allEnemyWaves.get(currentGroupIndex).getGroupActivationTime();
+        return allEnemyWaves.get(currentGroupNr).getGroupActivationTime();
     }
 
     public int getCurrentGroupNr() {
-        return currentGroupIndex;
+        return currentGroupNr;
     }
 
     public Iterable<Point> getEnemyPath() {

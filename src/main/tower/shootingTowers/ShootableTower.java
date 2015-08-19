@@ -1,10 +1,10 @@
-package main.tower.shootingTowers;
+package main.tower.shootingtowers;
 
 import java.awt.*;
 import java.util.Collection;
 
 import main.action.GameAction;
-import main.action.shootingAction.ShootingAction;
+import main.action.shootingaction.ShootingAction;
 import main.board.Board;
 import main.enemy.EnemyWave;
 import main.board.Placeable;
@@ -19,7 +19,7 @@ public class ShootableTower extends Tower {
     }
 
 
-    public void tick(EnemyWave allEnemies) { // TODO Move to shootingAction so that we have only data in this class(?)
+    public void tick(EnemyWave allEnemies) { // TODO Move to shootingaction so that we have only data in this class(?)
 
         //send action to all objects
         for (Placeable obj : getPlacablesWithinRangeOfThisTower()) {
@@ -37,9 +37,7 @@ public class ShootableTower extends Tower {
 
     @Override
     public void addBuffers(GameAction action) {
-        if (getBuffers().contains(action)) {
-            // do nothing if already there
-        } else {
+        if (!getBuffers().contains(action)) {
             getBuffers().add(action);
             for (GameAction currentGameAction : getGameActions()) {
                 if (currentGameAction.hasAnAttack())

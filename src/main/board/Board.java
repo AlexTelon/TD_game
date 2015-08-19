@@ -1,7 +1,7 @@
 package main.board;
 
 import main.player.Player;
-import main.tower.nonShootableTower.NonShootableTower;
+import main.tower.nonshootabletower.NonShootableTower;
 import main.tower.Tower;
 import main.board.IDesign.Shapes;
 import main.enemy.Enemy;
@@ -22,6 +22,8 @@ import java.util.List;
  * and it keeps track of all objects in the game.
  */
 
+@SuppressWarnings("CallToSimpleSetterFromWithinClass") // keeping this since simple setters might change and its a bit easier
+// to refactor things we call setters internally too.
 public class Board {
     private static final int WIDTH = 20;
     private static final int HEIGHT = 20;
@@ -45,13 +47,13 @@ public class Board {
     private final PriorityMap priorityMap = new PriorityMap();
 
     // Things that are constant and placed on the grid from the getgo.
-    private final Placeable castle = new Placeable(WIDTH-CASTLE_SIDE, getHeight()/2,
+    private final Placeable castle = new Placeable(WIDTH-CASTLE_SIDE, HEIGHT/2,
             new Dimension(CASTLE_SIDE,
                     CASTLE_SIDE), Colour.RED, Shapes.RECTANGLE, 8); //only enemies are above this
 
     private static final Color BACKGROUND_COLOR = Color.GREEN;
     private double frameRate = 50;
-    private EnemyWaves enemyWaves = new EnemyWaves(this, castle.getPosition(), new Point(0, getHeight()/2));
+    private EnemyWaves enemyWaves = new EnemyWaves(this, castle.getPosition(), new Point(0, HEIGHT/2));
     private EnemyWave allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();
 
 
@@ -77,13 +79,13 @@ public class Board {
      * like player win/lose conditions, prints stats and inciments the global currentTime.
      */
     public void tick() {
-        currentTime += getFrameRate();
-        subtractCountdownToNextWave(getFrameRate());
+        currentTime += frameRate;
+        subtractCountdownToNextWave(frameRate);
 
         if (!gameover) {
             notifyListeners();
 
-            if (getCountdownToNextWave() == 0) {
+            if (countdownToNextWave <= 0.1) {
 
                 // asume all enemies are dead and if this is not the case it is set to false below.
                 boolean allEnemiesAreDead = true;
@@ -207,7 +209,7 @@ public class Board {
         int yPosOfObject = object.getPosition().getY();
         int xPosOfObject = object.getPosition().getX();
 
-        if (heightOfObject+yPosOfObject > Board.getHeight() || widthOfObject+xPosOfObject > Board.getWidth()) {
+        if (heightOfObject+yPosOfObject > Board.HEIGHT || widthOfObject+xPosOfObject > Board.getWidth()) {
             System.out.println("out of bounds -- setPriority");
         } else {
             for (int y = 0; y < heightOfObject; y++) {
@@ -250,6 +252,7 @@ public class Board {
     public boolean isWithinCastle(Point point) {
         int castleY = castle.getPosition().getY();
         int castleX = castle.getPosition().getX();
+        //noinspection CallToSimpleGetterFromWithinClass // It the functions are more descriptive than the constant.
         for (int y = castleY; y < castleY + getCastleHeight(); y++ ) {
             for (int x = castleX; x < castleX + getCastleWidth(); x++ ) {
                 if (point.getX() == x && point.getY() == y) {
@@ -268,9 +271,7 @@ public class Board {
 
     // Loops through all listners in the arrayList and calls boardChanged() for them all
     public void notifyListeners() {
-        if (boardListener.isEmpty()) {
-        }
-        else {
+        if (!boardListener.isEmpty()) {
             for (int i = 0; i < boardListener.size(); i++) {
                 boardListener.get(i).boardChanged();
             }

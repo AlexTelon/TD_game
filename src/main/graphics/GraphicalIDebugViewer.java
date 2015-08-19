@@ -32,7 +32,7 @@ public class GraphicalIDebugViewer extends JComponent implements IBoardListener 
         return Board.getSquareWidth() * Board.getWidth();
     }
 
-
+    @Override
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         paintInfoForAllEnemies(g2);

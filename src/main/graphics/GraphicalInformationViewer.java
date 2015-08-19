@@ -1,6 +1,6 @@
 package main.graphics;
 
-import main.tower.shootingTowers.ShootableTower;
+import main.tower.shootingtowers.ShootableTower;
 import main.tower.Tower;
 import main.tower.Tower.TowerInformation;
 import main.action.GameAction;
@@ -29,7 +29,7 @@ import java.awt.*;
  */
 public class GraphicalInformationViewer extends JComponent implements IBoardListener {
     private Board board;
-    private Placeable currentObject;
+    private Placeable currentObject = null;
     private EnemyWaves enemyGroups;
     private int smallSpacing = 20;
 
@@ -39,6 +39,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
         enemyGroups = board.getEnemyWaves();
     }
 
+    @Override
     public Dimension getPreferredSize() {
         return new Dimension(preferredWidth(), preferredHeight());
     }
@@ -50,6 +51,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
         return 300;
     }
 
+    @Override
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
 

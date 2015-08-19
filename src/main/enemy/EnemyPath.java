@@ -19,10 +19,10 @@ public class EnemyPath {
     private final ArrayList<Point> mainPath = new ArrayList<Point>();
     private int currentGoal = 0;
     private List<Point> path = new ArrayList<Point>();
-    private static int x = new Random().nextInt(Board.getWidth()-Board.getCastleWidth());
-    private static int y = new Random().nextInt(Board.getHeight());
-    private static int x2 = new Random().nextInt(Board.getWidth()-Board.getCastleWidth());
-    private static int y2 = new Random().nextInt(Board.getHeight());
+    private static int subGoal1x = new Random().nextInt(Board.getWidth()-Board.getCastleWidth());
+    private static int subGoal1y = new Random().nextInt(Board.getHeight());
+    private static int subGoal2x = new Random().nextInt(Board.getWidth()-Board.getCastleWidth());
+    private static int subGoal2y = new Random().nextInt(Board.getHeight());
     private int pathLenght = 0;
     /*
     private static int x3 = new Random().nextInt(Board.getWidth());
@@ -30,8 +30,8 @@ public class EnemyPath {
 */
     public EnemyPath(Point start, Point endGoal) {
 
-        this.mainPath.add(0,new Point(x,y));
-        this.mainPath.add(1,new Point(x2,y2));
+        this.mainPath.add(0,new Point(subGoal1x, subGoal1y));
+        this.mainPath.add(1,new Point(subGoal2x, subGoal2y));
      //   this.mainPath.add(2,new Point(x3,y3));
         this.mainPath.add(2,endGoal);
 
@@ -86,7 +86,7 @@ public class EnemyPath {
                     currentYPos += changeInY; // update current YPos
                 }
 
-		Point pathPoint = new Point(currentXPos, currentYPos);
+                Point pathPoint = new Point(currentXPos, currentYPos);
 		path.add(pathPoint);
 
             }

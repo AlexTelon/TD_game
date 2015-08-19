@@ -1,4 +1,4 @@
-package main.tower.nonShootableTower;
+package main.tower.nonshootabletower;
 
 import main.tower.Tower;
 import main.action.GameAction;

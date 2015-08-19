@@ -47,9 +47,7 @@ public class Vector {
     }
 
     public double length() {
-        double x = getX();
-        double y = getY();
-        return sqrt((pow(x,2)+pow(y,2)));
+        return sqrt((pow(this.x,2)+pow(this.y,2)));
     }
 
 }

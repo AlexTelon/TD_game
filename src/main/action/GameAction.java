@@ -17,6 +17,10 @@ public class GameAction implements IGameActions {
         // all values are set to 0 by default.
     }
 
+    public void tick(Placeable obj) {
+          obj.addBuffers(this);
+    }
+
     public void tick(Tower tower) {
         tower.addBuffers(this);
     }

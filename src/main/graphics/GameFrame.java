@@ -25,7 +25,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
     private Board board;
     private GraphicalViewer graphicalViewer;
     private GraphicalInformationViewer graphicalInformationViewer;
-    private Point lastClickedPosition;
+    private Point lastClickedPosition = null;
     private TowerMaker towerFactory = new TowerMaker();
 
     public GameFrame(Board board) throws HeadlessException {
@@ -48,6 +48,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
 
 
         menu.add(new JMenuItem(closeAction));
+        //noinspection QuestionableName, not bar as in foo and bar but actually a bar :P
         final JMenuBar bar = new JMenuBar();
         bar.add(menu);
 

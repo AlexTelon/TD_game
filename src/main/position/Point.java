@@ -27,7 +27,7 @@ public class Point {
      * @return a Point in pixelPosition
      */
     public Point getPixelPos() {
-        return new Point(GlobalPositioning.getXPixel(getX()), GlobalPositioning.getYPixel(getY()));
+        return new Point(GlobalPositioning.getXPixel(x), GlobalPositioning.getYPixel(y));
     }
 
     public void convertToPixelPos() {
@@ -64,17 +64,17 @@ public class Point {
 
     @Override
     public String toString() {
-      return ("(" + getX() + ", " + getY() + " )" );
+      return ("(" + x + ", " + y + " )" );
     }
 
     public void add(Point pixelposition) {
-        this.x += pixelposition.getX();
-        this.y += pixelposition.getY();
+        this.x += pixelposition.x;
+        this.y += pixelposition.y;
     }
 
     public void subtract(Point pixelposition) {
-        this.x -= pixelposition.getX();
-        this.y -= pixelposition.getY();
+        this.x -= pixelposition.x;
+        this.y -= pixelposition.y;
     }
 
     public void subtractX(int changeInX) {

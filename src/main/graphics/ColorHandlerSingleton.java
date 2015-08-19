@@ -11,14 +11,14 @@ import java.awt.*;
  */
 public final class ColorHandlerSingleton
 {
-    private static ColorHandlerSingleton ourInstance = new ColorHandlerSingleton();
+    private static ColorHandlerSingleton instance = new ColorHandlerSingleton();
 
     public enum Colour {
         WHITE, GRAY, BLACK, YELLOW, ORANGE, GREEN, PURPLE, DARKBLUE, LIGHTBLUE, RED, BLUE
     }
 
     public static ColorHandlerSingleton getInstance() {
-        return ourInstance;
+        return instance;
     }
 
     private ColorHandlerSingleton() {

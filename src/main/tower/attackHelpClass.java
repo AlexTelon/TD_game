@@ -25,8 +25,10 @@ public class AttackHelpClass
             for (Placeable obj : allObjects) {
                 if (obj != referencePoint) {
                     if (isObjectWithinRange(obj, referencePoint)) {
-                        addToCurrentPlaceablesWithinRangeOfThisTower(obj);
+                        addToCurrentPlaceablesInRangeOfThisTower(obj);
                     }
+                } else {
+                    System.out.println("comparison failed");
                 }
             }
         }
@@ -47,13 +49,13 @@ public class AttackHelpClass
     Things regarding placablesWithinRangeOfThisTower
      */
 
-    public void addToCurrentPlaceablesWithinRangeOfThisTower(Placeable obj) {
+    public void addToCurrentPlaceablesInRangeOfThisTower(Placeable obj) {
         if (!placablesWithinRangeOfThisTower.contains(obj)) {
             this.placablesWithinRangeOfThisTower.add(obj);
         }
     }
 
-    public void removeFromCurrentPlaceablesWithinRangeOfThisTower(Enemy currentEnemy) {
+    public void removeFromCurrentPlaceablesInRangeOfThisTower(Enemy currentEnemy) {
         this.placablesWithinRangeOfThisTower.remove(currentEnemy);
     }
 

@@ -1,10 +1,10 @@
 package main.tower;
 
-import main.tower.nonShootableTower.NonShootableTower;
-import main.tower.shootingTowers.ShootableTower;
+import main.tower.nonshootabletower.NonShootableTower;
+import main.tower.shootingtowers.ShootableTower;
 import main.action.Attack;
-import main.action.auraAction.DmgBuffAction;
-import main.action.shootingAction.ShootingAction;
+import main.action.auraaction.DmgBuffAction;
+import main.action.shootingaction.ShootingAction;
 import main.board.Board;
 import main.board.IDesign.Shapes;
 import main.graphics.ColorHandlerSingleton.Colour;

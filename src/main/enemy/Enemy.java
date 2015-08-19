@@ -20,6 +20,8 @@ import static java.lang.Math.abs;
  * The main class for enemy, all types of enemy will extend this class. Has all the basic information which all
  * enemy have in common.
  */
+@SuppressWarnings("CallToSimpleSetterFromWithinClass") // keeping this since simple setters might change and its a bit easier
+// to refactor things we call setters internally too.
 public class Enemy extends Placeable {
     private int hitPoints;
     private int pixelSpeed;
@@ -27,11 +29,11 @@ public class Enemy extends Placeable {
     private int gold;
     private boolean alive;
     private boolean active;
-    private Board board;
+    private Board board = null;
     private double activationTime;
     private int experienceToTowers;
 
-    private EnemyPath enemyPathing;
+    private EnemyPath enemyPathing = null;
 
     public Enemy(Board board, int x, int y, Colour colour,
                  int experienceToTowers, int pixelSpeed, int dmgToBase, int gold, int hitPoints) {
@@ -67,21 +69,21 @@ public class Enemy extends Placeable {
      */
     public Enemy(Enemy enemyPrototype, double activationTime) {
         super(enemyPrototype.getPosition().getX(), enemyPrototype.getPosition().getY(), enemyPrototype.getHitpoints() , enemyPrototype.getColour(), 9);
-        this.board = enemyPrototype.getBoard();
+        this.board = enemyPrototype.board;
         this.hitPoints = enemyPrototype.getHitpoints();
-        this.pixelSpeed = enemyPrototype.getPixelSpeed();
+        this.pixelSpeed = enemyPrototype.pixelSpeed;
         if (pixelSpeed >= Board.getSquareHeight() || pixelSpeed >= Board.getSquareWidth()) { // there is a speed limit
             if (Board.getCastleHeight() < Board.getCastleWidth()) {
                 this.pixelSpeed = Board.getCastleHeight() ;
             }
             this.pixelSpeed = Board.getCastleWidth();
         }
-        this.dmgToBase = enemyPrototype.getDmgToBase();
-        alive = enemyPrototype.isAlive();
-        active = enemyPrototype.isActive();
-        this.gold = enemyPrototype.getGold();
+        this.dmgToBase = enemyPrototype.dmgToBase;
+        alive = enemyPrototype.alive;
+        active = enemyPrototype.active;
+        this.gold = enemyPrototype.gold;
         this.activationTime = activationTime;
-        this.experienceToTowers = enemyPrototype.getExperienceToTowers();
+        this.experienceToTowers = enemyPrototype.experienceToTowers;
         enemyPathing = new EnemyPath(getPosition(), board.getCastlePos());
     }
 
@@ -97,7 +99,7 @@ public class Enemy extends Placeable {
      * @param time current time
      */
     public void tick(double time) {
-        if (getActivationTime() <= time && isAlive()) {
+        if (activationTime <= time && alive) {
             setActive(true);
 
             for (GameAction currentAction : getGameActions()) {
@@ -110,11 +112,11 @@ public class Enemy extends Placeable {
             }
         }
 
-        if (getHitpoints() <= 0 && isAlive()) {
+        if (getHitpoints() <= 0 && alive) {
             setToDead();
             return;
         }
-        if (isActive() && board.isWithinCastlePixelPos(this)) { // if enemy is on castle
+        if (alive && board.isWithinCastlePixelPos(this)) { // if enemy is on castle
             board.getPlayer().subtractLives(dmgToBase);
             board.getPlayer().subtractGold(gold);
             setToDead();
@@ -137,14 +139,14 @@ public class Enemy extends Placeable {
         int moveX, moveY;
 
         // check for how far it should move and if if the direction should be pos or neg.
-        if (abs(deltaX) > getPixelSpeed()) {
-            moveX = getPixelSpeed();
+        if (abs(deltaX) > pixelSpeed) {
+            moveX = pixelSpeed;
             if (deltaX < 0) moveX = -moveX;
         } else {
             moveX = deltaX;
         }
-        if (abs(deltaY) > getPixelSpeed()) {
-            moveY = getPixelSpeed();
+        if (abs(deltaY) > pixelSpeed) {
+            moveY = pixelSpeed;
             if (deltaY < 0) moveY = -moveY;
         } else {
             moveY = deltaY;
@@ -170,7 +172,7 @@ public class Enemy extends Placeable {
         //     makeDeadBody();
 
         for( Tower currentTower : board.getAllTowers()) {
-            currentTower.removeFromCurrentPlaceablesWithinRangeOfThisTower(this);
+            currentTower.removeFromCurrentPlaceablesInRangeOfThisTower(this);
         }
 
         setActive(false);
@@ -275,7 +277,6 @@ public class Enemy extends Placeable {
 
     public double getActivationTime() {
         return activationTime;
-        // return timeType.getActivationTime();
     }
 
     public int getPixelSpeed() {

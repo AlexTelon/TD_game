@@ -17,8 +17,8 @@ import java.awt.*;
  */
 public class GraphicalViewer extends JComponent implements IBoardListener {
     private Board board;
-    private Placeable higlightedObj;
-    private Point higlightedPoint;
+    private Placeable higlightedObj = null;
+    private Point higlightedPoint = null;
     private boolean higlightisObj = false;
     private boolean nothingIsHighlighted = true;
 
@@ -26,6 +26,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
         this.board = board;
     }
 
+    @Override
     public Dimension getPreferredSize() {
         return new Dimension(preferredWidth(), preferredHeight());
     }
@@ -41,6 +42,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      * Paints the whole board
      * @param g
      */
+    @Override
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         for (int y = 0; y < Board.getHeight(); ++y ) {

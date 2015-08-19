@@ -21,12 +21,13 @@ import static java.lang.StrictMath.round;
  * This is the class which all objects that can be placed on the board will extend.
  */
 
+@SuppressWarnings("SuspiciousGetterSetter") // All ok getters/setters.
 public class Placeable implements IDesign{
     private Point position;
     private Dimension dimension = new Dimension(1,1);
     private ColorHandlerSingleton colorHandlerSingleton = ColorHandlerSingleton.getInstance();
-    private Colour color = Colour.WHITE;
-    private Shapes shapes = Shapes.RECTANGLE;
+    private Colour colour = Colour.WHITE;
+    private Shapes shape = Shapes.RECTANGLE;
     private int priority = 1;
     private Point pixelPosition;
     private String nameText = "Placeholder";
@@ -36,27 +37,30 @@ public class Placeable implements IDesign{
     private Collection<GameAction> actions = new ArrayList<GameAction>();
     //   private GameAction gameActions = new GameAction();
 
-    public Placeable(int x, int y, Dimension dimension, Colour color, Shapes shape, int priority) {
+    public Placeable(int x, int y, Dimension dimension, Colour colour, Shapes shape, int priority) {
         this.position = new Point(x,y);
         this.pixelPosition = position.getPixelPos();
         this.dimension = dimension;
-        this.color = color;
-        this.shapes = shape;
+        this.colour = colour;
+        this.shape = shape;
         this.priority = priority;
     }
 
-    public Placeable(int x, int y, Dimension dimension, Colour color, Shapes shape) {
-        this(x, y, dimension, color, shape, 1);
+    public Placeable(int x, int y, Dimension dimension, Colour colour, Shapes shape) {
+        this(x, y, dimension, colour, shape, 1);
     }
 
 
-    public Placeable(int x, int y, Dimension dimension, Colour color, Shapes shape, GameAction gameAction) {
-        this(x, y, dimension,color,shape,1);
-        this.addGameActions(gameAction);
+    public Placeable(int x, int y, Dimension dimension, Colour colour, Shapes shape, GameAction gameAction) {
+        this(x, y, dimension, colour, shape, 1);
+
+        // wont call addGameActions as it is overriden
+        if (!actions.contains(gameAction))
+        this.actions.add(gameAction); // only adds new actions
     }
 
-    public Placeable(int x, int y, int hitpoints, Colour color, int priority) {
-        this(x, y, new Dimension(1,1), color, Shapes.RECTANGLE, priority);
+    public Placeable(int x, int y, int hitpoints, Colour colour, int priority) {
+        this(x, y, new Dimension(1,1), colour, Shapes.RECTANGLE, priority);
         this.hitpoints = hitpoints;
     }
 
@@ -67,10 +71,10 @@ public class Placeable implements IDesign{
      * @return a point to the center of the object
      */
     public Point getCenterOfObject() {
-        double width = GlobalPositioning.getXPixel(getDimension().width);
-        double height = GlobalPositioning.getYPixel(getDimension().height);
-        double xPos = getPixelPosition().getX();
-        double yPos = getPixelPosition().getY();
+        double width = GlobalPositioning.getXPixel(dimension.width);
+        double height = GlobalPositioning.getYPixel(dimension.height);
+        double xPos = pixelPosition.getX();
+        double yPos = pixelPosition.getY();
         int midX = (int) round(xPos + width / 2);
         int midY = (int) round(yPos + height / 2);
         return new Point(midX, midY);
@@ -85,8 +89,8 @@ public class Placeable implements IDesign{
 	int result = position != null ? position.hashCode() : 0;
 	result = 31 * result + (dimension != null ? dimension.hashCode() : 0);
 	result = 31 * result + (colorHandlerSingleton != null ? colorHandlerSingleton.hashCode() : 0);
-	result = 31 * result + (color != null ? color.hashCode() : 0);
-	result = 31 * result + (shapes != null ? shapes.hashCode() : 0);
+	result = 31 * result + (colour != null ? colour.hashCode() : 0);
+	result = 31 * result + (shape != null ? shape.hashCode() : 0);
 	result = 31 * result + priority;
 	result = 31 * result + (pixelPosition != null ? pixelPosition.hashCode() : 0);
 	result = 31 * result + (nameText != null ? nameText.hashCode() : 0);
@@ -106,13 +110,13 @@ public class Placeable implements IDesign{
 
         if (hitpoints != placeable.hitpoints) return false;
         if (priority != placeable.priority) return false;
-        if (color != placeable.color) return false;
+        if (colour != placeable.colour) return false;
         if (dimension != null ? !dimension.equals(placeable.dimension) : placeable.dimension != null) return false;
         if (nameText != null ? !nameText.equals(placeable.nameText) : placeable.nameText != null) return false;
         if (pixelPosition != null ? !pixelPosition.equals(placeable.pixelPosition) : placeable.pixelPosition != null)
             return false;
         if (position != null ? !position.equals(placeable.position) : placeable.position != null) return false;
-        if (shapes != placeable.shapes) return false;
+        if (shape != placeable.shape) return false;
 
         return true;
     }
@@ -124,16 +128,16 @@ public class Placeable implements IDesign{
     }
 
     public Color getGUIColor() {
-        return colorHandlerSingleton.getGUIColour(color);
+        return colorHandlerSingleton.getGUIColour(colour);
     }
 
     public Colour getColour() {
-        return color;
+        return colour;
     }
 
     @Override
     public Shapes getShape() {
-        return shapes;
+        return shape;
     }
 
     /**
@@ -142,8 +146,8 @@ public class Placeable implements IDesign{
      * @return a double
      */
     public double distanceTo(Placeable a) {
-        Point aPos = a.getPixelPosition();
-        Point bPos = this.getPixelPosition();
+        Point aPos = a.pixelPosition;
+        Point bPos = this.pixelPosition;
         int deltaX = aPos.getX()-bPos.getX();
         int deltaY = aPos.getY()-bPos.getY();
 
@@ -180,7 +184,7 @@ public class Placeable implements IDesign{
     }
 
     public void setColour(Colour color) {
-        this.color = color;
+        this.colour = color;
     }
 
 
@@ -189,9 +193,7 @@ public class Placeable implements IDesign{
     }
 
     public void addBuffers(GameAction action) {
-        if (buffers.contains(action)) {
-            // do nothing if already there
-        } else {
+        if (!buffers.contains(action)) {
             this.buffers.add(action);
         }
     }

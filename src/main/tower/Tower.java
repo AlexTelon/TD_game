@@ -30,8 +30,8 @@ public class Tower extends Placeable  {
     private Collection<Placeable> allPlaceables = new ArrayList<Placeable>();
     private int kills = 0;
     private Board board;
-    private Enemy lastTarget;
-    private Enemy currentTarget;
+    private Enemy lastTarget = null;
+    private Enemy currentTarget = null;
     public enum TowerInformation {
         DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, EXTRA_DMG
     }
@@ -84,7 +84,7 @@ public class Tower extends Placeable  {
     }
 
     private void recalcLevel() {
-        hasGainedLevels = getLevelOfTower().recalculateLevel();
+        hasGainedLevels = levelOfTower.recalculateLevel();
         if (hasGainedLevels != 0) {
             for ( GameAction action : getGameActions()) {
                 if (action.getAttack() != null) { // getAttack() returns null if the gameAction does not have an attack.
@@ -107,8 +107,8 @@ public class Tower extends Placeable  {
     /*
     Things regarding placablesWithinRangeOfThisTower
      */
-    public void addToCurrentPlaceablesWithinRangeOfThisTower(Placeable obj) {
-        attackHelpClass.addToCurrentPlaceablesWithinRangeOfThisTower(obj);
+    public void addToCurrentPlaceablesInRangeOfThisTower(Placeable obj) {
+        attackHelpClass.addToCurrentPlaceablesInRangeOfThisTower(obj);
     }
 
 
@@ -116,8 +116,8 @@ public class Tower extends Placeable  {
         this.lastTargets.add(currentTarget);
     }
 
-    public void removeFromCurrentPlaceablesWithinRangeOfThisTower(Enemy currentEnemy) {
-        attackHelpClass.removeFromCurrentPlaceablesWithinRangeOfThisTower(currentEnemy);
+    public void removeFromCurrentPlaceablesInRangeOfThisTower(Enemy currentEnemy) {
+        attackHelpClass.removeFromCurrentPlaceablesInRangeOfThisTower(currentEnemy);
     }
 
     public Collection<Placeable> getPlacablesWithinRangeOfThisTower() {

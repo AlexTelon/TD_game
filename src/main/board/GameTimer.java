@@ -15,26 +15,27 @@ import java.util.Timer;
  * This class in the main class and calls tick for Board which the runs the rest of the program.
  */
 public class GameTimer {
-    private final Board board = new Board(refreshRate);
-    private static int refreshRate = 50;
+    private static final int REFRESH_RATE = 50;
+    private static final Board BOARD = new Board(REFRESH_RATE);
 
-    public GameTimer() {
-        board.setFramerate(refreshRate);
-        board.addBoardListener(new GameFrame(board));
-        board.addBoardListener(new GraphicalViewer(board));
+
+    public static void runGame() {
+        BOARD.setFramerate(REFRESH_RATE);
+        BOARD.addBoardListener(new GameFrame(BOARD));
+        BOARD.addBoardListener(new GraphicalViewer(BOARD));
 
         Timer timer = new Timer();
 
         timer.schedule( new TimerTask() {
             public void run() {
-                board.tick();
+                BOARD.tick();
             }
-        }, 0, refreshRate);
+        }, 0, REFRESH_RATE);
     }
 
     public static void main(String[] args) {
-        new GameTimer();
+        runGame();
     }
+};
 
 
-}
