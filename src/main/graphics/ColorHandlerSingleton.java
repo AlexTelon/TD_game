@@ -12,7 +12,7 @@ import java.awt.*;
 public final class ColorHandlerSingleton
 {
     private static ColorHandlerSingleton instance = new ColorHandlerSingleton();
-
+    
     public enum Colour {
         WHITE, GRAY, BLACK, YELLOW, ORANGE, GREEN, PURPLE, DARKBLUE, LIGHTBLUE, RED, BLUE
     }
@@ -28,7 +28,7 @@ public final class ColorHandlerSingleton
      * Gives the GUI color
      *
      * LATER ON: this should maybe use something else instead of a switch case.
-     * @param colour
+     * @param colour the Colour object to be converted to an Color object.
      * @return a color that the GUI can use
      */
     public Color getGUIColour(Colour colour) {

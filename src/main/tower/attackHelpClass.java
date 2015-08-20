@@ -6,8 +6,7 @@ import main.enemy.Enemy;
 import java.util.Collection;
 import java.util.ArrayList;
 
-public class AttackHelpClass
-{
+public class AttackHelpClass {
     private Collection<Placeable> placablesInRangeOfThisTower = new ArrayList<Placeable>();
     private ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
     private final double range = 200.0;
@@ -16,7 +15,6 @@ public class AttackHelpClass
      * Finds all placebles within range and returns them
      * @param allObjects
      * @param referencePoint - a placeable from which we want to find which objects are within range of
-     * @return
      */
     public void findObjectsWithinRange(Collection<Placeable> allObjects, Placeable referencePoint) {
         if (!allObjects.isEmpty()) {

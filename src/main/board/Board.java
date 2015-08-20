@@ -130,7 +130,6 @@ public class Board {
     /**
      * Placeable objects are placed in their proper lists.
      * @param obj
-     * @return true if added successfully, false otherwise
      */
     public void addObject(Placeable obj) {
 
