@@ -32,8 +32,11 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     private Board board;
     private Placeable currentObject = null;
     private EnemyWaves enemyGroups;
-    private int smallSpacing = 20;
-
+    private static final int SMALL_SPACING = 20;
+    private static final int PREFERRED_WITH = 300;
+    private static final int TOP_MARGIN_X = 80; // margin to the top of the window for text information
+    private static final int MARGIN_Y = 15;
+    private static final int WAVE_INFO_SPACE_TO_TOP = 190;
 
     public GraphicalInformationViewer( Board board) {
         this.board = board;
@@ -48,7 +51,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     private int preferredHeight() {
         return Board.getSquareHeight() * Board.getHeight();
     }
-    private int preferredWidth() {  return 300; }
+    private int preferredWidth() {  return PREFERRED_WITH; }
 
     @Override
     public void paintComponent(Graphics g) {
@@ -65,24 +68,24 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
      * @param  g2  a graphics2D objecv
      */
     private void paintInfoForCurrentEnemy(Graphics2D g2, Enemy currentEnemy) {
-        int x = 80;
-        int y = 15;
+        int x = TOP_MARGIN_X;
+        int y = MARGIN_Y;
         g2.setColor(Color.BLACK);
-        g2.drawString("Information about current Enemy", 0, 15);
+        g2.drawString("Information about current Enemy", 0, y);
 
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("Hitpoints", 0, y);
 
         g2.drawString(currentEnemy.getHealthText(), x, y);
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("Dmg To Base",0, y);
 
         g2.drawString(stringConverter(currentEnemy.getDmgToBase()), x, y);
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("Speed",0, y);
 
         g2.drawString(stringConverter(currentEnemy.getPixelSpeed()), x, y);
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("Gold", 0, y);
 
         g2.drawString(stringConverter(currentEnemy.getGold()), x, y);
@@ -97,72 +100,71 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     }
 
     private void paintInfo(Graphics2D g2) {
-        int spacingBeforeTowerText = 85;
         g2.setColor(Color.BLACK);
-        int x = 10;
-        int y = 190;
+        int x = MARGIN_Y;
+        int y = WAVE_INFO_SPACE_TO_TOP;
         g2.drawString("Current WaveNr: " + enemyGroups.getCurrentGroupNr() + "    Time to next Wave " +
                 stringConverter((int) board.getCountdownToNextWave()), x, y);
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.setColor(Color.BLACK);
         g2.drawString("main/tower", x, y);
-        x += spacingBeforeTowerText;
+        x += TOP_MARGIN_X;
         for (Tower currentTower : board.getAllTowers()) {
             g2.drawString(currentTower.getPrice() + ", ", x, y);
-            x += smallSpacing;
+            x += SMALL_SPACING;
         }
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("Gold: "+ stringConverter(board.getPlayer().getGold()), 10, y);
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("Lives: "+ stringConverter(board.getPlayer().getLives()), 10, y);
 
 
     }
 
     @SuppressWarnings("ReuseOfLocalVariable") private void paintInfoForCurrentTower(Graphics2D g2, Tower tower) {
-        int x = 80;
-        int y = 15;
+        int x = TOP_MARGIN_X;
+        int y = MARGIN_Y;
         g2.setColor(Color.BLACK);
-        g2.drawString("Information about current tower", 0, 15);
+        g2.drawString("Information about current tower", 0, y);
 
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("Type", 0, y);
         g2.drawString(tower.getNameText(), x, y);
 
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("Level",0, y);
         g2.drawString(stringConverter(tower.getLevelOfTower().getLevel()), x, y);
 
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("Exp",0, y);
         g2.drawString(stringConverter(tower.getLevelOfTower().getExp()), x, y);
 
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("MultiShoot? " + stringConverter(tower.getTowerInformation(TowerInformation.ENEMIESCANSHOOTSAMETIME)), 0,
                 y);
 
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("NrOfTargets:  " + stringConverter(tower.getPlacablesWithinRangeOfThisTower().size()), 0, y);
 
-        y += smallSpacing;
+        y += SMALL_SPACING;
         g2.drawString("Rate of Fire: (rounded)  " +  stringConverter(tower.getTowerInformation(TowerInformation.RATEOFFIRE)), 0, y);
 
-        y += smallSpacing;
+        y += SMALL_SPACING;
 
         /* This and all other cases of "Reuse of local variable" is OK for temporary variables in my mind. Several individual
          variables with good naming would be better thouogh, but still I think this is ok for placing stuff in a GUI like this*/
-        x = smallSpacing;
+        x = SMALL_SPACING;
 	if (!tower.getBuffers().isEmpty()) {
 	    g2.drawString("Buffers:  ", 0, y);
-            int spacingBetweenBuffers = 55;
+            final int SPACE_BETWEEN_BUFFERS = 55;
 	    for (GameAction actions : tower.getBuffers()) {
-		x += spacingBetweenBuffers;
+		x += SPACE_BETWEEN_BUFFERS;
 		g2.drawString(String.valueOf(actions.getExtraDmg() + " " + actions.getExtraRange()), x, y);
 	    }
 	} else System.out.println("No targets");
 
 
-	y += smallSpacing;
+	y += SMALL_SPACING;
         g2.drawString("DPS  " + tower.getTowerInformation(TowerInformation.DPS) + "    Dmg  " + stringConverter(tower
                 .getTowerInformation(TowerInformation.DMG)) + " ( " +"+ " + stringConverter(tower.getTowerInformation(TowerInformation.EXTRA_DMG)) + ")" , 0, y);
 

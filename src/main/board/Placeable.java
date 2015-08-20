@@ -31,7 +31,7 @@ public class Placeable implements IDesign{
     private int priority = 1;
     private Point pixelPosition;
     private String nameText = "Placeholder";
-    private int hitpoints = 99999;
+    private int hitpoints = 1;
     private Boolean isImortal = false;
     private Collection<GameAction> buffers = new ArrayList<GameAction>(); // TODO change to sets?
     private Collection<GameAction> actions = new ArrayList<GameAction>();

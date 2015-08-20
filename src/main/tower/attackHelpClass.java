@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 public class AttackHelpClass
 {
-    private Collection<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
+    private Collection<Placeable> placablesInRangeOfThisTower = new ArrayList<Placeable>();
     private ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
-    final double range = 200.0;
+    private final double range = 200.0;
 
     /**
      * Finds all placebles within range and returns them
@@ -43,26 +43,29 @@ public class AttackHelpClass
             return true;
         }
         return false;
-    }/*
-    Things regarding placablesWithinRangeOfThisTower
+    }
+
+    /*
+     * Things regarding placablesInRangeOfThisTower
      */
 
+
     public void addToCurrentPlaceablesInRangeOfThisTower(Placeable obj) {
-        if (!placablesWithinRangeOfThisTower.contains(obj)) {
-            this.placablesWithinRangeOfThisTower.add(obj);
+        if (!placablesInRangeOfThisTower.contains(obj)) {
+            this.placablesInRangeOfThisTower.add(obj);
         }
     }
 
     public void removeFromCurrentPlaceablesInRangeOfThisTower(Enemy currentEnemy) {
-        this.placablesWithinRangeOfThisTower.remove(currentEnemy);
+        this.placablesInRangeOfThisTower.remove(currentEnemy);
     }
 
     public void clearPlaceablesWithinRangeOfThisTower() {
-        this.placablesWithinRangeOfThisTower.clear();
+        this.placablesInRangeOfThisTower.clear();
     }
 
-    public Collection<Placeable> getPlaceablesWithinRangeOfThisTower() {
-        return placablesWithinRangeOfThisTower;
+    public Collection<Placeable> getPlacablesInRangeOfThisTower() {
+        return placablesInRangeOfThisTower;
     }
 
     public ArrayList<Placeable> getAllObjects() {

@@ -6,7 +6,8 @@ package main.player;
  * this way things like gold and life is easy to change.
  */
 public class Player {
-    private int gold = 40;
+    private final int STARTING_GOLD = 40;
+    private int gold = STARTING_GOLD;
     private int lives = 100;
 
     public int getGold() {

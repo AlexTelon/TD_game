@@ -50,9 +50,8 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
 
 
         menu.add(new JMenuItem(closeAction));
-        //noinspection QuestionableName, not bar as in foo and bar but actually a bar :P
-        final JMenuBar bar = new JMenuBar();
-        bar.add(menu);
+        final JMenuBar jMenuBar = new JMenuBar();
+        jMenuBar.add(menu);
 
         final JPanel buttons = new JPanel();
         buttons.add(new JButton(buildTowerTypeAAction));
@@ -60,7 +59,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
         buttons.add(new JButton(sellTowerAction));
         this.add(buttons);
 
-        this.setJMenuBar(bar);
+        this.setJMenuBar(jMenuBar);
 
         this.setLayout(new FlowLayout());
         this.pack();

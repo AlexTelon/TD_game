@@ -7,9 +7,8 @@ import java.util.List;
 /**
  * User: alete471 Date: 2012-10-16 Time: 17:40
  This class creates several enemies and puts them into this class as to represent a wave. All enemies in a wave have
- a groupActivationTime.
+ a common groupActivationTime.
  */
-
 public class EnemyWave implements Iterable<Enemy> {
     private List<Enemy> enemiesInCurrentWave = new ArrayList<Enemy>();
     private double groupActivationTime;

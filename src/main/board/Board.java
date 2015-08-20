@@ -33,6 +33,9 @@ public class Board {
     private static final int PIXELWIDTH = WIDTH*SQUARE_WIDTH;
     private static final int PIXELHEIGHT = HEIGHT*SQUARE_HEIGHT;
     private static final int CASTLE_SIDE = 2;
+    private static final int FRAMERATE = 50;
+    private static final double DELTA = 0.001; // used for comparisons between float values
+
     private Player player = new Player();
     private boolean gameover = false;
     private double currentTime = 0;
@@ -53,7 +56,7 @@ public class Board {
                     CASTLE_SIDE), Colour.RED, Shapes.RECTANGLE, 8); //only enemies are above this
 
     private static final Color BACKGROUND_COLOR = Color.GREEN;
-    private double frameRate = 50;
+    private double frameRate = FRAMERATE;
     private EnemyWaves enemyWaves = new EnemyWaves(this, castle.getPosition(), new Point(0, HEIGHT/2));
     private EnemyWave allEnemiesInCurrentWave = enemyWaves.getNextEnemyWave();
 
@@ -86,7 +89,7 @@ public class Board {
         if (!gameover) {
             notifyListeners();
 
-            if (countdownToNextWave <= 0.1) {
+            if (countdownToNextWave <= DELTA) {
 
                 // asume all enemies are dead and if this is not the case it is set to false below.
                 boolean allEnemiesAreDead = true;
@@ -310,6 +313,19 @@ public class Board {
 
     public static int getWidth() { return WIDTH; }
 
+
+    @SuppressWarnings("TypeMayBeWeakened")
+    /*
+    I dont think that is a needed here. Below is sample code of a case where I would need to
+    be explicit of what i get back from this getter which just seems unnecessary right now. Sure being general is good
+    if I would change the type of allEnemiesInCurrentWave, this function would not need to change, but the below code
+    would need to change anyway to cast to that something else and I would argue that then we have gained nothing as it
+    would result in equally many places to do refactoring on. Anyways here is the code example:
+       for ( Enemy currentEnemy : (EnemyWave) board.getAllEnemiesInCurrentWave()) { ... }
+
+    Without the suggested change it it:
+       for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) { ... }
+    */
     public EnemyWave getAllEnemiesInCurrentWave() {
         return allEnemiesInCurrentWave;
     }

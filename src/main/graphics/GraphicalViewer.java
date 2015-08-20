@@ -25,6 +25,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
     private boolean higlightisObj = false;
     private boolean nothingIsHighlighted = true;
 
+
     public GraphicalViewer( Board board) {
         this.board = board;
     }
@@ -119,47 +120,34 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      * @param  g2  a graphics2D object
      */
     private void paintInfo(Graphics2D g2) {
+        final int MARGIN = 10;
+        final int STANDARD_SPACING = 30;
+
         int tmpX = GlobalPositioning.getXPixel(1);
-        int someArbritarySpacing = 30;
         g2.setColor(Color.BLACK);
-        g2.drawString("HP", 0, 10);
-        for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
-            g2.drawString(currentEnemy.getHealthText(), tmpX, 10);
-            tmpX += someArbritarySpacing ;
+        g2.drawString("HP", 0, MARGIN);
+        for ( Enemy currentEnemy :  board.getAllEnemiesInCurrentWave()) {
+            g2.drawString(currentEnemy.getHealthText(), tmpX, MARGIN);
+            tmpX += STANDARD_SPACING;
         }
-        tmpX = someArbritarySpacing;
-        g2.drawString("Alive", 0, someArbritarySpacing);
+        tmpX = STANDARD_SPACING;
+        g2.drawString("Alive", 0, STANDARD_SPACING);
         for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             if (currentEnemy.isAlive()) {
-                g2.drawString("A", tmpX, someArbritarySpacing);
+                g2.drawString("A", tmpX, STANDARD_SPACING);
             } else {
-                g2.drawString("D", tmpX, someArbritarySpacing);
+                g2.drawString("D", tmpX, STANDARD_SPACING);
             }
-            tmpX += someArbritarySpacing ;
+            tmpX += STANDARD_SPACING;
         }
-        tmpX = someArbritarySpacing ;
-        g2.drawString("Active", 0, 55);
+        tmpX = STANDARD_SPACING;
+        g2.drawString("Active", 0, STANDARD_SPACING *2);
         for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             int localtime =((int) currentEnemy.getActivationTime() - (int) board.getCurrentTime())/1000;
             if (localtime < 0) localtime = 0;
-            g2.drawString(stringConverter(localtime), tmpX, 50);
-            tmpX += someArbritarySpacing ;
+            g2.drawString(stringConverter(localtime), tmpX, STANDARD_SPACING *2);
+            tmpX += STANDARD_SPACING;
         }
-
-        tmpX = someArbritarySpacing*2;
-        g2.drawString("PixelPos", 0, 255);
-        for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
-            if (currentEnemy.isActive()) {
-                g2.setColor(Color.BLACK);
-                g2.drawString(currentEnemy.getPixelPosition().toString(), tmpX, 255);
-                tmpX += someArbritarySpacing*3;
-            }
-        }
-
-        tmpX = someArbritarySpacing*2;
-        g2.drawString(stringConverter((int) board.getCurrentTime()), tmpX,275);
-
-
     }
 
     /**

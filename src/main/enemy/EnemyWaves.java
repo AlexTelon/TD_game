@@ -21,7 +21,7 @@ public class EnemyWaves {
 
     public EnemyWaves(Board board,Point castlePos, Point enemyStartingPosition) {
         int nrOfWaves = 10;
-        double groupActivationTime = 1000.0;
+        final double groupActivationTime = 1000.0;
         int y = board.getCastlePos().getY();
         int x = 0;
 
@@ -32,6 +32,7 @@ public class EnemyWaves {
         for (int i = 0; i < nrOfWaves; i++) {
             Enemy enemyPrototype;
             int nrOfEnemiesInAWave = 10;
+            @SuppressWarnings("MagicNumber") // pretty self explainatory variable initiation, nothing magic about it.
             double activationTime = 1000.0;
 
             switch (i) {
@@ -42,7 +43,6 @@ public class EnemyWaves {
 
                 case 2: enemyPrototype = new SlowEnemy(board, x, y);
                     nrOfEnemiesInAWave += 10;
-                 //   activationTime += 100;
                     break;
 
                 case 1: enemyPrototype = new StrongEnemy(board, x, y);

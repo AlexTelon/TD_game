@@ -47,8 +47,9 @@ public class TowerMaker {
                 return;
 
             case 'B':
+                //noinspection MagicNumber
                 price = 20;
-                range = 200;
+                range = 100;
                 priority = 1;
                 dimension = new Dimension(1,1);
 

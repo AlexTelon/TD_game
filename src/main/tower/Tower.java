@@ -121,7 +121,7 @@ public class Tower extends Placeable  {
     }
 
     public Collection<Placeable> getPlacablesWithinRangeOfThisTower() {
-        return attackHelpClass.getPlaceablesWithinRangeOfThisTower();
+        return attackHelpClass.getPlacablesInRangeOfThisTower();
     }
 
     public ArrayList<Placeable> getAllObjects() {
@@ -149,7 +149,7 @@ public class Tower extends Placeable  {
     }
 
     public boolean hasTarget() {
-        if (attackHelpClass.getPlaceablesWithinRangeOfThisTower().isEmpty()) {
+        if (attackHelpClass.getPlacablesInRangeOfThisTower().isEmpty()) {
             return false;
         }
         return true;
