@@ -984,6 +984,7 @@
         <option name="myAllowedSuppressions">
           <list>
             <option value="UnusedParameters" />
+            <option value="ReuseOfLocalVariable" />
           </list>
         </option>
       </inspection_tool>

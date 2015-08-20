@@ -24,7 +24,7 @@ public class TowerMaker {
 
 
     public void makeTower(Board board, char type, Point position) {
-        int price, priority, dmg, range, rOF, enemiesTowerCanShootAtTheSameTime;
+        int price, priority, dmg, range, rOF, enemiesTowerCanShootAtSameTime;
         Dimension dimension;
         switch(type){
             case 'A':
@@ -33,13 +33,13 @@ public class TowerMaker {
                 dmg = 5;
                 range = 100;
                 rOF = 1;
-                enemiesTowerCanShootAtTheSameTime = 3;
+                enemiesTowerCanShootAtSameTime = 3;
                 dimension = new Dimension(1,1);
                 if (board.isValidPositions(position, priority, dimension) && board.getPlayer().getGold() >= price) {
                     Colour colour = Colour.ORANGE;
                     Colour colourOfShoots = Colour.BLACK;
                     createTower(board, position, colour, colourOfShoots, dmg, range, rOF,
-                            enemiesTowerCanShootAtTheSameTime, price,
+                            enemiesTowerCanShootAtSameTime, price,
                             dimension);
                     board.getPlayer().subtractGold(price);
                 } else

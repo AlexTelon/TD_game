@@ -27,6 +27,7 @@ import java.awt.*;
  * Later on this should NOT implement boardlistener since this only needs to be updated each time a user klicks
  * something, not each frame.
  */
+@SuppressWarnings("ReuseOfLocalVariable")
 public class GraphicalInformationViewer extends JComponent implements IBoardListener {
     private Board board;
     private Placeable currentObject = null;
@@ -47,9 +48,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     private int preferredHeight() {
         return Board.getSquareHeight() * Board.getHeight();
     }
-    private int preferredWidth() {
-        return 300;
-    }
+    private int preferredWidth() {  return 300; }
 
     @Override
     public void paintComponent(Graphics g) {
@@ -120,7 +119,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
 
     }
 
-    private void paintInfoForCurrentTower(Graphics2D g2, Tower tower) {
+    @SuppressWarnings("ReuseOfLocalVariable") private void paintInfoForCurrentTower(Graphics2D g2, Tower tower) {
         int x = 80;
         int y = 15;
         g2.setColor(Color.BLACK);

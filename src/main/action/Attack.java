@@ -5,7 +5,7 @@ import main.graphics.ColorHandlerSingleton.Colour;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 /**
  * Created with IntelliJ IDEA.
  * User: alete471
@@ -22,19 +22,19 @@ public class Attack {
     private double rateOfFirePerFrame;
     private double rateOfFireCounter;
     private Color color = Color.ORANGE;
-    private List<GameAction> buffers = new ArrayList<GameAction>();
+    private Collection<GameAction> buffers = new ArrayList<GameAction>();
 
     private int enemiesTowerCanShootAtTheSameFrame = 1;
     private int enemiesTowerHasShoot = 0;
     private boolean rememberOldTarget = false;
 
-    public Attack(int dmg, double range, double rateOfFire, int enemiesTowerCanShootAtTheSameFrame, Colour colour, double framerate) {
+    public Attack(int dmg, double range, double rateOfFire, int enemiesTowerCanShootAtSameFrame, Colour colour, double framerate) {
         this.dmg = dmg;
         this.range = range;
         this.rateOfFire = rateOfFire;
         this.color = ColorHandlerSingleton.getInstance().getGUIColour(colour);
         this.setRateOfFirePerFrame(framerate);
-        this.enemiesTowerCanShootAtTheSameFrame = enemiesTowerCanShootAtTheSameFrame;
+        this.enemiesTowerCanShootAtTheSameFrame = enemiesTowerCanShootAtSameFrame;
     }
 
     public int getDmg() {
@@ -145,8 +145,8 @@ public class Attack {
         return rememberOldTarget;
     }
 
-    public void setEnemiesTowerCanShootAtTheSameFrame(int enemiesTowerCanShootAtTheSameFrame) {
-        this.enemiesTowerCanShootAtTheSameFrame = enemiesTowerCanShootAtTheSameFrame;
+    public void setEnemiesTowerCanShootAtTheSameFrame(int enemiesTowerCanShootAtSameFrame) {
+        this.enemiesTowerCanShootAtTheSameFrame = enemiesTowerCanShootAtSameFrame;
     }
 
     public void setRememberOldTarget(boolean rememberOldTarget) {

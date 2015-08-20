@@ -53,7 +53,7 @@ public class NonShootableTower extends Tower {
 
         //send action to all objects
         for (Placeable obj : getPlacablesWithinRangeOfThisTower()) {
-            if (obj != this) {
+            if (!obj.equals(this)) {
                 for (GameAction currentAction : getGameActions()) {
                     if (!currentAction.hasAnAttack()) {
                         obj.addGameActions(currentAction);

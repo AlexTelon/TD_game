@@ -4,14 +4,13 @@ import main.board.Placeable;
 import main.enemy.Enemy;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.ArrayList;
 
 public class AttackHelpClass
 {
-    private List<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
+    private Collection<Placeable> placablesWithinRangeOfThisTower = new ArrayList<Placeable>();
     private ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
-    private double range = 200.0;
+    final double range = 200.0;
 
     /**
      * Finds all placebles within range and returns them
@@ -23,12 +22,10 @@ public class AttackHelpClass
         if (!allObjects.isEmpty()) {
             clearPlaceablesWithinRangeOfThisTower();
             for (Placeable obj : allObjects) {
-                if (obj != referencePoint) {
+                if (!obj.equals(referencePoint)) {
                     if (isObjectWithinRange(obj, referencePoint)) {
                         addToCurrentPlaceablesInRangeOfThisTower(obj);
                     }
-                } else {
-                    System.out.println("comparison failed");
                 }
             }
         }
@@ -41,6 +38,7 @@ public class AttackHelpClass
      * @return true if it is in range.
      */
     public boolean isObjectWithinRange(Placeable obj, Placeable obj2) {
+
         if (obj.distanceTo(obj2) <= range) {
             return true;
         }

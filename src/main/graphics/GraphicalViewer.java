@@ -15,6 +15,9 @@ import java.awt.*;
  * Time: 18:09
  * The main component of GameFrame, this is what paints the game itself.
  */
+@SuppressWarnings("ReuseOfLocalVariable")
+/* This and all other cases of "Reuse of local variable" is OK for temporary variables in my mind. Several individual
+variables with good naming would be better thouogh, but still I think this is ok for placing stuff in a GUI like this*/
 public class GraphicalViewer extends JComponent implements IBoardListener {
     private Board board;
     private Placeable higlightedObj = null;

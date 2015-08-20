@@ -32,7 +32,6 @@ public class ShootingAction extends GameAction {
     /*
      * Makes its thing on one enemy
      */
-    @Override
     public void tick(Enemy enemy) {
         attack.resetEnemiesTowerHasShoot(); // reset enemies it has shot this frame.
         if (attack.canShootAtThisFrame()) {

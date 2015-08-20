@@ -14,7 +14,7 @@ import java.util.Timer;
  * Time: 14:33
  * This class in the main class and calls tick for Board which the runs the rest of the program.
  */
-public class GameTimer {
+public final class GameTimer {
     private static final int REFRESH_RATE = 50;
     private static final Board BOARD = new Board(REFRESH_RATE);
 
@@ -36,6 +36,6 @@ public class GameTimer {
     public static void main(String[] args) {
         runGame();
     }
-};
+}
 
 

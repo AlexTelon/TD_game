@@ -20,6 +20,8 @@ import java.awt.event.MouseListener;
  * Time: 18:07
  * Main class for GUI, handels what is shown and also placing and selling towers.
  */
+@SuppressWarnings("FieldCanBeLocal")
+// The fields like buildTowerTypeAAction are very large so moving in them to be local would ruin readability in the constructor.
 public class GameFrame extends JFrame implements IBoardListener, MouseListener {
     private final JMenu menu = new JMenu("Menu");
     private Board board;

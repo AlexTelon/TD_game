@@ -22,8 +22,9 @@ import java.util.List;
  * and it keeps track of all objects in the game.
  */
 
-@SuppressWarnings("CallToSimpleSetterFromWithinClass") // keeping this since simple setters might change and its a bit easier
-// to refactor things we call setters internally too.
+@SuppressWarnings({ "CallToSimpleSetterFromWithinClass", "SuspiciousGetterSetter" })
+// keeping this since simple setters might change and its a bit easier
+// to refactor things we call setters internally too. All getters are good so the suspiciouns are wrong imo.
 public class Board {
     private static final int WIDTH = 20;
     private static final int HEIGHT = 20;
@@ -252,7 +253,6 @@ public class Board {
     public boolean isWithinCastle(Point point) {
         int castleY = castle.getPosition().getY();
         int castleX = castle.getPosition().getX();
-        //noinspection CallToSimpleGetterFromWithinClass // It the functions are more descriptive than the constant.
         for (int y = castleY; y < castleY + getCastleHeight(); y++ ) {
             for (int x = castleX; x < castleX + getCastleWidth(); x++ ) {
                 if (point.getX() == x && point.getY() == y) {
