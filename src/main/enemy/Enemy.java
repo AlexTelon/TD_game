@@ -242,7 +242,6 @@ public class Enemy extends Placeable {
     /**
      * remember to add a kill in the caller!
      * @param dmg
-     * @return
      */
     public void attacked(int dmg) {
         subtractHitpoints(dmg);

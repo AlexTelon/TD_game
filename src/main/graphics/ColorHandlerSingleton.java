@@ -12,9 +12,60 @@ import java.awt.*;
 public final class ColorHandlerSingleton
 {
     private static ColorHandlerSingleton instance = new ColorHandlerSingleton();
-    
+
+    /**
+     * Our our colourscheme.
+     */
     public enum Colour {
-        WHITE, GRAY, BLACK, YELLOW, ORANGE, GREEN, PURPLE, DARKBLUE, LIGHTBLUE, RED, BLUE
+        /**
+         * White
+         */
+        WHITE,
+
+        /**
+         * Gray
+         */
+        GRAY,
+
+        /**
+         * Black
+         */
+        BLACK,
+
+        /**
+         * Yellow
+         */
+        YELLOW,
+
+        /**
+         * Orange
+         */
+        ORANGE,
+
+        /**
+         * Green
+         */
+        GREEN,
+
+        /**
+         * Normal Blue
+         */
+        DARKBLUE,
+
+        /**
+         * Cyan, which means light blue.
+         */
+        LIGHTBLUE,
+
+        /**
+         * Red
+         */
+        RED,
+
+        /**
+         * Blue
+         */
+        BLUE
     }
 
     public static ColorHandlerSingleton getInstance() {
@@ -26,8 +77,7 @@ public final class ColorHandlerSingleton
 
     /**
      * Gives the GUI color
-     *
-     * LATER ON: this should maybe use something else instead of a switch case.
+     * TODO make the colors more interesting, no game really wants to have pure green, blue and so on but a certain hue to them.
      * @param colour the Colour object to be converted to an Color object.
      * @return a color that the GUI can use
      */
@@ -39,7 +89,6 @@ public final class ColorHandlerSingleton
             case YELLOW: return Color.YELLOW;
             case ORANGE: return Color.ORANGE;
             case GREEN: return Color.GREEN;
-            case PURPLE: return Color.PINK;
             case DARKBLUE: return Color.BLUE;
             case LIGHTBLUE: return Color.CYAN;
             case RED: return Color.RED;

@@ -33,7 +33,35 @@ public class Tower extends Placeable  {
     private Enemy lastTarget = null;
     private Enemy currentTarget = null;
     public enum TowerInformation {
-        DMG, RANGE, RATEOFFIRE, ENEMIESCANSHOOTSAMETIME, DPS, EXTRA_DMG
+        /**
+         * The damage of the Tower.
+         */
+        DMG,
+
+        /**
+         * The range of the Tower.
+         */
+        RANGE,
+
+        /**
+         * The rate of fire of the Tower.
+         */
+        RATEOFFIRE,
+
+        /**
+         * The nr of enemies the tower can shoot at the same time.
+         */
+        ENEMIESCANSHOOTSAMETIME,
+
+        /**
+         * The damage per second of the Tower
+         */
+        DPS,
+
+        /**
+         * Any extra damage per shot that the Tower has, from buffing towers for example.
+         */
+        EXTRA_DMG
     }
 
     public Tower(Board board, Collection<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, Colour color,
@@ -168,9 +196,9 @@ public class Tower extends Placeable  {
 
 
     /**
-     * returns the aggregated value of all the shooting actions of a tower. Doubles are cast to ints!
+     * Returns the aggregated value of all the shooting actions of a tower. Doubles are cast to ints!
      * @param towerInformation
-     * @return
+     * @return Returns the corresponding information.
      */
     public int getTowerInformation(TowerInformation towerInformation) {
         double counter = 0;
@@ -208,7 +236,7 @@ public class Tower extends Placeable  {
     /**
      * Returns no cyan if the tower has no attack. If the tower has several shooting actions the color
      * of the first one is returned.
-     * @return
+     * @return The color of the attack.
      */
     public Color getAttackColor() {
         Color attackColor = Color.cyan;

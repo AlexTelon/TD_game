@@ -16,7 +16,19 @@ public interface IDesign {
      * <br></br> OBS not implemented well yet!
      */
     enum Shapes {
-	RECTANGLE, CIRCLE, TRIANGLE
+        /**
+         * A rectangle shape
+         */
+	RECTANGLE,
+        /**
+         * A circular shape
+         */
+        CIRCLE,
+
+        /**
+         * A triangular shape
+         */
+        TRIANGLE
     }
 
     /**
@@ -32,7 +44,6 @@ public interface IDesign {
 
     /**
      * @return the enum shape
-     *
      */
     Shapes getShape();
 

@@ -99,7 +99,7 @@ public class Attack {
 
     // can not shoot more than 1 time per frame per enemy
     public boolean canShootAtThisFrame() {
-        rateOfFireCounter += getRateOfFirePerFrame();
+        rateOfFireCounter += rateOfFirePerFrame;
         if (rateOfFireCounter >= 0) {
             rateOfFireCounter--;
             return true;

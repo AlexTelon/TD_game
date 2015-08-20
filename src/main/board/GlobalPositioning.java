@@ -11,7 +11,7 @@ public final class GlobalPositioning {
 
     /**
      * getXPixel returns the pixelPosition from a grid position
-     * @param x
+     * @param x X-pos in the grid
      * @return a pixel position int
      */
     //Calculates the position of the top left corner of each box from its position in the array
@@ -22,7 +22,7 @@ public final class GlobalPositioning {
 
     /**
      * getXPixel returns the pixelPosition from a grid position
-     * @param y
+     * @param y Y-pos in the grid
      * @return a pixel position int
      */
     public static int getYPixel(int y) {

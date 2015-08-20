@@ -69,7 +69,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
     /**
      * Gives information about the object that the player clicks on. The player must FIRST click on a grip position
      * and then choose what to do on/with that grid.
-     * @param e
+     * @param e The mouse event.
      */
     @Override
     public void mouseClicked(MouseEvent e) {

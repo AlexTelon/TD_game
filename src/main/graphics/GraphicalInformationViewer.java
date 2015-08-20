@@ -36,6 +36,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     private static final int PREFERRED_WITH = 300;
     private static final int TOP_MARGIN_X = 80; // margin to the top of the window for text information
     private static final int MARGIN_Y = 15;
+    private static final int MARGIN_X = 10;
     private static final int WAVE_INFO_SPACE_TO_TOP = 190;
 
     public GraphicalInformationViewer( Board board) {
@@ -101,7 +102,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
 
     private void paintInfo(Graphics2D g2) {
         g2.setColor(Color.BLACK);
-        int x = MARGIN_Y;
+        int x = MARGIN_X;
         int y = WAVE_INFO_SPACE_TO_TOP;
         g2.drawString("Current WaveNr: " + enemyGroups.getCurrentGroupNr() + "    Time to next Wave " +
                 stringConverter((int) board.getCountdownToNextWave()), x, y);
@@ -114,9 +115,9 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
             x += SMALL_SPACING;
         }
         y += SMALL_SPACING;
-        g2.drawString("Gold: "+ stringConverter(board.getPlayer().getGold()), 10, y);
+        g2.drawString("Gold: "+ stringConverter(board.getPlayer().getGold()), MARGIN_X, y);
         y += SMALL_SPACING;
-        g2.drawString("Lives: "+ stringConverter(board.getPlayer().getLives()), 10, y);
+        g2.drawString("Lives: "+ stringConverter(board.getPlayer().getLives()), MARGIN_X, y);
 
 
     }
@@ -156,9 +157,9 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
         x = SMALL_SPACING;
 	if (!tower.getBuffers().isEmpty()) {
 	    g2.drawString("Buffers:  ", 0, y);
-            final int SPACE_BETWEEN_BUFFERS = 55;
+            final int spaceBetweenBuffers = 55;
 	    for (GameAction actions : tower.getBuffers()) {
-		x += SPACE_BETWEEN_BUFFERS;
+		x += spaceBetweenBuffers;
 		g2.drawString(String.valueOf(actions.getExtraDmg() + " " + actions.getExtraRange()), x, y);
 	    }
 	} else System.out.println("No targets");

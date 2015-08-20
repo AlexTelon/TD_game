@@ -54,10 +54,10 @@ public class ShootingAction extends GameAction {
 
 
     /**
-     * correct target checks if the tower should remember its last target. If it should it is only allowed to change
+     * Correct target checks if the tower should remember its last target. If it should it is only allowed to change
      * target once the last target is dead or out of range.
      * @param currentEnemy
-     * @return
+     * @return true if it is the correct target
      */
     private boolean isCorrectTarget(Placeable currentEnemy) {
         if (tower.getLastTarget() != null || !isInRange(currentEnemy)) { // if no last target skip below and return

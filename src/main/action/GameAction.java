@@ -47,8 +47,7 @@ public class GameAction implements IGameActions {
     }
 
     /**
-     * returns true if the action has an attack
-     * @return
+     * @return true if the action has an attack
      */
     public boolean hasAnAttack() {
         return false;

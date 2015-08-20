@@ -16,19 +16,19 @@ import java.util.Timer;
  */
 public class GameTimer {
     private static final int REFRESH_RATE = 50;
-    private final Board BOARD = new Board(REFRESH_RATE);
+    private final Board board = new Board(REFRESH_RATE);
 
 
     public void runGame() {
-        BOARD.setFramerate(REFRESH_RATE);
-        BOARD.addBoardListener(new GameFrame(BOARD));
-        BOARD.addBoardListener(new GraphicalViewer(BOARD));
+        board.setFramerate(REFRESH_RATE);
+        board.addBoardListener(new GameFrame(board));
+        board.addBoardListener(new GraphicalViewer(board));
 
         Timer timer = new Timer();
 
         timer.schedule( new TimerTask() {
             public void run() {
-                BOARD.tick();
+                board.tick();
             }
         }, 0, REFRESH_RATE);
     }

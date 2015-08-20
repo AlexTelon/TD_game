@@ -22,9 +22,9 @@ import java.util.List;
  * and it keeps track of all objects in the game.
  */
 
-@SuppressWarnings({ "CallToSimpleSetterFromWithinClass", "SuspiciousGetterSetter" })
+@SuppressWarnings({ "CallToSimpleSetterFromWithinClass", "SuspiciousGetterSetter", "CallToSimpleGetterFromWithinClass" })
 // keeping this since simple setters might change and its a bit easier
-// to refactor things we call setters internally too. All getters are good so the suspiciouns are wrong imo.
+// to refactor things we call setters internally too. All getters/setters are good so the suspiciouns are wrong imo.
 public class Board {
     private static final int WIDTH = 20;
     private static final int HEIGHT = 20;
@@ -398,7 +398,6 @@ public class Board {
     public void removeFromNonShootableTower(Tower tower) {
         allNonShootableTowers.remove(tower);
     }
-
 
 
     /**

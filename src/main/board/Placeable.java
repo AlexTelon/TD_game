@@ -214,7 +214,7 @@ public class Placeable implements IDesign{
 
     /**
      * As default placables are NOT imortal, towers for example might be.
-     * @return
+     * @return true if the placable is imortal
      */
     public boolean isImortal() {
         return isImortal;

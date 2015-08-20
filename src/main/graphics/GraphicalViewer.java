@@ -120,33 +120,33 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      * @param  g2  a graphics2D object
      */
     private void paintInfo(Graphics2D g2) {
-        final int MARGIN = 10;
-        final int STANDARD_SPACING = 30;
+        final int margin = 10;
+        final int standardSpacing = 30;
 
         int tmpX = GlobalPositioning.getXPixel(1);
         g2.setColor(Color.BLACK);
-        g2.drawString("HP", 0, MARGIN);
+        g2.drawString("HP", 0, margin);
         for ( Enemy currentEnemy :  board.getAllEnemiesInCurrentWave()) {
-            g2.drawString(currentEnemy.getHealthText(), tmpX, MARGIN);
-            tmpX += STANDARD_SPACING;
+            g2.drawString(currentEnemy.getHealthText(), tmpX, margin);
+            tmpX += standardSpacing;
         }
-        tmpX = STANDARD_SPACING;
-        g2.drawString("Alive", 0, STANDARD_SPACING);
+        tmpX = standardSpacing;
+        g2.drawString("Alive", 0, standardSpacing);
         for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             if (currentEnemy.isAlive()) {
-                g2.drawString("A", tmpX, STANDARD_SPACING);
+                g2.drawString("A", tmpX, standardSpacing);
             } else {
-                g2.drawString("D", tmpX, STANDARD_SPACING);
+                g2.drawString("D", tmpX, standardSpacing);
             }
-            tmpX += STANDARD_SPACING;
+            tmpX += standardSpacing;
         }
-        tmpX = STANDARD_SPACING;
-        g2.drawString("Active", 0, STANDARD_SPACING *2);
+        tmpX = standardSpacing;
+        g2.drawString("Active", 0, standardSpacing *2);
         for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
             int localtime =((int) currentEnemy.getActivationTime() - (int) board.getCurrentTime())/1000;
             if (localtime < 0) localtime = 0;
-            g2.drawString(stringConverter(localtime), tmpX, STANDARD_SPACING *2);
-            tmpX += STANDARD_SPACING;
+            g2.drawString(stringConverter(localtime), tmpX, standardSpacing *2);
+            tmpX += standardSpacing;
         }
     }
 

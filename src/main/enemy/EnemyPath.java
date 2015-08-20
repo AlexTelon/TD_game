@@ -61,7 +61,7 @@ public class EnemyPath {
      * Method that calculates the path that the enemies will take. Is now hardcoded to follow a certain pattern to
      * the goals, but in the future this should be made to use the exact same method that enemies use for determining
      * their path so that everything uses the same piece of code.
-     * @param start
+     * @param start The startpoint
      */
     private void setPath(Point start) {
         int counter = 0;
