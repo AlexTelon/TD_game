@@ -46,10 +46,6 @@ public class Placeable implements IDesign{
         this.priority = priority;
     }
 
-    public Placeable(int x, int y, Dimension dimension, Colour colour, Shapes shape) {
-        this(x, y, dimension, colour, shape, 1);
-    }
-
 
     public Placeable(int x, int y, Dimension dimension, Colour colour, Shapes shape, GameAction gameAction) {
         this(x, y, dimension, colour, shape, 1);
@@ -179,13 +175,7 @@ public class Placeable implements IDesign{
         return nameText;
     }
 
-    public int getHitpoints() {
-        return hitpoints;
-    }
-
-    public void setColour(Colour color) {
-        this.colour = color;
-    }
+    public int getHitpoints() { return hitpoints; }
 
     public Collection<GameAction> getBuffers() {
         return buffers;
@@ -210,6 +200,13 @@ public class Placeable implements IDesign{
         return actions;
     }
 
+    /**
+     * Returns true if this is a tower
+     * @return false
+     */
+    public boolean isTower() {
+        return false;
+    }
 
     /**
      * As default placables are NOT imortal, towers for example might be.

@@ -14,8 +14,8 @@ import main.graphics.ColorHandlerSingleton.Colour;
 
 public class ShootableTower extends Tower {
 
-    public ShootableTower(Board board, Collection<Placeable> allObjects, ShootingAction newShootingAction, int x, int y, Dimension dimension, Colour colourOfTower, Shapes rectangle, int price) {
-        super(board,allObjects,newShootingAction,x,y,dimension,colourOfTower,rectangle,price);
+    public ShootableTower(Board board, Collection<Placeable> allObjects, ShootingAction newShootingAction, int x, int y, Dimension dimension, Colour colourOfTower, Shapes rectangle, int price, int range) {
+        super(board,allObjects,newShootingAction,x,y,dimension,colourOfTower,rectangle,price, range);
     }
 
 

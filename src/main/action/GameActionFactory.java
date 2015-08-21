@@ -7,10 +7,9 @@ import main.action.auraaction.RangeBuffAction;
  * User: alete471 Date: 2012-10-18 Time: 15:25
  * Factory for AuraActions.
  */
-public class GameActionFactory implements IGameActionFactory {
+public class GameActionFactory {
     static final double DELTA = 0.0001;
 
-    @Override
     public GameAction createGameAction(int extraDmg, double extraRange) {
         if (extraDmg != 0 && extraRange > DELTA) {
             return new GameAction(extraDmg, extraRange);

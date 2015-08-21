@@ -19,21 +19,12 @@ public class NonShootableTower extends Tower {
     private Board board;
 
     /**
-     * For defensive towers
-     * @param allObjects
-     * @param x
-     * @param y
-     * @param dimension
-     * @param color
-     * @param shape
-     * @param price
-     * @param extraDmg
-     * @param extraRange
+     * Create an aura tower.
      */
     public NonShootableTower(Board board, Collection<Placeable> allObjects, GameAction gameAction,
                              int x, int y, Dimension dimension, Colour color, Shapes shape, int price,
-                             int extraDmg, double extraRange) {
-        super(board, allObjects, gameAction, x, y, dimension, color, shape, price);
+                             int extraDmg, double extraRange, int range) {
+        super(board, allObjects, gameAction, x, y, dimension, color, shape, price, range);
         this.board = board;
         super.addGameActions(new GameActionFactory().createGameAction(extraDmg, extraRange));
     }
@@ -73,7 +64,6 @@ public class NonShootableTower extends Tower {
     @Override
     public void delete() {
         super.delete();
-        board.removeFromNonShootableTower(this);
     }
 
 }

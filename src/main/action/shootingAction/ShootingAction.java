@@ -15,12 +15,6 @@ public class ShootingAction extends GameAction {
     private Tower tower = null;
     private Attack attack;
 
-
-    public ShootingAction(Tower tower, Attack attack) {
-        this.tower = tower;
-        this.attack = attack;
-    }
-
     /**
      * constructor to make a ShootingAction that does not belong to a tower yet.
      * @param newAttack

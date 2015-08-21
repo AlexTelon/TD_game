@@ -8,8 +8,6 @@ import main.graphics.ColorHandlerSingleton.Colour;
 import main.position.Point;
 import main.position.Vector;
 
-import java.awt.*;
-
 import static java.lang.Math.abs;
 
 /**
@@ -169,7 +167,7 @@ public class Enemy extends Placeable {
         //     makeDeadBody();
 
         for( Tower currentTower : board.getAllTowers()) {
-            currentTower.removeFromCurrentPlaceablesInRangeOfThisTower(this);
+            currentTower.removePlaceableInRange(this);
         }
 
         setActive(false);

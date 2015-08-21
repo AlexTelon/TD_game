@@ -24,7 +24,7 @@ public class TowerMaker {
 
 
     public void makeTower(Board board, char type, Point position) {
-        int price, priority, dmg, range, rOF, enemiesTowerCanShootAtSameTime;
+        int price, priority, dmg, range, rOF, multiShots;
         Dimension dimension;
         switch(type){
             case 'A':
@@ -33,13 +33,13 @@ public class TowerMaker {
                 dmg = 5;
                 range = 100;
                 rOF = 1;
-                enemiesTowerCanShootAtSameTime = 3;
+                multiShots = 3;
                 dimension = new Dimension(1,1);
                 if (board.isValidPositions(position, priority, dimension) && board.getPlayer().getGold() >= price) {
                     Colour colour = Colour.ORANGE;
                     Colour colourOfShoots = Colour.BLACK;
                     createTower(board, position, colour, colourOfShoots, dmg, range, rOF,
-                            enemiesTowerCanShootAtSameTime, price,
+                            multiShots, price,
                             dimension);
                     board.getPlayer().subtractGold(price);
                 } else
@@ -51,6 +51,7 @@ public class TowerMaker {
                 price = 20;
                 priority = 1;
                 dimension = new Dimension(1,1);
+                range = 200;
 
                 if (board.isValidPositions(position, priority, dimension) && board.getPlayer().getGold() >= price) {
                     int extraDMG = 5;
@@ -61,7 +62,8 @@ public class TowerMaker {
                     // i gameAction också.
                     DmgBuffAction dmgBuffAction = new DmgBuffAction(extraDMG);
                     NonShootableTower newTower = new NonShootableTower(board, board.getAllObjects(), dmgBuffAction,
-                            position.getX(), position.getY(), dimension, Colour.BLUE, Shapes.RECTANGLE , price, extraDMG, extraRange);
+                            position.getX(), position.getY(), dimension, Colour.BLUE, Shapes.RECTANGLE , price, extraDMG,
+                                                                       extraRange, range);
 
                     board.addObject(newTower);
                     board.getPlayer().subtractGold(price);
@@ -77,13 +79,12 @@ public class TowerMaker {
     }
 
     private void createTower(Board board, main.position.Point position, Colour colourOfTower, Colour colourOfShoots, int dmg,
-                             int range, int rOF,
-                             int enemiesTowerCanShootAtTheSameTime, int price, Dimension dimension) {
+                             int range, int rOF, int multiShots, int price, Dimension dimension) {
 
-        Attack newAttack = new Attack(dmg, range, rOF, enemiesTowerCanShootAtTheSameTime ,colourOfShoots, board.getFrameRate());
+        Attack newAttack = new Attack(dmg, range, rOF, multiShots ,colourOfShoots, board.getFrameRate());
         ShootingAction newShootingAction = new ShootingAction(newAttack);
         ShootableTower newTower = new ShootableTower(board, board.getAllObjects(), newShootingAction, position.getX(),
-                                                     position.getY(), dimension, colourOfTower, Shapes.RECTANGLE, price);
+                                                     position.getY(), dimension, colourOfTower, Shapes.RECTANGLE, price, range);
         newShootingAction.setTower(newTower); // the gameaction is now attatched to the newTower.
 
         board.addObject(newTower);
