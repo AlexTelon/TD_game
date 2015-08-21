@@ -15,8 +15,8 @@ public class EnemyWave implements Iterable<Enemy> {
 
     /**
      * Send in an enemyPrototype, the nr of enemies and the activationtime of the group and a wave is initiazed
-     * @param enemyPrototype
-     * @param nrOfEnemies
+     * @param enemyPrototype the enemy to be used as an prototype
+     * @param nrOfEnemies nr of enemies in the wave
      * @param activationTime the activationTime of the enemyPrototype relative to the groups activationtime
      * @param groupActivationTime the groupActivationTime determines after how many ms this group should appear on
      *                            the board after the previous group has died. Or if the group is the first, how long

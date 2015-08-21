@@ -55,7 +55,6 @@ public class NonShootableTower extends Tower {
 
     /**
      * Non shootable towers can have no actions.
-     * @param action
      */
     @Override
     public void addGameActions(GameAction action) {

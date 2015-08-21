@@ -16,11 +16,11 @@ public class ShootingAction extends GameAction {
     private Attack attack;
 
     /**
-     * constructor to make a ShootingAction that does not belong to a tower yet.
-     * @param newAttack
+     * Constructor to make a ShootingAction that does not belong to a tower yet.
+     * @param attack the attackInfo class
      */
-    public ShootingAction(Attack newAttack) {
-        this.attack = newAttack;
+    public ShootingAction(Attack attack) {
+        this.attack = attack;
     }
 
     /*
@@ -50,7 +50,7 @@ public class ShootingAction extends GameAction {
     /**
      * Correct target checks if the tower should remember its last target. If it should it is only allowed to change
      * target once the last target is dead or out of range.
-     * @param currentEnemy
+     * @param currentEnemy enemy target.
      * @return true if it is the correct target
      */
     private boolean isCorrectTarget(Placeable currentEnemy) {
@@ -82,7 +82,6 @@ public class ShootingAction extends GameAction {
     /**
      * Calculates the range between the tower and its current target and then sees if this is less than the towers
      * maximum range.
-     * @param currentTarget
      * @return true if it is in range, false otherwise
      */
     private boolean isInRange(Placeable currentTarget) {

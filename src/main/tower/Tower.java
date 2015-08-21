@@ -209,8 +209,6 @@ public class Tower extends Placeable  {
 
     /**
      * Returns the aggregated value of all the shooting actions of a tower. Doubles are cast to ints!
-     * @param towerInformation
-     * @return Returns the corresponding information.
      */
     public int getTowerInformation(TowerInformation towerInformation) {
         double counter = 0;

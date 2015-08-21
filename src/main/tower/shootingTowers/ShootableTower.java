@@ -11,7 +11,9 @@ import main.board.Placeable;
 import main.tower.Tower;
 import main.graphics.ColorHandlerSingleton.Colour;
 
-
+/**
+ * Towers that shoot.
+ */
 public class ShootableTower extends Tower {
 
     public ShootableTower(Board board, Collection<Placeable> allObjects, ShootingAction newShootingAction, int x, int y, Dimension dimension, Colour colourOfTower, Shapes rectangle, int price, int range) {
