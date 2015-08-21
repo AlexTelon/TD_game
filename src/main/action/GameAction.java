@@ -8,16 +8,12 @@ import main.enemy.Enemy;
  * User: alete471 Date: 2012-10-12 Time: 09:47
  * Main class for all actions made by placeable objects.
  */
-public class GameAction implements IGameActions {
+public class GameAction {
     private double extraRange;
     private int extraDmg;
 
     public GameAction() {
         // all values are set to 0 by default.
-    }
-
-    public void tick(Placeable obj) {
-          obj.addBuffers(this);
     }
 
     public void tick(Tower tower) {
@@ -48,7 +44,7 @@ public class GameAction implements IGameActions {
         return false;
     }
 
-    public Attack getAttack() {  return null; }
+    public AttackData getAttackData() {  return null; }
 
 
     public boolean canShoot(Placeable obj) {

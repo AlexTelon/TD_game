@@ -77,7 +77,7 @@ public class GameFrame extends JFrame implements IBoardListener, MouseListener {
 
 
         for (Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
-            if( currentEnemy.isWithinObject(new main.position.Point(e.getPoint())) && currentEnemy.isAlive()) {
+            if( currentEnemy.isWithinObject(new Point(e.getPoint())) && currentEnemy.isAlive()) {
                 graphicalInformationViewer.currentObject(currentEnemy);
                 graphicalViewer.higlight(currentEnemy);
                 return;

@@ -184,7 +184,6 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
 
     /**
      * Sets the current object to something so that information about this object can be shown on the screen.
-     * @param obj
      */
     public void currentObject(Placeable obj) {
         this.currentObject = obj;

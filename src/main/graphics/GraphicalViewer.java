@@ -44,7 +44,6 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
 
     /**
      * Paints the whole board
-     * @param g
      */
     @Override
     public void paintComponent(Graphics g) {
@@ -82,7 +81,6 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      * This method uses the precalculated path in EnemyPath. EnemyPath contains all the gridCoordinates that the
      * enemies will visit and one by one they are painted. This way the path is only calculated once and after that
      * its only a matter of getting it from a list.
-     * @param g2
      */
     private void paintEnemyPath(Graphics2D g2, Iterable<Point> enemyPath) {
 
@@ -95,7 +93,6 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
 
     /**
      * Draws a red rectangle around the current obj
-     * @param g2
      */
     private void fillInHighlightedObj(Graphics2D g2) {
         g2.setColor(Color.RED);
@@ -106,7 +103,6 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
 
     /**
      * Draws a red rectangle around the current position
-     * @param g2
      */
     private void fillInHighlightedPoint(Graphics2D g2) {
         g2.setColor(Color.RED);
@@ -152,7 +148,6 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
 
     /**
      * Paints all shoots from ALL towers to ALL of their current targets.
-     * @param g2
      */
     private void paintAllShoots(Graphics2D g2) {
         for (Tower currentTower : board.getAllTowers()) {
@@ -169,8 +164,6 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
     }
     /**
      * Paints all towers
-     * @param g2
-     *
      */
     private void paintAllTowers(Graphics2D g2) {
         for ( Tower currentTower : board.getAllTowers()) {
@@ -180,7 +173,6 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
 
     /**
      * Paints all towers active enemies.
-     * @param g2
      */
     private void paintAllActiveEnemies(Graphics2D g2) {
         for ( Enemy currentEnemy : board.getAllEnemiesInCurrentWave()) {
@@ -204,7 +196,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      * <br></br>OBS ignores current pixelposition so it does not work on enemies which relies soley on their
      * pixelPosition.
      * @param obj of type Placable - to be painted
-     * @param g2
+     * @param g2 the graphics object to be painted with
      */
     private void paintPlaceable(Placeable obj, Graphics2D g2) {
         if (obj == null) {
@@ -226,9 +218,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
     }
 
     /**
-     *  paintPlacablePixelPosition is like paintPlacable but can paints the object according to its pixelposition
-     * @param obj
-     * @param g2
+     *  paintPlacablePixelPosition is like paintPlacable but can paint the object according to its pixelposition
      */
     private void paintPlacablePixelPosition(Placeable obj, Graphics2D g2) {
         if (obj == null) {

@@ -8,8 +8,6 @@ import main.graphics.ColorHandlerSingleton.Colour;
 import main.position.Point;
 import main.position.Vector;
 
-import java.awt.*;
-
 import static java.lang.Math.abs;
 
 /**
@@ -169,7 +167,7 @@ public class Enemy extends Placeable {
         //     makeDeadBody();
 
         for( Tower currentTower : board.getAllTowers()) {
-            currentTower.removeFromCurrentPlaceablesInRangeOfThisTower(this);
+            currentTower.removePlaceableInRange(this);
         }
 
         setActive(false);
@@ -237,8 +235,8 @@ public class Enemy extends Placeable {
     }
 
     /**
-     * remember to add a kill in the caller!
-     * @param dmg
+     * Remember to add a kill in the caller! TODO, fix with listener.
+     * @param dmg the damage inflicted on the enemy.
      */
     public void attacked(int dmg) {
         subtractHitpoints(dmg);
@@ -288,7 +286,7 @@ public class Enemy extends Placeable {
 
     /**
      * Sees if the given point is within the enemy. Could be moved to class Placable?
-     * @param point
+     * @param point in pixel position
      * @return true if point is within object
      */
     public boolean isWithinObject(Point point) {

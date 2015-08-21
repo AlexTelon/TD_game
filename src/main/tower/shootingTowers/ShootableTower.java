@@ -11,11 +11,13 @@ import main.board.Placeable;
 import main.tower.Tower;
 import main.graphics.ColorHandlerSingleton.Colour;
 
-
+/**
+ * Towers that shoot.
+ */
 public class ShootableTower extends Tower {
 
-    public ShootableTower(Board board, Collection<Placeable> allObjects, ShootingAction newShootingAction, int x, int y, Dimension dimension, Colour colourOfTower, Shapes rectangle, int price) {
-        super(board,allObjects,newShootingAction,x,y,dimension,colourOfTower,rectangle,price);
+    public ShootableTower(Board board, Collection<Placeable> allObjects, ShootingAction newShootingAction, int x, int y, Dimension dimension, Colour colourOfTower, Shapes rectangle, int price, int range) {
+        super(board,allObjects,newShootingAction,x,y,dimension,colourOfTower,rectangle,price, range);
     }
 
 
@@ -41,7 +43,7 @@ public class ShootableTower extends Tower {
             getBuffers().add(action);
             for (GameAction currentGameAction : getGameActions()) {
                 if (currentGameAction.hasAnAttack())
-                    currentGameAction.getAttack().addBuffers(action);
+                    currentGameAction.getAttackData().addBuffers(action);
             }
         }
     }
@@ -51,7 +53,7 @@ public class ShootableTower extends Tower {
             getBuffers().remove(action);
         for (GameAction currentGameAction : getGameActions()) {
             if (currentGameAction.hasAnAttack())
-                currentGameAction.getAttack().removeBuffers(action);
+                currentGameAction.getAttackData().removeBuffers(action);
         }
     }
 

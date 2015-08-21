@@ -1,7 +1,6 @@
 package main.board;
 
 import main.player.Player;
-import main.tower.nonshootabletower.NonShootableTower;
 import main.tower.Tower;
 import main.board.IDesign.Shapes;
 import main.enemy.Enemy;
@@ -42,7 +41,6 @@ public class Board {
 
 
     private final List<Tower> allTowers = new ArrayList<Tower>();
-    private List<NonShootableTower> allNonShootableTowers = new ArrayList<NonShootableTower>();
     private final ArrayList<Placeable> allObjects = new ArrayList<Placeable>();
 
     // A datatype containing all the priority for all positions.
@@ -127,20 +125,15 @@ public class Board {
 
     /**
      * Placeable objects are placed in their proper lists.
-     * @param obj
+     * @param obj Object to be added.
      */
     public void addObject(Placeable obj) {
 
         if (isValidPositions(obj)) {
             allObjects.add(0, obj);
-	    if ( obj instanceof Tower) {
+            if (obj.isTower()) {
 		allTowers.add(0, (Tower) obj);
 		setPriority(obj);
-
-		if (obj instanceof NonShootableTower) {
-		    allNonShootableTowers.add(0, (NonShootableTower) obj);
-		}
-
 	    }
 	}
     }
@@ -198,8 +191,7 @@ public class Board {
 
     /**
      * Sets the priority on a priorityMap
-     *
-     * @param object
+     * @param object object to be represented in the prio map.
      */
     public void setPriority(Placeable object) {
         int heightOfObject = (int) object.getSize().getHeight();
@@ -378,14 +370,10 @@ public class Board {
         allTowers.remove(tower);
     }
 
-    public void removeFromNonShootableTower(Tower tower) {
-        allNonShootableTowers.remove(tower);
-    }
-
 
     /**
      * sets priorioty on the priorityMap to 0 again, player gains some gold, tower is removed from allTowers
-     * @param currentTower
+     * @param currentTower tower to be sold.
      */
     public void sellTower(Tower currentTower) {
         player.addGold(currentTower.getPrice());

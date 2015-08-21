@@ -20,9 +20,8 @@ import java.util.Collection;
  * The main class for towers, all towers extend this class. It holds the most basic things which a tower must have so
  * both shooting and nonshooting towers can use the methods defined in this class.
  */
-
 public class Tower extends Placeable  {
-    private final AttackHelpClass attackHelpClass = new AttackHelpClass();
+    private RangeHandler rangeHandler;
     protected LevelOfTower levelOfTower;
     protected int hasGainedLevels = 0;
     private int price;
@@ -65,12 +64,13 @@ public class Tower extends Placeable  {
     }
 
     public Tower(Board board, Collection<Placeable> allPlaceables, GameAction gameAction, int x, int y, Dimension dimension, Colour color,
-                 Shapes shape, int price) {
+                 Shapes shape, int price, int range) {
         super(x, y, dimension, color, shape, gameAction);
         this.board = board;
         this.price = price;
         this.allPlaceables = allPlaceables;
         this.levelOfTower = new LevelOfTower();
+        this.rangeHandler = new RangeHandler(range);
     }
 
     /*
@@ -84,7 +84,7 @@ public class Tower extends Placeable  {
         updateAllObjects();
         recalcLevel();
 
-        attackHelpClass.findObjectsWithinRange(allPlaceables, this);
+        rangeHandler.updateObjectsWithinRange(allPlaceables, this);
     }
 
     /**
@@ -110,16 +110,18 @@ public class Tower extends Placeable  {
         }
     }
 
+
     private void recalcLevel() {
         hasGainedLevels = levelOfTower.recalculateLevel();
         if (hasGainedLevels != 0) {
             for ( GameAction action : getGameActions()) {
-                if (action.getAttack() != null) { // getAttack() returns null if the gameAction does not have an attack.
-                    action.getAttack().recalculateLevelMultiplier(hasGainedLevels);
+                if (action.getAttackData() != null) { // getAttackData() returns null if the gameAction does not have an attack.
+                    action.getAttackData().recalculateLevelMultiplier(hasGainedLevels);
                 }
             }
         }
     }
+
 
     public ArrayList<Placeable> getLastTargets() {
         return lastTargets;
@@ -135,7 +137,7 @@ public class Tower extends Placeable  {
     Things regarding placablesWithinRangeOfThisTower
      */
     public void addToCurrentPlaceablesInRangeOfThisTower(Placeable obj) {
-        attackHelpClass.addToCurrentPlaceablesInRangeOfThisTower(obj);
+        rangeHandler.addToCurrentPlaceablesInRange(obj);
     }
 
 
@@ -143,16 +145,12 @@ public class Tower extends Placeable  {
         this.lastTargets.add(currentTarget);
     }
 
-    public void removeFromCurrentPlaceablesInRangeOfThisTower(Enemy currentEnemy) {
-        attackHelpClass.removeFromCurrentPlaceablesInRangeOfThisTower(currentEnemy);
+    public void removePlaceableInRange(Enemy currentEnemy) {
+        rangeHandler.removePlaceableInRange(currentEnemy);
     }
 
     public Collection<Placeable> getPlacablesWithinRangeOfThisTower() {
-        return attackHelpClass.getPlacablesInRangeOfThisTower();
-    }
-
-    public ArrayList<Placeable> getAllObjects() {
-        return attackHelpClass.getAllObjects();
+        return rangeHandler.getPlacablesInRange();
     }
 
     public int getKills() {
@@ -176,7 +174,7 @@ public class Tower extends Placeable  {
     }
 
     public boolean hasTarget() {
-        if (attackHelpClass.getPlacablesInRangeOfThisTower().isEmpty()) {
+        if (rangeHandler.getPlacablesInRange().isEmpty()) {
             return false;
         }
         return true;
@@ -193,11 +191,24 @@ public class Tower extends Placeable  {
         return false;
     }
 
+    /**
+     * Is this a tower check.
+     * @return true
+     */
+    public boolean isTower() {
+        return true;
+    }
+
+    /*
+    A few getters
+     */
+
+    public Tower getTower() {
+        return this;
+    }
 
     /**
      * Returns the aggregated value of all the shooting actions of a tower. Doubles are cast to ints!
-     * @param towerInformation
-     * @return Returns the corresponding information.
      */
     public int getTowerInformation(TowerInformation towerInformation) {
         double counter = 0;
@@ -205,19 +216,19 @@ public class Tower extends Placeable  {
             if (currentGameAction.hasAnAttack()) {
                 switch (towerInformation) {
                     case DMG:
-                        counter += currentGameAction.getAttack().getDmg();
+                        counter += currentGameAction.getAttackData().getDmg();
                         break;
                     case RANGE:
-                        counter += currentGameAction.getAttack().getRange();
+                        counter += currentGameAction.getAttackData().getRange();
                         break;
                     case RATEOFFIRE:
-                        counter += currentGameAction.getAttack().getRateOfFire();
+                        counter += currentGameAction.getAttackData().getRateOfFire();
                         break;
                     case ENEMIESCANSHOOTSAMETIME:
-                        counter += currentGameAction.getAttack().getEnemiesTowerCanShootAtTheSameFrame();
+                        counter += currentGameAction.getAttackData().getEnemiesTowerCanShootAtTheSameFrame();
                         break;
                     case DPS:
-                        counter += currentGameAction.getAttack().getDPS();
+                        counter += currentGameAction.getAttackData().getDPS();
                         break;
                     case EXTRA_DMG:
                         counter += currentGameAction.getExtraDmg();
@@ -241,12 +252,22 @@ public class Tower extends Placeable  {
         Color attackColor = Color.cyan;
         for (GameAction currentGameAction : getGameActions()) {
             if (currentGameAction.hasAnAttack()) {
-                return currentGameAction.getAttack().getColor();
+                return currentGameAction.getAttackData().getColor();
 
             }
         }
         return attackColor;
     }
+
+
+    public Player getPlayer() {
+        return this.board.getPlayer();
+    }
+
+
+    /*
+    Misc
+     */
 
 
     @Override
@@ -261,10 +282,4 @@ public class Tower extends Placeable  {
     public boolean isImortal() {
         return true;
     }
-
-    public Player getPlayer() {
-        return this.board.getPlayer();
-    }
-
-
 }
