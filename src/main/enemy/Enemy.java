@@ -87,9 +87,6 @@ public class Enemy extends Placeable {
         enemyPathing = new EnemyPath(getPosition(), board.getCastlePos());
     }
 
-    public Enemy(int x, int y, Dimension dimension, Colour color, Shapes shape) {
-        super(x, y, dimension, color, shape);
-    }
 
     /**
      * like all other tick methods this handels everything that gamemechanically could or should happen to an object.
@@ -311,14 +308,7 @@ public class Enemy extends Placeable {
         return false;
     }
 
-    public int getExperienceToTowers() {
-        return experienceToTowers;
-    }
-
-
-    public Board getBoard() {
-        return board;
-    }
+    public int getExperienceToTowers() { return experienceToTowers; }
 
     @Override // "Method X ignores defined method in superclass errors are ok in my book if it is an override like this.
     public void addBuffers(GameAction action) {

@@ -53,11 +53,6 @@ public class Attack {
         return range+ extraRange;
     }
 
-    public void addRange(double range) {
-        this.range += range;
-    }
-
-
     public double getRateOfFire() {
         return rateOfFire;
     }
@@ -65,11 +60,6 @@ public class Attack {
     public void setRateOfFirePerFrame(double framerate) {
         // rate of fire = shoots per second
         this.rateOfFirePerFrame = rateOfFire* framerate/1000;
-    }
-
-    public double getRateOfFirePerFrame() {
-        return rateOfFirePerFrame;
-
     }
 
     public double getDPS() {
@@ -87,14 +77,6 @@ public class Attack {
         }
         extraDmg = dmgFromBuffers;
         return dmgFromBuffers;
-    }
-
-    public int getExtraDmg() {
-        return extraDmg;
-    }
-
-    public void addExtraDmg(int extraDmg) {
-        this.extraDmg += extraDmg;
     }
 
     // can not shoot more than 1 time per frame per enemy
@@ -143,13 +125,5 @@ public class Attack {
 
     public boolean isRememberOldTarget() {
         return rememberOldTarget;
-    }
-
-    public void setEnemiesTowerCanShootAtTheSameFrame(int enemiesTowerCanShootAtSameFrame) {
-        this.enemiesTowerCanShootAtTheSameFrame = enemiesTowerCanShootAtSameFrame;
-    }
-
-    public void setRememberOldTarget(boolean rememberOldTarget) {
-        this.rememberOldTarget = rememberOldTarget;
     }
 }

@@ -23,7 +23,6 @@ public class EnemyPath {
     private static int subGoal1y = new Random().nextInt(Board.getHeight());
     private static int subGoal2x = new Random().nextInt(Board.getWidth()-Board.getCastleWidth());
     private static int subGoal2y = new Random().nextInt(Board.getHeight());
-    private int pathLenght = 0;
     /*
     private static int x3 = new Random().nextInt(Board.getWidth());
     private static int y3 = new Random().nextInt(Board.getHeight());
@@ -37,11 +36,6 @@ public class EnemyPath {
 
         setPath(start);
     }
-
-    public ArrayList<Point> getMainPath() {
-        return mainPath;
-    }
-
     /**
      * Updates the position for the next goalPoint for enemies
      */
@@ -51,10 +45,6 @@ public class EnemyPath {
 
     public Point getCurrentPixelGoal() {
         return mainPath.get(currentGoal).getPixelPos();
-    }
-
-    public Point getCurrentGridGoal() {
-        return mainPath.get(currentGoal);
     }
 
     /**

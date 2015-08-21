@@ -85,7 +85,6 @@ public class Tower extends Placeable  {
         recalcLevel();
 
         attackHelpClass.findObjectsWithinRange(allPlaceables, this);
-
     }
 
     /**
@@ -236,7 +235,7 @@ public class Tower extends Placeable  {
     /**
      * Returns no cyan if the tower has no attack. If the tower has several shooting actions the color
      * of the first one is returned.
-     * @return The color of the attack.
+     * @return he color of the attack.
      */
     public Color getAttackColor() {
         Color attackColor = Color.cyan;

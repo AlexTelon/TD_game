@@ -34,6 +34,7 @@ public class FastEnemy extends Enemy {
      * @param hitPoints Hitpoints of the enemy
      * @see FastEnemy#FastEnemy(Board, int, int)
      */
+    @SuppressWarnings("unused") // a detailed constructor feels like a good thing to leave here.
     public FastEnemy(Board board, int x, int y, Colour colour, int experienceToTowers, int pixelSpeed,
                      int dmgToBase, int gold, int hitPoints) {
         super(board, x, y, colour, experienceToTowers, pixelSpeed, dmgToBase,

@@ -131,7 +131,6 @@ public class ShootingAction extends GameAction {
         return attack;
     }
 
-    @Override
     public void setTower(Tower tower) {
         this.tower = tower;
     }

@@ -33,6 +33,7 @@ public class SlowEnemy extends Enemy {
      * @param hitPoints Hitpoints of the enemy
      * @see SlowEnemy#SlowEnemy(Board, int, int)
      */
+    @SuppressWarnings("unused") // a detailed constructor feels like a good thing to leave here.
     public SlowEnemy(Board board, int x, int y, Colour colour, int experienceToTowers, int pixelSpeed,
                      int dmgToBase, int gold, int hitPoints) {
         super(board, x, y, colour, experienceToTowers, pixelSpeed, dmgToBase, gold, hitPoints);

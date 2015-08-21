@@ -9,6 +9,7 @@ import java.awt.*;
  * Time: 14:55
  * A interface for the design things to be included for all placeables, not used fully yet
  */
+@SuppressWarnings("unused") // Leaving these here, no harm in having other shapes even though they are not implemented yet.
 public interface IDesign {
 
     /**

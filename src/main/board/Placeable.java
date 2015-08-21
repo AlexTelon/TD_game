@@ -187,7 +187,6 @@ public class Placeable implements IDesign{
         this.colour = color;
     }
 
-
     public Collection<GameAction> getBuffers() {
         return buffers;
     }

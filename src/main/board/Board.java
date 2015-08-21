@@ -30,8 +30,6 @@ public class Board {
     private static final int HEIGHT = 20;
     private static final int SQUARE_WIDTH = 20; // in pixels
     private static final int SQUARE_HEIGHT = 20; // in pixels
-    private static final int PIXELWIDTH = WIDTH*SQUARE_WIDTH;
-    private static final int PIXELHEIGHT = HEIGHT*SQUARE_HEIGHT;
     private static final int CASTLE_SIDE = 2;
     private static final int FRAMERATE = 50;
     private static final double DELTA = 0.001; // used for comparisons between float values
@@ -147,9 +145,6 @@ public class Board {
 	}
     }
 
-    public Board(Placeable obj) {
-        setPriority(obj);
-    }
 
     public PriorityMap getPriorityMap() {
         return priorityMap;
@@ -333,21 +328,9 @@ public class Board {
         return BACKGROUND_COLOR;
     }
 
-    public Iterable<Tower> getAllTowers() {
-        return allTowers;
-    }
+    public Iterable<Tower> getAllTowers() { return allTowers; }
 
-    public Placeable getCastle() {
-        return castle;
-    }
-
-    public static int getPixelheight() {
-        return PIXELHEIGHT;
-    }
-
-    public static int getPixelwidth() {
-        return PIXELWIDTH;
-    }
+    public Placeable getCastle() { return castle; }
 
     public static int getSquareHeight() {
         return SQUARE_HEIGHT;

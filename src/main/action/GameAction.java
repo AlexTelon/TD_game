@@ -11,7 +11,6 @@ import main.enemy.Enemy;
 public class GameAction implements IGameActions {
     private double extraRange;
     private int extraDmg;
-    private int decreaseSpeed; // finns här för att visa att man lätt kan lägga fler "Actions"
 
     public GameAction() {
         // all values are set to 0 by default.
@@ -42,10 +41,6 @@ public class GameAction implements IGameActions {
         return extraRange;
     }
 
-    public int getDecreaseSpeed() {
-        return decreaseSpeed;
-    }
-
     /**
      * @return true if the action has an attack
      */
@@ -53,12 +48,8 @@ public class GameAction implements IGameActions {
         return false;
     }
 
-    public Attack getAttack() {
-        return null;
-    }
+    public Attack getAttack() {  return null; }
 
-    public void setTower(Tower tower) {
-    }
 
     public boolean canShoot(Placeable obj) {
         // this is overrided by shooting towers

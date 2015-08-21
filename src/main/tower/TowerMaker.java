@@ -49,7 +49,6 @@ public class TowerMaker {
             case 'B':
                 //noinspection MagicNumber
                 price = 20;
-                range = 100;
                 priority = 1;
                 dimension = new Dimension(1,1);
 
@@ -62,7 +61,7 @@ public class TowerMaker {
                     // i gameAction också.
                     DmgBuffAction dmgBuffAction = new DmgBuffAction(extraDMG);
                     NonShootableTower newTower = new NonShootableTower(board, board.getAllObjects(), dmgBuffAction,
-                            position.getX(), position.getY(), dimension, Colour.BLUE, Shapes.RECTANGLE, range , price, extraDMG, extraRange);
+                            position.getX(), position.getY(), dimension, Colour.BLUE, Shapes.RECTANGLE , price, extraDMG, extraRange);
 
                     board.addObject(newTower);
                     board.getPlayer().subtractGold(price);

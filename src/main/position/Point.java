@@ -9,6 +9,7 @@ import main.board.GlobalPositioning;
  * Time: 14:24
  * To change this template use File | Settings | File Templates.
  */
+@SuppressWarnings("unused") // im leaving a few unused functions here since they might be needed in the future.
 public class Point {
     private int x, y;
 

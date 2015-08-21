@@ -27,7 +27,9 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="EntryPointsManager">
-    <entry_points version="2.0" />
+    <entry_points version="2.0">
+      <entry_point TYPE="method" FQNAME="main.enemy.enemytype.SlowEnemy SlowEnemy(main.board.Board board, int x, int y, main.graphics.ColorHandlerSingleton.Colour colour, int experienceToTowers, int pixelSpeed, int dmgToBase, ...)" />
+    </entry_points>
   </component>
   <component name="IdProvider" IDEtalkID="4265F9F18B94C0420E1BB6F67F9318C8" />
   <component name="InspectionProjectProfileManager">

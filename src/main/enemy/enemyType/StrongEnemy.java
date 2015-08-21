@@ -33,6 +33,7 @@ public class StrongEnemy extends Enemy {
      * @param hitPoints Hitpoints of the enemy  <b>Should be relatively high</b>
      * @see StrongEnemy#StrongEnemy(Board, int, int)
      */
+    @SuppressWarnings("unused") // a detailed constructor feels like a good thing to leave here.
     public StrongEnemy(Board board, int x, int y, Colour colour, int experienceToTowers, int pixelSpeed,
                        int dmgToBase, int gold, int hitPoints) {
         super(board, x, y, colour, experienceToTowers, pixelSpeed, dmgToBase, gold, hitPoints);

@@ -47,7 +47,6 @@ public class AttackHelpClass {
      * Things regarding placablesInRangeOfThisTower
      */
 
-
     public void addToCurrentPlaceablesInRangeOfThisTower(Placeable obj) {
         if (!placablesInRangeOfThisTower.contains(obj)) {
             this.placablesInRangeOfThisTower.add(obj);
@@ -69,10 +68,4 @@ public class AttackHelpClass {
     public ArrayList<Placeable> getAllObjects() {
         return allObjects;
     }
-
-    public void setAllObjects(ArrayList<Placeable> allObjects) {
-        this.allObjects = allObjects;
-    }
-
-
 }

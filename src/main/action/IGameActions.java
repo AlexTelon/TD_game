@@ -12,8 +12,5 @@ public interface IGameActions {
     int getExtraDmg();
 
     double getExtraRange();
-
-    int getDecreaseSpeed();
-
 }
 
