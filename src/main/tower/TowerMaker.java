@@ -1,8 +1,8 @@
 package main.tower;
 
+import main.action.AttackData;
 import main.tower.nonshootabletower.NonShootableTower;
 import main.tower.shootingtowers.ShootableTower;
-import main.action.Attack;
 import main.action.auraaction.DmgBuffAction;
 import main.action.shootingaction.ShootingAction;
 import main.board.Board;
@@ -81,8 +81,8 @@ public class TowerMaker {
     private void createTower(Board board, main.position.Point position, Colour colourOfTower, Colour colourOfShoots, int dmg,
                              int range, int rOF, int multiShots, int price, Dimension dimension) {
 
-        Attack newAttack = new Attack(dmg, range, rOF, multiShots ,colourOfShoots, board.getFrameRate());
-        ShootingAction newShootingAction = new ShootingAction(newAttack);
+        AttackData newAttackData = new AttackData(dmg, range, rOF, multiShots ,colourOfShoots, board.getFrameRate());
+        ShootingAction newShootingAction = new ShootingAction(newAttackData);
         ShootableTower newTower = new ShootableTower(board, board.getAllObjects(), newShootingAction, position.getX(),
                                                      position.getY(), dimension, colourOfTower, Shapes.RECTANGLE, price, range);
         newShootingAction.setTower(newTower); // the gameaction is now attatched to the newTower.

@@ -1,7 +1,7 @@
 package main.action.shootingaction;
 
+import main.action.AttackData;
 import main.tower.Tower;
-import main.action.Attack;
 import main.action.GameAction;
 import main.board.Placeable;
 import main.enemy.Enemy;
@@ -9,26 +9,26 @@ import main.enemy.Enemy;
 /**
  * User: alete471 Date: 2012-10-08 Time: 14:27
  * This ONLY and action - in other words this only handels HOW things are done and when. It should NOT contain any
- * data itself. The Data is in tower and in attack
+ * data itself. The Data is attackData.
  */
 public class ShootingAction extends GameAction {
     private Tower tower = null;
-    private Attack attack;
+    private AttackData attackData;
 
     /**
      * Constructor to make a ShootingAction that does not belong to a tower yet.
-     * @param attack the attackInfo class
+     * @param attackData the attackInfo class
      */
-    public ShootingAction(Attack attack) {
-        this.attack = attack;
+    public ShootingAction(AttackData attackData) {
+        this.attackData = attackData;
     }
 
     /*
      * Makes its thing on one enemy
      */
     public void tick(Enemy enemy) {
-        attack.resetEnemiesTowerHasShoot(); // reset enemies it has shot this frame.
-        if (attack.canShootAtThisFrame()) {
+        attackData.resetEnemiesTowerHasShoot(); // reset enemies it has shot this frame.
+        if (attackData.canShootAtThisFrame()) {
 
             if (enemy.isActive() && enemy.isAlive()) { // can only handle active and alive enemies
                 if (canShoot() && isInRange(enemy) && isCorrectTarget(enemy)) {
@@ -55,7 +55,7 @@ public class ShootingAction extends GameAction {
      */
     private boolean isCorrectTarget(Placeable currentEnemy) {
         if (tower.getLastTarget() != null || !isInRange(currentEnemy)) { // if no last target skip below and return
-            if (attack.isRememberOldTarget()) { //if it does not care about keeping track of old target
+            if (attackData.isRememberOldTarget()) { //if it does not care about keeping track of old target
                 if (tower.getLastTarget().isActive() || tower.getLastTarget().isAlive() ) { // if enemy is dead, skip
                     if (currentEnemy.equals(tower.getLastTarget())) {
                         return true;
@@ -69,8 +69,8 @@ public class ShootingAction extends GameAction {
 
 
     private void shoot(Enemy currentEnemy) {
-        currentEnemy.attacked(attack.getDmg());
-        attack.addEnemiesTowerHasShoot();
+        currentEnemy.attacked(attackData.getDmg());
+        attackData.addEnemiesTowerHasShoot();
 
         if (!currentEnemy.isAlive()) { // enemy died
             tower.getPlayer().addGold(currentEnemy.getGold());
@@ -87,7 +87,7 @@ public class ShootingAction extends GameAction {
     private boolean isInRange(Placeable currentTarget) {
         double rangeToTarget;
         rangeToTarget = currentTarget.distanceTo(tower);
-        if (attack.getRange() >= rangeToTarget) {
+        if (attackData.getRange() >= rangeToTarget) {
             return true;
         } return false;
     }
@@ -113,15 +113,15 @@ public class ShootingAction extends GameAction {
     }
 
     private boolean canShootMoreTargets() {
-        if (attack.getEnemiesTowerCanShootAtTheSameFrame() > attack.getEnemiesTowerHasShoot()) {
+        if (attackData.getEnemiesTowerCanShootAtTheSameFrame() > attackData.getEnemiesTowerHasShoot()) {
             return true;
         }
         return false;
     }
 
     @Override
-    public Attack getAttack() {
-        return attack;
+    public AttackData getAttackData() {
+        return attackData;
     }
 
     public void setTower(Tower tower) {
@@ -130,11 +130,11 @@ public class ShootingAction extends GameAction {
 
     @Override
     public boolean hasAnAttack() {
-        return (this.attack != null);
+        return (this.attackData != null);
     }
     @Override
     public void addBuffers(GameAction gameAction) {
-        this.attack.addBuffers(gameAction);
+        this.attackData.addBuffers(gameAction);
     }
 
 }

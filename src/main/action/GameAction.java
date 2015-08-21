@@ -44,7 +44,7 @@ public class GameAction {
         return false;
     }
 
-    public Attack getAttack() {  return null; }
+    public AttackData getAttackData() {  return null; }
 
 
     public boolean canShoot(Placeable obj) {

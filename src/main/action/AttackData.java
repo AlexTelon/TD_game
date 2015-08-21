@@ -14,7 +14,8 @@ import java.util.Collection;
  * This is the class that holds information about the attack of a tower (model), HOW it shoots and when is up to the
  * class ShootingAction
  */
-public class Attack {
+public class AttackData
+{
     private int dmg;
     private int extraDmg = 0;
     private double range;
@@ -28,7 +29,8 @@ public class Attack {
     private int enemiesTowerHasShoot = 0;
     private boolean rememberOldTarget = false;
 
-    public Attack(int dmg, double range, double rateOfFire, int enemiesTowerCanShootAtSameFrame, Colour colour, double framerate) {
+    public AttackData(int dmg, double range, double rateOfFire, int enemiesTowerCanShootAtSameFrame, Colour colour,
+                      double framerate) {
         this.dmg = dmg;
         this.range = range;
         this.rateOfFire = rateOfFire;

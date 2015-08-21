@@ -115,8 +115,8 @@ public class Tower extends Placeable  {
         hasGainedLevels = levelOfTower.recalculateLevel();
         if (hasGainedLevels != 0) {
             for ( GameAction action : getGameActions()) {
-                if (action.getAttack() != null) { // getAttack() returns null if the gameAction does not have an attack.
-                    action.getAttack().recalculateLevelMultiplier(hasGainedLevels);
+                if (action.getAttackData() != null) { // getAttackData() returns null if the gameAction does not have an attack.
+                    action.getAttackData().recalculateLevelMultiplier(hasGainedLevels);
                 }
             }
         }
@@ -216,19 +216,19 @@ public class Tower extends Placeable  {
             if (currentGameAction.hasAnAttack()) {
                 switch (towerInformation) {
                     case DMG:
-                        counter += currentGameAction.getAttack().getDmg();
+                        counter += currentGameAction.getAttackData().getDmg();
                         break;
                     case RANGE:
-                        counter += currentGameAction.getAttack().getRange();
+                        counter += currentGameAction.getAttackData().getRange();
                         break;
                     case RATEOFFIRE:
-                        counter += currentGameAction.getAttack().getRateOfFire();
+                        counter += currentGameAction.getAttackData().getRateOfFire();
                         break;
                     case ENEMIESCANSHOOTSAMETIME:
-                        counter += currentGameAction.getAttack().getEnemiesTowerCanShootAtTheSameFrame();
+                        counter += currentGameAction.getAttackData().getEnemiesTowerCanShootAtTheSameFrame();
                         break;
                     case DPS:
-                        counter += currentGameAction.getAttack().getDPS();
+                        counter += currentGameAction.getAttackData().getDPS();
                         break;
                     case EXTRA_DMG:
                         counter += currentGameAction.getExtraDmg();
@@ -252,7 +252,7 @@ public class Tower extends Placeable  {
         Color attackColor = Color.cyan;
         for (GameAction currentGameAction : getGameActions()) {
             if (currentGameAction.hasAnAttack()) {
-                return currentGameAction.getAttack().getColor();
+                return currentGameAction.getAttackData().getColor();
 
             }
         }

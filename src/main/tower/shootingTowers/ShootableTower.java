@@ -43,7 +43,7 @@ public class ShootableTower extends Tower {
             getBuffers().add(action);
             for (GameAction currentGameAction : getGameActions()) {
                 if (currentGameAction.hasAnAttack())
-                    currentGameAction.getAttack().addBuffers(action);
+                    currentGameAction.getAttackData().addBuffers(action);
             }
         }
     }
@@ -53,7 +53,7 @@ public class ShootableTower extends Tower {
             getBuffers().remove(action);
         for (GameAction currentGameAction : getGameActions()) {
             if (currentGameAction.hasAnAttack())
-                currentGameAction.getAttack().removeBuffers(action);
+                currentGameAction.getAttackData().removeBuffers(action);
         }
     }
 
