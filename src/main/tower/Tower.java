@@ -30,7 +30,9 @@ public class Tower extends Placeable  {
     private int kills = 0;
     private Board board;
     private Enemy lastTarget = null;
-    private Enemy currentTarget = null;
+    private Collection<Enemy> currentTargets = new ArrayList<Enemy>();
+
+
     public enum TowerInformation {
         /**
          * The damage of the Tower.
@@ -169,8 +171,16 @@ public class Tower extends Placeable  {
         return lastTarget;
     }
 
-    public void setCurrentTarget(Enemy currentTarget) {
-        this.currentTarget = currentTarget;
+    public void addToCurrentTargets(Enemy enemy) {
+        this.currentTargets.add(enemy);
+    }
+
+    public void removeFromCurrentTargets(Enemy enemy) {
+        this.currentTargets.remove(enemy);
+    }
+
+    public Collection<Enemy> getCurrentTargets() {
+        return currentTargets;
     }
 
     public boolean hasTarget() {
