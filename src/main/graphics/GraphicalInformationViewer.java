@@ -44,7 +44,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
         enemyGroups = board.getEnemyWaves();
     }
 
-    @Override
+    @SuppressWarnings("RefusedBequest") @Override // doing this on purpose as we want to redefine the preferred size.
     public Dimension getPreferredSize() {
         return new Dimension(preferredWidth(), preferredHeight());
     }
@@ -56,9 +56,10 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
 
     @Override
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
 
-        paintInfoForCurrentObj(g2,currentObject);
+        paintInfoForCurrentObj(g2, currentObject);
         paintInfo(g2);
 
     }
@@ -93,7 +94,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     }
 
     private void paintInfoForCurrentObj(Graphics2D g2, Placeable obj) {
-        if (currentObject instanceof Enemy) {
+        if (obj != null && obj.isEnemy()) {
             paintInfoForCurrentEnemy(g2, (Enemy) obj);
         } else if (currentObject instanceof ShootableTower) {
             paintInfoForCurrentTower(g2, (ShootableTower) currentObject);

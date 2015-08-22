@@ -30,7 +30,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
         this.board = board;
     }
 
-    @Override
+    @SuppressWarnings("RefusedBequest") @Override // doing this on purpose as we want to redefine the preferred size.
     public Dimension getPreferredSize() {
         return new Dimension(preferredWidth(), preferredHeight());
     }
@@ -47,6 +47,7 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
      */
     @Override
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         for (int y = 0; y < Board.getHeight(); ++y ) {
             for (int x = 0; x < Board.getWidth(); ++x) {

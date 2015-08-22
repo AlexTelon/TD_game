@@ -16,7 +16,7 @@ import static java.lang.Math.abs;
  * TThis is the path that all enemy will take in their way to the castle.
  */
 public class EnemyPath {
-    private final ArrayList<Point> mainPath = new ArrayList<Point>();
+    private final List<Point> mainPath = new ArrayList<Point>();
     private int currentGoal = 0;
     private List<Point> path = new ArrayList<Point>();
     private static int subGoal1x = new Random().nextInt(Board.getWidth()-Board.getCastleWidth());

@@ -20,6 +20,7 @@ import java.awt.*;
  * This is the class that makes the towers that the user "ordered". It checks if the tower can be placed where the
  * user wants it to be placed and checks if the user has enough gold. If that is the case the proper tower is created.
  */
+@SuppressWarnings("MagicNumber") // These are not really magic numbers.
 public class TowerMaker {
 
 
@@ -47,11 +48,11 @@ public class TowerMaker {
                 return;
 
             case 'B':
-                //noinspection MagicNumber
                 price = 20;
+                range = 200;
                 priority = 1;
                 dimension = new Dimension(1,1);
-                range = 200;
+
 
                 if (board.isValidPositions(position, priority, dimension) && board.getPlayer().getGold() >= price) {
                     int extraDMG = 5;

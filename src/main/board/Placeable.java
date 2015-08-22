@@ -200,12 +200,21 @@ public class Placeable implements IDesign{
     }
 
     /**
-     * Returns true if this is a tower
+     * Returns true if this is a Tower
      * @return false
      */
     public boolean isTower() {
         return false;
     }
+
+    /**
+     * Returns true if this is an Enemy
+     * @return false
+     */
+    public boolean isEnemy() {
+        return false;
+    }
+
 
     /**
      * As default placables are NOT imortal, towers for example might be.
@@ -219,8 +228,6 @@ public class Placeable implements IDesign{
         isImortal = imortal;
     }
 
-    public void removeGameAction(GameAction action) {
-        this.actions.remove(action);
-    }
+    public void removeGameAction(GameAction action) { this.actions.remove(action); }
 }
 

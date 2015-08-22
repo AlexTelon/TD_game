@@ -20,7 +20,8 @@ public class GraphicalIDebugViewer extends JComponent implements IBoardListener 
         this.board = board;
     }
 
-    @Override
+
+    @SuppressWarnings("RefusedBequest") @Override // doing this on purpose as we want to redefine the preferred size.
     public Dimension getPreferredSize() {
         return new Dimension(preferredWidth(), preferredHeight());
     }
@@ -34,6 +35,7 @@ public class GraphicalIDebugViewer extends JComponent implements IBoardListener 
 
     @Override
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         paintInfoForAllEnemies(g2);
     }
@@ -41,10 +43,9 @@ public class GraphicalIDebugViewer extends JComponent implements IBoardListener 
     /**
      * paintInfoForAllEnemies is only for debugging, it gives information about all kinds of things usefull while
      * working with the code.
-     * @param  g2  a graphics2D objecv
+     * @param  g2  a graphics2D object
      */
     private void paintInfoForAllEnemies(Graphics2D g2) {
-
         for (int y = 0; y < Board.getHeight(); y++ ) {
             for (int x = 0; x < Board.getWidth(); x++) {
                 if (!board.getPriorityMap().isEmpty(x,y)) {

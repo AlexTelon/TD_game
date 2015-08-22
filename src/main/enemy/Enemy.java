@@ -256,6 +256,15 @@ public class Enemy extends Placeable {
     }
 
     /**
+     * Returns true if this is an Enemy
+     * @return true
+     */
+    @SuppressWarnings("RefusedBequest") // This really should ignore the method in the superclass which returns false.
+    public boolean isEnemy() {
+        return true;
+    }
+
+    /**
      * Changes the position of an placeable obj by a vector
      * @param point this vector contains the change in x and y.
      */
@@ -308,11 +317,15 @@ public class Enemy extends Placeable {
 
     public int getExperienceToTowers() { return experienceToTowers; }
 
-    @Override // "Method X ignores defined method in superclass errors are ok in my book if it is an override like this.
+    // "Method X ignores defined method in superclass errors are ok in my book if it is an override like this.
+    @SuppressWarnings("RefusedBequest")
+    @Override
     public void addBuffers(GameAction action) {
       // as of now there are no buffers for enemies.
     }
 
+    // "Method X ignores defined method in superclass errors are ok in my book if it is an override like this.
+    @SuppressWarnings("RefusedBequest")
     @Override
     public void removeBuffer(GameAction action) {
         // as of now there are no buffers for enemies.

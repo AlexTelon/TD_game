@@ -16,7 +16,6 @@ import java.util.Collection;
  * Remember to write something useful here!!
  */
 public class NonShootableTower extends Tower {
-    private Board board;
 
     /**
      * Create an aura tower.
@@ -25,7 +24,6 @@ public class NonShootableTower extends Tower {
                              int x, int y, Dimension dimension, Colour color, Shapes shape, int price,
                              int extraDmg, double extraRange, int range) {
         super(board, allObjects, gameAction, x, y, dimension, color, shape, price, range);
-        this.board = board;
         super.addGameActions(new GameActionFactory().createGameAction(extraDmg, extraRange));
     }
 
@@ -56,13 +54,7 @@ public class NonShootableTower extends Tower {
     /**
      * Non shootable towers can have no actions.
      */
-    @Override
+    @SuppressWarnings("RefusedBequest") @Override // Not calling the method in the superclass is intended.
     public void addGameActions(GameAction action) {
     }
-
-    @Override
-    public void delete() {
-        super.delete();
-    }
-
 }

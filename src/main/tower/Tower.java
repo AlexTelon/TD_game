@@ -278,6 +278,7 @@ public class Tower extends Placeable  {
         }
     }
 
+
     @Override
     public boolean isImortal() {
         return true;

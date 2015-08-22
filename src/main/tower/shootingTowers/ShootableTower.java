@@ -37,7 +37,10 @@ public class ShootableTower extends Tower {
     }
 
 
-    @Override
+
+    @Override // Not calling superclass is intended, but not optimal. All buffers should in
+    // my current oppinion be the same buffer Collection. Right now there are some actions that are both added to the AttackData
+    // class and the placable itself which is weird. Better have them all in one place or?
     public void addBuffers(GameAction action) {
         if (!getBuffers().contains(action)) {
             getBuffers().add(action);
@@ -50,7 +53,7 @@ public class ShootableTower extends Tower {
 
     @Override
         public void removeBuffer(GameAction action) {
-            getBuffers().remove(action);
+        getBuffers().remove(action);
         for (GameAction currentGameAction : getGameActions()) {
             if (currentGameAction.hasAnAttack())
                 currentGameAction.getAttackData().removeBuffers(action);
