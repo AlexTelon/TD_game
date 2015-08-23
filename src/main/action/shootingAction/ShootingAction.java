@@ -33,13 +33,13 @@ public class ShootingAction extends GameAction {
             if (enemy.isActive() && enemy.isAlive()) { // can only handle active and alive enemies
                 if (canShoot() && isInRange(enemy) && isCorrectTarget(enemy)) {
                     shoot(enemy);
-                    tower.setLastTarget(enemy); // why is lastTarget used? - does it only work as an iterator?
+                    tower.setLastTarget(enemy);
 
                     if (enemy.isAlive()) { // ie enemy still is alive
-                        tower.setCurrentTarget( enemy);
+                        tower.addToCurrentTargets(enemy);
                         tower.addToCurrentPlaceablesInRangeOfThisTower(enemy);
                     } else {
-                        tower.setCurrentTarget(null);
+                        tower.removeFromCurrentTargets(enemy);
                     }
                 }
             }

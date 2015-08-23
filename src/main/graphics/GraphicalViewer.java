@@ -153,11 +153,12 @@ public class GraphicalViewer extends JComponent implements IBoardListener {
     private void paintAllShoots(Graphics2D g2) {
         for (Tower currentTower : board.getAllTowers()) {
             if (currentTower.hasTarget()) {
-                for (Placeable currentObj : currentTower.getPlacablesWithinRangeOfThisTower()) {
+//                for (Placeable currentObj : currentTower.getPlacablesWithinRangeOfThisTower()) {
+                for (Placeable currentObj : currentTower.getCurrentTargets()) {
                     if (currentTower.canShoot(currentObj)) {
                         g2.setColor(currentTower.getAttackColor());
                         g2.drawLine(currentTower.getCenterOfObject().getX(), currentTower.getCenterOfObject().getY(),
-                                currentObj.getCenterOfObject().getX(), currentObj.getCenterOfObject().getY());
+                                    currentObj.getCenterOfObject().getX(), currentObj.getCenterOfObject().getY());
                     }
                 }
             }
