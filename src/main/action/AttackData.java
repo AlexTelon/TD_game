@@ -27,7 +27,6 @@ public class AttackData
 
     private int enemiesTowerCanShootAtTheSameFrame = 1;
     private int enemiesTowerHasShoot = 0;
-    private boolean rememberOldTarget = false;
 
     public AttackData(int dmg, double range, double rateOfFire, int enemiesTowerCanShootAtSameFrame, Colour colour,
                       double framerate) {
@@ -126,6 +125,7 @@ public class AttackData
     }
 
     public boolean isRememberOldTarget() {
+        final boolean rememberOldTarget = false;
         return rememberOldTarget;
     }
 }
