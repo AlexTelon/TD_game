@@ -1,6 +1,5 @@
 package main.action.auraaction;
 
-import main.enemy.Enemy;
 
 /**
  * User: alete471 Date: 2012-10-08 Time: 14:27
@@ -11,10 +10,4 @@ public class DmgBuffAction extends AuraAction {
     public DmgBuffAction(int extraDmg) {
         super(extraDmg, 0);
      }
-
-    public void tick(Enemy enemy) {
-        super.tick(enemy);
-        enemy.addBuffers(this);
-    }
-
 }
