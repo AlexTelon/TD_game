@@ -25,7 +25,6 @@ public class Tower extends Placeable  {
     protected LevelOfTower levelOfTower;
     protected int hasGainedLevels = 0;
     private int price;
-    private ArrayList<Placeable> lastTargets = new ArrayList<Placeable>();
     private Collection<Placeable> allPlaceables = new ArrayList<Placeable>();
     private int kills = 0;
     private Board board;
@@ -125,11 +124,6 @@ public class Tower extends Placeable  {
     }
 
 
-    public ArrayList<Placeable> getLastTargets() {
-        return lastTargets;
-    }
-
-
     public int getPrice() {
         return price;
     }
@@ -142,10 +136,6 @@ public class Tower extends Placeable  {
         rangeHandler.addToCurrentPlaceablesInRange(obj);
     }
 
-
-    public void setLastTarget(Enemy currentTarget) {
-        this.lastTargets.add(currentTarget);
-    }
 
     public void removePlaceableInRange(Enemy currentEnemy) {
         rangeHandler.removePlaceableInRange(currentEnemy);
@@ -179,7 +169,7 @@ public class Tower extends Placeable  {
         this.currentTargets.remove(enemy);
     }
 
-    public Collection<Enemy> getCurrentTargets() {
+    public Iterable<Enemy> getCurrentTargets() {
         return currentTargets;
     }
 
@@ -205,6 +195,7 @@ public class Tower extends Placeable  {
      * Is this a tower check.
      * @return true
      */
+    @SuppressWarnings("RefusedBequest") // clearly intentional
     public boolean isTower() {
         return true;
     }
@@ -212,10 +203,6 @@ public class Tower extends Placeable  {
     /*
     A few getters
      */
-
-    public Tower getTower() {
-        return this;
-    }
 
     /**
      * Returns the aggregated value of all the shooting actions of a tower. Doubles are cast to ints!
@@ -290,6 +277,7 @@ public class Tower extends Placeable  {
 
 
     @Override
+    @SuppressWarnings("RefusedBequest") // clearly intentional
     public boolean isImortal() {
         return true;
     }

@@ -27,13 +27,13 @@ public class ShootingAction extends GameAction {
      * Makes its thing on one enemy
      */
     public void tick(Enemy enemy) {
+        super.tick(enemy);
         attackData.resetEnemiesTowerHasShoot(); // reset enemies it has shot this frame.
         if (attackData.canShootAtThisFrame()) {
 
             if (enemy.isActive() && enemy.isAlive()) { // can only handle active and alive enemies
                 if (canShoot() && isInRange(enemy) && isCorrectTarget(enemy)) {
                     shoot(enemy);
-                    tower.setLastTarget(enemy);
 
                     if (enemy.isAlive()) { // ie enemy still is alive
                         tower.addToCurrentTargets(enemy);
@@ -105,6 +105,7 @@ public class ShootingAction extends GameAction {
     }
 
     @Override
+    @SuppressWarnings("RefusedBequest") // intentinall as super always returns false
     public boolean canShoot(Placeable obj) {
         if (!obj.isImortal()) {
             return (canShoot() && isInRange(obj) && isCorrectTarget(obj));
@@ -120,6 +121,7 @@ public class ShootingAction extends GameAction {
     }
 
     @Override
+    @SuppressWarnings("RefusedBequest") // Parent class does not have an attackData and hence always returns null
     public AttackData getAttackData() {
         return attackData;
     }
@@ -129,11 +131,13 @@ public class ShootingAction extends GameAction {
     }
 
     @Override
+    @SuppressWarnings("RefusedBequest") // intentinall as super always returns false
     public boolean hasAnAttack() {
         return (this.attackData != null);
     }
     @Override
     public void addBuffers(GameAction gameAction) {
+        super.addBuffers(gameAction);
         this.attackData.addBuffers(gameAction);
     }
 

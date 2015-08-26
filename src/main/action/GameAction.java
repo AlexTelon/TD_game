@@ -21,7 +21,6 @@ public class GameAction {
     }
 
     public void tick(Enemy enemy) {
-        enemy.addBuffers(this);
     }
 
     public GameAction(int extraDmg, double extraRange) {

@@ -37,7 +37,7 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
     private static final int TOP_MARGIN_X = 80; // margin to the top of the window for text information
     private static final int MARGIN_Y = 15;
     private static final int MARGIN_X = 10;
-    private static final int WAVE_INFO_SPACE_TO_TOP = 190;
+    private static final int WAVE_INFO_SPACE_TO_TOP = 230;
 
     public GraphicalInformationViewer( Board board) {
         this.board = board;
@@ -150,6 +150,10 @@ public class GraphicalInformationViewer extends JComponent implements IBoardList
 
         y += SMALL_SPACING;
         g2.drawString("Rate of Fire: (rounded)  " +  stringConverter(tower.getTowerInformation(TowerInformation.RATEOFFIRE)), 0, y);
+
+        y += SMALL_SPACING;
+        g2.drawString("Kills: " +  Integer.toString(tower.getKills()), 0, y);
+
 
         y += SMALL_SPACING;
 
