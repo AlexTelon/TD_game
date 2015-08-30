@@ -75,7 +75,7 @@ public class Tower extends Placeable  {
     }
 
     /*
-
+        Adds the towers GameAction to all placeables in range.
      */
     public void tick(EnemyWave allEnemies) {
         for (GameAction currentAction : getGameActions()) {

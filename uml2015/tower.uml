@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>main.tower</OriginalElement>
+  <nodes>
+    <node x="94.0" y="422.0">main.tower.nonshootabletower.NonShootableTower</node>
+    <node x="288.0" y="0.0">main.tower.LevelOfTower</node>
+    <node x="49.75" y="123.0">main.tower.Tower</node>
+    <node x="189.75" y="501.0">main.tower.TowerMaker</node>
+    <node x="0.0" y="11.0">main.tower.RangeHandler</node>
+    <node x="254.0" y="422.0">main.tower.shootingtowers.ShootableTower</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="main.tower.nonshootabletower.NonShootableTower" target="main.tower.Tower">
+      <point x="0.0" y="-14.5" />
+      <point x="164.0" y="397.0" />
+      <point x="144.0" y="397.0" />
+      <point x="-94.25" y="124.5" />
+    </edge>
+    <edge source="main.tower.Tower" target="main.tower.RangeHandler">
+      <point x="-47.125" y="-124.5" />
+      <point x="191.125" y="98.0" />
+      <point x="201.0" y="98.0" />
+      <point x="67.0" y="25.5" />
+    </edge>
+    <edge source="main.tower.TowerMaker" target="main.tower.nonshootabletower.NonShootableTower">
+      <point x="-24.25" y="-14.5" />
+      <point x="214.0" y="476.0" />
+      <point x="164.0" y="476.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="main.tower.shootingtowers.ShootableTower" target="main.tower.Tower">
+      <point x="0.0" y="-14.5" />
+      <point x="312.5" y="397.0" />
+      <point x="332.5" y="397.0" />
+      <point x="94.25" y="124.5" />
+    </edge>
+    <edge source="main.tower.TowerMaker" target="main.tower.shootingtowers.ShootableTower">
+      <point x="24.25" y="-14.5" />
+      <point x="262.5" y="476.0" />
+      <point x="312.5" y="476.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="main.tower.Tower" target="main.tower.LevelOfTower">
+      <point x="141.375" y="-124.5" />
+      <point x="379.625" y="98.0" />
+      <point x="369.75" y="98.0" />
+      <point x="27.25" y="36.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="138.5" y="128.0" />
+  <SelectedNodes>
+    <node>main.tower.LevelOfTower</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

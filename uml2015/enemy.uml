@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>main.enemy</OriginalElement>
+  <nodes>
+    <node x="30.955357142857167" y="666.5">main.enemy.enemytype</node>
+    <node x="0.0" y="146.0">main.enemy.Enemy</node>
+    <node x="81.95535714285711" y="768.0">main.enemy.EnemyWaves</node>
+    <node x="283.25" y="0.0">main.enemy.EnemyPath</node>
+    <node x="188.95535714285717" y="644.0">main.enemy.EnemyWave</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="main.enemy.Enemy" target="main.enemy.EnemyPath">
+      <point x="125.75" y="-224.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="main.enemy.EnemyWaves" target="main.enemy.enemytype">
+      <point x="-170.39999999999992" y="-92.0" />
+      <point x="124.55535714285719" y="743.0" />
+      <point x="99.95535714285717" y="743.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="main.enemy.EnemyWaves" target="main.enemy.EnemyPath">
+      <point x="170.40000000000003" y="-92.0" />
+      <point x="465.35535714285714" y="743.0" />
+      <point x="513.5" y="743.0" />
+      <point x="513.5" y="121.0" />
+      <point x="439.91666666666663" y="121.0" />
+      <point x="62.66666666666663" y="48.0" />
+    </edge>
+    <edge source="main.enemy.enemytype" target="main.enemy.Enemy">
+      <point x="0.0" y="-14.5" />
+      <point x="99.95535714285717" y="619.0" />
+      <point x="62.875" y="619.0" />
+      <point x="-188.625" y="224.0" />
+    </edge>
+    <edge source="main.enemy.EnemyWave" target="main.enemy.Enemy">
+      <point x="0.0" y="-37.0" />
+      <point x="294.95535714285717" y="619.0" />
+      <point x="314.375" y="619.0" />
+      <point x="62.875" y="224.0" />
+    </edge>
+    <edge source="main.enemy.EnemyWaves" target="main.enemy.EnemyWave">
+      <point x="85.19999999999999" y="-92.0" />
+      <point x="380.1553571428571" y="743.0" />
+      <point x="365.62202380952385" y="743.0" />
+      <point x="70.66666666666669" y="37.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="122.0" y="609.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
