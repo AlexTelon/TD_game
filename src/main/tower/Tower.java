@@ -195,7 +195,7 @@ public class Tower extends Placeable  {
      * Is this a tower check.
      * @return true
      */
-    @SuppressWarnings("RefusedBequest") // clearly intentional
+    @SuppressWarnings("RefusedBequest") // clearly intentionally, no need to call super.isTower()
     public boolean isTower() {
         return true;
     }
