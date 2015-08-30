@@ -1,0 +1,139 @@
+Dessa är kommentarerna till första kompletteringen som jag (av ren slump) skickade för exakt två år sedan, har kompletterat mina kommentarerna på 3 ställen med uppdaterad kod eller en ny kommentar.
+Andra kompletteringen var att jag inte kollat varningarna så de var inte mer än så.
+
+”I metoden nedan vore det bättre om Towers hade en metod
+tick(EnemyWave) och så får de implementationer som inte använder
+fienderna helt enkelt strunta i dem.  Som det är nu måste
+GraphicalInformationViewer känna till olika specialtyper av torn och
+den måste utökas om man lägger till en ny torntyp.  Detta är något som
+polymorfism ska låta oss undvika!
+
+    public void tick(Towers currentTower, EnemyWave allEnemies ) {
+        if (currentTower instanceof ShootableTowers) {
+            ((ShootableTowers) currentTower).tick(allEnemies);
+        } else if (currentTower instanceof NonShootableTower) {
+           ((NonShootableTower) currentTower).tick();
+        }
+    }”
+Detta är nu löst på följande sätt:
+
+    /*
+        Adds the towers GameAction to all placeables in range.
+         */
+    public void tick(EnemyWave allEnemies) {
+        for (GameAction currentAction : getGameActions()) {
+            currentAction.tick(this);
+        }
+
+        updateAllObjects();
+        recalcLevel();
+
+        rangeHandler.updateObjectsWithinRange(allPlaceables, this);
+    }
+
+Att referera till subklassen ShootableTowers från Tower på detta sätt
+är inte bra.  Implementera om metoden i ShootableTowers istället, det
+är det overriding är till för!
+
+    public void addBuffers(GameActions action) {
+       if (this instanceof ShootableTowers) {
+            ((ShootableTowers) this).getAttack().addBuffers(action);
+        }
+
+        super.addBuffers(action);
+    }
+
+Numera (2015) så overridar jag metoden helt och anropar inte superklassen alls. 
+Är dock inte helt nöjd över kedjan av addBuffers mellan Placable, Tower och ShootableTower.
+Trolig kandidat till komplettering..
+
+
+Namngivning: "Towers" borde vara "Tower" eftersom man normalt namnger
+sin klass efter *ett* objekt.  Liknande problem med en del andra namn.
+(Det heter inte Strings, ArrayLists, ...)
+
+Namngivning: "PlaceEnemyPathOnBoard" ser ut som en klass.  Metoder
+börjar med liten bokstav.  Gäller även på andra ställen (IDEA varnar
+för detta).
+
+Dessa är fixade.
+
+GraphicalInformationViewer och GraphicalViewer har många magiska
+konstanter som borde döpas.
+
+Skapade endel variabler för att lösa detta.
+
+GameTimer: Varför lagra refresh rate som både int och double när man
+kan cast:a när den används istället?
+
+    static double refreshrate = 50;
+    static int refRate = (int) refreshrate;
+
+Tog bort refRate helt, och gjorde refresrRate till en int. Vet inte varför de var två olika innan.
+
+Varför är gameover statisk?  Har ni flera Boards på samma gång blir
+det ju en och samma flagga de använder... och när gameover väl blir
+sann kan den aldrig mer bli falsk som koden ser ut nu.
+
+    private static boolean gameover = false;
+
+Den är nu inte längre statisk. Dock så får man starta om spelet om man vill köra om.
+Kan implementera att man kan starta om om du tycker att det behövs för något visst
+betyg.
+
+TowerMaker: Behöver inte ha Character-klassen när char-typen fungerar
+lika bra.
+
+    public void makeTower(Board board, Character type, Point position) {
+
+fixed.
+
+Är detta meningen?  Kanske kan använda "*= 2" för att förtydliga att
+det inte är ett misstag i så fall.
+
+                    activationTime += activationTime;
+
+Ja det var meningen. Men skrev om de med "*= 2" istället
+
+I metoder som RangeBuffAction.tick() vore det bättre om
+    public void tick(Placeable obj) {
+        if (obj instanceof ShootableTowers) {
+            ((ShootableTowers) obj).getAttack().addBuffers(this);
+        }
+        obj.addBuffers(this);
+    }
+vore
+    public void tick(Placeable obj) {
+        super.tick(obj);
+        if (obj instanceof ShootableTowers) {
+            ((ShootableTowers) obj).getAttack().addBuffers(this);
+        }
+    }
+så att man bara lägger till en sak i implementationen istället för att
+ersätta den.  Om man sedan ändrar något i AuraAction.tick() behöver
+man inte gå in och ändra alla subklasser eftersom de anropar
+superklassens implementation.
+
+
+Den ser nu ut så att den anropar sin superklass, AuraAction som lägger till sig själv på
+objectets bufferlista. Sen så behövs ingen instanceof då jag låter objektet själv bestämma
+vad den ska göra.
+
+
+
+Ni använder typer som ArrayList<...> för diverse variabler och
+returtyper.  Det är generellt sett bättre att använda List<...> så att
+implementationen kan bytas ut utan att man ändrar vad som syns utåt.
+Exempel:
+
+    public ArrayList<Placeable> getCurrentTargets() {
+        return currentTargets;
+    }
+==>
+    public List<Placeable> getCurrentTargets() {
+        return currentTargets;
+    }
+
+Detta hade jag inte fixat för två år sedan men är nu helt fixat.
+
+

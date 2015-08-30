@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>main.action</OriginalElement>
+  <nodes>
+    <node x="320.75" y="488.0">main.action.auraaction.DmgBuffAction</node>
+    <node x="393.63749999999993" y="266.0">main.action.auraaction.AuraAction</node>
+    <node x="224.49999999999997" y="0.0">main.action.GameAction</node>
+    <node x="440.38749999999993" y="589.0">main.action.GameActionFactory</node>
+    <node x="155.26416666666663" y="466.0">main.action.shootingaction.ShootingAction</node>
+    <node x="455.75" y="488.0">main.action.auraaction.RangeBuffAction</node>
+    <node x="0.0" y="145.0">main.action.AttackData</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="main.action.GameActionFactory" target="main.action.auraaction.RangeBuffAction">
+      <point x="0.0" y="-14.5" />
+      <point x="508.88749999999993" y="564.0" />
+      <point x="516.75" y="564.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="main.action.auraaction.DmgBuffAction" target="main.action.auraaction.AuraAction">
+      <point x="0.0" y="-14.5" />
+      <point x="378.25" y="441.0" />
+      <point x="416.63749999999993" y="441.0" />
+      <point x="-23.0" y="14.5" />
+    </edge>
+    <edge source="main.action.GameActionFactory" target="main.action.GameAction">
+      <point x="45.66666666666663" y="-14.5" />
+      <point x="554.5541666666666" y="564.0" />
+      <point x="588.25" y="564.0" />
+      <point x="588.25" y="115.0" />
+      <point x="370.29999999999995" y="115.0" />
+      <point x="64.80000000000001" y="47.5" />
+    </edge>
+    <edge source="main.action.shootingaction.ShootingAction" target="main.action.GameAction">
+      <point x="34.5" y="-36.5" />
+      <point x="258.7641666666666" y="441.0" />
+      <point x="305.5" y="441.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="main.action.auraaction.AuraAction" target="main.action.GameAction">
+      <point x="0.0" y="-14.5" />
+      <point x="439.63749999999993" y="125.0" />
+      <point x="337.9" y="125.0" />
+      <point x="32.400000000000034" y="47.5" />
+    </edge>
+    <edge source="main.action.shootingaction.ShootingAction" target="main.action.AttackData">
+      <point x="-34.5" y="-36.5" />
+      <point x="189.76416666666663" y="441.0" />
+      <point x="147.5" y="441.0" />
+      <point x="0.0" y="135.5" />
+    </edge>
+    <edge source="main.action.GameActionFactory" target="main.action.auraaction.DmgBuffAction">
+      <point x="-45.66666666666663" y="-14.5" />
+      <point x="463.2208333333333" y="564.0" />
+      <point x="378.25" y="564.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="main.action.AttackData" target="main.action.GameAction">
+      <point x="73.75" y="-135.5" />
+      <point x="221.25" y="125.0" />
+      <point x="273.1" y="125.0" />
+      <point x="-32.39999999999998" y="47.5" />
+    </edge>
+    <edge source="main.action.auraaction.RangeBuffAction" target="main.action.auraaction.AuraAction">
+      <point x="0.0" y="-14.5" />
+      <point x="516.75" y="441.0" />
+      <point x="462.63749999999993" y="441.0" />
+      <point x="23.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="157.0" y="128.0" />
+  <SelectedNodes>
+    <node>main.action.shootingaction.ShootingAction</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

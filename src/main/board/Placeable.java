@@ -21,7 +21,7 @@ import static java.lang.StrictMath.round;
  * This is the class which all objects that can be placed on the board will extend.
  */
 
-@SuppressWarnings("SuspiciousGetterSetter") // All ok getters/setters.
+@SuppressWarnings("SuspiciousGetterSetter") // All ok getters/setters in my oppinion.
 public class Placeable implements IDesign{
     private Point position;
     private Dimension dimension = new Dimension(1,1);

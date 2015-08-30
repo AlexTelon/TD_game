@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>main.board.Placeable</OriginalElement>
+  <nodes>
+    <node x="0.0" y="237.0">main.tower.nonshootabletower.NonShootableTower</node>
+    <node x="411.0185185185185" y="158.0">main.enemy.Enemy</node>
+    <node x="406.0" y="237.0">main.enemy.enemytype.SlowEnemy</node>
+    <node x="101.5462962962963" y="158.0">main.tower.Tower</node>
+    <node x="238.6574074074074" y="0.0">main.board.IDesign</node>
+    <node x="519.0" y="237.0">main.enemy.enemytype.StrongEnemy</node>
+    <node x="233.1574074074074" y="79.0">main.board.Placeable</node>
+    <node x="160.0" y="237.0">main.tower.shootingtowers.ShootableTower</node>
+    <node x="297.0" y="237.0">main.enemy.enemytype.FastEnemy</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="main.tower.nonshootabletower.NonShootableTower" target="main.tower.Tower">
+      <point x="0.0" y="-14.5" />
+      <point x="70.0" y="212.0" />
+      <point x="117.5462962962963" y="212.0" />
+      <point x="-16.0" y="14.5" />
+    </edge>
+    <edge source="main.tower.shootingtowers.ShootableTower" target="main.tower.Tower">
+      <point x="0.0" y="-14.5" />
+      <point x="218.5" y="212.0" />
+      <point x="149.5462962962963" y="212.0" />
+      <point x="16.0" y="14.5" />
+    </edge>
+    <edge source="main.enemy.enemytype.FastEnemy" target="main.enemy.Enemy">
+      <point x="0.0" y="-14.5" />
+      <point x="341.5" y="212.0" />
+      <point x="422.35185185185185" y="212.0" />
+      <point x="-22.666666666666686" y="14.5" />
+    </edge>
+    <edge source="main.enemy.enemytype.SlowEnemy" target="main.enemy.Enemy">
+      <point x="0.0" y="-14.5" />
+      <point x="452.5" y="212.0" />
+      <point x="445.0185185185185" y="212.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="main.tower.Tower" target="main.board.Placeable">
+      <point x="0.0" y="-14.5" />
+      <point x="133.5462962962963" y="133.0" />
+      <point x="253.6574074074074" y="133.0" />
+      <point x="-20.5" y="14.5" />
+    </edge>
+    <edge source="main.enemy.enemytype.StrongEnemy" target="main.enemy.Enemy">
+      <point x="0.0" y="-14.5" />
+      <point x="570.5" y="212.0" />
+      <point x="467.6851851851852" y="212.0" />
+      <point x="22.666666666666686" y="14.5" />
+    </edge>
+    <edge source="main.board.Placeable" target="main.board.IDesign">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="main.enemy.Enemy" target="main.board.Placeable">
+      <point x="0.0" y="-14.5" />
+      <point x="445.0185185185185" y="133.0" />
+      <point x="294.6574074074074" y="133.0" />
+      <point x="20.5" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="64.5" y="93.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

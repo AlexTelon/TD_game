@@ -75,7 +75,7 @@ public class Tower extends Placeable  {
     }
 
     /*
-
+        Adds the towers GameAction to all placeables in range.
      */
     public void tick(EnemyWave allEnemies) {
         for (GameAction currentAction : getGameActions()) {
@@ -195,7 +195,7 @@ public class Tower extends Placeable  {
      * Is this a tower check.
      * @return true
      */
-    @SuppressWarnings("RefusedBequest") // clearly intentional
+    @SuppressWarnings("RefusedBequest") // clearly intentionally, no need to call super.isTower()
     public boolean isTower() {
         return true;
     }

@@ -105,7 +105,7 @@ public class ShootingAction extends GameAction {
     }
 
     @Override
-    @SuppressWarnings("RefusedBequest") // intentinall as super always returns false
+    @SuppressWarnings("RefusedBequest") // intentional as super always returns false
     public boolean canShoot(Placeable obj) {
         if (!obj.isImortal()) {
             return (canShoot() && isInRange(obj) && isCorrectTarget(obj));
@@ -131,7 +131,7 @@ public class ShootingAction extends GameAction {
     }
 
     @Override
-    @SuppressWarnings("RefusedBequest") // intentinall as super always returns false
+    @SuppressWarnings("RefusedBequest") // intentional as super always returns false
     public boolean hasAnAttack() {
         return (this.attackData != null);
     }
